@@ -69,7 +69,7 @@
   .\install.ps1 -ReportSkills -ReportUrl https://cto.wayof.work
   .\install.ps1 -Mode repo -Dest ~/.ai-engineering-harness
 .LINK
-  https://github.com/Way-Of/wayofmono
+  https://github.com/Way-Of/aiharness
 #>
 
 param(
@@ -98,7 +98,7 @@ param(
 )
 
 $ScriptVersion = "1.7.16"
-$ScriptUrl = "https://raw.githubusercontent.com/Way-Of/wayofmono/main/packages/@aiengineeringharness/install.ts"
+$ScriptUrl = "https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts"
 
 function Write-Logo {
   $logo = @(

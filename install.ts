@@ -4,10 +4,10 @@
  *
  * Install as CLI (recommended):
  *   deno install -Agf --no-lock --reload -n ai-harness \
- *     https://raw.githubusercontent.com/Way-Of/wayofmono/main/packages/@aiengineeringharness/install.ts
+ *     https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts
  *
  * Or using built-in --install-cli (auto-resolves URL):
- *   deno run -A https://raw.githubusercontent.com/Way-Of/wayofmono/main/packages/@aiengineeringharness/install.ts --install-cli
+ *   deno run -A https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts --install-cli
  *
  * Then:
  *   ai-harness --tool=claude
@@ -249,7 +249,7 @@ function isRemote(url: string): boolean {
 function deriveBaseUrl(): string | null {
   const url = import.meta.url;
   if (!isRemote(url)) return null;
-  // e.g. https://raw.githubusercontent.com/Way-Of/wayofmono/<SHA>/packages/@aiengineeringharness/install.ts
+  // e.g. https://raw.githubusercontent.com/Way-Of/aiharness/<SHA>/install.ts
   return url.slice(0, url.lastIndexOf("/") + 1);
 }
 
@@ -284,8 +284,8 @@ async function loadManifest(sd: string, token: string | null): Promise<Manifest>
         const sep = Deno.build.os === "windows" ? "\\" : "/";
         throw new Error(
           `Failed to fetch manifest (${resp.status}). If this is a private repository, clone and run locally:\n\n` +
-          `  git clone https://github.com/Way-Of/wayofmono.git ${cloneDir} --depth=1 -q\n` +
-          `  GITHUB_TOKEN=$(gh auth token) deno run -A ${cloneDir}${sep}packages${sep}@aiengineeringharness${sep}install.ts --tool=claude`
+          `  git clone https://github.com/Way-Of/aiharness.git ${cloneDir} --depth=1 -q\n` +
+          `  GITHUB_TOKEN=$(gh auth token) deno run -A ${cloneDir}${sep}install.ts --tool=claude`
         );
       }
       throw new Error(`Failed to fetch manifest from ${manifestUrl}: ${resp.status} ${resp.statusText}`);
@@ -413,7 +413,7 @@ function printHelp(): void {
   console.log(`  ${o("└")}${od("─".repeat(54))}${o("┘")}`);
   console.log();
 
-  const INSTALL_URL = "https://raw.githubusercontent.com/Way-Of/wayofmono/main/packages/@aiengineeringharness/install.ts";
+  const INSTALL_URL = "https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts";
   const sections: Array<{ title: string; items: Array<{ cmd: string; desc: string }> }> = [
     {
       title: "quick start (one-liner)",
@@ -499,8 +499,8 @@ The repo must remain at a stable path on your system.
        Arch:           sudo pacman -S stow
 
    2. Clone the repository:
-       git clone https://github.com/Way-Of/wayofmono.git ${expanded}
-       cd ${expanded}/packages/@aiengineeringharness
+       git clone https://github.com/Way-Of/aiharness.git ${expanded}
+       cd ${expanded}
 
    3. Install symlinks:
        ./setup.sh claude             # Claude Code
@@ -1656,7 +1656,7 @@ if (args.mode === "repo") {
 // --install-cli: install/update CLI binary with Matrix output
 if (args["install-cli"]) {
   const installUrl =
-    "https://raw.githubusercontent.com/Way-Of/wayofmono/main/packages/@aiengineeringharness/install.ts";
+    "https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts";
 
   const logo = [
     "██╗    ██╗ ██████╗     ███╗   ███╗ ██████╗ ███╗   ██╗ ██████╗",
@@ -1721,7 +1721,7 @@ if (args["install-cli"]) {
 // --update: full harness sync — CLI binary + changelog + docs + all tools + stale cleanup + validate
 if (args.update) {
   const installUrl =
-    "https://raw.githubusercontent.com/Way-Of/wayofmono/main/packages/@aiengineeringharness/install.ts";
+    "https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts";
   const installBase = installUrl.slice(0, installUrl.lastIndexOf("/") + 1);
   const dryRun = Boolean(args["dry-run"]);
   let yes = Boolean(args.yes);

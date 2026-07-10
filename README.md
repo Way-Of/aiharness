@@ -4,6 +4,40 @@
 
 The AI Engineering Harness provides 51 battle-tested skills, 12 agents, and workflows across 7 AI coding tools. Install once, use everywhere.
 
+## About This
+
+This repo provides a cross-tool AI engineering harness — 51+ skills, 12 agents, and workflows that work across 7 AI coding tools. Install once, use everywhere.
+
+### Updating
+
+To pull the latest skills, agents, and installer updates from the remote repository:
+
+**macOS / Linux:**
+
+```bash
+deno run --reload -A https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts --install-cli
+```
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ps1 | iex
+```
+
+The `--reload` flag (Deno) forces a re-fetch of all dependencies and the script itself, ensuring you always get the latest version. On Windows, `irm` (Invoke-RestMethod) fetches and pipes the script directly to `iex` (Invoke-Expression).
+
+**Using the CLI (all platforms):**
+
+```bash
+ai-harness --update
+```
+
+**Windows (PowerShell) with explicit flags:**
+
+```powershell
+ai-harness.exe --update
+```
+
 ## Quick Start
 
 ```bash

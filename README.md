@@ -54,15 +54,15 @@ way-of --tool=opencode
 
 ## Supported Tools
 
-| Tool | Config Dir | Skill Naming |
-|------|------------|--------------|
-| **Claude Code** | `~/.claude/` | snake_case |
-| **OpenCode** | `~/.config/opencode/` | kebab-case |
-| **Pi** | `~/.pi/agent/` | kebab-case |
-| **Wo Coder** | `~/.wocode/` | kebab-case |
-| **Antigravity** | `~/.antigravity/` | snake_case |
-| **Codex CLI** | `~/.codex/` | snake_case |
-| **Gemini CLI** | `~/.gemini/` | snake_case |
+| Tool | Config Dir (Linux) | Config Dir (macOS) | Config Dir (Windows) | Skill Naming |
+|------|-------------------|-------------------|---------------------|--------------|
+| **Claude Code** | `~/.claude/` | `~/.claude/` | `%USERPROFILE%\.claude\` | snake_case |
+| **OpenCode** | `~/.config/opencode/` | `~/.config/opencode/` | `%APPDATA%\opencode\` | kebab-case |
+| **Pi** | `~/.pi/agent/` | `~/.pi/agent/` | `%USERPROFILE%\.pi\agent\` | kebab-case |
+| **Wo Coder** | `~/.wocode/agent/` | `~/.wocode/agent/` | `%USERPROFILE%\.wocode\agent\` | kebab-case |
+| **Antigravity** | `~/.antigravity/` | `~/.antigravity/` | `%USERPROFILE%\.antigravity\` | snake_case |
+| **Codex CLI** | `~/.codex/` | `~/.codex/` | `%USERPROFILE%\.codex\` | snake_case |
+| **Gemini CLI** | `~/.gemini/` | `~/.gemini/` | `%USERPROFILE%\.gemini\` | snake_case |
 
 ## Installation
 

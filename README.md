@@ -29,13 +29,13 @@ The `--reload` flag (Deno) forces a re-fetch of all dependencies and the script 
 **Using the CLI (all platforms):**
 
 ```bash
-ai-harness --update
+way-of --update
 ```
 
 **Windows (PowerShell) with explicit flags:**
 
 ```powershell
-ai-harness.exe --update
+way-of.exe --update
 ```
 
 ## Quick Start
@@ -45,11 +45,11 @@ ai-harness.exe --update
 deno run -A https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts --install-cli
 
 # Install all tools
-ai-harness --tool=all --yes
+way-of --tool=all --yes
 
 # Install specific tool
-ai-harness --tool=claude
-ai-harness --tool=opencode
+way-of --tool=claude
+way-of --tool=opencode
 ```
 
 ## Supported Tools
@@ -75,19 +75,19 @@ deno run -A https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts -
 ### Per-Tool Install
 
 ```bash
-ai-harness --tool=claude          # Claude Code
-ai-harness --tool=opencode        # OpenCode
-ai-harness --tool=pi              # Pi
-ai-harness --tool=wocode          # Wo Coder
-ai-harness --tool=antigravity     # Antigravity
-ai-harness --tool=codex           # Codex CLI
-ai-harness --tool=all --yes       # All tools
+way-of --tool=claude          # Claude Code
+way-of --tool=opencode        # OpenCode
+way-of --tool=pi              # Pi
+way-of --tool=wocode          # Wo Coder
+way-of --tool=antigravity     # Antigravity
+way-of --tool=codex           # Codex CLI
+way-of --tool=all --yes       # All tools
 ```
 
 ### Update
 
 ```bash
-ai-harness --update
+way-of --update
 ```
 
 ### GNU Stow (Alternative)
@@ -175,14 +175,14 @@ cd ~/.ai-engineering-harness
 ## Commands
 
 ```bash
-ai-harness --tool=<name>          # Install tool config
-ai-harness --tool=all --yes       # Install all tools
-ai-harness --update               # Full sync
-ai-harness --install-cli          # Install/update CLI
-ai-harness --help                 # Full usage
-ai-harness --report-skills        # Report to CTO Dashboard
-ai-harness --sync-docs --check    # Check docs sync
-ai-harness --compliance           # Run compliance check
+way-of --tool=<name>          # Install tool config
+way-of --tool=all --yes       # Install all tools
+way-of --update               # Full sync
+way-of --install-cli          # Install/update CLI
+way-of --help                 # Full usage
+way-of --report-skills        # Report to CTO Dashboard
+way-of --sync-docs --check    # Check docs sync
+way-of --compliance           # Run compliance check
 ```
 
 ## Repository Structure

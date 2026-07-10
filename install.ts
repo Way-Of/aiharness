@@ -791,6 +791,7 @@ interface InstallOptions {
   sd: string;
   token: string | null;
   local: boolean;
+  settingsPrompted?: boolean; // Track if settings prompt was already shown
 }
 
 function getProjectLocalTarget(tool: string): string {
@@ -974,13 +975,14 @@ async function installTool(manifest: Manifest, toolName: string, opts: InstallOp
 
   for (const comp of selectedComponents) {
     // Warn before installing user-specific config files in the default flow
-    if (comp.name === "settings" && !opts.yes && opts.skills.length === 0) {
+    if (comp.name === "settings" && !opts.yes && opts.skills.length === 0 && !opts.settingsPrompted) {
       console.log(`\n  ⚠ The "settings" component contains tool-specific config files`);
       console.log(`    (settings.json, .mcp.json) that may overwrite your existing settings.`);
       if (opts.dryRun) {
         console.log("  [dry-run] would prompt for confirmation");
       } else {
         const ok = await promptConfirm(`  Install settings component?`);
+        opts.settingsPrompted = true; // Mark as prompted so we don't ask again
         if (!ok) {
           console.log("  Skipped settings component.");
           skipped += comp.files.length;

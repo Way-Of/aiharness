@@ -1,0 +1,10 @@
+name: ticket_organization
+naming: snake_case
+allowed-tools: read, grep, glob, bash, write, edit
+allowed-tools-case: lowercase
+disable-model-invocation: false
+dir_name: ticket_organization
+project_memory: ANTIGRAVITY.md
+config_dir: ~/.antigravity/
+dests:
+  - antigravity/skills/

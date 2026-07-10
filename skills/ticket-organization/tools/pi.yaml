@@ -1,0 +1,11 @@
+name: ticket-organization
+naming: kebab-case
+allowed-tools: read, grep, glob, bash, write, edit
+allowed-tools-case: lowercase
+disable-model-invocation: false
+dir_name: ticket-organization
+project_memory: null
+config_dir: ~/.pi/agent/
+dests:
+  - pi/skills/
+  - pi/agent/skills/

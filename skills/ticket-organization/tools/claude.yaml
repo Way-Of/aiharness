@@ -1,0 +1,10 @@
+name: ticket_organization
+naming: snake_case
+allowed-tools: Read, Grep, Glob, Bash, Write, Edit
+allowed-tools-case: PascalCase
+disable-model-invocation: false
+dir_name: ticket_organization
+project_memory: CLAUDE.md
+config_dir: ~/.claude/
+dests:
+  - claude/skills/

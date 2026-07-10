@@ -65,11 +65,12 @@ cd ~/.ai-engineering-harness
 ./setup.sh all       # All tools
 ```
 
-## Skills (51)
+## Skills (52)
 
 ### Core Workflow
 - `ticket-manager` — Full ticket lifecycle management
 - `ticket-executor` — Phase-by-phase implementation
+- `ticket-organization` — Proactive ticket organization (audit, archive, naming, orphans, TODO regeneration)
 - `backlog-groomer` — Ticket creation and maintenance
 - `create-plan` — Implementation plan generation
 - `validate-plan` — Verify implementation against plan
@@ -158,7 +159,7 @@ aiharness/
 ├── install.ps1         # Windows PowerShell installer
 ├── setup.sh            # GNU Stow installer
 ├── manifest.json       # Skills/agents manifest
-├── skills/             # 51 skill definitions
+├── skills/             # 52 skill definitions
 ├── opencode/           # OpenCode configs
 ├── claude/             # Claude Code configs
 ├── pi/                 # Pi configs

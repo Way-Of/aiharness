@@ -1,0 +1,13 @@
+{
+  "project": "aiharness",
+  "namespace": "AIH",
+  "version_files": [
+    {
+      "path": "manifest.json",
+      "fields": ["version"],
+      "type": "json",
+      "bump_order": 1
+    }
+  ],
+  "bump_order": ["manifest.json"]
+}

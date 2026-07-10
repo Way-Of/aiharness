@@ -1,26 +1,20 @@
 ---
 name: fixes_manager
-description: "Cross-project fix/release notes manager. Creates, updates, diffs, and migrates fix notes for any Way-Of project. Per-project assets define each project's fix note location, template, and format rules."
+description: "Cross-project fix/release notes manager. Creates, updates, diffs, and migrates fix notes for any project. Per-project assets define each project's fix note location, template, and format rules."
 allowed-tools: Read Write Edit Bash Grep Glob Websearch
 ---
 
 # fixes-manager — Cross-Project Fix Notes
 
-Creates, updates, diffs, and migrates fix/release notes across all Way-Of projects. Each project has its own assets defining fix note location, template, and format rules.
+Creates, updates, diffs, and migrates fix/release notes across all projects. Each project has its own assets defining fix note location, template, and format rules.
 
 Fix notes live in `thoughts/<project>/docs/fixes/`. The skill writes to the correct location based on the selected project.
 
 ---
 
-## Supported Projects
+## Project Discovery
 
-| Project | Namespace | Assets | Fixes Location |
-|---------|-----------|--------|----------------|
-| WayOfMono | WOMONO | `assets/womono/` | `thoughts/wayofmono/docs/fixes/` |
-| WayOfWork | WOW | `assets/wow/` | `thoughts/wow/docs/fixes/` |
-| OptiCat | OPT | `assets/opticat/` | `thoughts/opticat/docs/fixes/` |
-
-New projects: create `assets/<project-slug>/` with the asset structure below.
+Projects are auto-discovered from `assets/<project-slug>/` directories. Each directory defines a project's fix note system. The skill reads these at runtime — no code changes needed to add a new project.
 
 ---
 

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "AI Engineering Harness",
+    "slug": "aiharness",
+    "fix_note_file": "ai-engineering-harness-fixes.md",
+    "version_sources": [
+      "manifest.json (top-level version)"
+    ],
+    "package_path": "."
+  }
+]

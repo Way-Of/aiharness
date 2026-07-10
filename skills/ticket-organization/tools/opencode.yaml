@@ -1,0 +1,10 @@
+name: ticket-organization
+naming: kebab-case
+allowed-tools: read, grep, glob, bash, write, edit
+allowed-tools-case: lowercase
+disable-model-invocation: false
+dir_name: ticket-organization
+project_memory: AGENTS.md
+config_dir: ~/.config/opencode/
+dests:
+  - opencode/skills/

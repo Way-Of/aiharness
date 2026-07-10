@@ -531,6 +531,15 @@
             }
           ]
         },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "antigravity/skills/ticket_organization/SKILL.md",
+              "dest": "skills/ticket-organization/SKILL.md"
+            }
+          ]
+        },
         "skill/validate-podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
@@ -1202,6 +1211,15 @@
             }
           ]
         },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "claude/skills/ticket_organization/SKILL.md",
+              "dest": "skills/ticket-organization/SKILL.md"
+            }
+          ]
+        },
         "skill/validate-podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
@@ -1868,6 +1886,15 @@
             {
               "src": "codex/skills/ticket_executor/assets/audit-tickets.js",
               "dest": "skills/ticket-executor/assets/audit-tickets.js"
+            }
+          ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "codex/skills/ticket_organization/SKILL.md",
+              "dest": "skills/ticket-organization/SKILL.md"
             }
           ]
         },
@@ -2596,6 +2623,15 @@
             {
               "src": "opencode/skills/ticket-executor/assets/audit-tickets.js",
               "dest": "skills/ticket-executor/assets/audit-tickets.js"
+            }
+          ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "opencode/skills/ticket-organization/SKILL.md",
+              "dest": "skills/ticket-organization/SKILL.md"
             }
           ]
         },
@@ -3388,6 +3424,15 @@
             {
               "src": "pi/agent/skills/ticket-executor/assets/audit-tickets.js",
               "dest": "skills/ticket-executor/assets/audit-tickets.js"
+            }
+          ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "pi/agent/skills/ticket-organization/SKILL.md",
+              "dest": "skills/ticket-organization/SKILL.md"
             }
           ]
         },
@@ -4395,6 +4440,15 @@
             {
               "src": "wocode/agent/skills/ticket-executor/assets/audit-tickets.js",
               "dest": "skills/ticket-executor/assets/audit-tickets.js"
+            }
+          ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "wocode/agent/skills/ticket-organization/SKILL.md",
+              "dest": "skills/ticket-organization/SKILL.md"
             }
           ]
         },

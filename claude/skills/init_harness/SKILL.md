@@ -396,8 +396,8 @@ Copy template rules to the project:
 
 ```bash
 # Copy template rules from shared templates
-if [ -d thoughts/global/templates/rules ]; then
-  for template in thoughts/global/templates/rules/*.md; do
+if [ -d thoughts/global/rules ]; then
+  for template in thoughts/global/rules/*.md; do
     if [ -f "$template" ]; then
       filename=$(basename "$template")
       cp "$template" "thoughts/${PROJECT_SLUG}/rules/$filename"
@@ -470,6 +470,7 @@ The following agents are available via the harness:
 - **codebase_analyzer** — Deep analysis of complex systems — trace data flow through 5+ files, understand intricate interactions
 - **coder** — Implementation and code generation
 - **reviewer** — Code review and quality checks
+- **debugger** — Debug issues during testing — examines logs, state, git history to find root causes (read-only)
 - **thoughts_analyzer** — Extract insights from research documents
 - **thoughts_locator** — Discover documents in thoughts/ directory
 - **web_search_researcher** — Research information from web sources

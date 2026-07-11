@@ -4,6 +4,15 @@ All notable changes to the AI Engineering Harness will be documented in this fil
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Unreleased]
+
+### Changed
+- Consolidated duplicate rules directories: removed `thoughts/global/templates/rules/`, kept `thoughts/global/rules/` as single source of truth (AIH-187)
+- Updated ~680 skill files to reference `thoughts/global/rules/` instead of `thoughts/global/templates/rules/`
+- Simplified rules-manager from 3-tier to 2-tier precedence (project > global)
+- Updated init-harness to copy rules from `thoughts/global/rules/` to new projects
+- Created debugger agent for all 6 tools + 2 subagent extensions (AIH-186)
+
 ## [1.7.21] - 2026-07-11
 
 ### Fixed

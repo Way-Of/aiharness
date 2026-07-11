@@ -396,3 +396,10 @@ components:
     files:
     - src: codex/commands/rules.md
       dest: commands/rules.md
+  skill/ticket-organization:
+    description: Proactively organize tickets across all namespaces — auto-audit,
+      archive management, naming enforcement, orphan detection, cross-project consistency,
+      TODO.md regeneration
+    files:
+    - src: codex/skills/ticket_organization/SKILL.md
+      dest: skills/ticket_organization/SKILL.md

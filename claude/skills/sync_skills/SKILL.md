@@ -22,4 +22,4 @@ Activates the [build-tool-skill](skills/build_tool_skill/SKILL.md) skill to perf
 ## Templates & Rules
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
-- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules
+- **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules

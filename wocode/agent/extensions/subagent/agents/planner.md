@@ -1,6 +1,6 @@
 ---
 name: planner
-description: Creates implementation plans from context and requirements
+description: "Design implementation plans before coding — use when starting a new feature, refactoring, or complex change. Creates risk-aware, actionable strategies grounded in codebase reality."
 tools: read, grep, find, ls
 model: claude-sonnet-4-5
 ---

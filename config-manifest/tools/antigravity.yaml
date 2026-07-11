@@ -441,3 +441,10 @@ components:
     files:
     - src: antigravity/commands/run-rules.toml
       dest: commands/run-rules.toml
+  skill/ticket-organization:
+    description: Proactively organize tickets across all namespaces — auto-audit,
+      archive management, naming enforcement, orphan detection, cross-project consistency,
+      TODO.md regeneration
+    files:
+    - src: antigravity/skills/ticket_organization/SKILL.md
+      dest: skills/ticket_organization/SKILL.md

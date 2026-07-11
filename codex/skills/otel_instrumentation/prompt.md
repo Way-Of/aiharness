@@ -556,4 +556,4 @@ curl -sf http://otel-collector:4318/v1/traces || echo "Collector unreachable (HT
 ## Templates & Rules
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
-- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules
+- **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules

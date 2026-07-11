@@ -25,4 +25,4 @@ The UI is divided into distinct "surfaces". The primary application container is
 ## Templates & Rules
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
-- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules
+- **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules

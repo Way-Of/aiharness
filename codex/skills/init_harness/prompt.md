@@ -394,8 +394,8 @@ Copy template rules to the project:
 
 ```bash
 # Copy template rules from shared templates
-if [ -d thoughts/global/templates/rules ]; then
-  for template in thoughts/global/templates/rules/*.md; do
+if [ -d thoughts/global/rules ]; then
+  for template in thoughts/global/rules/*.md; do
     if [ -f "$template" ]; then
       filename=$(basename "$template")
       cp "$template" "thoughts/${PROJECT_SLUG}/rules/$filename"

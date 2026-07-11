@@ -128,13 +128,14 @@ All agents are shared across all six tools:
 | `scout` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Find files, understand code, quick analysis — use this for most code investigation tasks |
 | `codebase_locator` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Find files/directories by feature or task |
 | `codebase_pattern_finder` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Discover similar implementations and patterns |
+| `planner` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Design implementation plans before coding — use when starting a new feature, refactoring, or complex change |
 | `codebase_analyzer` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Deep analysis of complex systems — trace data flow through 5+ files, understand intricate interactions |
 | `thoughts_analyzer` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Extract insights from research documents |
 | `thoughts_locator` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Discover documents in thoughts/ directory |
 | `web_search_researcher` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Research information from web sources |
 | `coder` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Implementation and code generation |
-| `planner` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Design implementation plans before coding — use when starting a new feature, refactoring, or complex change |
 | `reviewer` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Code review and quality checks |
+| `debugger` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Debug issues during testing — examines logs, state, git history to find root causes (read-only) |
 | `netlify_troubleshooter` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Netlify CI/CD diagnostics and build pipeline |
 
 ## Workflow
@@ -245,13 +246,14 @@ Available MCP servers: `kubernetes` (disabled by default), `aspire-dashboard` (d
 - scout
 - codebase_locator
 - codebase_pattern_finder
+- planner
 - codebase_analyzer
 - thoughts_analyzer
 - thoughts_locator
 - web_search_researcher
 - coder
-- planner
 - reviewer
+- debugger
 - netlify_troubleshooter
 
 ## GitHub Skills Agent Directory

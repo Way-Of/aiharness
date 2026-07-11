@@ -108,4 +108,4 @@ After all tests pass, look for [refactor candidates](refactoring.md):
 ## Templates & Rules
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
-- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules
+- **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules

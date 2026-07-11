@@ -73,4 +73,4 @@ This ensures the CTO Dashboard bell badge reflects only genuinely unread notific
 ## Templates & Rules
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
-- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules
+- **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules

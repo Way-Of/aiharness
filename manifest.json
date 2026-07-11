@@ -420,7 +420,7 @@
           ]
         },
         "skill/build-tool-agent": {
-          "description": "Unified agent builder for all 7 tools — deployed to Antigravity",
+          "description": "Unified agent builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
               "src": "antigravity/skills/build_tool_agent/SKILL.md",
@@ -429,7 +429,7 @@
           ]
         },
         "skill/build-tool-extension": {
-          "description": "Unified extension/plugin builder for all 7 tools — deployed to Antigravity",
+          "description": "Unified extension/plugin builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
               "src": "antigravity/skills/build_tool_extension/SKILL.md",
@@ -438,7 +438,7 @@
           ]
         },
         "skill/build-tool-tui": {
-          "description": "Unified TUI component builder for all 7 tools — deployed to Antigravity",
+          "description": "Unified TUI component builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
               "src": "antigravity/skills/build_tool_tui/SKILL.md",
@@ -447,7 +447,7 @@
           ]
         },
         "skill/build-tool-cli": {
-          "description": "Unified CLI reference for all 7 tools — deployed to Antigravity",
+          "description": "Unified CLI reference for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
               "src": "antigravity/skills/build_tool_cli/SKILL.md",
@@ -456,7 +456,7 @@
           ]
         },
         "skill/build-tool-themes": {
-          "description": "Unified theme builder for all 7 tools — deployed to Antigravity",
+          "description": "Unified theme builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
               "src": "antigravity/skills/build_tool_themes/SKILL.md",
@@ -465,7 +465,7 @@
           ]
         },
         "skill/build-tool-prompts": {
-          "description": "Unified prompt template builder for all 7 tools — deployed to Antigravity",
+          "description": "Unified prompt template builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
               "src": "antigravity/skills/build_tool_prompts/SKILL.md",
@@ -474,7 +474,7 @@
           ]
         },
         "skill/build-tool-keybindings": {
-          "description": "Unified keybinding reference for all 7 tools — deployed to Antigravity",
+          "description": "Unified keybinding reference for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
               "src": "antigravity/skills/build_tool_keybindings/SKILL.md",
@@ -483,7 +483,7 @@
           ]
         },
         "skill/build-tool-config": {
-          "description": "Unified configuration reference for all 7 tools — deployed to Antigravity",
+          "description": "Unified configuration reference for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
               "src": "antigravity/skills/build_tool_config/SKILL.md",
@@ -793,6 +793,15 @@
               "dest": "commands/run-rules.toml"
             }
           ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces \u2014 auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "antigravity/skills/ticket_organization/SKILL.md",
+              "dest": "skills/ticket_organization/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -1100,7 +1109,7 @@
           ]
         },
         "skill/build-tool-agent": {
-          "description": "Unified agent builder for all 7 tools — deployed to Claude Code",
+          "description": "Unified agent builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
               "src": "claude/skills/build_tool_agent/SKILL.md",
@@ -1109,7 +1118,7 @@
           ]
         },
         "skill/build-tool-extension": {
-          "description": "Unified extension/plugin builder for all 7 tools — deployed to Claude Code",
+          "description": "Unified extension/plugin builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
               "src": "claude/skills/build_tool_extension/SKILL.md",
@@ -1118,7 +1127,7 @@
           ]
         },
         "skill/build-tool-tui": {
-          "description": "Unified TUI component builder for all 7 tools — deployed to Claude Code",
+          "description": "Unified TUI component builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
               "src": "claude/skills/build_tool_tui/SKILL.md",
@@ -1127,7 +1136,7 @@
           ]
         },
         "skill/build-tool-cli": {
-          "description": "Unified CLI reference for all 7 tools — deployed to Claude Code",
+          "description": "Unified CLI reference for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
               "src": "claude/skills/build_tool_cli/SKILL.md",
@@ -1136,7 +1145,7 @@
           ]
         },
         "skill/build-tool-themes": {
-          "description": "Unified theme builder for all 7 tools — deployed to Claude Code",
+          "description": "Unified theme builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
               "src": "claude/skills/build_tool_themes/SKILL.md",
@@ -1145,7 +1154,7 @@
           ]
         },
         "skill/build-tool-prompts": {
-          "description": "Unified prompt template builder for all 7 tools — deployed to Claude Code",
+          "description": "Unified prompt template builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
               "src": "claude/skills/build_tool_prompts/SKILL.md",
@@ -1154,7 +1163,7 @@
           ]
         },
         "skill/build-tool-keybindings": {
-          "description": "Unified keybinding reference for all 7 tools — deployed to Claude Code",
+          "description": "Unified keybinding reference for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
               "src": "claude/skills/build_tool_keybindings/SKILL.md",
@@ -1163,7 +1172,7 @@
           ]
         },
         "skill/build-tool-config": {
-          "description": "Unified configuration reference for all 7 tools — deployed to Claude Code",
+          "description": "Unified configuration reference for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
               "src": "claude/skills/build_tool_config/SKILL.md",
@@ -1518,6 +1527,15 @@
               "dest": "commands/rules.md"
             }
           ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces \u2014 auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "claude/skills/ticket_organization/SKILL.md",
+              "dest": "skills/ticket_organization/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -1796,7 +1814,7 @@
           ]
         },
         "skill/build-tool-agent": {
-          "description": "Unified agent builder for all 7 tools — deployed to Codex",
+          "description": "Unified agent builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
               "src": "codex/skills/build_tool_agent/SKILL.md",
@@ -1805,7 +1823,7 @@
           ]
         },
         "skill/build-tool-extension": {
-          "description": "Unified extension/plugin builder for all 7 tools — deployed to Codex",
+          "description": "Unified extension/plugin builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
               "src": "codex/skills/build_tool_extension/SKILL.md",
@@ -1814,7 +1832,7 @@
           ]
         },
         "skill/build-tool-tui": {
-          "description": "Unified TUI component builder for all 7 tools — deployed to Codex",
+          "description": "Unified TUI component builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
               "src": "codex/skills/build_tool_tui/SKILL.md",
@@ -1823,7 +1841,7 @@
           ]
         },
         "skill/build-tool-cli": {
-          "description": "Unified CLI reference for all 7 tools — deployed to Codex",
+          "description": "Unified CLI reference for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
               "src": "codex/skills/build_tool_cli/SKILL.md",
@@ -1832,7 +1850,7 @@
           ]
         },
         "skill/build-tool-themes": {
-          "description": "Unified theme builder for all 7 tools — deployed to Codex",
+          "description": "Unified theme builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
               "src": "codex/skills/build_tool_themes/SKILL.md",
@@ -1841,7 +1859,7 @@
           ]
         },
         "skill/build-tool-prompts": {
-          "description": "Unified prompt template builder for all 7 tools — deployed to Codex",
+          "description": "Unified prompt template builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
               "src": "codex/skills/build_tool_prompts/SKILL.md",
@@ -1850,7 +1868,7 @@
           ]
         },
         "skill/build-tool-keybindings": {
-          "description": "Unified keybinding reference for all 7 tools — deployed to Codex",
+          "description": "Unified keybinding reference for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
               "src": "codex/skills/build_tool_keybindings/SKILL.md",
@@ -1859,7 +1877,7 @@
           ]
         },
         "skill/build-tool-config": {
-          "description": "Unified configuration reference for all 7 tools — deployed to Codex",
+          "description": "Unified configuration reference for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
               "src": "codex/skills/build_tool_config/SKILL.md",
@@ -2226,6 +2244,15 @@
               "dest": "commands/rules.md"
             }
           ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces \u2014 auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "codex/skills/ticket_organization/SKILL.md",
+              "dest": "skills/ticket_organization/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -2560,7 +2587,7 @@
           ]
         },
         "skill/build-tool-agent": {
-          "description": "Unified agent builder for all 7 tools — deployed to OpenCode",
+          "description": "Unified agent builder for all 7 tools \u2014 deployed to OpenCode",
           "files": [
             {
               "src": "opencode/skills/build-tool-agent/SKILL.md",
@@ -2569,7 +2596,7 @@
           ]
         },
         "skill/build-tool-extension": {
-          "description": "Unified extension/plugin builder for all 7 tools — deployed to OpenCode",
+          "description": "Unified extension/plugin builder for all 7 tools \u2014 deployed to OpenCode",
           "files": [
             {
               "src": "opencode/skills/build-tool-extension/SKILL.md",
@@ -2578,7 +2605,7 @@
           ]
         },
         "skill/build-tool-tui": {
-          "description": "Unified TUI component builder for all 7 tools — deployed to OpenCode",
+          "description": "Unified TUI component builder for all 7 tools \u2014 deployed to OpenCode",
           "files": [
             {
               "src": "opencode/skills/build-tool-tui/SKILL.md",
@@ -2587,7 +2614,7 @@
           ]
         },
         "skill/build-tool-cli": {
-          "description": "Unified CLI reference for all 7 tools — deployed to OpenCode",
+          "description": "Unified CLI reference for all 7 tools \u2014 deployed to OpenCode",
           "files": [
             {
               "src": "opencode/skills/build-tool-cli/SKILL.md",
@@ -2596,7 +2623,7 @@
           ]
         },
         "skill/build-tool-themes": {
-          "description": "Unified theme builder for all 7 tools — deployed to OpenCode",
+          "description": "Unified theme builder for all 7 tools \u2014 deployed to OpenCode",
           "files": [
             {
               "src": "opencode/skills/build-tool-themes/SKILL.md",
@@ -2605,7 +2632,7 @@
           ]
         },
         "skill/build-tool-prompts": {
-          "description": "Unified prompt template builder for all 7 tools — deployed to OpenCode",
+          "description": "Unified prompt template builder for all 7 tools \u2014 deployed to OpenCode",
           "files": [
             {
               "src": "opencode/skills/build-tool-prompts/SKILL.md",
@@ -2614,7 +2641,7 @@
           ]
         },
         "skill/build-tool-keybindings": {
-          "description": "Unified keybinding reference for all 7 tools — deployed to OpenCode",
+          "description": "Unified keybinding reference for all 7 tools \u2014 deployed to OpenCode",
           "files": [
             {
               "src": "opencode/skills/build-tool-keybindings/SKILL.md",
@@ -2623,7 +2650,7 @@
           ]
         },
         "skill/build-tool-config": {
-          "description": "Unified configuration reference for all 7 tools — deployed to OpenCode",
+          "description": "Unified configuration reference for all 7 tools \u2014 deployed to OpenCode",
           "files": [
             {
               "src": "opencode/skills/build-tool-config/SKILL.md",
@@ -2940,6 +2967,15 @@
             {
               "src": "opencode/commands/rules.md",
               "dest": "commands/rules.md"
+            }
+          ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces \u2014 auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "opencode/skills/ticket-organization/SKILL.md",
+              "dest": "skills/ticket-organization/SKILL.md"
             }
           ]
         }
@@ -3370,7 +3406,7 @@
           ]
         },
         "skill/build-tool-agent": {
-          "description": "Unified agent builder for all 7 tools — deployed to Pi",
+          "description": "Unified agent builder for all 7 tools \u2014 deployed to Pi",
           "files": [
             {
               "src": "pi/agent/skills/build-tool-agent/SKILL.md",
@@ -3379,7 +3415,7 @@
           ]
         },
         "skill/build-tool-extension": {
-          "description": "Unified extension/plugin builder for all 7 tools — deployed to Pi",
+          "description": "Unified extension/plugin builder for all 7 tools \u2014 deployed to Pi",
           "files": [
             {
               "src": "pi/agent/skills/build-tool-extension/SKILL.md",
@@ -3388,7 +3424,7 @@
           ]
         },
         "skill/build-tool-tui": {
-          "description": "Unified TUI component builder for all 7 tools — deployed to Pi",
+          "description": "Unified TUI component builder for all 7 tools \u2014 deployed to Pi",
           "files": [
             {
               "src": "pi/agent/skills/build-tool-tui/SKILL.md",
@@ -3397,7 +3433,7 @@
           ]
         },
         "skill/build-tool-cli": {
-          "description": "Unified CLI reference for all 7 tools — deployed to Pi",
+          "description": "Unified CLI reference for all 7 tools \u2014 deployed to Pi",
           "files": [
             {
               "src": "pi/agent/skills/build-tool-cli/SKILL.md",
@@ -3406,7 +3442,7 @@
           ]
         },
         "skill/build-tool-themes": {
-          "description": "Unified theme builder for all 7 tools — deployed to Pi",
+          "description": "Unified theme builder for all 7 tools \u2014 deployed to Pi",
           "files": [
             {
               "src": "pi/agent/skills/build-tool-themes/SKILL.md",
@@ -3415,7 +3451,7 @@
           ]
         },
         "skill/build-tool-prompts": {
-          "description": "Unified prompt template builder for all 7 tools — deployed to Pi",
+          "description": "Unified prompt template builder for all 7 tools \u2014 deployed to Pi",
           "files": [
             {
               "src": "pi/agent/skills/build-tool-prompts/SKILL.md",
@@ -3424,7 +3460,7 @@
           ]
         },
         "skill/build-tool-keybindings": {
-          "description": "Unified keybinding reference for all 7 tools — deployed to Pi",
+          "description": "Unified keybinding reference for all 7 tools \u2014 deployed to Pi",
           "files": [
             {
               "src": "pi/agent/skills/build-tool-keybindings/SKILL.md",
@@ -3433,7 +3469,7 @@
           ]
         },
         "skill/build-tool-config": {
-          "description": "Unified configuration reference for all 7 tools — deployed to Pi",
+          "description": "Unified configuration reference for all 7 tools \u2014 deployed to Pi",
           "files": [
             {
               "src": "pi/agent/skills/build-tool-config/SKILL.md",
@@ -3896,6 +3932,15 @@
             {
               "src": "pi/agent/prompts/rules.md",
               "dest": "prompts/rules.md"
+            }
+          ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces \u2014 auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "pi/agent/skills/ticket-organization/SKILL.md",
+              "dest": "skills/ticket-organization/SKILL.md"
             }
           ]
         }
@@ -4413,7 +4458,7 @@
           ]
         },
         "skill/build-tool-agent": {
-          "description": "Unified agent builder for all 7 tools — deployed to Wo Coder",
+          "description": "Unified agent builder for all 7 tools \u2014 deployed to Wo Coder",
           "files": [
             {
               "src": "wocode/agent/skills/build-tool-agent/SKILL.md",
@@ -4422,7 +4467,7 @@
           ]
         },
         "skill/build-tool-extension": {
-          "description": "Unified extension/plugin builder for all 7 tools — deployed to Wo Coder",
+          "description": "Unified extension/plugin builder for all 7 tools \u2014 deployed to Wo Coder",
           "files": [
             {
               "src": "wocode/agent/skills/build-tool-extension/SKILL.md",
@@ -4431,7 +4476,7 @@
           ]
         },
         "skill/build-tool-tui": {
-          "description": "Unified TUI component builder for all 7 tools — deployed to Wo Coder",
+          "description": "Unified TUI component builder for all 7 tools \u2014 deployed to Wo Coder",
           "files": [
             {
               "src": "wocode/agent/skills/build-tool-tui/SKILL.md",
@@ -4440,7 +4485,7 @@
           ]
         },
         "skill/build-tool-cli": {
-          "description": "Unified CLI reference for all 7 tools — deployed to Wo Coder",
+          "description": "Unified CLI reference for all 7 tools \u2014 deployed to Wo Coder",
           "files": [
             {
               "src": "wocode/agent/skills/build-tool-cli/SKILL.md",
@@ -4449,7 +4494,7 @@
           ]
         },
         "skill/build-tool-themes": {
-          "description": "Unified theme builder for all 7 tools — deployed to Wo Coder",
+          "description": "Unified theme builder for all 7 tools \u2014 deployed to Wo Coder",
           "files": [
             {
               "src": "wocode/agent/skills/build-tool-themes/SKILL.md",
@@ -4458,7 +4503,7 @@
           ]
         },
         "skill/build-tool-prompts": {
-          "description": "Unified prompt template builder for all 7 tools — deployed to Wo Coder",
+          "description": "Unified prompt template builder for all 7 tools \u2014 deployed to Wo Coder",
           "files": [
             {
               "src": "wocode/agent/skills/build-tool-prompts/SKILL.md",
@@ -4467,7 +4512,7 @@
           ]
         },
         "skill/build-tool-keybindings": {
-          "description": "Unified keybinding reference for all 7 tools — deployed to Wo Coder",
+          "description": "Unified keybinding reference for all 7 tools \u2014 deployed to Wo Coder",
           "files": [
             {
               "src": "wocode/agent/skills/build-tool-keybindings/SKILL.md",
@@ -4476,7 +4521,7 @@
           ]
         },
         "skill/build-tool-config": {
-          "description": "Unified configuration reference for all 7 tools — deployed to Wo Coder",
+          "description": "Unified configuration reference for all 7 tools \u2014 deployed to Wo Coder",
           "files": [
             {
               "src": "wocode/agent/skills/build-tool-config/SKILL.md",
@@ -4829,6 +4874,15 @@
             {
               "src": "wocode/agent/prompts/rules.md",
               "dest": "prompts/rules.md"
+            }
+          ]
+        },
+        "skill/ticket-organization": {
+          "description": "Proactively organize tickets across all namespaces \u2014 auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
+          "files": [
+            {
+              "src": "wocode/agent/skills/ticket-organization/SKILL.md",
+              "dest": "skills/ticket-organization/SKILL.md"
             }
           ]
         }

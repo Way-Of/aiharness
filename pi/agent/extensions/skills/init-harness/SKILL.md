@@ -390,8 +390,8 @@ Copy template rules to the project:
 
 ```bash
 # Copy template rules from shared templates
-if [ -d thoughts/global/templates/rules ]; then
-  for template in thoughts/global/templates/rules/*.md; do
+if [ -d thoughts/global/rules ]; then
+  for template in thoughts/global/rules/*.md; do
     if [ -f "$template" ]; then
       filename=$(basename "$template")
       cp "$template" "thoughts/${PROJECT_SLUG}/rules/$filename"
@@ -467,6 +467,7 @@ The following agents are available via the AI Engineering Harness:
 - **coder** — Implementation and code generation
 - **planner** — Architecture and implementation planning
 - **reviewer** — Code review and quality checks
+- **debugger** — Debug issues during testing — examines logs, state, git history to find root causes (read-only)
 - **netlify_troubleshooter** — Netlify CI/CD diagnostics and build pipeline
 
 Use `/help` to learn more about each agent.

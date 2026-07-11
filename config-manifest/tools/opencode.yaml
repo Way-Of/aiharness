@@ -400,3 +400,10 @@ components:
     files:
     - src: opencode/commands/rules.md
       dest: commands/rules.md
+  skill/ticket-organization:
+    description: Proactively organize tickets across all namespaces — auto-audit,
+      archive management, naming enforcement, orphan detection, cross-project consistency,
+      TODO.md regeneration
+    files:
+    - src: opencode/skills/ticket-organization/SKILL.md
+      dest: skills/ticket-organization/SKILL.md

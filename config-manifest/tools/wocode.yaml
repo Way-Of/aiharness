@@ -515,3 +515,10 @@ components:
     files:
     - src: wocode/agent/prompts/rules.md
       dest: prompts/rules.md
+  skill/ticket-organization:
+    description: Proactively organize tickets across all namespaces — auto-audit,
+      archive management, naming enforcement, orphan detection, cross-project consistency,
+      TODO.md regeneration
+    files:
+    - src: wocode/agent/skills/ticket-organization/SKILL.md
+      dest: skills/ticket-organization/SKILL.md

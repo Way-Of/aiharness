@@ -10,7 +10,7 @@ Validate version consistency across all project files using the fixes-manager sk
 `/fixes validate --project=<project>`
 
 ### Arguments
-- `--project` (required) — Project namespace: `womono`, `wow`, `opticat`
+- `--project` (required) — Project namespace (any project with `assets/<project>/version-config.json`)
 
 ## Process
 1. Validate the provided arguments

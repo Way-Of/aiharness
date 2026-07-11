@@ -1,7 +1,7 @@
 ---
 specialist_id: planner
 name: planner
-description: Architecture and implementation planning
+description: "Design implementation plans before coding — use when starting a new feature, refactoring, or complex change. Creates risk-aware, actionable strategies grounded in codebase reality."
 models: 
 tools: read,grep,find,ls,write
 ---

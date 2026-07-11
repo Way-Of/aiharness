@@ -466,17 +466,14 @@ The following agents are available via the harness:
 - **scout** — Find files, understand code, quick analysis — use this for most code investigation tasks
 - **codebase_locator** — Find files/directories by feature or task
 - **codebase_pattern_finder** — Discover similar implementations and patterns
+- **planner** — Design implementation plans before coding — use when starting a new feature, refactoring, or complex change
 - **codebase_analyzer** — Deep analysis of complex systems — trace data flow through 5+ files, understand intricate interactions
+- **coder** — Implementation and code generation
+- **reviewer** — Code review and quality checks
 - **thoughts_analyzer** — Extract insights from research documents
 - **thoughts_locator** — Discover documents in thoughts/ directory
 - **web_search_researcher** — Research information from web sources
-- **coder** — Implementation and code generation
-- **planner** — Architecture and implementation planning
-- **reviewer** — Code review and quality checks
 - **netlify_troubleshooter** — Netlify CI/CD diagnostics and build pipeline
-
-Use `/help` to learn more about each agent.
-
 ### Next Steps
 1. **Set up GitHub auth for f-rr-d** (if not done):
    - `gh auth login` or configure a personal access token

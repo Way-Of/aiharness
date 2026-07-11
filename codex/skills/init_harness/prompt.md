@@ -469,7 +469,7 @@ The following agents are available via the harness:
 - **thoughts_locator** — Discover documents in thoughts/ directory
 - **web_search_researcher** — Research information from web sources
 - **coder** — Implementation and code generation
-- **planner** — Architecture and implementation planning
+- **planner — Design implementation plans before coding — use when starting a new feature, refactoring, or complex change
 - **reviewer** — Code review and quality checks
 - **netlify_troubleshooter** — Netlify CI/CD diagnostics and build pipeline
 

@@ -1,5 +1,33 @@
 # AI Engineering Harness Fixes & Release Notes
 
+## v0.0.1 — 2026-07-11 — Rules System + Production-Ready Standards (AIH-182, AIH-183)
+
+### Features
+- **Rules system implemented (AIH-182)**: Added modular rules folder per project in f-rr-d with global rules, project-specific rules, and templates. Rules define coding standards, conventions, and guidelines that agents, skills, and commands reference during planning, implementation, and validation.
+- **rules-manager skill created**: New skill with interactive menu for listing, viewing, editing, adding, and checking rules across all projects.
+- **/rules command added**: Interactive slash command for all 7 tools (opencode, claude, codex, pi, wocode, antigravity).
+- **init-harness updated**: Now creates rules folder and copies templates during project initialization.
+- **create-plan updated**: Loads rules before generating plans and includes rules compliance section.
+- **validate-plan updated**: Checks implementation against rules and reports violations.
+- **Production-ready rules templates (AIH-183)**: Comprehensive rules for coding standards, naming conventions, testing requirements, security guidelines, and deployment rules. All templates prohibit hardcoded file paths and secrets.
+
+### Files
+- `skills/rules-manager/SKILL.md` — New rules-manager skill
+- `opencode/commands/rules.md` — /rules command for OpenCode
+- `claude/commands/rules.md` — /rules command for Claude
+- `codex/commands/rules.md` — /rules command for Codex
+- `pi/agent/prompts/rules.md` — /rules prompt for Pi
+- `wocode/agent/prompts/rules.md` — /rules prompt for Wo Coder
+- `antigravity/commands/run-rules.toml` — /rules command for Antigravity
+- `skills/init-harness/SKILL.md` — Updated to create rules folder
+- `skills/create-plan/SKILL.md` — Updated to load rules
+- `skills/validate-plan/SKILL.md` — Updated to check rules compliance
+- `config-manifest/tools/*.yaml` — Updated with rules-manager skill entries
+- `thoughts/global/rules/` — 5 comprehensive rule files (100+ lines each)
+- `thoughts/shared/templates/rules/` — 5 template rule files
+
+---
+
 ## v1.7.12 — 2026-07-04 — WOMONO Skills Update + Standup Skill (WOMONO-135, WOMONO-136, WOMONO-137)
 
 ### Features

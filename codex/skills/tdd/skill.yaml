@@ -1,9 +1,9 @@
 name: tdd
-description: "Test-driven development with red-green-refactor loop. Use when user wants to build features or fix bugs using TDD, mentions "red-green-refactor", asks for test-first development, or wants integration-style tests that survive refactors."
-version: 1.0.0
+description: Test-driven development with red-green-refactor loop. Use when user wants to build features or fix bugs using TDD, mentions "red-green-refactor", asks for test-first development, or wants integration-style tests that survive refactors.
 tools:
-  - read_file
-  - run_shell_command
+  - read
+  - bash
   - glob
-  - write_file
+  - write
   - replace
+version: 1.0.0

@@ -1,7 +1,7 @@
 ---
 name: help
-description: "Unified help system for all commands and skills. Delegates to the help-command skill."
-allowed-tools: Read, Bash, Glob, Grep
+description: Unified help system for all commands and skills. Delegates to the help-command skill.
+allowed-tools: Read Bash Glob Grep
 disable-model-invocation: true
 ---
 

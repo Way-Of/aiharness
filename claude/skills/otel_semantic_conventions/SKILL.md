@@ -1,11 +1,9 @@
 ---
 name: otel_semantic_conventions
-description: >
-  OpenTelemetry semantic conventions — attribute naming, placement across
-  telemetry levels, stability/versioning, legacy→current migration,
-  and registry namespace reference.
+description: OpenTelemetry semantic conventions — attribute naming, placement across telemetry levels, stability/versioning, legacy→current migration, and registry namespace reference.
+
 disable-model-invocation: true
-allowed-tools: Read, Bash, Grep, Glob
+allowed-tools: Read Bash Grep Glob
 ---
 
 # OpenTelemetry Semantic Conventions

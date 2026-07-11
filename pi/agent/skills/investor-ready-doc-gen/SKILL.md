@@ -1,7 +1,17 @@
 ---
 name: investor-ready-doc-gen
 description: Generate complete investor-ready documentation for ANY project with a production-quality, project-branded design system. Auto-fires when the user asks to generate investor docs, funding materials, pitch decks, or white papers. Uses 28+ mustache-style templates bundled as assets in the skill folder. Features auto brand color detection from codebase, 12+ professional slide layouts with gradients/metrics/callouts, chart.js data visualization via chartjs2img, and exports all docs as investor-grade PDFs via Marp CLI. Project-agnostic — works for OptiCat, Way of Work, or any new project.
-allowed-tools: read, write, bash, edit, grep, glob, webfetch, websearch, question, fetch
+allowed-tools:
+  - read
+  - write
+  - bash
+  - edit
+  - grep
+  - glob
+  - webfetch
+  - websearch
+  - question
+  - fetch
 ---
 
 # Investor-Ready Document Generator

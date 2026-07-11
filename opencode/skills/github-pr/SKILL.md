@@ -1,10 +1,10 @@
 ---
 name: github-pr
-description: "Create, manage, and review GitHub Pull Requests with ticket linking, template support, and review workflow integration."
+description: Create, manage, and review GitHub Pull Requests with ticket linking, template support, and review workflow integration.
 allowed-tools: read, write, edit, bash, git, gh
 ---
 
-# GitHub PR skill
+# GitHub PR Skill
 
 Manages GitHub Pull Requests with full ticket integration, templates, and review workflow.
 
@@ -15,7 +15,7 @@ Manages GitHub Pull Requests with full ticket integration, templates, and review
 Brief description of changes
 
 ## Ticket
-Closes: WOMONO-084
+Closes: PROJ-084
 
 ## Changes
 - [ ] Change 1
@@ -39,10 +39,10 @@ Closes: WOMONO-084
 
 ```bash
 # Create PR with template, auto-link to ticket
-gh pr create --title "WOMONO-084: Add GitHub skills" \
+gh pr create --title "PROJ-084: Add GitHub skills" \
   --body "$(cat .github/PR_TEMPLATE.md)" \
   --base main \
-  --head womono/WOMONO-084-github-skills
+  --head project/PROJ-084-feature-name
 ```
 
 ### 2. Request Review
@@ -74,7 +74,7 @@ gh pr merge --squash --delete-branch
 ### `create_pr`
 Create PR with template and ticket linking.
 Parameters:
-- `ticket_id` (required): Ticket ID (e.g., "WOMONO-084")
+- `ticket_id` (required): Ticket ID (e.g., "PROJ-084")
 - `branch_name` (required): Source branch name
 - `base_branch` (optional): Target branch (default: "main")
 - `title` (optional): PR title (auto-generated from ticket)
@@ -116,18 +116,9 @@ Parameters:
 - `pr_url` (required): PR URL
 - `pr_number` (required): PR number
 
-## Multi-Machine Awareness
-
-- **Always branch first, never push to main**: Changes must be on a feature branch, pushed, then merged via PR. Direct pushes to main are forbidden.
-- **PRs are remote**: PRs live on GitHub, not locally — create and manage from any machine
-- **Push changes from anywhere**: Address review comments, push from any machine to the same branch
-- **Always pull before pushing**: `git pull --rebase` before `git push` to avoid rejection if another machine pushed
-- **PR metadata is GitHub-native**: Labels, reviewers, and milestones are synced via GitHub — no local state to worry about
-
 ## Integration
 
 - Auto-links PR to ticket via `ticket-manager` `link_pr_to_ticket`
 - Updates ticket status to "Submitted for Review" on PR creation
 - CTO Dashboard Review Queue watches for "needs-review" label
 - On merge, updates ticket to "Done" and deletes branch
-

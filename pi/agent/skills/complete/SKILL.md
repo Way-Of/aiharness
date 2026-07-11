@@ -1,7 +1,12 @@
 ---
 name: complete
-description: "Complete a ticket, submit for review. Delegates to the ticket-manager skill."
-allowed-tools: read, write, bash, grep, glob
+description: Complete a ticket, submit for review. Delegates to the ticket-manager skill.
+allowed-tools:
+  - read
+  - write
+  - bash
+  - grep
+  - glob
 ---
 
 # /complete — Complete a ticket, submit for review

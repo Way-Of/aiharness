@@ -1,3 +1,9 @@
+---
+name: agents_md_manager
+description: Create, update, and maintain AGENTS.md files across projects and subdirectories. Ensures every AGENTS.md follows the standard format and contains accurate agent/command/skill references.
+allowed-tools: read, write, grep, glob, bash
+---
+
 # AGENTS.md Manager
 
 Create, update, and maintain AGENTS.md files across projects and subdirectories. Ensures every AGENTS.md follows the standard format and contains accurate agent/command/skill references.

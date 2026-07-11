@@ -1,3 +1,9 @@
+---
+name: knowledge
+description: Store, fetch, search, and manage learned knowledge in a structured, growing database.
+allowed-tools: Read Write Grep Glob
+---
+
 # Knowledge Database
 
 Store, fetch, search, and manage learned knowledge in a structured, growing database.

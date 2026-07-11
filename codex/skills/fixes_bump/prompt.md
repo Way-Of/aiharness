@@ -1,4 +1,6 @@
-# Fixes Bump
+> **Platform**: Codex | **Skill**: fixes_bump | **Version**: 1.0.0
+>
+> _Auto-generated from canonical format. Do not edit directly._
 
 Bump the version across all project files using the fixes-manager skill.
 

@@ -1,10 +1,10 @@
 ---
 name: github_sync
-description: "Sync feature branches with base branch, resolve conflicts, and manage branch lifecycle."
+description: Sync feature branches with base branch, resolve conflicts, and manage branch lifecycle.
 allowed-tools: read, write, edit, bash, git
 ---
 
-# GitHub Sync skill
+# GitHub Sync Skill
 
 Manages branch synchronization with base branch, conflict resolution, and branch lifecycle.
 
@@ -14,7 +14,7 @@ Manages branch synchronization with base branch, conflict resolution, and branch
 
 ```bash
 # Rebase feature branch onto latest main
-git checkout womono/WOMONO-084-github-skills
+git checkout project/PROJ-084-feature-name
 git fetch origin
 git rebase origin/main
 
@@ -23,14 +23,14 @@ git rebase origin/main
 # git rebase --continue
 
 # Force push (only if branch not shared)
-git push -f origin womono/WOMONO-084-github-skills
+git push -f origin project/PROJ-084-feature-name
 ```
 
 ### 2. Merge (For Shared Branches)
 
 ```bash
 # Merge main into feature branch
-git checkout womono/WOMONO-084-github-skills
+git checkout project/PROJ-084-feature-name
 git fetch origin
 git merge origin/main
 
@@ -38,7 +38,7 @@ git merge origin/main
 # git add .
 # git commit -m "merge: sync with main"
 
-git push origin womono/WOMONO-084-github-skills
+git push origin project/PROJ-084-feature-name
 ```
 
 ## Conflict Resolution
@@ -64,7 +64,7 @@ git commit -m "merge: resolve conflicts with main"
 
 ```bash
 # Ensure branch is up to date
-github_sync sync_branch --branch_name womono/WOMONO-084-github-skills
+github_sync sync_branch --branch_name project/PROJ-084-feature-name
 
 # Run tests
 npm test
@@ -78,7 +78,7 @@ git add .
 git commit -m "fix: address review comments"
 
 # Sync with latest main before pushing
-github_sync sync_branch --branch_name womono/WOMONO-084-github-skills
+github_sync sync_branch --branch_name project/PROJ-084-feature-name
 
 # Push
 git push

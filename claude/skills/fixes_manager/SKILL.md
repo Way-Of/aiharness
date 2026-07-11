@@ -1,6 +1,6 @@
 ---
 name: fixes_manager
-description: "Cross-project fix/release notes manager. Creates, updates, diffs, and migrates fix notes for any Way-Of project. Per-project assets define each project's fix note location, template, and format rules."
+description: Cross-project fix/release notes manager. Creates, updates, diffs, and migrates fix notes for any Way-Of project. Per-project assets define each project's fix note location, template, and format rules.
 allowed-tools: Read Write Edit Bash Grep Glob Websearch
 ---
 

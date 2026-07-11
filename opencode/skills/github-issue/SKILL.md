@@ -1,10 +1,10 @@
 ---
 name: github-issue
-description: "Create, manage, and link GitHub Issues with tickets. Supports bi-directional sync between f-rr-d tickets and GitHub Issues."
+description: Create, manage, and link GitHub Issues with tickets. Supports bi-directional sync between f-rr-d tickets and GitHub Issues.
 allowed-tools: read, write, edit, bash, git, gh
 ---
 
-# GitHub Issue skill
+# GitHub Issue Skill
 
 Manages GitHub Issues with bi-directional sync to f-rr-d tickets.
 
@@ -15,7 +15,7 @@ Manages GitHub Issues with bi-directional sync to f-rr-d tickets.
 Brief description of the issue
 
 ## Related Ticket
-WOMONO-084
+PROJ-084
 
 ## Type
 - [ ] Bug
@@ -39,9 +39,9 @@ Any other information, screenshots, or references
 ```bash
 # Create GitHub Issue linked to ticket
 gh issue create \
-  --title "WOMONO-084: Add GitHub skills" \
+  --title "PROJ-084: Add GitHub skills" \
   --body "$(cat .github/ISSUE_TEMPLATE.md)" \
-  --label "womono,feature,needs-triage" \
+  --label "feature,needs-triage" \
   --assignee "username"
 ```
 
@@ -49,10 +49,10 @@ gh issue create \
 
 ```bash
 # Add ticket reference to issue
-gh issue edit 123 --add-label "womono" --body "$(cat issue-body.md)\n\nTicket: WOMONO-084"
+gh issue edit 123 --body "$(cat issue-body.md)\n\nTicket: PROJ-084"
 
 # Update ticket with issue URL
-update_ticket --ticket_id WOMONO-084 --github_issue "https://github.com/Way-Of/wayofmono/issues/123"
+update_ticket --ticket_id PROJ-084 --github_issue "https://github.com/org/repo/issues/123"
 ```
 
 ### 3. Sync Issue Status to Ticket
@@ -62,7 +62,7 @@ update_ticket --ticket_id WOMONO-084 --github_issue "https://github.com/Way-Of/w
 gh issue close 123 --comment "Fixed in PR #456"
 
 # Auto-sync via webhook or manual
-update_ticket --ticket_id WOMONO-084 --status "Done"
+update_ticket --ticket_id PROJ-084 --status "Done"
 ```
 
 ## Available Tools
@@ -110,13 +110,6 @@ List GitHub Issues linked to ticket.
 Parameters:
 - `ticket_id` (required): Ticket ID
 
-## Multi-Machine Awareness
-
-- **Issues are GitHub-native**: No local state — create, update, and close from any machine
-- **Bi-directional sync is automatic**: Ticket ↔ Issue links work regardless of which machine created them
-- **Labels are global**: Shared across all machines via GitHub
-- **f-rr-d tickets are the local concern**: Remember to `git -C thoughts/ pull --ff-only` before linking a GitHub Issue to a local ticket
-
 ## Integration
 
 - Bi-directional sync: ticket ↔ GitHub Issue
@@ -124,4 +117,3 @@ Parameters:
 - Webhook support for auto-sync (if configured)
 - CTO Dashboard shows linked issues
 - `ticket-manager` `update_ticket` syncs `github_issue` field
-

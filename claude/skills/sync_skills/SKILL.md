@@ -1,7 +1,7 @@
 ---
 name: sync_skills
-description: "Sync all skills across all frontends. Delegates to the build-tool-skill skill."
-allowed-tools: Read, Bash, Glob, Grep
+description: Sync all skills across all frontends. Delegates to the build-tool-skill skill.
+allowed-tools: Read Bash Glob Grep
 disable-model-invocation: true
 ---
 

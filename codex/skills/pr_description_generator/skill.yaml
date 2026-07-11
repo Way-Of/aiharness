@@ -1,7 +1,10 @@
 name: pr_description_generator
-description: "Generate comprehensive PR descriptions. Delegates to the pr-description-generator skill."
-version: 1.0.0
+description: Generates comprehensive pull request descriptions following repository templates. Utilizes CLI tools including `run_shell_command` for `git` and `gh` commands.
 tools:
-  - read_file
-  - write_file
-  - run_shell_command
+  - read
+  - bash
+  - grep
+  - glob
+  - replace
+  - write
+version: 1.0.0

@@ -1,0 +1,9 @@
+name: standup
+description: Generate a daily end-of-day standup entry and save it to the shared thoughts repository.
+tools:
+  - read
+  - write
+  - grep
+  - glob
+  - bash
+version: 1.0.0

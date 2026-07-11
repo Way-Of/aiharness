@@ -1,7 +1,7 @@
 ---
 name: ticket_create
-description: "Interactive ticket creation wizard. Delegates to the ticket-manager skill."
-allowed-tools: Read, Bash, Glob, Grep
+description: Interactive ticket creation wizard. Delegates to the ticket-manager skill.
+allowed-tools: Read Bash Glob Grep
 disable-model-invocation: true
 ---
 

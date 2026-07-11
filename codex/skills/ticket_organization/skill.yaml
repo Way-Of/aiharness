@@ -1,0 +1,10 @@
+name: ticket_organization
+description: "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration"
+tools:
+  - read
+  - grep
+  - glob
+  - bash
+  - write
+  - edit
+version: 1.0.0

@@ -1,11 +1,16 @@
 ---
 name: womonodeploy
-description: >-
-  Release and update npm packages across the WoM ecosystem. Handles version
-  bumping, README/docs updates, npm publish, git commit/push, permission
-  workarounds (EACCES), and production mode configuration. Knows the full
-  release workflow for @wayofmono/* packages.
-allowed-tools: read, write, edit, bash, grep, glob, todowrite, task, question
+description: Release and update npm packages across the WoM ecosystem. Handles version bumping, README/docs updates, npm publish, git commit/push, permission workarounds (EACCES), and production mode configuration. Knows the full release workflow for @wayofmono/* packages.
+allowed-tools:
+  - read
+  - write
+  - edit
+  - bash
+  - grep
+  - glob
+  - todowrite
+  - task
+  - question
 ---
 
 # womonodeploy — Package Release & Deploy skill

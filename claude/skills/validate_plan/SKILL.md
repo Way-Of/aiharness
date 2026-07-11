@@ -1,7 +1,7 @@
 ---
 name: validate_plan
 description: Validate that an implementation plan was correctly executed, verifying all success criteria using CLI tools and delegating to research agents.
-allowed-tools: Read, Write, Bash, Grep, Glob, Task
+allowed-tools: Read Write Bash Grep Glob Task
 disable-model-invocation: true
 ---
 

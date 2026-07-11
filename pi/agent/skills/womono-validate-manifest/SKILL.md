@@ -1,7 +1,12 @@
 ---
 name: womono-validate-manifest
-description: "Validate that all file paths in manifest.json exist on disk for all 7 AI coding tools. Checks for missing, stale, or incorrectly formatted entries and offers auto-fix capabilities."
-allowed-tools: read, write, bash, glob, grep
+description: Validate that all file paths in manifest.json exist on disk for all 7 AI coding tools. Checks for missing, stale, or incorrectly formatted entries and offers auto-fix capabilities.
+allowed-tools:
+  - read
+  - write
+  - bash
+  - glob
+  - grep
 ---
 
 # womono-validate-manifest — Manifest Integrity Validator

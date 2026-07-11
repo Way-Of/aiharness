@@ -1,0 +1,9 @@
+name: validate_podman
+description: Validate Podman/Quadlet configurations on Fedora. Checks .container, .volume, .network files for syntax, security best practices, systemd integration, and dependency ordering.
+tools:
+  - read
+  - write
+  - bash
+  - glob
+  - grep
+version: 1.0.0

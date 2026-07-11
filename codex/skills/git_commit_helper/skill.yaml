@@ -1,7 +1,8 @@
 name: git_commit_helper
-description: "Create well-structured git commits. Delegates to the git-commit-helper skill."
-version: 1.0.0
+description: Creates well-structured git commits by analyzing changes, drafting messages, and executing commits using CLI `run_shell_command` for git operations.
 tools:
-  - read_file
-  - write_file
-  - run_shell_command
+  - read
+  - bash
+  - grep
+  - glob
+version: 1.0.0

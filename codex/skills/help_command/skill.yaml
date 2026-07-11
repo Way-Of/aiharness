@@ -1,0 +1,9 @@
+name: help_command
+description: Unified /help system — skills, commands, agents, workflows, practices, search, onboarding
+tools:
+  - read
+  - grep
+  - glob
+  - bash
+  - write
+version: 1.0.0

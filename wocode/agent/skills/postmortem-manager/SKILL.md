@@ -94,7 +94,7 @@ deprecated: false
 
 ## Action Items → Tickets
 
-Pass `--create-tickets` to auto-create WOMONO/WOW/OPT tickets from action items.
+Pass `--create-tickets` to auto-create tickets from action items.
 
 ## Postmortem → Knowledge Flow
 

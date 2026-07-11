@@ -1,0 +1,10 @@
+name: github_pr
+description: "Create, manage, and review GitHub Pull Requests with ticket linking, template support, and review workflow integration."
+tools:
+  - read
+  - write
+  - edit
+  - bash
+  - git
+  - gh
+version: 1.0.0

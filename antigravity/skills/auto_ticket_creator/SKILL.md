@@ -1,7 +1,7 @@
 ---
 name: auto_ticket_creator
 description: Monitor codebase, dependencies, and external sources to auto-create tickets for agent updates, skill updates, dep updates, security advisories
-allowed-tools: Read, Write, Grep, Glob, Web, Search
+allowed-tools: read, write, grep, glob, web, search
 ---
 
 # Auto-Ticket Creation skill

@@ -1,0 +1,9 @@
+name: github_sync
+description: "Sync feature branches with base branch, resolve conflicts, and manage branch lifecycle."
+tools:
+  - read
+  - write
+  - edit
+  - bash
+  - git
+version: 1.0.0

@@ -1,7 +1,15 @@
+---
 name: implement_plan
-description: "Execute approved plan phase-by-phase. Delegates to the implement-plan skill."
-version: 1.0.0
+description: Implement an approved technical plan from thoughts/plans/ with phase-by-phase execution, leveraging CLI tools for file interaction, command execution, and task management.
 tools:
-  - read_file
-  - write_file
-  - run_shell_command
+  - read
+  - write
+  - bash
+  - grep
+  - glob
+  - todowrite
+  - task
+version: 1.0.0
+---
+
+

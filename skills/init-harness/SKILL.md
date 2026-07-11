@@ -1,3 +1,9 @@
+---
+name: init-harness
+description: Initialize the harness in a repository
+allowed-tools: read, write, bash, grep, glob
+---
+
 # Initialize Harness
 
 Initialize the harness in this repository.
@@ -381,7 +387,7 @@ Create the core structure:
 
 ```bash
 mkdir -p thoughts/${PROJECT_SLUG}/shared/{tickets,plans,research}
-mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references}
+mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references,debug}
 mkdir -p thoughts/${PROJECT_SLUG}/enforcement-ticket
 mkdir -p thoughts/${PROJECT_SLUG}/rules
 ```

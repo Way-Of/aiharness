@@ -1,7 +1,20 @@
+---
 name: research_codebase
-description: "Comprehensive codebase research. Delegates to the research-codebase skill."
-version: 1.0.0
+description: Conduct comprehensive codebase research by delegating to parallel sub-agents and synthesizing findings using CLI tools.
 tools:
-  - read_file
-  - write_file
-  - run_shell_command
+  - read
+  - write
+  - bash
+  - grep
+  - glob
+  - todowrite
+  - task
+  - google
+  - web
+  - search
+  - web
+  - fetch
+version: 1.0.0
+---
+
+

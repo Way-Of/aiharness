@@ -1,9 +1,6 @@
 ---
 name: postmortem-manager
-description: "Generate, update, and maintain incident postmortems per project in the f-rr-d thoughts folder. Interactive flow covers What Went Well, What Could Be Better, Root Cause Analysis, Tech Debt, Knowledge, Action Items, and Metrics. Follows canonical template at assets/postmortem-template.md."
-version: "1.0"
-tools: [read, write, grep, glob, bash]
-platforms: [opencode, claude, pi, wocode, antigravity, codex]
+description: Generate, update, and maintain incident postmortems per project in the f-rr-d thoughts folder. Interactive flow covers What Went Well, What Could Be Better, Root Cause Analysis, Tech Debt, Knowledge, Action Items, and Metrics. Follows canonical template at assets/postmortem-template.md.
 allowed-tools: read, write, grep, glob, bash
 ---
 
@@ -90,7 +87,7 @@ deprecated: false
 
 ## Action Items → Tickets
 
-Pass `--create-tickets` to auto-create WOMONO/WOW/OPT tickets from action items.
+Pass `--create-tickets` to auto-create tickets from action items.
 
 ## Postmortem → Knowledge Flow
 

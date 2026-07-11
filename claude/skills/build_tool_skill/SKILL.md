@@ -1,9 +1,6 @@
 ---
-name: build-tool-skill
-version: "2.0"
-tools: [read, write, edit, bash, grep, glob, websearch]
-platforms: [opencode, claude, pi, wocode, antigravity, codex]
-allowed-tools: read, write, edit, bash, grep, glob, websearch
+name: build_tool_skill
+allowed-tools: Read Write Edit Bash Grep Glob Websearch
 ---
 
 # build-tool-skill — Unified Skill Builder, Validator & Lifecycle Manager

@@ -73,7 +73,10 @@ def serialize_frontmatter(data):
         elif value is None:
             continue
         else:
-            lines.append(key + ": " + str(value))
+            s = str(value)
+            if ":" in s or s.startswith('"') or s.startswith("'"):
+                s = '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
+            lines.append(key + ": " + s)
     lines.append("---")
     return "\n".join(lines)
 
@@ -91,9 +94,18 @@ def find_skills():
         if DUAL_FILE:
             sf = os.path.join(skill_path, SKILL_FILE)
             pf = os.path.join(skill_path, DUAL_FILE)
-            skill["skill_file"] = sf if os.path.isfile(sf) else None
+            skillmd = os.path.join(skill_path, "SKILL.md")
+            # Accept skill.yaml OR SKILL.md as the skill file
+            if os.path.isfile(sf):
+                skill["skill_file"] = sf
+                skill["has_skill"] = True
+            elif os.path.isfile(skillmd):
+                skill["skill_file"] = skillmd
+                skill["has_skill"] = True
+            else:
+                skill["skill_file"] = None
+                skill["has_skill"] = False
             skill["prompt_file"] = pf if os.path.isfile(pf) else None
-            skill["has_skill"] = os.path.isfile(sf)
             skill["has_prompt"] = os.path.isfile(pf)
         else:
             sf = os.path.join(skill_path, SKILL_FILE)
@@ -113,7 +125,16 @@ def validate_skill(skill):
         return issues
     with open(skill["skill_file"]) as f:
         content = f.read()
-    fm_data, body = parse_frontmatter(content)
+    # Handle both skill.yaml (pure YAML) and SKILL.md (frontmatter)
+    if skill["skill_file"].endswith(".yaml"):
+        try:
+            fm_data = yaml.safe_load(content)
+            fm_data = fm_data if isinstance(fm_data, dict) else None
+        except yaml.YAMLError:
+            fm_data = None
+        body = ""
+    else:
+        fm_data, body = parse_frontmatter(content)
     if fm_data is None:
         issues.append("FM_PARSE: cannot parse YAML frontmatter")
         return issues
@@ -121,11 +142,14 @@ def validate_skill(skill):
     expected_name = to_case(name if name else skill["dir"], NAME_CASE)
     if name != expected_name:
         issues.append("NAME_MISMATCH: name '" + name + "' should be '" + expected_name + "'")
+    # Normalize: SKILL.md uses "allowed-tools", skill.yaml uses "tools"
+    if "allowed-tools" in fm_data and "tools" not in fm_data:
+        fm_data["tools"] = fm_data.pop("allowed-tools")
     for key in fm_data:
         if key not in SUPPORTED_FIELDS:
             issues.append("UNSUPPORTED: field '" + key + "' not supported")
-    if "allowed-tools" in SUPPORTED_FIELDS and "allowed-tools" in fm_data:
-        at = fm_data["allowed-tools"]
+    if "tools" in SUPPORTED_FIELDS and "tools" in fm_data:
+        at = fm_data["tools"]
         if TOOLS_FMT == "yaml_list" and not isinstance(at, list):
             issues.append("TOOLS_FMT: allowed-tools should be YAML list, got " + type(at).__name__)
         elif TOOLS_FMT in ("comma_string", "space_string") and isinstance(at, list):
@@ -156,29 +180,41 @@ def fix_skill(skill, dry_run=False):
         return False
     with open(skill["skill_file"]) as f:
         content = f.read()
-    fm_data, body = parse_frontmatter(content)
+    # Handle both skill.yaml (pure YAML) and SKILL.md (frontmatter)
+    if skill["skill_file"].endswith(".yaml"):
+        try:
+            fm_data = yaml.safe_load(content)
+            fm_data = fm_data if isinstance(fm_data, dict) else None
+        except yaml.YAMLError:
+            fm_data = None
+        body = ""
+    else:
+        fm_data, body = parse_frontmatter(content)
     if fm_data is None:
         return False
+    # Normalize: SKILL.md uses "allowed-tools", skill.yaml uses "tools"
+    if "allowed-tools" in fm_data and "tools" not in fm_data:
+        fm_data["tools"] = fm_data.pop("allowed-tools")
     changed = False
     name = fm_data.get("name", "")
     expected_name = to_case(name if name else skill["dir"], NAME_CASE)
     if name != expected_name:
         fm_data["name"] = expected_name
         changed = True
-    at = fm_data.get("allowed-tools", None)
+    at = fm_data.get("tools", None)
     if at is not None:
         if TOOLS_FMT == "yaml_list" and isinstance(at, str):
             tools = [t.strip().lower() for t in re.split(r"[\s,]+", at) if t.strip()]
             if TARGET_TOOLS_CASE == "PascalCase":
                 tools = [t.capitalize() for t in tools]
-            fm_data["allowed-tools"] = tools
+            fm_data["tools"] = tools
             changed = True
         elif TOOLS_FMT in ("comma_string", "space_string") and isinstance(at, list):
             sep = ", " if TOOLS_FMT == "comma_string" else " "
             tools = [t.strip().lower() for t in at]
             if TARGET_TOOLS_CASE == "PascalCase":
                 tools = [t.capitalize() for t in tools]
-            fm_data["allowed-tools"] = sep.join(tools)
+            fm_data["tools"] = sep.join(tools)
             changed = True
         elif isinstance(at, str):
             tools = [t.strip() for t in re.split(r"[\s,]+", at) if t.strip()]
@@ -193,14 +229,18 @@ def fix_skill(skill, dry_run=False):
             sep = ", " if TOOLS_FMT == "comma_string" else " "
             new_at = sep.join(fixed)
             if new_at != at:
-                fm_data["allowed-tools"] = new_at
+                fm_data["tools"] = new_at
                 changed = True
     for key in list(fm_data.keys()):
         if key not in SUPPORTED_FIELDS and key != "name":
             del fm_data[key]
             changed = True
     if changed and not dry_run:
-        new_content = serialize_frontmatter(fm_data) + "\n\n" + body + "\n"
+        if skill["skill_file"].endswith(".yaml"):
+            # Write pure YAML (no --- delimiters)
+            new_content = yaml.dump(fm_data, default_flow_style=False, allow_unicode=True)
+        else:
+            new_content = serialize_frontmatter(fm_data) + "\n\n" + body + "\n"
         with open(skill["skill_file"], "w") as f:
             f.write(new_content)
     return changed

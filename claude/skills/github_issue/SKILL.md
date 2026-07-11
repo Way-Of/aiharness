@@ -1,7 +1,7 @@
 ---
 name: github_issue
-description: "Create, manage, and link GitHub Issues with tickets. Supports bi-directional sync between f-rr-d tickets and GitHub Issues."
-allowed-tools: Read, Write, Edit, Bash, Git, Gh
+description: Create, manage, and link GitHub Issues with tickets. Supports bi-directional sync between f-rr-d tickets and GitHub Issues.
+allowed-tools: Read Write Edit Bash Git Gh
 ---
 
 # GitHub Issue Skill
@@ -15,7 +15,7 @@ Manages GitHub Issues with bi-directional sync to f-rr-d tickets.
 Brief description of the issue
 
 ## Related Ticket
-WOMONO-084
+PROJ-084
 
 ## Type
 - [ ] Bug
@@ -39,9 +39,9 @@ Any other information, screenshots, or references
 ```bash
 # Create GitHub Issue linked to ticket
 gh issue create \
-  --title "WOMONO-084: Add GitHub skills" \
+  --title "PROJ-084: Add GitHub skills" \
   --body "$(cat .github/ISSUE_TEMPLATE.md)" \
-  --label "womono,feature,needs-triage" \
+  --label "feature,needs-triage" \
   --assignee "username"
 ```
 
@@ -49,10 +49,10 @@ gh issue create \
 
 ```bash
 # Add ticket reference to issue
-gh issue edit 123 --add-label "womono" --body "$(cat issue-body.md)\n\nTicket: WOMONO-084"
+gh issue edit 123 --body "$(cat issue-body.md)\n\nTicket: PROJ-084"
 
 # Update ticket with issue URL
-update_ticket --ticket_id WOMONO-084 --github_issue "https://github.com/Way-Of/wayofmono/issues/123"
+update_ticket --ticket_id PROJ-084 --github_issue "https://github.com/org/repo/issues/123"
 ```
 
 ### 3. Sync Issue Status to Ticket
@@ -62,7 +62,7 @@ update_ticket --ticket_id WOMONO-084 --github_issue "https://github.com/Way-Of/w
 gh issue close 123 --comment "Fixed in PR #456"
 
 # Auto-sync via webhook or manual
-update_ticket --ticket_id WOMONO-084 --status "Done"
+update_ticket --ticket_id PROJ-084 --status "Done"
 ```
 
 ## Available Tools

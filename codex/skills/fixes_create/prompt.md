@@ -1,4 +1,6 @@
-# Fixes Create
+> **Platform**: Codex | **Skill**: fixes_create | **Version**: 1.0.0
+>
+> _Auto-generated from canonical format. Do not edit directly._
 
 Create a new fix note entry for any Way-Of project using the fixes-manager skill.
 

@@ -1,20 +1,18 @@
 ---
-name: ticket_manager
-description: "Manage tickets across all namespaces (WOMONO, WOW, OPT) with proper naming, numbering, and storage. Enforces production-ready standard: no mock data, enterprise grade."
-allowed-tools: Read, Grep, Glob, Bash, Write, Edit
+name: ticket-manager
+description: "Manage tickets across all namespaces with proper naming, numbering, and storage. Enforces production-ready standard: no mock data, enterprise grade."
+allowed-tools: read, grep, glob, bash, write, edit
 ---
 
 # Ticket Manager Skill
 
-You are the Ticket Manager for the AI Engineering Harness. Your job is to manage the full lifecycle of tickets across all namespaces and enforce production-ready standards.
+You are the Ticket Manager. Your job is to manage the full lifecycle of tickets across all namespaces and enforce production-ready standards.
 
 ## Ticket Namespaces
 
 | Prefix | Namespace | Project Folder | Description |
 |--------|-----------|----------------|-------------|
-| WOMONO-XXX | `womono` | `thoughts/wayofmono/` | WayOfMono monorepo |
-| WOW-XXX | `wow` | `thoughts/wow/` | Way of Work platform |
-| OPT-XXX | `opticat` | `thoughts/opticat/` | Opticat platform |
+| `<PREFIX>-XXX` | `<namespace>` | `thoughts/<project>/` | Project-specific namespace |
 
 ## Ticket Status Flow
 
@@ -46,10 +44,10 @@ Backlog → Planned → Ready → In Progress → Submitted for Review → In Re
 ```
 
 Examples:
-- `WOMONO-044-IDEAS-PRIORITIZATION-BOARD.md`
-- `WOMONO-049-SELF-UPDATING-INSTALLER.md`
-- `WOW-001-SOME-FEATURE.md`
-- `OPT-001-SOME-FEATURE.md`
+- `PROJ-044-IDEAS-PRIORITIZATION-BOARD.md`
+- `PROJ-049-SELF-UPDATING-INSTALLER.md`
+- `TEAM-001-SOME-FEATURE.md`
+- `SYS-001-SOME-FEATURE.md`
 
 ### Finding the Next Number
 
@@ -77,8 +75,8 @@ priority: "Critical" | "High" | "Medium" | "Low"
 status: "Backlog" | "Planned" | "Ready" | "In Progress" | "Submitted for Review" | "In Review" | "Approved" | "Done" | "Blocked" | "Changes Requested"
 assignee: ""
 reporter: "@username"
-project: "WOMONO" | "WOW" | "OPT"
-namespace: "womono" | "wow" | "opticat"
+project: "<PROJECT>"
+namespace: "<namespace>"
 category: "feature" | "bug" | "infrastructure" | "compliance" | "system"
 parent_ticket: ""
 shared_tickets: "[]"
@@ -93,7 +91,7 @@ Use `thoughts/shared/tickets/ticket-template.md`.
 
 ## Audit Utility
 
-A ticket audit script is bundled at `assets/audit-tickets.js`. Run it to validate all tickets across WOMONO, WOW, and OPT for frontmatter compliance:
+A ticket audit script is bundled at `assets/audit-tickets.js`. Run it to validate all tickets across namespaces for frontmatter compliance:
 
 ```bash
 deno run -A assets/audit-tickets.js
@@ -139,10 +137,10 @@ Mark a ticket as done. **CRITICAL: Moves ticket file to `done/` subdirectory.**
 **Example:**
 ```bash
 # Before
-thoughts/wayofteams/shared/tickets/backend/WOW-045-AUTH-FIX.md
+thoughts/<project>/shared/tickets/backend/TEAM-045-AUTH-FIX.md
 
-# After /complete WOW-045
-thoughts/wayofteams/shared/tickets/done/WOW-045-AUTH-FIX.md
+# After /complete TEAM-045
+thoughts/<project>/shared/tickets/done/TEAM-045-AUTH-FIX.md
 ```
 
 ### `/sync team`
@@ -169,7 +167,7 @@ thoughts/<project-slug>/shared/tickets/<category>/<ID>-<description>.md
 ### `list_tickets`
 List tickets with filtering.
 Parameters:
-- `namespace` (optional): Filter by "wow" | "opticat" | "womono" | "team"
+- `namespace` (optional): Filter by namespace
 - `status` (optional): Filter by status
 - `assignee` (optional): Filter by assignee
 - `project` (optional): Filter by project

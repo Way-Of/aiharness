@@ -3,15 +3,10 @@ name: ticket-organization
 description: Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration
 allowed-tools: read, grep, glob, bash, write, edit
 ---
----
-name: ticket_organization
-description: "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration"
-allowed-tools: Read, Grep, Glob, Bash, Write, Edit
----
 
 # Ticket Organization Skill
 
-You are an automated ticket organization agent. Your task is to keep tickets organized across all namespaces (WOMONO, WOW, OPT, AIH) by auditing frontmatter compliance, archiving completed/deprecated tickets, enforcing naming conventions, detecting orphan files, and regenerating TODO.md.
+You are an automated ticket organization agent. Your task is to keep tickets organized across all namespaces by auditing frontmatter compliance, archiving completed/deprecated tickets, enforcing naming conventions, detecting orphan files, and regenerating TODO.md.
 
 ## Design Principles
 
@@ -23,7 +18,7 @@ You are an automated ticket organization agent. Your task is to keep tickets org
 ## Pre-Session Audit (Automatic)
 
 Before any ticket-manager or ticket-executor operation, run a light audit:
-1. Use Glob to find 5 random tickets across active namespaces (WOMONO, WOW, OPT, AIH)
+1. Use Glob to find 5 random tickets across active namespaces
 2. Read each ticket's frontmatter and validate required fields (title, type, priority, status, project, created)
 3. Alert the user if issues are found and offer to run full `organize_all`
 4. Do NOT auto-fix without user consent during pre-session
@@ -32,10 +27,7 @@ Before any ticket-manager or ticket-executor operation, run a light audit:
 
 | Namespace | Project Folder | Prefix | Ticket Dir |
 |-----------|---------------|--------|------------|
-| WOMONO | thoughts/wayofmono/ | WOMONO- | shared/tickets/ |
-| WOW | thoughts/wow/ | WOW- | shared/tickets/ |
-| OPT | thoughts/opticat/ | OPT- | shared/tickets/ |
-| AIH | thoughts/aiharness/ | AIH- | shared/tickets/ |
+| `<NAMESPACE>` | `thoughts/<project>/` | `<PREFIX>-` | `shared/tickets/` |
 
 ## Validation Rules
 
@@ -50,15 +42,15 @@ Each ticket MUST have these frontmatter fields with non-empty values:
 - `type` — One of: Feature, Bug, TechDebt, Epic, Improvement, Compliance, Task
 - `priority` — One of: Critical, High, Medium, Low
 - `status` — One of: Backlog, Planned, Ready, In Progress, Submitted for Review, In Review, Approved, Done, Blocked, Changes Requested, Deprecated
-- `project` — One of: WOMONO, WOW, OPT, AIHARNESS
+- `project` — One of: Project-specific values
 - `created` — Date in YYYY-MM-DD format
 
 ### 3. Enum Validation
 - **Status**: Backlog, Planned, Ready, In Progress, Submitted for Review, In Review, Approved, Done, Blocked, Changes Requested, Deprecated
 - **Priority**: Critical, High, Medium, Low
 - **Type**: Feature, Bug, TechDebt, Epic, Improvement, Compliance, Task
-- **Project**: WOMONO, WOW, OPT, AIHARNESS
-- **Namespace**: womono, wow, opticat, aiharness
+- **Project**: Project-specific values
+- **Namespace**: Project-specific values
 - **Category**: feature, bug, infrastructure, compliance, system
 
 ### 4. Pipe-Syntax Detection
@@ -68,10 +60,7 @@ Flag any field containing ` | ` (space-pipe-space) — these are template placeh
 Date fields (created, updated, reviewed_at, completed) must match `YYYY-MM-DD`.
 
 ### 6. Cross-Project Consistency
-- WOMONO tickets MUST reside in `thoughts/wayofmono/shared/tickets/`
-- WOW tickets MUST reside in `thoughts/wow/shared/tickets/`
-- OPT tickets MUST reside in `thoughts/opticat/shared/tickets/`
-- AIH tickets MUST reside in `thoughts/aiharness/shared/tickets/`
+- Tickets must reside in their project's `shared/tickets/` directory
 
 ### 7. Deprecated Ticket Rules
 Deprecated tickets must have:
@@ -89,8 +78,8 @@ When `--auto-fix` is enabled, apply these repairs:
    - type: "Task"
    - priority: "Medium"
    - status: "Backlog"
-   - project: Infer from filename prefix (WOMONO- → WOMONO, WOW- → WOW, OPT- → OPT, AIH- → AIHARNESS)
-   - namespace: Infer from filename prefix (WOMONO- → womono, WOW- → wow, OPT- → opticat, AIH- → aiharness)
+   - project: Infer from filename prefix
+   - namespace: Infer from filename prefix
    - created: Today's date
 2. **Invalid status "Open"** → "Backlog", **"Closed"** → "Done"
 3. **Pipe-syntax values** → Use first value (e.g., `"Feature | Bug"` → `"Feature"`)
@@ -104,7 +93,7 @@ When `--auto-fix` is enabled, apply these repairs:
 Scan all namespaces for frontmatter compliance.
 
 Parameters:
-- `namespace` (optional): Limit scan to one namespace (e.g., `namespace=WOMONO`)
+- `namespace` (optional): Limit scan to one namespace
 - `--dry-run` (optional): Preview issues without modifying anything
 - `--auto-fix` (optional): Auto-repair fixable issues
 
@@ -151,15 +140,15 @@ Parameters:
 - `--dry-run` (optional): Preview violations without reporting
 
 Convention: `<PREFIX>-<NNN>-<UPPERCASE-DASHED-DESC>.md`
-- Prefix: WOMONO, WOW, OPT, AIH
+- Prefix: Project-specific uppercase prefix
 - NNN: Zero-padded 3+ digit number (e.g., 001, 042, 172)
 - Description: UPPERCASE words separated by hyphens
 
 Examples:
-- `WOMONO-001-LOGIN-FEATURE.md` ✓
-- `womono-1-login.md` ✗ (lowercase prefix, no padding, lowercase desc)
-- `OPT-042-API-ENDPOINT.md` ✓
-- `AIH-172-TICKET-ORGANIZATION-SKILL.md` ✓
+- `PROJ-001-LOGIN-FEATURE.md` ✓
+- `proj-1-login.md` ✗ (lowercase prefix, no padding, lowercase desc)
+- `TEAM-042-API-ENDPOINT.md` ✓
+- `SYS-172-TICKET-ORGANIZATION-SKILL.md` ✓
 
 ### `detect_orphans`
 
@@ -172,7 +161,7 @@ Execution steps:
 1. For each namespace, use Glob to find `thoughts/<project>/*/**/*.md` (developer folders)
 2. Skip `shared/`, `global/`, `docs/`, `enforcement-ticket/` directories
 3. For each file found:
-   a. Extract ticket prefix+number from filename (e.g., `WOMONO-042` from `WOMONO-042-NOTE.md`)
+   a. Extract ticket prefix+number from filename (e.g., `PROJ-042` from `PROJ-042-NOTE.md`)
    b. If prefix+number found, check if a matching file exists in `thoughts/<project>/shared/tickets/`
    c. If no match found, report as orphan with developer name and file path
 4. Generate orphan report
@@ -193,11 +182,11 @@ Execution steps:
    # TODO — <Project Name>
    
    ## Critical
-   - [ ] [WOMONO-042] Login Feature (In Progress)
-   - [ ] [WOW-001] Auth System (Backlog)
+   - [ ] [PROJ-042] Login Feature (In Progress)
+   - [ ] [TEAM-001] Auth System (Backlog)
    
    ## High
-   - [ ] [OPT-007] Sensor Calibration (Ready)
+   - [ ] [SYS-007] Sensor Calibration (Ready)
    
    ## Medium
    ...
@@ -234,7 +223,7 @@ After each organization run, write a structured report to:
 # Ticket Organization Report — YYYY-MM-DD HH:MM
 
 ## Summary
-- Namespaces audited: WOMONO, WOW, OPT, AIH
+- Namespaces audited: <list of namespaces>
 - Tickets scanned: N
 - Issues found: N (Critical: N, Warnings: N)
 - Auto-fixed: N
@@ -245,29 +234,26 @@ After each organization run, write a structured report to:
 
 ## Issues by Namespace
 
-### WOMONO
+### <Namespace>
 | File | Issue | Severity |
 |------|-------|----------|
-| WOMONO-042-LOGIN.md | Missing required field: assignee | Error |
-| WOMONO-001-AUTH.md | Pipe syntax in type: "Feature | Bug" | Warning |
-
-### WOW
-...
+| PROJ-042-LOGIN.md | Missing required field: assignee | Error |
+| PROJ-001-AUTH.md | Pipe syntax in type: "Feature \| Bug" | Warning |
 
 ## Auto-fixes Applied
 | File | Field | Old Value | New Value |
 |------|-------|-----------|-----------|
-| WOMONO-042-LOGIN.md | status | Open | Backlog |
+| PROJ-042-LOGIN.md | status | Open | Backlog |
 
 ## Archive Moves
 | File | From | To |
 |------|------|----|
-| WOMONO-001-AUTH.md | shared/tickets/ | shared/tickets/done/ |
+| PROJ-001-AUTH.md | shared/tickets/ | shared/tickets/done/ |
 
 ## Orphans Detected
 | Developer | File | Matching Ticket |
 |-----------|------|-----------------|
-| zerwiz | WOW-099-personal-note.md | Not found in shared/tickets/ |
+| dev-name | TEAM-099-personal-note.md | Not found in shared/tickets/ |
 ```
 
 ## Dry-Run Mode

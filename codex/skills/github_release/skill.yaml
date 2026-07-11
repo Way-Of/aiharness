@@ -1,0 +1,10 @@
+name: github_release
+description: "Create GitHub releases with changelog generation, version tagging, and automated publishing."
+tools:
+  - read
+  - write
+  - edit
+  - bash
+  - git
+  - gh
+version: 1.0.0

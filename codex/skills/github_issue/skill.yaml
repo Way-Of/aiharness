@@ -1,0 +1,10 @@
+name: github_issue
+description: "Create, manage, and link GitHub Issues with tickets. Supports bi-directional sync between f-rr-d tickets and GitHub Issues."
+tools:
+  - read
+  - write
+  - edit
+  - bash
+  - git
+  - gh
+version: 1.0.0

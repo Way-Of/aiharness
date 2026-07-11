@@ -1,7 +1,7 @@
 ---
 name: git_commit_helper
 description: Creates well-structured git commits by analyzing changes, drafting messages, and executing commits using CLI `run_shell_command` for git operations.
-allowed-tools: Read, Bash, Grep, Glob
+allowed-tools: Read Bash Grep Glob
 ---
 
 # Git Commit Helper

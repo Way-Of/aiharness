@@ -1,7 +1,7 @@
 ---
 name: build_tool_cli
 description: CLI reference for all 7 AI coding tools — knows flags, subcommands, environment variables, output modes, non-interactive usage.
-allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Websearch
+allowed-tools: Read Write Edit Bash Grep Glob Websearch
 ---
 
 # build_tool_cli — Unified CLI Reference

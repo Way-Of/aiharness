@@ -1,7 +1,13 @@
 ---
 name: github-review
-description: "Review GitHub Pull Requests with structured feedback, approval workflow, and CTO Dashboard integration."
-allowed-tools: read, write, edit, bash, git, gh
+description: Review GitHub Pull Requests with structured feedback, approval workflow, and CTO Dashboard integration.
+allowed-tools:
+  - read
+  - write
+  - edit
+  - bash
+  - git
+  - gh
 ---
 
 # GitHub Review Skill
@@ -75,13 +81,13 @@ gh pr review 123 --reject --body "Does not meet requirements"
 
 ```bash
 # On Approve
-update_ticket --ticket_id WOMONO-084 --status "Approved"
+update_ticket --ticket_id PROJ-084 --status "Approved"
 
 # On Changes Requested
-update_ticket --ticket_id WOMONO-084 --status "Changes Requested"
+update_ticket --ticket_id PROJ-084 --status "Changes Requested"
 
 # On Reject
-update_ticket --ticket_id WOMONO-084 --status "Blocked" --blockers "Review rejected: ..."
+update_ticket --ticket_id PROJ-084 --status "Blocked" --blockers "Review rejected: ..."
 ```
 
 ## Available Tools

@@ -1,7 +1,7 @@
 ---
 name: complete
-description: "Complete a ticket, submit for review. Delegates to the ticket-manager skill."
-allowed-tools: Read, Bash, Glob, Grep
+description: Complete a ticket, submit for review. Delegates to the ticket-manager skill.
+allowed-tools: Read Bash Glob Grep
 disable-model-invocation: true
 ---
 

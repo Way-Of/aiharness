@@ -1,7 +1,7 @@
 ---
 name: create_plan
 description: Create detailed, actionable implementation plans through an interactive, iterative process, leveraging CLI tools for research and documentation.
-allowed-tools: Read, Write, Bash, Glob, Grep, Todowrite, Task
+allowed-tools: Read Write Bash Glob Grep Todowrite Task
 disable-model-invocation: true
 ---
 
@@ -156,4 +156,3 @@ Continue refining until the user is satisfied.
 3. **Be Thorough** - Read all context files COMPLETELY
 4. **Be Practical** - Focus on incremental, testable changes
 5. **Track Progress** - Use TodoWrite
-

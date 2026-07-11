@@ -1,7 +1,11 @@
 ---
 name: git-commit-helper
 description: Creates well-structured git commits by analyzing changes, drafting messages, and executing commits using CLI `run_shell_command` for git operations.
-allowed-tools: read, bash, grep, glob
+allowed-tools:
+  - read
+  - bash
+  - grep
+  - glob
 ---
 
 # Git Commit Helper
@@ -108,7 +112,7 @@ Always add files explicitly by path.
 - `WIP` (not descriptive)
 
 ### Imperative Mood
-write as if commanding: "Add this", "Fix that", "Update those"
+Write as if commanding: "Add this", "Fix that", "Update those"
 - ✓ "Add feature"
 - ✗ "Added feature"
 - ✗ "Adding feature"
@@ -124,7 +128,7 @@ When the "what" isn't obvious from the code, explain the "why":
 - **NEVER add co-author information**
 - **NEVER add "Generated with AI" or similar messages**
 - **NEVER add "Co-Authored-By" lines**
-- **write commit messages as if the user wrote them**
+- **Write commit messages as if the user wrote them**
 
 The commits should be authored solely by the user with no AI attribution.
 
@@ -136,7 +140,7 @@ The commits should be authored solely by the user with no AI attribution.
 
 ### Context Awareness
 - You have the full context of what was done in this session
-- Use conversation history to write meaningful commit messages
+- Use conversation history to Write meaningful commit messages
 - The user trusts your judgment - they asked you to commit
 - Don't ask unnecessary questions - use your understanding of the work
 

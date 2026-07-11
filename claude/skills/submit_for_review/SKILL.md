@@ -1,7 +1,7 @@
 ---
 name: submit_for_review
-description: "Submit ticket for CTO review. Delegates to the ticket-manager skill."
-allowed-tools: Read, Bash, Glob, Grep
+description: Submit ticket for CTO review. Delegates to the ticket-manager skill.
+allowed-tools: Read Bash Glob Grep
 disable-model-invocation: true
 ---
 

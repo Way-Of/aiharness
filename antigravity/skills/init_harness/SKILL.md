@@ -1,6 +1,12 @@
+---
+name: init_harness
+description: Initialize the harness in a repository
+allowed-tools: read, write, bash, grep, glob
+---
+
 # Initialize Harness
 
-Initialize the AI Engineering Harness in this repository.
+Initialize the harness in this repository.
 
 ## What This Command Does
 
@@ -17,18 +23,18 @@ Initialize the AI Engineering Harness in this repository.
 - Reports compliance status and asks before making changes
 
 **Client vs Internal Projects:**
-- **Internal Way-Of projects** get full AGENTS.md with GitHub workflow, all agents, and internal references
-- **Client projects** (when `--frrd-remote` is provided) get a sanitized AGENTS.md — no internal Way-Of references, no GitHub Skills Agent Directory
+- **Internal projects** get full AGENTS.md with GitHub workflow, all agents, and internal references
+- **Client projects** (when `--frrd-remote` is provided) get a sanitized AGENTS.md — no internal references, no GitHub Skills Agent Directory
 
 ## Parameters
 
-When invoked with `--frrd-remote <url>`, the init-harness will clone the specified f-rr-d repo instead of the default `github.com/Way-Of/f-rr-d`. This is used for client projects that have their own isolated f-rr-d.
+When invoked with `--frrd-remote <url>`, the init-harness will clone the specified f-rr-d repo instead of the default `github.com/your-org/f-rr-d`. This is used for client projects that have their own isolated f-rr-d.
 
 Setting `--frrd-remote` also stores the URL in `.wo/settings.json` as `frrd_remote` for other skills to reference.
 
 ## Critical Rules — f-rr-d is Append-Only
 
-The `thoughts/` directory is a clone of an f-rr-d repository. For internal Way-Of projects this is `github.com/Way-Of/f-rr-d`. For client projects it's the URL specified by `--frrd-remote`. In all cases, it must be treated as **append-only**:
+The `thoughts/` directory is a clone of an f-rr-d repository. For internal projects this is `github.com/your-org/f-rr-d`. For client projects it's the URL specified by `--frrd-remote`. In all cases, it must be treated as **append-only**:
 
 - **NEVER delete** any file or directory inside `thoughts/`
 - **NEVER rename** or **move** any file or directory inside `thoughts/`
@@ -95,7 +101,7 @@ Before asking the user anything about the project, ensure f-rr-d is available an
 
 Set `F_RRD_URL`:
 - Use `--frrd-remote <url>` if provided (client project)
-- Otherwise use `https://github.com/Way-Of/f-rr-d.git` (default, internal project)
+- Otherwise use `https://github.com/your-org/f-rr-d.git` (default, internal project)
 
 **If `thoughts/` does not exist**, clone the f-rr-d repo:
 ```bash
@@ -130,19 +136,19 @@ After f-rr-d is up-to-date, list existing projects to see what's already there:
 ls -d thoughts/*/ 2>/dev/null | xargs -n1 basename | sort
 ```
 
-This shows all project slugs currently in f-rr-d (e.g., `wayofmono`, `wow`, `opticat`, `wayofteams`).
+This shows all project slugs currently in f-rr-d (e.g., `project-a`, `project-b`, `project-c`).
 
 **Ask the user:**
 1. Does the project already exist in f-rr-d? (show the list of existing slugs)
    - If **yes**: ask which existing slug to use. Skip name/slug questions.
    - If **no**: ask for new project name and slug.
-2. Is this an **internal** Way-Of project or a **client** project?
+2. Is this an **internal** project or a **client** project?
 
 Set `PROJECT_NAME` to the project name and `PROJECT_SLUG` to the slug. Set `IS_CLIENT` to `true` if a client project.
 
 **If the command was invoked with `--frrd-remote <url>`**, use that URL as the f-rr-d remote. This implies a client project. Skip the "internal vs client" question — it's a client.
 
-**If no `--frrd-remote` is provided**, clone from `https://github.com/Way-Of/f-rr-d.git` (default, internal project).
+**If no `--frrd-remote` is provided**, clone from `https://github.com/your-org/f-rr-d.git` (default, internal project).
 
 Store the f-rr-d URL in `.wo/settings.json` for other skills to reference:
 
@@ -227,22 +233,22 @@ Then proceed to Step 3 (Generate/Update Project Memory).
 Check if the project memory file already exists. If it does, keep it and skip this step.
 If not, run the tool's `/init` command. If this tool has no `/init`, create the project memory file manually with the standard format for this tool.
 
-#### Step 3a: Discover and Append AI Engineering Harness Skills, Commands & Agents Reference
+#### Step 3a: Discover and Append Skills, Commands & Agents Reference
 
-After the project memory file is created (or if it already exists), append a reference section listing all skills, commands, and agents installed by the AI Engineering Harness.
+After the project memory file is created (or if it already exists), append a reference section listing all skills, commands, and agents installed by the harness.
 
-**Skills Catalog Reference:** The complete skills catalog is maintained at `thoughts/wayofmono/docs/AI-Engineering-Harness-Skills-Catalog.md` (v1.7.16). It documents all 49 skills, 12 agents per tool, 5 commands/prompts per tool, and tool-specific extensions. Reference this catalog when listing available capabilities.
+**Skills Catalog Reference:** The complete skills catalog is maintained at `thoughts/shared/docs/Skills-Catalog.md`. It documents all available skills, agents, commands/prompts, and tool-specific extensions. Reference this catalog when listing available capabilities.
 
 Determine the tool's config directory installed by the harness (e.g., `~/.config/opencode/`, `~/.claude/`, `~/.config/opencode/`, `~/.pi/agent/`, `~/.wocode/`, `~/.antigravity/`, `~/.codex/`). Then discover skills, commands, and agents:
 
 ```bash
-# List all installed skill names from the AI Engineering Harness
+# List all installed skill names
 ls -d <TOOL_CONFIG_DIR>/skills/*/ 2>/dev/null | xargs -n1 basename | sort
 
-# List all installed command names (if tool has a commands/ dir from the harness)
+# List all installed command names (if tool has a commands/ dir)
 ls <TOOL_CONFIG_DIR>/commands/ 2>/dev/null | sed 's/\.md$//' | sort
 
-# List all installed agent names from the AI Engineering Harness
+# List all installed agent names
 ls <TOOL_CONFIG_DIR>/agents/ 2>/dev/null | sed 's/\.md$//' | grep -vi readme | sort
 ```
 
@@ -251,23 +257,23 @@ Append the following section to the project memory file:
 ```markdown
 ## Available Skills & Commands
 
-> **Full catalog:** See `thoughts/wayofmono/docs/AI-Engineering-Harness-Skills-Catalog.md` for detailed descriptions of all 49 skills, 12 agents, and 5 commands/prompts.
+> **Full catalog:** See `thoughts/shared/docs/Skills-Catalog.md` for detailed descriptions of all skills, agents, and commands/prompts.
 
-### Skills (auto-triggered by the AI Engineering Harness)
+### Skills (auto-triggered by the harness)
 <list each skill name from the discovery above, one per line>
 
-### Commands (slash commands from the AI Engineering Harness)
+### Commands (slash commands from the harness)
 <list each command name from the discovery above, one per line>
 
-### Agents (available from the AI Engineering Harness)
+### Agents (available from the harness)
 <list each agent name from the discovery above, one per line>
 ```
 
 If the tool does not have a `commands/` directory (e.g., Claude, Codex), omit the Commands section.
 
-After listing skills and commands, for **internal Way-Of projects** also add structured agent definitions for the 6 GitHub skills so that agents know exactly when and how to use them:
+After listing skills and commands, for **internal projects** also add structured agent definitions for the 6 GitHub skills so that agents know exactly when and how to use them:
 
-**For client projects (sanitized)**: Skip the GitHub Skills Agent Directory and GitHub Workflow sections entirely. Client AGENTS.md must contain **zero internal Way-Of references**.
+**For client projects (sanitized)**: Skip the GitHub Skills Agent Directory and GitHub Workflow sections entirely. Client AGENTS.md must contain **zero internal references**.
 
 For internal projects, add:
 
@@ -364,7 +370,7 @@ thoughts/${PROJECT_SLUG}/
 ├── TODO.md             # If the user wants one
 ```
 
-**For internal Way-Of projects only**, also create:
+**For internal projects only**, also create:
 ```
 ├── global/             # Project-level cross-cutting concerns
 ├── zerwiz/             # Developer workspace
@@ -381,7 +387,7 @@ Create the core structure:
 
 ```bash
 mkdir -p thoughts/${PROJECT_SLUG}/shared/{tickets,plans,research}
-mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references}
+mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references,debug}
 mkdir -p thoughts/${PROJECT_SLUG}/enforcement-ticket
 mkdir -p thoughts/${PROJECT_SLUG}/rules
 ```
@@ -420,7 +426,7 @@ Additional subdirectories like `docs/best-practices/`, `docs/skills/`, `docs/too
 
 ### Step 5: Create Personal Thoughts Directories
 
-**For internal Way-Of projects**: Developer directories (`zerwiz/`, `tomas/`, `craig/`, `andre/`) were already created in Step 4. These are **always** created for every internal project — no user input needed. If additional developers join later, create their directories manually:
+**For internal projects**: Developer directories (`zerwiz/`, `tomas/`, `craig/`, `andre/`) were already created in Step 4. These are **always** created for every internal project — no user input needed. If additional developers join later, create their directories manually:
 
 ```bash
 mkdir -p thoughts/${PROJECT_SLUG}/<developer-name>
@@ -436,7 +442,7 @@ This step is **critical** — without it, GitHub Actions and CI/CD pipelines may
 
 ```bash
 # CRITICAL: ensure thoughts/ is gitignored — prevents f-rr-d content from polluting project repo
-grep -q '^thoughts/' .gitignore 2>/dev/null || echo '# Centralized in Way-Of/f-rr-d' >> .gitignore
+grep -q '^thoughts/' .gitignore 2>/dev/null || echo '# Centralized in f-rr-d' >> .gitignore
 grep -q '^thoughts/' .gitignore 2>/dev/null || echo 'thoughts/' >> .gitignore
 ```
 
@@ -446,7 +452,7 @@ grep -q '^thoughts/' .gitignore 2>/dev/null || echo 'thoughts/' >> .gitignore
 
 Print the following summary:
 
-**For internal Way-Of projects**:
+**For internal projects**:
 ```
 ## Harness Initialized Successfully
 
@@ -456,7 +462,7 @@ Print the following summary:
 - thoughts/${PROJECT_SLUG}/ — This project's workspace
 
 ### Available Agents
-The following agents are available via the AI Engineering Harness:
+The following agents are available via the harness:
 - **codebase_analyzer** — Analyze implementation details, trace data flow
 - **codebase_locator** — Find files/directories by feature or task
 - **codebase_pattern_finder** — Discover similar implementations and patterns

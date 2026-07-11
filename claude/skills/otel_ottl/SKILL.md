@@ -1,8 +1,7 @@
 ---
 name: otel_ottl
 description: OTTL (OpenTelemetry Transformation Language) reference — syntax, contexts, common patterns (redaction, normalization, enrichment, filtering), error handling, and complete function reference for Collector processors.
-
-allowed-tools: Read, Bash, Grep, Glob, Replace, Write
+allowed-tools: Read Bash Grep Glob Replace Write
 disable-model-invocation: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: work
-description: "Start working on a ticket, update status to In Progress. Delegates to the ticket-manager skill."
-allowed-tools: Read, Bash, Glob, Grep
+description: Start working on a ticket, update status to In Progress. Delegates to the ticket-manager skill.
+allowed-tools: Read Bash Glob Grep
 disable-model-invocation: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: self_documentation
 description: Enables Wo to answer "How do I...?" and "What's the command for...?" questions by searching its own commands, skills, and documentation locally
-allowed-tools: Read, Write, Bash, Glob, Grep
+allowed-tools: Read Write Bash Glob Grep
 ---
 
 # Self-Documentation skill

@@ -1,7 +1,7 @@
 ---
 name: github_pr
-description: "Create, manage, and review GitHub Pull Requests with ticket linking, template support, and review workflow integration."
-allowed-tools: Read, Write, Edit, Bash, Git, Gh
+description: Create, manage, and review GitHub Pull Requests with ticket linking, template support, and review workflow integration.
+allowed-tools: Read Write Edit Bash Git Gh
 ---
 
 # GitHub PR Skill
@@ -15,7 +15,7 @@ Manages GitHub Pull Requests with full ticket integration, templates, and review
 Brief description of changes
 
 ## Ticket
-Closes: WOMONO-084
+Closes: PROJ-084
 
 ## Changes
 - [ ] Change 1
@@ -39,10 +39,10 @@ Closes: WOMONO-084
 
 ```bash
 # Create PR with template, auto-link to ticket
-gh pr create --title "WOMONO-084: Add GitHub skills" \
+gh pr create --title "PROJ-084: Add GitHub skills" \
   --body "$(cat .github/PR_TEMPLATE.md)" \
   --base main \
-  --head womono/WOMONO-084-github-skills
+  --head project/PROJ-084-feature-name
 ```
 
 ### 2. Request Review
@@ -74,7 +74,7 @@ gh pr merge --squash --delete-branch
 ### `create_pr`
 Create PR with template and ticket linking.
 Parameters:
-- `ticket_id` (required): Ticket ID (e.g., "WOMONO-084")
+- `ticket_id` (required): Ticket ID (e.g., "PROJ-084")
 - `branch_name` (required): Source branch name
 - `base_branch` (optional): Target branch (default: "main")
 - `title` (optional): PR title (auto-generated from ticket)

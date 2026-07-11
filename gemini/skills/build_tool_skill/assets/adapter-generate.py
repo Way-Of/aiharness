@@ -16,6 +16,7 @@ Usage:
 import os
 import sys
 import shutil
+import re
 
 HARNESS_ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "..")
 HARNESS_ROOT = os.path.abspath(HARNESS_ROOT)
@@ -70,12 +71,49 @@ def generate(tool_filter=None, skill_filter=None, dry_run=False):
             shutil.copy2(os.path.join(canonical_skill, "SKILL.md"),
                          os.path.join(target_dir, "SKILL.md"))
 
+            # Codex: also generate skill.yaml + prompt.md from SKILL.md
+            if tool == "codex":
+                skill_md_path = os.path.join(target_dir, "SKILL.md")
+                skill_yaml_path = os.path.join(target_dir, "skill.yaml")
+                prompt_md_path = os.path.join(target_dir, "prompt.md")
+                with open(skill_md_path) as f:
+                    content = f.read()
+                # Parse frontmatter
+                if content.startswith("---"):
+                    end = content.find("---", 3)
+                    if end != -1:
+                        fm_str = content[3:end].strip()
+                        body = content[end+3:].strip()
+                        # Convert allowed-tools to tools list
+                        fm_lines = []
+                        for line in fm_str.split("\n"):
+                            if line.startswith("allowed-tools:"):
+                                tools_str = line.split(":", 1)[1].strip()
+                                tool_names = [t.strip().lower() for t in re.split(r"[\s,]+", tools_str) if t.strip()]
+                                fm_lines.append("tools:")
+                                for t in tool_names:
+                                    fm_lines.append(f"  - {t}")
+                            elif line.startswith("name:"):
+                                fm_lines.append(line.replace("-", "_").replace("name: ", "name: ").rstrip())
+                            else:
+                                fm_lines.append(line)
+                        fm_lines.append("version: 1.0.0")
+                        with open(skill_yaml_path, "w") as f:
+                            f.write("\n".join(fm_lines) + "\n")
+                        with open(prompt_md_path, "w") as f:
+                            f.write(f"> **Platform**: Codex | **Skill**: {dir_name} | **Version**: 1.0.0\n")
+                            f.write(f">\n")
+                            f.write(f"> _Auto-generated from canonical format. Do not edit directly._\n\n")
+                            f.write(body + "\n")
+
             # Copy assets/
             src_assets = os.path.join(canonical_skill, "assets")
             if os.path.isdir(src_assets):
                 for f in os.listdir(src_assets):
-                    shutil.copy2(os.path.join(src_assets, f),
-                                 os.path.join(target_dir, "assets", f))
+                    src_file = os.path.join(src_assets, f)
+                    if os.path.isfile(src_file):
+                        shutil.copy2(src_file,
+                                     os.path.join(target_dir, "assets", f))
 
             print(f"[{tool}] {action} {prefix}/{dir_name}/ ({'updated' if action == 'update' else 'created'})")
 

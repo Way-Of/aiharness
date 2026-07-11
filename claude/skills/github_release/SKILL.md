@@ -1,7 +1,7 @@
 ---
 name: github_release
-description: "Create GitHub releases with changelog generation, version tagging, and automated publishing."
-allowed-tools: Read, Write, Edit, Bash, Git, Gh
+description: Create GitHub releases with changelog generation, version tagging, and automated publishing.
+allowed-tools: Read Write Edit Bash Git Gh
 ---
 
 # GitHub Release Skill

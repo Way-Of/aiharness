@@ -1,7 +1,7 @@
 ---
 name: sync_team
-description: "Show team ticket dashboard. Delegates to the ticket-manager skill."
-allowed-tools: Read, Bash, Glob, Grep
+description: Show team ticket dashboard. Delegates to the ticket-manager skill.
+allowed-tools: Read Bash Glob Grep
 disable-model-invocation: true
 ---
 

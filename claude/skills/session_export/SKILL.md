@@ -1,6 +1,6 @@
 ---
 name: session_export
-description: "Capture the current working session and export as structured session history in the f-rr-d thoughts folder. Auto-captures git metrics, problems solved, files changed, commits, architecture decisions, and next steps. Follows canonical template at assets/session-template.md."
+description: Capture the current working session and export as structured session history in the f-rr-d thoughts folder. Auto-captures git metrics, problems solved, files changed, commits, architecture decisions, and next steps. Follows canonical template at assets/session-template.md.
 allowed-tools: Read Write Grep Glob Bash
 ---
 

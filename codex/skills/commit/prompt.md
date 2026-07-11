@@ -1,6 +1,10 @@
+> **Platform**: Codex | **Skill**: commit | **Version**: 1.0.0
+>
+> _Auto-generated from canonical format. Do not edit directly._
+
 # /commit — Create structured git commits
 
-Activates the git-commit-helper skill to perform this operation.
+Activates the [git-commit-helper](skills/git_commit_helper/SKILL.md) skill to perform this operation.
 
 ## Usage
 ```

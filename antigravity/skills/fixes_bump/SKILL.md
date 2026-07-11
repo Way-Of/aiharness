@@ -1,7 +1,6 @@
 ---
 name: fixes_bump
-description: "Bump the version across all project files. Delegates to fixes-manager skill."
-disable-model-invocation: true
+description: Bump the version across all project files. Delegates to fixes-manager skill.
 ---
 
 Bump the version across all project files using the fixes-manager skill.

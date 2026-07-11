@@ -98,7 +98,7 @@ Would you like me to investigate a specific file or log layer further?
 
 ### Step 4: Save Debug Session to Docs
 
-After presenting findings, save a debug session record to `docs/debug/` using the template at `fixes-templates/debug-template.md`:
+After presenting findings, save a debug session record to `docs/debug/` using the template at `thoughts/global/templates/fixes/debug-template.md`:
 
 ```bash
 mkdir -p docs/debug
@@ -138,7 +138,7 @@ Create a file named `docs/debug/YYYY-MM-DD-<short-description>.md` with:
 - <lesson>
 ```
 
-This creates a searchable debug history for the project. Reference `fixes-templates/debug-template.md` for the full template with placeholders.
+This creates a searchable debug history for the project. Reference `thoughts/global/templates/fixes/debug-template.md` for the full template with placeholders.
 
 ## Important Notes
 

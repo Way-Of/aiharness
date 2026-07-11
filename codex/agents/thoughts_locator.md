@@ -24,7 +24,7 @@ You are a specialist at discovering and categorizing documents in the thoughts/ 
      - Enforcement tickets: `thoughts/<project>/enforcement-ticket/` (highest priority)
      - Every ticket has a `domain` field: frontend, backend, devops, infra, ai-tools, docs, security, testing, architecture, cross-cutting
    - **Knowledge entries**: `thoughts/global/knowledge/<topic>/<topic>-<NNN>.md` (20+ topics)
-   - **Templates**: `thoughts/shared/templates/` (ticket, knowledge, TODO, AGENTS.md)
+   - **Templates**: `thoughts/global/templates/` (ticket, knowledge, TODO, AGENTS.md)
    - **Research documents**: Investigation results, technology evaluations
    - **Implementation plans**: Detailed technical designs
    - **Decisions**: Architectural decisions, team agreements

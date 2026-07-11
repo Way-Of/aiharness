@@ -183,11 +183,11 @@ If any required directories are missing, create them.
 # Check if ticket template exists and is current
 ls thoughts/${PROJECT_SLUG}/shared/tickets/ticket-template.md 2>/dev/null || echo "MISSING: ticket-template.md"
 # Also check shared/templates/
-ls thoughts/shared/templates/ticket-template.md 2>/dev/null || echo "MISSING: shared/templates/ticket-template.md"
+ls thoughts/global/templates/ticket-template.md 2>/dev/null || echo "MISSING: shared/templates/ticket-template.md"
 ```
 If the ticket template is missing or outdated, copy from the canonical location:
 ```bash
-cp thoughts/shared/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/
+cp thoughts/global/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/
 ```
 
 #### 3. AGENTS.md Check
@@ -356,7 +356,7 @@ First, examine the existing f-rr-d structure to understand the pattern. Look at 
 ```
 thoughts/${PROJECT_SLUG}/
 ├── shared/
-│   ├── tickets/        # Tickets (copy template from thoughts/shared/templates/ticket-template.md)
+│   ├── tickets/        # Tickets (copy template from thoughts/global/templates/ticket-template.md)
 │   ├── plans/          # Implementation plans
 │   └── research/       # Research documents
 ├── docs/
@@ -394,8 +394,8 @@ Copy template rules to the project:
 
 ```bash
 # Copy template rules from shared templates
-if [ -d thoughts/shared/templates/rules ]; then
-  for template in thoughts/shared/templates/rules/*.md; do
+if [ -d thoughts/global/templates/rules ]; then
+  for template in thoughts/global/templates/rules/*.md; do
     if [ -f "$template" ]; then
       filename=$(basename "$template")
       cp "$template" "thoughts/${PROJECT_SLUG}/rules/$filename"
@@ -413,8 +413,8 @@ Copy the ticket template from the shared location:
 
 ```bash
 # Try current template path first, fall back to old path
-if [ -f thoughts/shared/templates/ticket-template.md ]; then
-  cp thoughts/shared/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/
+if [ -f thoughts/global/templates/ticket-template.md ]; then
+  cp thoughts/global/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/
 else
   cp thoughts/shared/tickets/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/ 2>/dev/null || true
 fi
@@ -480,7 +480,7 @@ Use `/help` to learn more about each agent.
    - `gh auth login` or configure a personal access token
    - Required for pushing tickets, plans, and research to f-rr-d
 2. Create your first ticket:
-   cp thoughts/shared/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/PROJ-001-my-feature.md
+   cp thoughts/global/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/PROJ-001-my-feature.md
 3. Generate a plan: /create_plan ...
 4. Implement: /implement_plan ...
 5. Commit: /commit

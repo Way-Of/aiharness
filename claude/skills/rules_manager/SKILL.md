@@ -18,7 +18,7 @@ Rules define coding standards, conventions, and guidelines that agents, skills, 
 |----------|---------|------------|
 | `thoughts/<project>/rules/` | Project-specific rules | Highest (overrides global) |
 | `thoughts/global/rules/` | Global rules (all projects) | Medium (default fallback) |
-| `thoughts/shared/templates/rules/` | Template rules for new projects | Lowest (source for new rules) |
+| `thoughts/global/templates/rules/` | Template rules for new projects | Lowest (source for new rules) |
 
 ### Available Rule Categories
 
@@ -80,7 +80,7 @@ Create a new rule from a template.
 - `scope` (optional): "global" or "project" (defaults to project)
 
 **Process:**
-1. Read template from `thoughts/shared/templates/rules/`
+1. Read template from `thoughts/global/templates/rules/`
 2. Copy to target location
 3. Prompt user for customization
 4. Write customized rule

@@ -48,7 +48,7 @@ Every ticket has a `domain` field. When loading ticket context:
 ## Rules
 
 - All code changes **must** be associated with an existing ticket.
-- Tickets follow naming convention in `thoughts/shared/templates/ticket-template.md`.
+- Tickets follow naming convention in `thoughts/global/templates/ticket-template.md`.
 - Never work on a deprecated ticket without user confirmation.
 - The `ticket_manager` skill handles full lifecycle. This skill ensures process adherence.
 

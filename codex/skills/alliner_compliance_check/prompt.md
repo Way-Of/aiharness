@@ -29,8 +29,8 @@ Delegate to `alliner-compliance-check` for deep validation of project <slug>.
 
 ### Step 1: Load Context
 
-1. Read `thoughts/shared/templates/ticket-template.md` — the canonical template
-2. Read `thoughts/shared/templates/AGENTS.md.template` — the canonical AGENTS.md template
+1. Read `thoughts/global/templates/ticket-template.md` — the canonical template
+2. Read `thoughts/global/templates/AGENTS.md.template` — the canonical AGENTS.md template
 3. Set `PROJECT_SLUG` and `FRRD_PATH` from arguments or detect from `.wo/settings.json`
 
 ### Step 2: Run All Checks
@@ -63,7 +63,7 @@ Compare the project's ticket template against the canonical template.
 ```bash
 # Check if template exists
 ls thoughts/${PROJECT_SLUG}/shared/tickets/ticket-template.md 2>/dev/null
-ls thoughts/shared/templates/ticket-template.md 2>/dev/null
+ls thoughts/global/templates/ticket-template.md 2>/dev/null
 ```
 
 **Checks:**
@@ -81,7 +81,7 @@ ls thoughts/shared/templates/ticket-template.md 2>/dev/null
 - [ ] `domain` values match: `"frontend" | "backend" | "devops" | "infra" | "ai-tools" | "docs" | "security" | "testing" | "architecture" | "cross-cutting"`
 - [ ] Template matches canonical version (diff check)
 
-**Auto-fix:** If project template is missing or outdated, copy from `thoughts/shared/templates/ticket-template.md`.
+**Auto-fix:** If project template is missing or outdated, copy from `thoughts/global/templates/ticket-template.md`.
 
 ---
 

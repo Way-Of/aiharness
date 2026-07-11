@@ -1,8 +1,9 @@
 ---
-name: ticket_organization
+name: ticket-organization
 description: Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration
 allowed-tools: read, grep, glob, bash, write, edit
 ---
+
 ---
 name: ticket_organization
 description: "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration"

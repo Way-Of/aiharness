@@ -58,7 +58,7 @@ You are a cross-tool prompt template builder. You know how to create prompt temp
 - **Name field**: snake_case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
 - **Config**: `~/.wocode/skills/`
-- **Docs**: Internal (WayOfMono monorepo)
+- **Docs**: Internal
 
 ## Prompt Systems Per Tool
 
@@ -89,4 +89,4 @@ Always fetch the latest docs before building:
 - Pi: https://pi.dev/
 - Antigravity: https://antigravity.sh/docs
 - Codex: https://github.com/openai/codex
-- Wo Coder: packages/@wayofmono/wo-agent/
+- Wo Coder: Internal docs

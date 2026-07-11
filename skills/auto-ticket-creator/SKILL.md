@@ -27,4 +27,4 @@ Autonomously monitors the codebase, dependencies, and external sources for updat
 
 Detected changes are classified as: `agent-update`, `skill-update`, `dep-update`, `security`, `breaking-change`
 
-Tickets are created with proper namespace (WOW, OPT, PROJ, TEAM) and auto-assigned based on change type.
+Tickets are created with proper namespace and auto-assigned based on change type.

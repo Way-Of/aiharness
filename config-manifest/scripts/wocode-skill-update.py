@@ -73,7 +73,10 @@ def serialize_frontmatter(data):
         elif value is None:
             continue
         else:
-            lines.append(key + ": " + str(value))
+            s = str(value)
+            if ":" in s or s.startswith('"') or s.startswith("'"):
+                s = '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
+            lines.append(key + ": " + s)
     lines.append("---")
     return "\n".join(lines)
 

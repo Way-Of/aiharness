@@ -16,9 +16,7 @@ Generate a daily end-of-day standup entry and save it to the shared f-rr-d thoug
 Determine the developer's username in order of priority:
 1. Check `git config user.name` in the project repo
 2. Check `$USER` environment variable
-3. If neither resolves to a known developer, prompt: "What is your developer username (e.g., zerwiz, craig, andre, tomas, michael)?"
-
-Known developer usernames: zerwiz, craig, andre, tomas, michael
+3. If neither resolves to a known developer, prompt: "What is your developer username?"
 
 ### Step 2: Prompt for Standup Details
 
@@ -27,7 +25,7 @@ Ask the developer for each of the following. Default answers are in brackets —
 #### What did you work on today?
 
 For each ticket or task:
-- Ticket ID (e.g., WOMONO-XXX) or "—" if no ticket
+- Ticket ID or "—" if no ticket
 - Brief description
 - Status change (e.g., "Backlog → In Progress" or "—")
 - Effort in hours (e.g., "3h")

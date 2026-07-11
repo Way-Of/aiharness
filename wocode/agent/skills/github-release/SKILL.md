@@ -1,6 +1,6 @@
 ---
-name: github_release
-description: "Create GitHub releases with changelog generation, version tagging, and automated publishing."
+name: github-release
+description: Create GitHub releases with changelog generation, version tagging, and automated publishing.
 allowed-tools: read, write, edit, bash, git, gh
 ---
 

@@ -1,6 +1,6 @@
 ---
-name: github_review
-description: "Review GitHub Pull Requests with structured feedback, approval workflow, and CTO Dashboard integration."
+name: github-review
+description: Review GitHub Pull Requests with structured feedback, approval workflow, and CTO Dashboard integration.
 allowed-tools: read, write, edit, bash, git, gh
 ---
 

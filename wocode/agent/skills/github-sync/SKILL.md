@@ -1,6 +1,6 @@
 ---
-name: github_sync
-description: "Sync feature branches with base branch, resolve conflicts, and manage branch lifecycle."
+name: github-sync
+description: Sync feature branches with base branch, resolve conflicts, and manage branch lifecycle.
 allowed-tools: read, write, edit, bash, git
 ---
 

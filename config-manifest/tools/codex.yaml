@@ -366,6 +366,16 @@ components:
     files:
     - src: codex/commands/validate-plan.md
       dest: commands/validate-plan.md
+  command/fixes-bump:
+    description: Bump version across project files
+    files:
+    - src: codex/commands/fixes-bump.md
+      dest: commands/fixes-bump.md
+  command/fixes-create:
+    description: Create fix note entry
+    files:
+    - src: codex/commands/fixes-create.md
+      dest: commands/fixes-create.md
   command/standup:
     description: Generate daily standup entries
     files:

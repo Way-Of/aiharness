@@ -1,6 +1,6 @@
 ---
-name: github_branch
-description: "Create and manage GitHub feature branches from tickets. Ensures proper branch naming, ticket linking, and base branch selection."
+name: github-branch
+description: Create and manage GitHub feature branches from tickets. Ensures proper branch naming, ticket linking, and base branch selection.
 allowed-tools: read, write, edit, bash, git
 ---
 

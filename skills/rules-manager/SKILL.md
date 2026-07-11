@@ -6,7 +6,7 @@ allowed-tools: Read, Grep, Glob, Bash, Write, Edit
 
 # Rules Manager Skill
 
-You are the Rules Manager for the AI Engineering Harness. Your job is to manage coding rules for projects, ensuring consistent standards and compliance.
+You are the Rules Manager. Your job is to manage coding rules for projects, ensuring consistent standards and compliance.
 
 ## Rules Overview
 

@@ -531,15 +531,6 @@
             }
           ]
         },
-        "skill/ticket-organization": {
-          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
-          "files": [
-            {
-              "src": "antigravity/skills/ticket_organization/SKILL.md",
-              "dest": "skills/ticket-organization/SKILL.md"
-            }
-          ]
-        },
         "skill/validate-podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
@@ -785,12 +776,21 @@
             }
           ]
         },
-        "skill/alliner-compliance-check": {
-          "description": "alliner-compliance-check skill — deep compliance validation for existing f-rr-d projects",
+        "skill/rules_manager": {
+          "description": "Rules Manager skill",
           "files": [
             {
-              "src": "antigravity/skills/alliner_compliance_check/SKILL.md",
-              "dest": "skills/alliner-compliance-check/SKILL.md"
+              "src": "antigravity/skills/rules_manager/SKILL.md",
+              "dest": "skills/rules_manager/SKILL.md"
+            }
+          ]
+        },
+        "command/rules": {
+          "description": "Rules management command",
+          "files": [
+            {
+              "src": "antigravity/commands/run-rules.toml",
+              "dest": "commands/run-rules.toml"
             }
           ]
         }
@@ -1211,15 +1211,6 @@
             }
           ]
         },
-        "skill/ticket-organization": {
-          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
-          "files": [
-            {
-              "src": "claude/skills/ticket_organization/SKILL.md",
-              "dest": "skills/ticket-organization/SKILL.md"
-            }
-          ]
-        },
         "skill/validate-podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
@@ -1474,6 +1465,24 @@
             }
           ]
         },
+        "command/fixes-bump": {
+          "description": "Bump version across project files",
+          "files": [
+            {
+              "src": "claude/commands/fixes-bump.md",
+              "dest": "commands/fixes-bump.md"
+            }
+          ]
+        },
+        "command/fixes-create": {
+          "description": "Create fix note entry",
+          "files": [
+            {
+              "src": "claude/commands/fixes-create.md",
+              "dest": "commands/fixes-create.md"
+            }
+          ]
+        },
         "command/standup": {
           "description": "Generate daily standup entries",
           "files": [
@@ -1492,12 +1501,21 @@
             }
           ]
         },
-        "skill/alliner-compliance-check": {
-          "description": "alliner-compliance-check skill — deep compliance validation for existing f-rr-d projects",
+        "skill/rules_manager": {
+          "description": "Rules Manager skill",
           "files": [
             {
-              "src": "claude/skills/alliner_compliance_check/SKILL.md",
-              "dest": "skills/alliner-compliance-check/SKILL.md"
+              "src": "claude/skills/rules_manager/SKILL.md",
+              "dest": "skills/rules_manager/SKILL.md"
+            }
+          ]
+        },
+        "command/rules": {
+          "description": "Rules management command",
+          "files": [
+            {
+              "src": "claude/commands/rules.md",
+              "dest": "commands/rules.md"
             }
           ]
         }
@@ -1889,15 +1907,6 @@
             }
           ]
         },
-        "skill/ticket-organization": {
-          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
-          "files": [
-            {
-              "src": "codex/skills/ticket_organization/SKILL.md",
-              "dest": "skills/ticket-organization/SKILL.md"
-            }
-          ]
-        },
         "skill/validate-podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
@@ -2164,6 +2173,24 @@
             }
           ]
         },
+        "command/fixes-bump": {
+          "description": "Bump version across project files",
+          "files": [
+            {
+              "src": "codex/commands/fixes-bump.md",
+              "dest": "commands/fixes-bump.md"
+            }
+          ]
+        },
+        "command/fixes-create": {
+          "description": "Create fix note entry",
+          "files": [
+            {
+              "src": "codex/commands/fixes-create.md",
+              "dest": "commands/fixes-create.md"
+            }
+          ]
+        },
         "command/standup": {
           "description": "Generate daily standup entries",
           "files": [
@@ -2182,12 +2209,21 @@
             }
           ]
         },
-        "skill/alliner-compliance-check": {
-          "description": "alliner-compliance-check skill — deep compliance validation for existing f-rr-d projects",
+        "skill/rules_manager": {
+          "description": "Rules Manager skill",
           "files": [
             {
-              "src": "codex/skills/alliner_compliance_check/SKILL.md",
-              "dest": "skills/alliner-compliance-check/SKILL.md"
+              "src": "codex/skills/rules_manager/SKILL.md",
+              "dest": "skills/rules_manager/SKILL.md"
+            }
+          ]
+        },
+        "command/rules": {
+          "description": "Rules management command",
+          "files": [
+            {
+              "src": "codex/commands/rules.md",
+              "dest": "commands/rules.md"
             }
           ]
         }
@@ -2626,15 +2662,6 @@
             }
           ]
         },
-        "skill/ticket-organization": {
-          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
-          "files": [
-            {
-              "src": "opencode/skills/ticket-organization/SKILL.md",
-              "dest": "skills/ticket-organization/SKILL.md"
-            }
-          ]
-        },
         "skill/validate-podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
@@ -2862,6 +2889,24 @@
             }
           ]
         },
+        "command/fixes-bump": {
+          "description": "Bump version across project files",
+          "files": [
+            {
+              "src": "opencode/commands/fixes-bump.md",
+              "dest": "commands/fixes-bump.md"
+            }
+          ]
+        },
+        "command/fixes-create": {
+          "description": "Create fix note entry",
+          "files": [
+            {
+              "src": "opencode/commands/fixes-create.md",
+              "dest": "commands/fixes-create.md"
+            }
+          ]
+        },
         "command/standup": {
           "description": "Generate daily standup entries",
           "files": [
@@ -2880,12 +2925,21 @@
             }
           ]
         },
-        "skill/alliner-compliance-check": {
-          "description": "alliner-compliance-check skill — deep compliance validation for existing f-rr-d projects",
+        "skill/rules-manager": {
+          "description": "Rules Manager skill",
           "files": [
             {
-              "src": "opencode/skills/alliner-compliance-check/SKILL.md",
-              "dest": "skills/alliner-compliance-check/SKILL.md"
+              "src": "opencode/skills/rules-manager/SKILL.md",
+              "dest": "skills/rules-manager/SKILL.md"
+            }
+          ]
+        },
+        "command/rules": {
+          "description": "Rules management command",
+          "files": [
+            {
+              "src": "opencode/commands/rules.md",
+              "dest": "commands/rules.md"
             }
           ]
         }
@@ -3427,15 +3481,6 @@
             }
           ]
         },
-        "skill/ticket-organization": {
-          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
-          "files": [
-            {
-              "src": "pi/agent/skills/ticket-organization/SKILL.md",
-              "dest": "skills/ticket-organization/SKILL.md"
-            }
-          ]
-        },
         "skill/validate-podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
@@ -3800,6 +3845,24 @@
             }
           ]
         },
+        "prompt/fixes-bump": {
+          "description": "Bump version across project files",
+          "files": [
+            {
+              "src": "pi/agent/prompts/fixes-bump.md",
+              "dest": "prompts/fixes-bump.md"
+            }
+          ]
+        },
+        "prompt/fixes-create": {
+          "description": "Create fix note entry",
+          "files": [
+            {
+              "src": "pi/agent/prompts/fixes-create.md",
+              "dest": "prompts/fixes-create.md"
+            }
+          ]
+        },
         "prompt/standup": {
           "description": "Generate daily standup entries",
           "files": [
@@ -3818,12 +3881,21 @@
             }
           ]
         },
-        "skill/alliner-compliance-check": {
-          "description": "alliner-compliance-check skill — deep compliance validation for existing f-rr-d projects",
+        "skill/rules-manager": {
+          "description": "Rules Manager skill",
           "files": [
             {
-              "src": "pi/agent/skills/alliner-compliance-check/SKILL.md",
-              "dest": "skills/alliner-compliance-check/SKILL.md"
+              "src": "pi/agent/skills/rules-manager/SKILL.md",
+              "dest": "skills/rules-manager/SKILL.md"
+            }
+          ]
+        },
+        "prompt/rules": {
+          "description": "Rules management prompt",
+          "files": [
+            {
+              "src": "pi/agent/prompts/rules.md",
+              "dest": "prompts/rules.md"
             }
           ]
         }
@@ -4443,15 +4515,6 @@
             }
           ]
         },
-        "skill/ticket-organization": {
-          "description": "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
-          "files": [
-            {
-              "src": "wocode/agent/skills/ticket-organization/SKILL.md",
-              "dest": "skills/ticket-organization/SKILL.md"
-            }
-          ]
-        },
         "skill/self-documentation": {
           "description": "Enables Wo to answer How do I...? and What's the command for...? questions by searching its own commands, skills, and documentation locally",
           "files": [
@@ -4715,6 +4778,24 @@
             }
           ]
         },
+        "prompt/fixes-bump": {
+          "description": "Bump version across project files",
+          "files": [
+            {
+              "src": "wocode/agent/prompts/fixes-bump.md",
+              "dest": "prompts/fixes-bump.md"
+            }
+          ]
+        },
+        "prompt/fixes-create": {
+          "description": "Create fix note entry",
+          "files": [
+            {
+              "src": "wocode/agent/prompts/fixes-create.md",
+              "dest": "prompts/fixes-create.md"
+            }
+          ]
+        },
         "prompt/standup": {
           "description": "Generate daily standup entries",
           "files": [
@@ -4733,12 +4814,21 @@
             }
           ]
         },
-        "skill/alliner-compliance-check": {
-          "description": "alliner-compliance-check skill — deep compliance validation for existing f-rr-d projects",
+        "skill/rules-manager": {
+          "description": "Rules Manager skill",
           "files": [
             {
-              "src": "wocode/agent/skills/alliner-compliance-check/SKILL.md",
-              "dest": "skills/alliner-compliance-check/SKILL.md"
+              "src": "wocode/agent/skills/rules-manager/SKILL.md",
+              "dest": "skills/rules-manager/SKILL.md"
+            }
+          ]
+        },
+        "prompt/rules": {
+          "description": "Rules management prompt",
+          "files": [
+            {
+              "src": "wocode/agent/prompts/rules.md",
+              "dest": "prompts/rules.md"
             }
           ]
         }

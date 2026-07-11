@@ -485,6 +485,16 @@ components:
     files:
     - src: wocode/agent/prompts/ticket-create.md
       dest: prompts/ticket-create.md
+  prompt/fixes-bump:
+    description: Bump version across project files
+    files:
+    - src: wocode/agent/prompts/fixes-bump.md
+      dest: prompts/fixes-bump.md
+  prompt/fixes-create:
+    description: Create fix note entry
+    files:
+    - src: wocode/agent/prompts/fixes-create.md
+      dest: prompts/fixes-create.md
   prompt/standup:
     description: Generate daily standup entries
     files:

@@ -370,6 +370,16 @@ components:
     files:
     - src: opencode/skills/fixes-create/SKILL.md
       dest: skills/fixes-create/SKILL.md
+  command/fixes-bump:
+    description: Bump version across project files
+    files:
+    - src: opencode/commands/fixes-bump.md
+      dest: commands/fixes-bump.md
+  command/fixes-create:
+    description: Create fix note entry
+    files:
+    - src: opencode/commands/fixes-create.md
+      dest: commands/fixes-create.md
   command/standup:
     description: Generate daily standup entries
     files:

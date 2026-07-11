@@ -492,6 +492,16 @@ components:
     files:
     - src: pi/agent/prompts/ticket-create.md
       dest: prompts/ticket-create.md
+  prompt/fixes-bump:
+    description: Bump version across project files
+    files:
+    - src: pi/agent/prompts/fixes-bump.md
+      dest: prompts/fixes-bump.md
+  prompt/fixes-create:
+    description: Create fix note entry
+    files:
+    - src: pi/agent/prompts/fixes-create.md
+      dest: prompts/fixes-create.md
   prompt/standup:
     description: Generate daily standup entries
     files:
@@ -505,7 +515,7 @@ components:
   skill/rules-manager:
     description: Rules Manager skill
     files:
-    - src: pi/skills/rules-manager/SKILL.md
+    - src: pi/agent/skills/rules-manager/SKILL.md
       dest: skills/rules-manager/SKILL.md
   prompt/rules:
     description: Rules management prompt

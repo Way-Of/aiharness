@@ -195,7 +195,7 @@ Read back the file to confirm it was written correctly.
 ### Non-Git Repository
 Create the AGENTS.md anyway — it's documentation, not a git hook.
 
-### No AI Engineering Harness Installed
+### No Harness Installed
 If no harness config directory is found, create a minimal AGENTS.md with just the project overview and architecture standard. The user can enrich it later.
 
 ### Per-Tool Frontmatter Differences
@@ -209,12 +209,12 @@ If multiple harness config directories are detected (e.g., both `.claude/` and `
 ### f-rr-d Per-Project AGENTS.md
 Every project in the f-rr-d thoughts repo has a per-project AGENTS.md at `thoughts/<project>/AGENTS.md` that:
 - Documents the project's folder structure within f-rr-d
-- Lists available skills from the AI Engineering Harness
+- Lists available skills from the harness
 - Describes the agent workflow for that project
 - Is created/updated by `init-harness` using standard templates
 
 ### Harness AGENTS.md
-The AI Engineering Harness has its own AGENTS.md at `packages/@aiengineeringharness/AGENTS.md` that:
+The harness has its own AGENTS.md at `packages/@aiengineeringharness/AGENTS.md` that:
 - Serves as structured reference data for AI coding assistants
 - Contains repository structure, commands/skills table, agent table, workflow
 - Is maintained manually alongside the code

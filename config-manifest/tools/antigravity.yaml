@@ -414,13 +414,13 @@ components:
   skill/fixes-bump:
     description: fixes-bump skill
     files:
-    - src: antigravity/skills/fixes-bump/SKILL.md
-      dest: skills/fixes-bump/SKILL.md
+    - src: antigravity/skills/fixes_bump/SKILL.md
+      dest: skills/fixes_bump/SKILL.md
   skill/fixes-create:
     description: fixes-create skill
     files:
-    - src: antigravity/skills/fixes-create/SKILL.md
-      dest: skills/fixes-create/SKILL.md
+    - src: antigravity/skills/fixes_create/SKILL.md
+      dest: skills/fixes_create/SKILL.md
   command/standup:
     description: Generate daily standup entries
     files:

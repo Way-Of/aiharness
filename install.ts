@@ -2007,7 +2007,7 @@ if (args.purge) {
       }
       // Also check for version file
       if (!looksLikeConfig) {
-        try { const _ = await Deno.stat(join(targetDir, ".ai-harness-version")); looksLikeConfig = true; } catch { /* ok */ }
+        try { const _ = await Deno.stat(join(targetDir, ".harness-version")); looksLikeConfig = true; } catch { /* ok */ }
       }
     } catch { /* target dir doesn't exist */ }
 
@@ -2045,7 +2045,7 @@ if (args.purge) {
     }
 
     // Remove version marker and any harness config files
-    for (const extra of [".ai-harness-version"]) {
+    for (const extra of [".harness-version"]) {
       const path = join(targetDir, extra);
       if (args["dry-run"]) {
         console.log(`  would remove  ${extra}`);
@@ -2189,7 +2189,7 @@ if (args.uninstall) {
         const dir = join(targetDir, subdir);
         try { await Deno.remove(dir, { recursive: true }); } catch { /* not found */ }
       }
-      const versionFile = join(targetDir, ".ai-harness-version");
+      const versionFile = join(targetDir, ".harness-version");
       try { await Deno.remove(versionFile); } catch { /* not found */ }
     }
 

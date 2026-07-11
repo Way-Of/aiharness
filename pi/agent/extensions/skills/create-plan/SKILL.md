@@ -149,6 +149,24 @@ Write the plan to `thoughts/plans/{descriptive_name}.md` using this template:
 
 Continue refining until the user is satisfied.
 
+### Step 6: MANDATORY VALIDATION GATE
+
+**STOP. Do NOT proceed to implementation.**
+
+After the plan is finalized:
+
+1. **Present the complete plan** to the user with a summary
+2. **Ask for explicit approval**: "Do you approve this plan? Reply 'approve' to proceed or request changes."
+3. **Wait for user response** — do not assume approval
+4. **If approved**: Save the plan, update ticket status to "Planned", and report: "Plan approved. Use `/implement_plan` to execute."
+5. **If changes requested**: Return to Step 5 and iterate
+
+**CRITICAL RULE**: The create-plan command ONLY creates plans. It never implements them. Implementation is a separate step via `/implement_plan`. This separation ensures:
+- Plans are reviewed before code is written
+- Users maintain control over what gets implemented
+- Plans can be shared, discussed, and revised without side effects
+
+
 ## Important Guidelines
 
 1. **Be Skeptical** - question vague requirements

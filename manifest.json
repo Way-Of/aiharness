@@ -744,8 +744,8 @@
           "description": "fixes-bump skill",
           "files": [
             {
-              "src": "antigravity/skills/fixes-bump/SKILL.md",
-              "dest": "skills/fixes-bump/SKILL.md"
+              "src": "antigravity/skills/fixes_bump/SKILL.md",
+              "dest": "skills/fixes_bump/SKILL.md"
             }
           ]
         },
@@ -753,8 +753,8 @@
           "description": "fixes-create skill",
           "files": [
             {
-              "src": "antigravity/skills/fixes-create/SKILL.md",
-              "dest": "skills/fixes-create/SKILL.md"
+              "src": "antigravity/skills/fixes_create/SKILL.md",
+              "dest": "skills/fixes_create/SKILL.md"
             }
           ]
         },

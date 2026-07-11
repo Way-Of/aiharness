@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Renamed "Templates & Rules" boilerplate to "Context Reference" across 659 skill files
 - Added knowledgebase reference (`thoughts/global/knowledge/`) to all skill boilerplate
 - Added Context Reference section to 108 command and prompt files (rules, templates, knowledgebase paths)
+- Added mandatory validation gate to create-plan: plans require explicit user approval before implementation (16 files)
 
 ## [1.7.21] - 2026-07-11
 

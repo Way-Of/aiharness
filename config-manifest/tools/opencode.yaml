@@ -34,21 +34,6 @@ components:
       dest: agents/scout.md
     - src: opencode/agents/netlify_troubleshooter.md
       dest: agents/netlify_troubleshooter.md
-  command/create_plan:
-    description: Create implementation plans command
-    files:
-    - src: opencode/commands/create-plan.md
-      dest: commands/create-plan.md
-  command/implement_plan:
-    description: Execute an approved plan command
-    files:
-    - src: opencode/commands/implement-plan.md
-      dest: commands/implement-plan.md
-  command/validate_plan:
-    description: Validate implementation against plan command
-    files:
-    - src: opencode/commands/validate-plan.md
-      dest: commands/validate-plan.md
   skill/init-harness:
     description: Initialize harness skill
     files:
@@ -407,3 +392,23 @@ components:
     files:
     - src: opencode/skills/ticket-organization/SKILL.md
       dest: skills/ticket-organization/SKILL.md
+  skill/alliner-compliance-check:
+    description: Deep compliance validation for existing f-rr-d projects
+    files:
+    - src: opencode/skills/alliner-compliance-check/SKILL.md
+      dest: skills/alliner-compliance-check/SKILL.md
+  command/create-plan:
+    description: Create implementation plans command
+    files:
+    - src: opencode/commands/create-plan.md
+      dest: commands/create-plan.md
+  command/implement-plan:
+    description: Execute an approved plan command
+    files:
+    - src: opencode/commands/implement-plan.md
+      dest: commands/implement-plan.md
+  command/validate-plan:
+    description: Validate implementation against plan command
+    files:
+    - src: opencode/commands/validate-plan.md
+      dest: commands/validate-plan.md

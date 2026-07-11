@@ -529,3 +529,8 @@ components:
     files:
     - src: pi/agent/skills/ticket-organization/SKILL.md
       dest: skills/ticket-organization/SKILL.md
+  skill/alliner-compliance-check:
+    description: Deep compliance validation for existing f-rr-d projects
+    files:
+    - src: pi/agent/skills/alliner-compliance-check/SKILL.md
+      dest: skills/alliner-compliance-check/SKILL.md

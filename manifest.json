@@ -188,82 +188,6 @@
             }
           ]
         },
-        "skill/create-plan": {
-          "description": "Create Plan skill",
-          "files": [
-            {
-              "src": "antigravity/skills/create_plan/SKILL.md",
-              "dest": "skills/create-plan/SKILL.md"
-            }
-          ]
-        },
-        "skill/git-commit-helper": {
-          "description": "Git Commit Helper skill",
-          "files": [
-            {
-              "src": "antigravity/skills/git_commit_helper/SKILL.md",
-              "dest": "skills/git-commit-helper/SKILL.md"
-            }
-          ]
-        },
-        "skill/implement-plan": {
-          "description": "Implement Plan skill",
-          "files": [
-            {
-              "src": "antigravity/skills/implement_plan/SKILL.md",
-              "dest": "skills/implement-plan/SKILL.md"
-            }
-          ]
-        },
-        "skill/improve-codebase-architecture": {
-          "description": "Improve Codebase Architecture skill",
-          "files": [
-            {
-              "src": "antigravity/skills/improve_codebase_architecture/REFERENCE.md",
-              "dest": "skills/improve-codebase-architecture/REFERENCE.md"
-            },
-            {
-              "src": "antigravity/skills/improve_codebase_architecture/SKILL.md",
-              "dest": "skills/improve-codebase-architecture/SKILL.md"
-            }
-          ]
-        },
-        "skill/init-harness": {
-          "description": "Init Harness skill",
-          "files": [
-            {
-              "src": "antigravity/skills/init_harness/SKILL.md",
-              "dest": "skills/init-harness/SKILL.md"
-            }
-          ]
-        },
-        "skill/pr-description-generator": {
-          "description": "Pr Description Generator skill",
-          "files": [
-            {
-              "src": "antigravity/skills/pr_description_generator/SKILL.md",
-              "dest": "skills/pr-description-generator/SKILL.md"
-            }
-          ]
-        },
-        "skill/prd-to-issues": {
-          "description": "Prd To Issues skill",
-          "files": [
-            {
-              "src": "antigravity/skills/prd_to_issues/SKILL.md",
-              "dest": "skills/prd-to-issues/SKILL.md"
-            }
-          ]
-        },
-        "skill/research-codebase": {
-          "description": "Research Codebase skill",
-          "files": [
-            {
-              "src": "antigravity/skills/research_codebase/SKILL.md",
-              "dest": "skills/research-codebase/SKILL.md"
-            }
-          ]
-        },
         "skill/tdd": {
           "description": "Tdd skill",
           "files": [
@@ -293,7 +217,164 @@
             }
           ]
         },
-        "skill/usage-rules": {
+        "skill/debug": {
+          "description": "Debug issues during manual testing or implementation",
+          "files": [
+            {
+              "src": "antigravity/skills/debug/SKILL.md",
+              "dest": "skills/debug/SKILL.md"
+            }
+          ]
+        },
+        "skill/knowledge": {
+          "description": "knowledge skill",
+          "files": [
+            {
+              "src": "antigravity/skills/knowledge/SKILL.md",
+              "dest": "skills/knowledge/SKILL.md"
+            }
+          ]
+        },
+        "skill/standup": {
+          "description": "standup skill",
+          "files": [
+            {
+              "src": "antigravity/skills/standup/SKILL.md",
+              "dest": "skills/standup/SKILL.md"
+            }
+          ]
+        },
+        "skill/commit": {
+          "description": "commit skill",
+          "files": [
+            {
+              "src": "antigravity/skills/commit/SKILL.md",
+              "dest": "skills/commit/SKILL.md"
+            }
+          ]
+        },
+        "command/standup": {
+          "description": "Generate daily standup entries",
+          "files": [
+            {
+              "src": "antigravity/commands/standup.toml",
+              "dest": "commands/standup.toml"
+            }
+          ]
+        },
+        "skill/sales": {
+          "description": "Sales knowledge, playbooks, and competitive intelligence",
+          "files": [
+            {
+              "src": "antigravity/skills/sales/SKILL.md",
+              "dest": "skills/sales/SKILL.md"
+            }
+          ]
+        },
+        "skill/rules_manager": {
+          "description": "Rules Manager skill",
+          "files": [
+            {
+              "src": "antigravity/skills/rules_manager/SKILL.md",
+              "dest": "skills/rules_manager/SKILL.md"
+            }
+          ]
+        },
+        "command/rules": {
+          "description": "Rules management command",
+          "files": [
+            {
+              "src": "antigravity/commands/run-rules.toml",
+              "dest": "commands/run-rules.toml"
+            }
+          ]
+        },
+        "skill/alliner_compliance_check": {
+          "description": "Deep compliance validation for existing f-rr-d projects",
+          "files": [
+            {
+              "src": "antigravity/skills/alliner_compliance_check/SKILL.md",
+              "dest": "skills/alliner_compliance_check/SKILL.md"
+            }
+          ]
+        },
+        "skill/create_plan": {
+          "description": "Create Plan skill",
+          "files": [
+            {
+              "src": "antigravity/skills/create_plan/SKILL.md",
+              "dest": "skills/create-plan/SKILL.md"
+            }
+          ]
+        },
+        "skill/git_commit_helper": {
+          "description": "Git Commit Helper skill",
+          "files": [
+            {
+              "src": "antigravity/skills/git_commit_helper/SKILL.md",
+              "dest": "skills/git-commit-helper/SKILL.md"
+            }
+          ]
+        },
+        "skill/implement_plan": {
+          "description": "Implement Plan skill",
+          "files": [
+            {
+              "src": "antigravity/skills/implement_plan/SKILL.md",
+              "dest": "skills/implement-plan/SKILL.md"
+            }
+          ]
+        },
+        "skill/improve_codebase_architecture": {
+          "description": "Improve Codebase Architecture skill",
+          "files": [
+            {
+              "src": "antigravity/skills/improve_codebase_architecture/REFERENCE.md",
+              "dest": "skills/improve-codebase-architecture/REFERENCE.md"
+            },
+            {
+              "src": "antigravity/skills/improve_codebase_architecture/SKILL.md",
+              "dest": "skills/improve-codebase-architecture/SKILL.md"
+            }
+          ]
+        },
+        "skill/init_harness": {
+          "description": "Init Harness skill",
+          "files": [
+            {
+              "src": "antigravity/skills/init_harness/SKILL.md",
+              "dest": "skills/init-harness/SKILL.md"
+            }
+          ]
+        },
+        "skill/pr_description_generator": {
+          "description": "Pr Description Generator skill",
+          "files": [
+            {
+              "src": "antigravity/skills/pr_description_generator/SKILL.md",
+              "dest": "skills/pr-description-generator/SKILL.md"
+            }
+          ]
+        },
+        "skill/prd_to_issues": {
+          "description": "Prd To Issues skill",
+          "files": [
+            {
+              "src": "antigravity/skills/prd_to_issues/SKILL.md",
+              "dest": "skills/prd-to-issues/SKILL.md"
+            }
+          ]
+        },
+        "skill/research_codebase": {
+          "description": "Research Codebase skill",
+          "files": [
+            {
+              "src": "antigravity/skills/research_codebase/SKILL.md",
+              "dest": "skills/research-codebase/SKILL.md"
+            }
+          ]
+        },
+        "skill/usage_rules": {
           "description": "Usage Rules skill",
           "files": [
             {
@@ -302,7 +383,7 @@
             }
           ]
         },
-        "skill/validate-plan": {
+        "skill/validate_plan": {
           "description": "Validate Plan skill",
           "files": [
             {
@@ -311,7 +392,7 @@
             }
           ]
         },
-        "skill/write-a-prd": {
+        "skill/write_a_prd": {
           "description": "Write A Prd skill",
           "files": [
             {
@@ -320,7 +401,7 @@
             }
           ]
         },
-        "skill/auto-ticket-creator": {
+        "skill/auto_ticket_creator": {
           "description": "Auto Ticket Creator skill",
           "files": [
             {
@@ -329,7 +410,7 @@
             }
           ]
         },
-        "skill/backlog-groomer": {
+        "skill/backlog_groomer": {
           "description": "Backlog Groomer skill",
           "files": [
             {
@@ -338,7 +419,7 @@
             }
           ]
         },
-        "skill/document-generation": {
+        "skill/document_generation": {
           "description": "Document Generation skill",
           "files": [
             {
@@ -347,7 +428,7 @@
             }
           ]
         },
-        "skill/help-command": {
+        "skill/help_command": {
           "description": "Help Command skill",
           "files": [
             {
@@ -356,7 +437,7 @@
             }
           ]
         },
-        "skill/ticket-manager": {
+        "skill/ticket_manager": {
           "description": "Ticket Manager skill",
           "files": [
             {
@@ -369,7 +450,7 @@
             }
           ]
         },
-        "skill/build-tool": {
+        "skill/build_tool": {
           "description": "Universal component builder for all 7 AI coding tools",
           "files": [
             {
@@ -378,7 +459,7 @@
             }
           ]
         },
-        "skill/build-tool-skill": {
+        "skill/build_tool_skill": {
           "description": "Unified skill builder, validator, adapter, and lifecycle manager for all 7 tools",
           "files": [
             {
@@ -419,7 +500,7 @@
             }
           ]
         },
-        "skill/build-tool-agent": {
+        "skill/build_tool_agent": {
           "description": "Unified agent builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
@@ -428,7 +509,7 @@
             }
           ]
         },
-        "skill/build-tool-extension": {
+        "skill/build_tool_extension": {
           "description": "Unified extension/plugin builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
@@ -437,7 +518,7 @@
             }
           ]
         },
-        "skill/build-tool-tui": {
+        "skill/build_tool_tui": {
           "description": "Unified TUI component builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
@@ -446,7 +527,7 @@
             }
           ]
         },
-        "skill/build-tool-cli": {
+        "skill/build_tool_cli": {
           "description": "Unified CLI reference for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
@@ -455,7 +536,7 @@
             }
           ]
         },
-        "skill/build-tool-themes": {
+        "skill/build_tool_themes": {
           "description": "Unified theme builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
@@ -464,7 +545,7 @@
             }
           ]
         },
-        "skill/build-tool-prompts": {
+        "skill/build_tool_prompts": {
           "description": "Unified prompt template builder for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
@@ -473,7 +554,7 @@
             }
           ]
         },
-        "skill/build-tool-keybindings": {
+        "skill/build_tool_keybindings": {
           "description": "Unified keybinding reference for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
@@ -482,7 +563,7 @@
             }
           ]
         },
-        "skill/build-tool-config": {
+        "skill/build_tool_config": {
           "description": "Unified configuration reference for all 7 tools \u2014 deployed to Antigravity",
           "files": [
             {
@@ -491,7 +572,7 @@
             }
           ]
         },
-        "skill/build-auto-ticket-creator": {
+        "skill/build_auto_ticket_creator": {
           "description": "Monitor codebase, dependencies, and external sources to auto-create tickets for agent updates, skill updates, dep updates, security advisories",
           "files": [
             {
@@ -500,7 +581,7 @@
             }
           ]
         },
-        "skill/build-backlog-groomer": {
+        "skill/build_backlog_groomer": {
           "description": "Product & Ticket Manager. Helps transform ideas/plans into structured tickets in thoughts/shared/tickets/ and maintains the project backlog.",
           "files": [
             {
@@ -509,7 +590,7 @@
             }
           ]
         },
-        "skill/self-documentation": {
+        "skill/self_documentation": {
           "description": "Enables Wo to answer How do I...? and What's the command for...? questions by searching its own commands, skills, and documentation locally",
           "files": [
             {
@@ -518,7 +599,7 @@
             }
           ]
         },
-        "skill/ticket-executor": {
+        "skill/ticket_executor": {
           "description": "Execute approved plans in phases, validating telemetry and committing changes after each phase completes successfully",
           "files": [
             {
@@ -531,7 +612,7 @@
             }
           ]
         },
-        "skill/validate-podman": {
+        "skill/validate_podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
             {
@@ -540,7 +621,7 @@
             }
           ]
         },
-        "skill/github-branch": {
+        "skill/github_branch": {
           "description": "Create and manage GitHub feature branches from tickets with proper naming and protection",
           "files": [
             {
@@ -549,7 +630,7 @@
             }
           ]
         },
-        "skill/github-pr": {
+        "skill/github_pr": {
           "description": "Create, manage, and review GitHub Pull Requests with ticket linking and template support",
           "files": [
             {
@@ -558,7 +639,7 @@
             }
           ]
         },
-        "skill/github-review": {
+        "skill/github_review": {
           "description": "Review GitHub Pull Requests with structured feedback and CTO Dashboard integration",
           "files": [
             {
@@ -567,7 +648,7 @@
             }
           ]
         },
-        "skill/github-sync": {
+        "skill/github_sync": {
           "description": "Sync feature branches with base branch, resolve conflicts, manage branch lifecycle",
           "files": [
             {
@@ -576,7 +657,7 @@
             }
           ]
         },
-        "skill/github-release": {
+        "skill/github_release": {
           "description": "Create GitHub releases with changelog generation, version tagging, and automated publishing",
           "files": [
             {
@@ -585,7 +666,7 @@
             }
           ]
         },
-        "skill/github-issue": {
+        "skill/github_issue": {
           "description": "Create, manage, and link GitHub Issues with tickets, bi-directional sync",
           "files": [
             {
@@ -594,7 +675,7 @@
             }
           ]
         },
-        "skill/runbook-manager": {
+        "skill/runbook_manager": {
           "description": "Generate, update, and maintain production runbooks per project",
           "files": [
             {
@@ -607,7 +688,7 @@
             }
           ]
         },
-        "skill/postmortem-manager": {
+        "skill/postmortem_manager": {
           "description": "Generate incident postmortems with interactive flow and git metrics",
           "files": [
             {
@@ -620,7 +701,7 @@
             }
           ]
         },
-        "skill/session-export": {
+        "skill/session_export": {
           "description": "Capture working session as structured session history with git metrics and context",
           "files": [
             {
@@ -633,7 +714,7 @@
             }
           ]
         },
-        "command/ticket-create": {
+        "command/ticket_create": {
           "description": "Interactive ticket creation wizard",
           "files": [
             {
@@ -642,7 +723,7 @@
             }
           ]
         },
-        "skill/fixes-manager": {
+        "skill/fixes_manager": {
           "description": "Cross-project fix/release notes and version manager. Creates, updates, bumps, validates, and syncs fix notes for WOMONO, WOW, OPT.",
           "files": [
             {
@@ -695,16 +776,7 @@
             }
           ]
         },
-        "skill/debug": {
-          "description": "Debug issues during manual testing or implementation",
-          "files": [
-            {
-              "src": "antigravity/skills/debug/SKILL.md",
-              "dest": "skills/debug/SKILL.md"
-            }
-          ]
-        },
-        "skill/agents-md-manager": {
+        "skill/agents_md_manager": {
           "description": "agents-md-manager skill",
           "files": [
             {
@@ -713,34 +785,7 @@
             }
           ]
         },
-        "skill/knowledge": {
-          "description": "knowledge skill",
-          "files": [
-            {
-              "src": "antigravity/skills/knowledge/SKILL.md",
-              "dest": "skills/knowledge/SKILL.md"
-            }
-          ]
-        },
-        "skill/standup": {
-          "description": "standup skill",
-          "files": [
-            {
-              "src": "antigravity/skills/standup/SKILL.md",
-              "dest": "skills/standup/SKILL.md"
-            }
-          ]
-        },
-        "skill/commit": {
-          "description": "commit skill",
-          "files": [
-            {
-              "src": "antigravity/skills/commit/SKILL.md",
-              "dest": "skills/commit/SKILL.md"
-            }
-          ]
-        },
-        "skill/fixes-bump": {
+        "skill/fixes_bump": {
           "description": "fixes-bump skill",
           "files": [
             {
@@ -749,7 +794,7 @@
             }
           ]
         },
-        "skill/fixes-create": {
+        "skill/fixes_create": {
           "description": "fixes-create skill",
           "files": [
             {
@@ -758,43 +803,7 @@
             }
           ]
         },
-        "command/standup": {
-          "description": "Generate daily standup entries",
-          "files": [
-            {
-              "src": "antigravity/commands/standup.toml",
-              "dest": "commands/standup.toml"
-            }
-          ]
-        },
-        "skill/sales": {
-          "description": "Sales knowledge, playbooks, and competitive intelligence",
-          "files": [
-            {
-              "src": "antigravity/skills/sales/SKILL.md",
-              "dest": "skills/sales/SKILL.md"
-            }
-          ]
-        },
-        "skill/rules_manager": {
-          "description": "Rules Manager skill",
-          "files": [
-            {
-              "src": "antigravity/skills/rules_manager/SKILL.md",
-              "dest": "skills/rules_manager/SKILL.md"
-            }
-          ]
-        },
-        "command/rules": {
-          "description": "Rules management command",
-          "files": [
-            {
-              "src": "antigravity/commands/run-rules.toml",
-              "dest": "commands/run-rules.toml"
-            }
-          ]
-        },
-        "skill/ticket-organization": {
+        "skill/ticket_organization": {
           "description": "Proactively organize tickets across all namespaces \u2014 auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
           "files": [
             {
@@ -881,42 +890,6 @@
             }
           ]
         },
-        "skill/create-plan": {
-          "description": "Create Plan skill",
-          "files": [
-            {
-              "src": "claude/skills/create_plan/SKILL.md",
-              "dest": "skills/create-plan/SKILL.md"
-            }
-          ]
-        },
-        "skill/implement-plan": {
-          "description": "Implement Plan skill",
-          "files": [
-            {
-              "src": "claude/skills/implement_plan/SKILL.md",
-              "dest": "skills/implement-plan/SKILL.md"
-            }
-          ]
-        },
-        "skill/init-harness": {
-          "description": "Init Harness skill",
-          "files": [
-            {
-              "src": "claude/skills/init_harness/SKILL.md",
-              "dest": "skills/init-harness/SKILL.md"
-            }
-          ]
-        },
-        "skill/research-codebase": {
-          "description": "Research Codebase skill",
-          "files": [
-            {
-              "src": "claude/skills/research_codebase/SKILL.md",
-              "dest": "skills/research-codebase/SKILL.md"
-            }
-          ]
-        },
         "skill/tdd": {
           "description": "Tdd skill",
           "files": [
@@ -946,7 +919,124 @@
             }
           ]
         },
-        "skill/validate-plan": {
+        "skill/commit": {
+          "description": "Create structured git commits",
+          "files": [
+            {
+              "src": "claude/skills/commit/SKILL.md",
+              "dest": "skills/commit/SKILL.md"
+            }
+          ]
+        },
+        "skill/debug": {
+          "description": "Debug issues during manual testing or implementation",
+          "files": [
+            {
+              "src": "claude/skills/debug/SKILL.md",
+              "dest": "skills/debug/SKILL.md"
+            }
+          ]
+        },
+        "skill/knowledge": {
+          "description": "knowledge skill",
+          "files": [
+            {
+              "src": "claude/skills/knowledge/SKILL.md",
+              "dest": "skills/knowledge/SKILL.md"
+            }
+          ]
+        },
+        "skill/standup": {
+          "description": "standup skill",
+          "files": [
+            {
+              "src": "claude/skills/standup/SKILL.md",
+              "dest": "skills/standup/SKILL.md"
+            }
+          ]
+        },
+        "command/standup": {
+          "description": "Generate daily standup entries",
+          "files": [
+            {
+              "src": "claude/commands/standup.md",
+              "dest": "commands/standup.md"
+            }
+          ]
+        },
+        "skill/sales": {
+          "description": "Sales knowledge, playbooks, and competitive intelligence",
+          "files": [
+            {
+              "src": "claude/skills/sales/SKILL.md",
+              "dest": "skills/sales/SKILL.md"
+            }
+          ]
+        },
+        "skill/rules_manager": {
+          "description": "Rules Manager skill",
+          "files": [
+            {
+              "src": "claude/skills/rules_manager/SKILL.md",
+              "dest": "skills/rules_manager/SKILL.md"
+            }
+          ]
+        },
+        "command/rules": {
+          "description": "Rules management command",
+          "files": [
+            {
+              "src": "claude/commands/rules.md",
+              "dest": "commands/rules.md"
+            }
+          ]
+        },
+        "skill/alliner_compliance_check": {
+          "description": "Deep compliance validation for existing f-rr-d projects",
+          "files": [
+            {
+              "src": "claude/skills/alliner_compliance_check/SKILL.md",
+              "dest": "skills/alliner-compliance-check/SKILL.md"
+            }
+          ]
+        },
+        "skill/create_plan": {
+          "description": "Create Plan skill",
+          "files": [
+            {
+              "src": "claude/skills/create_plan/SKILL.md",
+              "dest": "skills/create-plan/SKILL.md"
+            }
+          ]
+        },
+        "skill/implement_plan": {
+          "description": "Implement Plan skill",
+          "files": [
+            {
+              "src": "claude/skills/implement_plan/SKILL.md",
+              "dest": "skills/implement-plan/SKILL.md"
+            }
+          ]
+        },
+        "skill/init_harness": {
+          "description": "Init Harness skill",
+          "files": [
+            {
+              "src": "claude/skills/init_harness/SKILL.md",
+              "dest": "skills/init-harness/SKILL.md"
+            }
+          ]
+        },
+        "skill/research_codebase": {
+          "description": "Research Codebase skill",
+          "files": [
+            {
+              "src": "claude/skills/research_codebase/SKILL.md",
+              "dest": "skills/research-codebase/SKILL.md"
+            }
+          ]
+        },
+        "skill/validate_plan": {
           "description": "Validate Plan skill",
           "files": [
             {
@@ -955,7 +1045,7 @@
             }
           ]
         },
-        "skill/auto-ticket-creator": {
+        "skill/auto_ticket_creator": {
           "description": "Auto Ticket Creator skill",
           "files": [
             {
@@ -964,7 +1054,7 @@
             }
           ]
         },
-        "skill/backlog-groomer": {
+        "skill/backlog_groomer": {
           "description": "Backlog Groomer skill",
           "files": [
             {
@@ -973,7 +1063,7 @@
             }
           ]
         },
-        "skill/document-generation": {
+        "skill/document_generation": {
           "description": "Document Generation skill",
           "files": [
             {
@@ -982,7 +1072,7 @@
             }
           ]
         },
-        "skill/git-commit-helper": {
+        "skill/git_commit_helper": {
           "description": "Git Commit Helper skill",
           "files": [
             {
@@ -991,7 +1081,7 @@
             }
           ]
         },
-        "skill/help-command": {
+        "skill/help_command": {
           "description": "Help Command skill",
           "files": [
             {
@@ -1000,7 +1090,7 @@
             }
           ]
         },
-        "skill/improve-codebase-architecture": {
+        "skill/improve_codebase_architecture": {
           "description": "Improve Codebase Architecture skill",
           "files": [
             {
@@ -1009,7 +1099,7 @@
             }
           ]
         },
-        "skill/pr-description-generator": {
+        "skill/pr_description_generator": {
           "description": "Pr Description Generator skill",
           "files": [
             {
@@ -1018,7 +1108,7 @@
             }
           ]
         },
-        "skill/prd-to-issues": {
+        "skill/prd_to_issues": {
           "description": "Prd To Issues skill",
           "files": [
             {
@@ -1027,7 +1117,7 @@
             }
           ]
         },
-        "skill/ticket-manager": {
+        "skill/ticket_manager": {
           "description": "Ticket Manager skill",
           "files": [
             {
@@ -1040,7 +1130,7 @@
             }
           ]
         },
-        "skill/usage-rules": {
+        "skill/usage_rules": {
           "description": "Usage Rules skill",
           "files": [
             {
@@ -1049,7 +1139,7 @@
             }
           ]
         },
-        "skill/write-a-prd": {
+        "skill/write_a_prd": {
           "description": "Write A Prd skill",
           "files": [
             {
@@ -1058,7 +1148,7 @@
             }
           ]
         },
-        "skill/build-tool": {
+        "skill/build_tool": {
           "description": "Universal component builder for all 7 AI coding tools",
           "files": [
             {
@@ -1067,7 +1157,7 @@
             }
           ]
         },
-        "skill/build-tool-skill": {
+        "skill/build_tool_skill": {
           "description": "Unified skill builder, validator, adapter, and lifecycle manager for all 7 tools",
           "files": [
             {
@@ -1108,7 +1198,7 @@
             }
           ]
         },
-        "skill/build-tool-agent": {
+        "skill/build_tool_agent": {
           "description": "Unified agent builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
@@ -1117,7 +1207,7 @@
             }
           ]
         },
-        "skill/build-tool-extension": {
+        "skill/build_tool_extension": {
           "description": "Unified extension/plugin builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
@@ -1126,7 +1216,7 @@
             }
           ]
         },
-        "skill/build-tool-tui": {
+        "skill/build_tool_tui": {
           "description": "Unified TUI component builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
@@ -1135,7 +1225,7 @@
             }
           ]
         },
-        "skill/build-tool-cli": {
+        "skill/build_tool_cli": {
           "description": "Unified CLI reference for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
@@ -1144,7 +1234,7 @@
             }
           ]
         },
-        "skill/build-tool-themes": {
+        "skill/build_tool_themes": {
           "description": "Unified theme builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
@@ -1153,7 +1243,7 @@
             }
           ]
         },
-        "skill/build-tool-prompts": {
+        "skill/build_tool_prompts": {
           "description": "Unified prompt template builder for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
@@ -1162,7 +1252,7 @@
             }
           ]
         },
-        "skill/build-tool-keybindings": {
+        "skill/build_tool_keybindings": {
           "description": "Unified keybinding reference for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
@@ -1171,7 +1261,7 @@
             }
           ]
         },
-        "skill/build-tool-config": {
+        "skill/build_tool_config": {
           "description": "Unified configuration reference for all 7 tools \u2014 deployed to Claude Code",
           "files": [
             {
@@ -1180,7 +1270,7 @@
             }
           ]
         },
-        "skill/build-auto-ticket-creator": {
+        "skill/build_auto_ticket_creator": {
           "description": "Monitor codebase, dependencies, and external sources to auto-create tickets for agent updates, skill updates, dep updates, security advisories",
           "files": [
             {
@@ -1189,7 +1279,7 @@
             }
           ]
         },
-        "skill/build-backlog-groomer": {
+        "skill/build_backlog_groomer": {
           "description": "Product & Ticket Manager. Helps transform ideas/plans into structured tickets in thoughts/shared/tickets/ and maintains the project backlog.",
           "files": [
             {
@@ -1198,7 +1288,7 @@
             }
           ]
         },
-        "skill/self-documentation": {
+        "skill/self_documentation": {
           "description": "Enables Wo to answer How do I...? and What's the command for...? questions by searching its own commands, skills, and documentation locally",
           "files": [
             {
@@ -1207,7 +1297,7 @@
             }
           ]
         },
-        "skill/ticket-executor": {
+        "skill/ticket_executor": {
           "description": "Execute approved plans in phases, validating telemetry and committing changes after each phase completes successfully",
           "files": [
             {
@@ -1220,7 +1310,7 @@
             }
           ]
         },
-        "skill/validate-podman": {
+        "skill/validate_podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
             {
@@ -1229,7 +1319,7 @@
             }
           ]
         },
-        "skill/github-branch": {
+        "skill/github_branch": {
           "description": "Create and manage GitHub feature branches from tickets with proper naming and protection",
           "files": [
             {
@@ -1238,7 +1328,7 @@
             }
           ]
         },
-        "skill/github-pr": {
+        "skill/github_pr": {
           "description": "Create, manage, and review GitHub Pull Requests with ticket linking and template support",
           "files": [
             {
@@ -1247,7 +1337,7 @@
             }
           ]
         },
-        "skill/github-review": {
+        "skill/github_review": {
           "description": "Review GitHub Pull Requests with structured feedback and CTO Dashboard integration",
           "files": [
             {
@@ -1256,7 +1346,7 @@
             }
           ]
         },
-        "skill/github-sync": {
+        "skill/github_sync": {
           "description": "Sync feature branches with base branch, resolve conflicts, manage branch lifecycle",
           "files": [
             {
@@ -1265,7 +1355,7 @@
             }
           ]
         },
-        "skill/github-release": {
+        "skill/github_release": {
           "description": "Create GitHub releases with changelog generation, version tagging, and automated publishing",
           "files": [
             {
@@ -1274,7 +1364,7 @@
             }
           ]
         },
-        "skill/github-issue": {
+        "skill/github_issue": {
           "description": "Create, manage, and link GitHub Issues with tickets, bi-directional sync",
           "files": [
             {
@@ -1283,7 +1373,7 @@
             }
           ]
         },
-        "skill/runbook-manager": {
+        "skill/runbook_manager": {
           "description": "Generate, update, and maintain production runbooks per project",
           "files": [
             {
@@ -1296,7 +1386,7 @@
             }
           ]
         },
-        "skill/postmortem-manager": {
+        "skill/postmortem_manager": {
           "description": "Generate incident postmortems with interactive flow and git metrics",
           "files": [
             {
@@ -1309,7 +1399,7 @@
             }
           ]
         },
-        "skill/session-export": {
+        "skill/session_export": {
           "description": "Capture working session as structured session history with git metrics and context",
           "files": [
             {
@@ -1322,7 +1412,7 @@
             }
           ]
         },
-        "skill/fixes-create": {
+        "skill/fixes_create": {
           "description": "Create fix note entry command",
           "files": [
             {
@@ -1331,7 +1421,7 @@
             }
           ]
         },
-        "skill/fixes-bump": {
+        "skill/fixes_bump": {
           "description": "Bump version across project files command",
           "files": [
             {
@@ -1340,16 +1430,7 @@
             }
           ]
         },
-        "skill/commit": {
-          "description": "Create structured git commits",
-          "files": [
-            {
-              "src": "claude/skills/commit/SKILL.md",
-              "dest": "skills/commit/SKILL.md"
-            }
-          ]
-        },
-        "skill/fixes-manager": {
+        "skill/fixes_manager": {
           "description": "Cross-project fix/release notes and version manager. Creates, updates, bumps, validates, and syncs fix notes for WOMONO, WOW, OPT.",
           "files": [
             {
@@ -1402,16 +1483,7 @@
             }
           ]
         },
-        "skill/debug": {
-          "description": "Debug issues during manual testing or implementation",
-          "files": [
-            {
-              "src": "claude/skills/debug/SKILL.md",
-              "dest": "skills/debug/SKILL.md"
-            }
-          ]
-        },
-        "skill/agents-md-manager": {
+        "skill/agents_md_manager": {
           "description": "agents-md-manager skill",
           "files": [
             {
@@ -1420,25 +1492,7 @@
             }
           ]
         },
-        "skill/knowledge": {
-          "description": "knowledge skill",
-          "files": [
-            {
-              "src": "claude/skills/knowledge/SKILL.md",
-              "dest": "skills/knowledge/SKILL.md"
-            }
-          ]
-        },
-        "skill/standup": {
-          "description": "standup skill",
-          "files": [
-            {
-              "src": "claude/skills/standup/SKILL.md",
-              "dest": "skills/standup/SKILL.md"
-            }
-          ]
-        },
-        "command/create-plan": {
+        "command/create_plan": {
           "description": "create-plan command",
           "files": [
             {
@@ -1447,7 +1501,7 @@
             }
           ]
         },
-        "command/implement-plan": {
+        "command/implement_plan": {
           "description": "implement-plan command",
           "files": [
             {
@@ -1456,7 +1510,7 @@
             }
           ]
         },
-        "command/ticket-create": {
+        "command/ticket_create": {
           "description": "ticket-create command",
           "files": [
             {
@@ -1465,7 +1519,7 @@
             }
           ]
         },
-        "command/validate-plan": {
+        "command/validate_plan": {
           "description": "validate-plan command",
           "files": [
             {
@@ -1474,7 +1528,7 @@
             }
           ]
         },
-        "command/fixes-bump": {
+        "command/fixes_bump": {
           "description": "Bump version across project files",
           "files": [
             {
@@ -1483,7 +1537,7 @@
             }
           ]
         },
-        "command/fixes-create": {
+        "command/fixes_create": {
           "description": "Create fix note entry",
           "files": [
             {
@@ -1492,43 +1546,7 @@
             }
           ]
         },
-        "command/standup": {
-          "description": "Generate daily standup entries",
-          "files": [
-            {
-              "src": "claude/commands/standup.md",
-              "dest": "commands/standup.md"
-            }
-          ]
-        },
-        "skill/sales": {
-          "description": "Sales knowledge, playbooks, and competitive intelligence",
-          "files": [
-            {
-              "src": "claude/skills/sales/SKILL.md",
-              "dest": "skills/sales/SKILL.md"
-            }
-          ]
-        },
-        "skill/rules_manager": {
-          "description": "Rules Manager skill",
-          "files": [
-            {
-              "src": "claude/skills/rules_manager/SKILL.md",
-              "dest": "skills/rules_manager/SKILL.md"
-            }
-          ]
-        },
-        "command/rules": {
-          "description": "Rules management command",
-          "files": [
-            {
-              "src": "claude/commands/rules.md",
-              "dest": "commands/rules.md"
-            }
-          ]
-        },
-        "skill/ticket-organization": {
+        "skill/ticket_organization": {
           "description": "Proactively organize tickets across all namespaces \u2014 auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
           "files": [
             {
@@ -1606,114 +1624,6 @@
             }
           ]
         },
-        "skill/auto-ticket-creator": {
-          "description": "Auto Ticket Creator skill",
-          "files": [
-            {
-              "src": "codex/skills/auto_ticket_creator/SKILL.md",
-              "dest": "skills/auto-ticket-creator/SKILL.md"
-            }
-          ]
-        },
-        "skill/backlog-groomer": {
-          "description": "Backlog Groomer skill",
-          "files": [
-            {
-              "src": "codex/skills/backlog_groomer/SKILL.md",
-              "dest": "skills/backlog-groomer/SKILL.md"
-            }
-          ]
-        },
-        "skill/create-plan": {
-          "description": "Create Plan skill",
-          "files": [
-            {
-              "src": "codex/skills/create_plan/SKILL.md",
-              "dest": "skills/create-plan/SKILL.md"
-            }
-          ]
-        },
-        "skill/document-generation": {
-          "description": "Document Generation skill",
-          "files": [
-            {
-              "src": "codex/skills/document_generation/SKILL.md",
-              "dest": "skills/document-generation/SKILL.md"
-            }
-          ]
-        },
-        "skill/git-commit-helper": {
-          "description": "Git Commit Helper skill",
-          "files": [
-            {
-              "src": "codex/skills/git_commit_helper/SKILL.md",
-              "dest": "skills/git-commit-helper/SKILL.md"
-            }
-          ]
-        },
-        "skill/help-command": {
-          "description": "Help Command skill",
-          "files": [
-            {
-              "src": "codex/skills/help_command/SKILL.md",
-              "dest": "skills/help-command/SKILL.md"
-            }
-          ]
-        },
-        "skill/implement-plan": {
-          "description": "Implement Plan skill",
-          "files": [
-            {
-              "src": "codex/skills/implement_plan/SKILL.md",
-              "dest": "skills/implement-plan/SKILL.md"
-            }
-          ]
-        },
-        "skill/improve-codebase-architecture": {
-          "description": "Improve Codebase Architecture skill",
-          "files": [
-            {
-              "src": "codex/skills/improve_codebase_architecture/SKILL.md",
-              "dest": "skills/improve-codebase-architecture/SKILL.md"
-            }
-          ]
-        },
-        "skill/init-harness": {
-          "description": "Init Harness skill",
-          "files": [
-            {
-              "src": "codex/skills/init_harness/SKILL.md",
-              "dest": "skills/init-harness/SKILL.md"
-            }
-          ]
-        },
-        "skill/pr-description-generator": {
-          "description": "Pr Description Generator skill",
-          "files": [
-            {
-              "src": "codex/skills/pr_description_generator/SKILL.md",
-              "dest": "skills/pr-description-generator/SKILL.md"
-            }
-          ]
-        },
-        "skill/prd-to-issues": {
-          "description": "Prd To Issues skill",
-          "files": [
-            {
-              "src": "codex/skills/prd_to_issues/SKILL.md",
-              "dest": "skills/prd-to-issues/SKILL.md"
-            }
-          ]
-        },
-        "skill/research-codebase": {
-          "description": "Research Codebase skill",
-          "files": [
-            {
-              "src": "codex/skills/research_codebase/SKILL.md",
-              "dest": "skills/research-codebase/SKILL.md"
-            }
-          ]
-        },
         "skill/tdd": {
           "description": "Tdd skill",
           "files": [
@@ -1723,7 +1633,200 @@
             }
           ]
         },
-        "skill/ticket-manager": {
+        "skill/commit": {
+          "description": "Create structured git commits",
+          "files": [
+            {
+              "src": "codex/skills/commit/skill.yaml",
+              "dest": "skills/commit/skill.yaml"
+            },
+            {
+              "src": "codex/skills/commit/prompt.md",
+              "dest": "skills/commit/prompt.md"
+            }
+          ]
+        },
+        "skill/debug": {
+          "description": "Debug issues during manual testing or implementation",
+          "files": [
+            {
+              "src": "codex/skills/debug/SKILL.md",
+              "dest": "skills/debug/SKILL.md"
+            }
+          ]
+        },
+        "skill/knowledge": {
+          "description": "knowledge skill",
+          "files": [
+            {
+              "src": "codex/skills/knowledge/SKILL.md",
+              "dest": "skills/knowledge/SKILL.md"
+            }
+          ]
+        },
+        "skill/standup": {
+          "description": "standup skill",
+          "files": [
+            {
+              "src": "codex/skills/standup/SKILL.md",
+              "dest": "skills/standup/SKILL.md"
+            }
+          ]
+        },
+        "command/standup": {
+          "description": "Generate daily standup entries",
+          "files": [
+            {
+              "src": "codex/commands/standup.md",
+              "dest": "commands/standup.md"
+            }
+          ]
+        },
+        "skill/sales": {
+          "description": "Sales knowledge, playbooks, and competitive intelligence",
+          "files": [
+            {
+              "src": "codex/skills/sales/SKILL.md",
+              "dest": "skills/sales/SKILL.md"
+            }
+          ]
+        },
+        "skill/rules_manager": {
+          "description": "Rules Manager skill",
+          "files": [
+            {
+              "src": "codex/skills/rules_manager/SKILL.md",
+              "dest": "skills/rules_manager/SKILL.md"
+            }
+          ]
+        },
+        "command/rules": {
+          "description": "Rules management command",
+          "files": [
+            {
+              "src": "codex/commands/rules.md",
+              "dest": "commands/rules.md"
+            }
+          ]
+        },
+        "skill/alliner_compliance_check": {
+          "description": "Deep compliance validation for existing f-rr-d projects",
+          "files": [
+            {
+              "src": "codex/skills/alliner_compliance_check/SKILL.md",
+              "dest": "skills/alliner_compliance_check/SKILL.md"
+            }
+          ]
+        },
+        "skill/auto_ticket_creator": {
+          "description": "Auto Ticket Creator skill",
+          "files": [
+            {
+              "src": "codex/skills/auto_ticket_creator/SKILL.md",
+              "dest": "skills/auto-ticket-creator/SKILL.md"
+            }
+          ]
+        },
+        "skill/backlog_groomer": {
+          "description": "Backlog Groomer skill",
+          "files": [
+            {
+              "src": "codex/skills/backlog_groomer/SKILL.md",
+              "dest": "skills/backlog-groomer/SKILL.md"
+            }
+          ]
+        },
+        "skill/create_plan": {
+          "description": "Create Plan skill",
+          "files": [
+            {
+              "src": "codex/skills/create_plan/SKILL.md",
+              "dest": "skills/create-plan/SKILL.md"
+            }
+          ]
+        },
+        "skill/document_generation": {
+          "description": "Document Generation skill",
+          "files": [
+            {
+              "src": "codex/skills/document_generation/SKILL.md",
+              "dest": "skills/document-generation/SKILL.md"
+            }
+          ]
+        },
+        "skill/git_commit_helper": {
+          "description": "Git Commit Helper skill",
+          "files": [
+            {
+              "src": "codex/skills/git_commit_helper/SKILL.md",
+              "dest": "skills/git-commit-helper/SKILL.md"
+            }
+          ]
+        },
+        "skill/help_command": {
+          "description": "Help Command skill",
+          "files": [
+            {
+              "src": "codex/skills/help_command/SKILL.md",
+              "dest": "skills/help-command/SKILL.md"
+            }
+          ]
+        },
+        "skill/implement_plan": {
+          "description": "Implement Plan skill",
+          "files": [
+            {
+              "src": "codex/skills/implement_plan/SKILL.md",
+              "dest": "skills/implement-plan/SKILL.md"
+            }
+          ]
+        },
+        "skill/improve_codebase_architecture": {
+          "description": "Improve Codebase Architecture skill",
+          "files": [
+            {
+              "src": "codex/skills/improve_codebase_architecture/SKILL.md",
+              "dest": "skills/improve-codebase-architecture/SKILL.md"
+            }
+          ]
+        },
+        "skill/init_harness": {
+          "description": "Init Harness skill",
+          "files": [
+            {
+              "src": "codex/skills/init_harness/SKILL.md",
+              "dest": "skills/init-harness/SKILL.md"
+            }
+          ]
+        },
+        "skill/pr_description_generator": {
+          "description": "Pr Description Generator skill",
+          "files": [
+            {
+              "src": "codex/skills/pr_description_generator/SKILL.md",
+              "dest": "skills/pr-description-generator/SKILL.md"
+            }
+          ]
+        },
+        "skill/prd_to_issues": {
+          "description": "Prd To Issues skill",
+          "files": [
+            {
+              "src": "codex/skills/prd_to_issues/SKILL.md",
+              "dest": "skills/prd-to-issues/SKILL.md"
+            }
+          ]
+        },
+        "skill/research_codebase": {
+          "description": "Research Codebase skill",
+          "files": [
+            {
+              "src": "codex/skills/research_codebase/SKILL.md",
+              "dest": "skills/research-codebase/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket_manager": {
           "description": "Ticket Manager skill",
           "files": [
             {
@@ -1736,7 +1839,7 @@
             }
           ]
         },
-        "skill/usage-rules": {
+        "skill/usage_rules": {
           "description": "Usage Rules skill",
           "files": [
             {
@@ -1745,7 +1848,7 @@
             }
           ]
         },
-        "skill/validate-plan": {
+        "skill/validate_plan": {
           "description": "Validate Plan skill",
           "files": [
             {
@@ -1754,7 +1857,7 @@
             }
           ]
         },
-        "skill/write-a-prd": {
+        "skill/write_a_prd": {
           "description": "Write A Prd skill",
           "files": [
             {
@@ -1763,7 +1866,7 @@
             }
           ]
         },
-        "skill/build-tool": {
+        "skill/build_tool": {
           "description": "Universal component builder for all 7 AI coding tools",
           "files": [
             {
@@ -1772,7 +1875,7 @@
             }
           ]
         },
-        "skill/build-tool-skill": {
+        "skill/build_tool_skill": {
           "description": "Unified skill builder, validator, adapter, and lifecycle manager for all 7 tools",
           "files": [
             {
@@ -1813,7 +1916,7 @@
             }
           ]
         },
-        "skill/build-tool-agent": {
+        "skill/build_tool_agent": {
           "description": "Unified agent builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
@@ -1822,7 +1925,7 @@
             }
           ]
         },
-        "skill/build-tool-extension": {
+        "skill/build_tool_extension": {
           "description": "Unified extension/plugin builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
@@ -1831,7 +1934,7 @@
             }
           ]
         },
-        "skill/build-tool-tui": {
+        "skill/build_tool_tui": {
           "description": "Unified TUI component builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
@@ -1840,7 +1943,7 @@
             }
           ]
         },
-        "skill/build-tool-cli": {
+        "skill/build_tool_cli": {
           "description": "Unified CLI reference for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
@@ -1849,7 +1952,7 @@
             }
           ]
         },
-        "skill/build-tool-themes": {
+        "skill/build_tool_themes": {
           "description": "Unified theme builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
@@ -1858,7 +1961,7 @@
             }
           ]
         },
-        "skill/build-tool-prompts": {
+        "skill/build_tool_prompts": {
           "description": "Unified prompt template builder for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
@@ -1867,7 +1970,7 @@
             }
           ]
         },
-        "skill/build-tool-keybindings": {
+        "skill/build_tool_keybindings": {
           "description": "Unified keybinding reference for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
@@ -1876,7 +1979,7 @@
             }
           ]
         },
-        "skill/build-tool-config": {
+        "skill/build_tool_config": {
           "description": "Unified configuration reference for all 7 tools \u2014 deployed to Codex",
           "files": [
             {
@@ -1885,7 +1988,7 @@
             }
           ]
         },
-        "skill/build-auto-ticket-creator": {
+        "skill/build_auto_ticket_creator": {
           "description": "Monitor codebase, dependencies, and external sources to auto-create tickets for agent updates, skill updates, dep updates, security advisories",
           "files": [
             {
@@ -1894,7 +1997,7 @@
             }
           ]
         },
-        "skill/build-backlog-groomer": {
+        "skill/build_backlog_groomer": {
           "description": "Product & Ticket Manager. Helps transform ideas/plans into structured tickets in thoughts/shared/tickets/ and maintains the project backlog.",
           "files": [
             {
@@ -1903,7 +2006,7 @@
             }
           ]
         },
-        "skill/self-documentation": {
+        "skill/self_documentation": {
           "description": "Enables Wo to answer How do I...? and What's the command for...? questions by searching its own commands, skills, and documentation locally",
           "files": [
             {
@@ -1912,7 +2015,7 @@
             }
           ]
         },
-        "skill/ticket-executor": {
+        "skill/ticket_executor": {
           "description": "Execute approved plans in phases, validating telemetry and committing changes after each phase completes successfully",
           "files": [
             {
@@ -1925,7 +2028,7 @@
             }
           ]
         },
-        "skill/validate-podman": {
+        "skill/validate_podman": {
           "description": "Validate Podman/Quadlet configurations on Fedora",
           "files": [
             {
@@ -1934,7 +2037,7 @@
             }
           ]
         },
-        "skill/github-branch": {
+        "skill/github_branch": {
           "description": "Create and manage GitHub feature branches from tickets with proper naming and protection",
           "files": [
             {
@@ -1943,7 +2046,7 @@
             }
           ]
         },
-        "skill/github-pr": {
+        "skill/github_pr": {
           "description": "Create, manage, and review GitHub Pull Requests with ticket linking and template support",
           "files": [
             {
@@ -1952,7 +2055,7 @@
             }
           ]
         },
-        "skill/github-review": {
+        "skill/github_review": {
           "description": "Review GitHub Pull Requests with structured feedback and CTO Dashboard integration",
           "files": [
             {
@@ -1961,7 +2064,7 @@
             }
           ]
         },
-        "skill/github-sync": {
+        "skill/github_sync": {
           "description": "Sync feature branches with base branch, resolve conflicts, manage branch lifecycle",
           "files": [
             {
@@ -1970,7 +2073,7 @@
             }
           ]
         },
-        "skill/github-release": {
+        "skill/github_release": {
           "description": "Create GitHub releases with changelog generation, version tagging, and automated publishing",
           "files": [
             {
@@ -1979,7 +2082,7 @@
             }
           ]
         },
-        "skill/github-issue": {
+        "skill/github_issue": {
           "description": "Create, manage, and link GitHub Issues with tickets, bi-directional sync",
           "files": [
             {
@@ -1988,7 +2091,7 @@
             }
           ]
         },
-        "skill/runbook-manager": {
+        "skill/runbook_manager": {
           "description": "Generate, update, and maintain production runbooks per project",
           "files": [
             {
@@ -2001,7 +2104,7 @@
             }
           ]
         },
-        "skill/postmortem-manager": {
+        "skill/postmortem_manager": {
           "description": "Generate incident postmortems with interactive flow and git metrics",
           "files": [
             {
@@ -2014,7 +2117,7 @@
             }
           ]
         },
-        "skill/session-export": {
+        "skill/session_export": {
           "description": "Capture working session as structured session history with git metrics and context",
           "files": [
             {
@@ -2027,7 +2130,7 @@
             }
           ]
         },
-        "skill/fixes-create": {
+        "skill/fixes_create": {
           "description": "Create fix note entry skill",
           "files": [
             {
@@ -2040,7 +2143,7 @@
             }
           ]
         },
-        "skill/fixes-bump": {
+        "skill/fixes_bump": {
           "description": "Bump version across project files skill",
           "files": [
             {
@@ -2053,20 +2156,7 @@
             }
           ]
         },
-        "skill/commit": {
-          "description": "Create structured git commits",
-          "files": [
-            {
-              "src": "codex/skills/commit/skill.yaml",
-              "dest": "skills/commit/skill.yaml"
-            },
-            {
-              "src": "codex/skills/commit/prompt.md",
-              "dest": "skills/commit/prompt.md"
-            }
-          ]
-        },
-        "skill/fixes-manager": {
+        "skill/fixes_manager": {
           "description": "Cross-project fix/release notes and version manager. Creates, updates, bumps, validates, and syncs fix notes for WOMONO, WOW, OPT.",
           "files": [
             {
@@ -2119,16 +2209,7 @@
             }
           ]
         },
-        "skill/debug": {
-          "description": "Debug issues during manual testing or implementation",
-          "files": [
-            {
-              "src": "codex/skills/debug/SKILL.md",
-              "dest": "skills/debug/SKILL.md"
-            }
-          ]
-        },
-        "skill/agents-md-manager": {
+        "skill/agents_md_manager": {
           "description": "agents-md-manager skill",
           "files": [
             {
@@ -2137,25 +2218,7 @@
             }
           ]
         },
-        "skill/knowledge": {
-          "description": "knowledge skill",
-          "files": [
-            {
-              "src": "codex/skills/knowledge/SKILL.md",
-              "dest": "skills/knowledge/SKILL.md"
-            }
-          ]
-        },
-        "skill/standup": {
-          "description": "standup skill",
-          "files": [
-            {
-              "src": "codex/skills/standup/SKILL.md",
-              "dest": "skills/standup/SKILL.md"
-            }
-          ]
-        },
-        "command/create-plan": {
+        "command/create_plan": {
           "description": "create-plan command",
           "files": [
             {
@@ -2164,7 +2227,7 @@
             }
           ]
         },
-        "command/implement-plan": {
+        "command/implement_plan": {
           "description": "implement-plan command",
           "files": [
             {
@@ -2173,7 +2236,7 @@
             }
           ]
         },
-        "command/ticket-create": {
+        "command/ticket_create": {
           "description": "ticket-create command",
           "files": [
             {
@@ -2182,7 +2245,7 @@
             }
           ]
         },
-        "command/validate-plan": {
+        "command/validate_plan": {
           "description": "validate-plan command",
           "files": [
             {
@@ -2191,7 +2254,7 @@
             }
           ]
         },
-        "command/fixes-bump": {
+        "command/fixes_bump": {
           "description": "Bump version across project files",
           "files": [
             {
@@ -2200,7 +2263,7 @@
             }
           ]
         },
-        "command/fixes-create": {
+        "command/fixes_create": {
           "description": "Create fix note entry",
           "files": [
             {
@@ -2209,43 +2272,7 @@
             }
           ]
         },
-        "command/standup": {
-          "description": "Generate daily standup entries",
-          "files": [
-            {
-              "src": "codex/commands/standup.md",
-              "dest": "commands/standup.md"
-            }
-          ]
-        },
-        "skill/sales": {
-          "description": "Sales knowledge, playbooks, and competitive intelligence",
-          "files": [
-            {
-              "src": "codex/skills/sales/SKILL.md",
-              "dest": "skills/sales/SKILL.md"
-            }
-          ]
-        },
-        "skill/rules_manager": {
-          "description": "Rules Manager skill",
-          "files": [
-            {
-              "src": "codex/skills/rules_manager/SKILL.md",
-              "dest": "skills/rules_manager/SKILL.md"
-            }
-          ]
-        },
-        "command/rules": {
-          "description": "Rules management command",
-          "files": [
-            {
-              "src": "codex/commands/rules.md",
-              "dest": "commands/rules.md"
-            }
-          ]
-        },
-        "skill/ticket-organization": {
+        "skill/ticket_organization": {
           "description": "Proactively organize tickets across all namespaces \u2014 auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration",
           "files": [
             {
@@ -2320,33 +2347,6 @@
             {
               "src": "opencode/agents/netlify_troubleshooter.md",
               "dest": "agents/netlify_troubleshooter.md"
-            }
-          ]
-        },
-        "command/create_plan": {
-          "description": "Create implementation plans command",
-          "files": [
-            {
-              "src": "opencode/commands/create-plan.md",
-              "dest": "commands/create-plan.md"
-            }
-          ]
-        },
-        "command/implement_plan": {
-          "description": "Execute an approved plan command",
-          "files": [
-            {
-              "src": "opencode/commands/implement-plan.md",
-              "dest": "commands/implement-plan.md"
-            }
-          ]
-        },
-        "command/validate_plan": {
-          "description": "Validate implementation against plan command",
-          "files": [
-            {
-              "src": "opencode/commands/validate-plan.md",
-              "dest": "commands/validate-plan.md"
             }
           ]
         },
@@ -2976,6 +2976,42 @@
             {
               "src": "opencode/skills/ticket-organization/SKILL.md",
               "dest": "skills/ticket-organization/SKILL.md"
+            }
+          ]
+        },
+        "skill/alliner-compliance-check": {
+          "description": "Deep compliance validation for existing f-rr-d projects",
+          "files": [
+            {
+              "src": "opencode/skills/alliner-compliance-check/SKILL.md",
+              "dest": "skills/alliner-compliance-check/SKILL.md"
+            }
+          ]
+        },
+        "command/create-plan": {
+          "description": "Create implementation plans command",
+          "files": [
+            {
+              "src": "opencode/commands/create-plan.md",
+              "dest": "commands/create-plan.md"
+            }
+          ]
+        },
+        "command/implement-plan": {
+          "description": "Execute an approved plan command",
+          "files": [
+            {
+              "src": "opencode/commands/implement-plan.md",
+              "dest": "commands/implement-plan.md"
+            }
+          ]
+        },
+        "command/validate-plan": {
+          "description": "Validate implementation against plan command",
+          "files": [
+            {
+              "src": "opencode/commands/validate-plan.md",
+              "dest": "commands/validate-plan.md"
             }
           ]
         }
@@ -3943,6 +3979,15 @@
               "dest": "skills/ticket-organization/SKILL.md"
             }
           ]
+        },
+        "skill/alliner-compliance-check": {
+          "description": "Deep compliance validation for existing f-rr-d projects",
+          "files": [
+            {
+              "src": "pi/agent/skills/alliner-compliance-check/SKILL.md",
+              "dest": "skills/alliner-compliance-check/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -4883,6 +4928,15 @@
             {
               "src": "wocode/agent/skills/ticket-organization/SKILL.md",
               "dest": "skills/ticket-organization/SKILL.md"
+            }
+          ]
+        },
+        "skill/alliner-compliance-check": {
+          "description": "Deep compliance validation for existing f-rr-d projects",
+          "files": [
+            {
+              "src": "wocode/agent/skills/alliner-compliance-check/SKILL.md",
+              "dest": "skills/alliner-compliance-check/SKILL.md"
             }
           ]
         }

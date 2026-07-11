@@ -13,6 +13,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Knowledgebase reference (`thoughts/global/knowledge/`) to all 659 skill boilerplate sections
 - Mandatory validation gate to create-plan: plans require explicit user approval before implementation (16 files)
 - Knowledge entry ai-tools-001: sed bulk-update pattern for mass path renames
+- `alliner-compliance-check` skill added to manifest for all 6 tools (AIH-188)
+- `rules-manager` added to official skills catalog — 53 skills total (AIH-188)
+- `ticket-organization` skill added to manifest for all 6 tools (AIH-188)
 
 ### Changed
 - Consolidated duplicate rules directories: removed `thoughts/global/templates/rules/`, kept `thoughts/global/rules/` as single source of truth (AIH-187)
@@ -20,10 +23,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Simplified rules-manager from 3-tier to 2-tier precedence (project > global)
 - Updated init-harness to copy rules from `thoughts/global/rules/` to new projects
 - Renamed "Templates & Rules" boilerplate to "Context Reference" across 659 skill files
+- Renamed 151 component keys in manifest.json to match per-tool naming conventions (AIH-188)
+  - opencode: `command/create_plan` → `command/create-plan` (3 fixes)
+  - claude: kebab-case → snake_case (51 fixes)
+  - antigravity: kebab-case → snake_case (46 fixes)
+  - codex: kebab-case → snake_case (51 fixes)
+- Renamed 151 component keys in YAML configs to match manifest changes (AIH-188)
 
 ### Fixed
 - Planner agent repositioned from 8th to 4th in agent lists across all tools (AIH-186)
 - Planner agent description updated to clearly state when to use it
+- Antigravity `fixes-bump` and `fixes-create` broken src paths — kebab-case paths corrected to snake_case (AIH-188)
+- Version file naming mismatch in install.ts — unified to `.harness-version` across install/purge/uninstall (AIH-188)
+- Skills catalog updated to reflect actual manifest contents — 53 skills, all tools consistent (AIH-188)
 
 ## [1.7.21] - 2026-07-11
 

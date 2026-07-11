@@ -39,26 +39,6 @@ components:
     files:
     - src: claude/skills/README.md
       dest: skills/README.md
-  skill/create-plan:
-    description: Create Plan skill
-    files:
-    - src: claude/skills/create_plan/SKILL.md
-      dest: skills/create-plan/SKILL.md
-  skill/implement-plan:
-    description: Implement Plan skill
-    files:
-    - src: claude/skills/implement_plan/SKILL.md
-      dest: skills/implement-plan/SKILL.md
-  skill/init-harness:
-    description: Init Harness skill
-    files:
-    - src: claude/skills/init_harness/SKILL.md
-      dest: skills/init-harness/SKILL.md
-  skill/research-codebase:
-    description: Research Codebase skill
-    files:
-    - src: claude/skills/research_codebase/SKILL.md
-      dest: skills/research-codebase/SKILL.md
   skill/tdd:
     description: Tdd skill
     files:
@@ -74,74 +54,139 @@ components:
       dest: skills/tdd/refactoring.md
     - src: claude/skills/tdd/tests.md
       dest: skills/tdd/tests.md
-  skill/validate-plan:
+  skill/commit:
+    description: Create structured git commits
+    files:
+    - src: claude/skills/commit/SKILL.md
+      dest: skills/commit/SKILL.md
+  skill/debug:
+    description: Debug issues during manual testing or implementation
+    files:
+    - src: claude/skills/debug/SKILL.md
+      dest: skills/debug/SKILL.md
+  skill/knowledge:
+    description: knowledge skill
+    files:
+    - src: claude/skills/knowledge/SKILL.md
+      dest: skills/knowledge/SKILL.md
+  skill/standup:
+    description: standup skill
+    files:
+    - src: claude/skills/standup/SKILL.md
+      dest: skills/standup/SKILL.md
+  command/standup:
+    description: Generate daily standup entries
+    files:
+    - src: claude/commands/standup.md
+      dest: commands/standup.md
+  skill/sales:
+    description: Sales knowledge, playbooks, and competitive intelligence
+    files:
+    - src: claude/skills/sales/SKILL.md
+      dest: skills/sales/SKILL.md
+  skill/rules_manager:
+    description: Rules Manager skill
+    files:
+    - src: claude/skills/rules_manager/SKILL.md
+      dest: skills/rules_manager/SKILL.md
+  command/rules:
+    description: Rules management command
+    files:
+    - src: claude/commands/rules.md
+      dest: commands/rules.md
+  skill/alliner_compliance_check:
+    description: Deep compliance validation for existing f-rr-d projects
+    files:
+    - src: claude/skills/alliner_compliance_check/SKILL.md
+      dest: skills/alliner-compliance-check/SKILL.md
+  skill/create_plan:
+    description: Create Plan skill
+    files:
+    - src: claude/skills/create_plan/SKILL.md
+      dest: skills/create-plan/SKILL.md
+  skill/implement_plan:
+    description: Implement Plan skill
+    files:
+    - src: claude/skills/implement_plan/SKILL.md
+      dest: skills/implement-plan/SKILL.md
+  skill/init_harness:
+    description: Init Harness skill
+    files:
+    - src: claude/skills/init_harness/SKILL.md
+      dest: skills/init-harness/SKILL.md
+  skill/research_codebase:
+    description: Research Codebase skill
+    files:
+    - src: claude/skills/research_codebase/SKILL.md
+      dest: skills/research-codebase/SKILL.md
+  skill/validate_plan:
     description: Validate Plan skill
     files:
     - src: claude/skills/validate_plan/SKILL.md
       dest: skills/validate-plan/SKILL.md
-  skill/auto-ticket-creator:
+  skill/auto_ticket_creator:
     description: Auto Ticket Creator skill
     files:
     - src: claude/skills/auto_ticket_creator/SKILL.md
       dest: skills/auto-ticket-creator/SKILL.md
-  skill/backlog-groomer:
+  skill/backlog_groomer:
     description: Backlog Groomer skill
     files:
     - src: claude/skills/backlog_groomer/SKILL.md
       dest: skills/backlog-groomer/SKILL.md
-  skill/document-generation:
+  skill/document_generation:
     description: Document Generation skill
     files:
     - src: claude/skills/document_generation/SKILL.md
       dest: skills/document-generation/SKILL.md
-  skill/git-commit-helper:
+  skill/git_commit_helper:
     description: Git Commit Helper skill
     files:
     - src: claude/skills/git_commit_helper/SKILL.md
       dest: skills/git-commit-helper/SKILL.md
-  skill/help-command:
+  skill/help_command:
     description: Help Command skill
     files:
     - src: claude/skills/help_command/SKILL.md
       dest: skills/help-command/SKILL.md
-  skill/improve-codebase-architecture:
+  skill/improve_codebase_architecture:
     description: Improve Codebase Architecture skill
     files:
     - src: claude/skills/improve_codebase_architecture/SKILL.md
       dest: skills/improve-codebase-architecture/SKILL.md
-  skill/pr-description-generator:
+  skill/pr_description_generator:
     description: Pr Description Generator skill
     files:
     - src: claude/skills/pr_description_generator/SKILL.md
       dest: skills/pr-description-generator/SKILL.md
-  skill/prd-to-issues:
+  skill/prd_to_issues:
     description: Prd To Issues skill
     files:
     - src: claude/skills/prd_to_issues/SKILL.md
       dest: skills/prd-to-issues/SKILL.md
-  skill/ticket-manager:
+  skill/ticket_manager:
     description: Ticket Manager skill
     files:
     - src: claude/skills/ticket_manager/SKILL.md
       dest: skills/ticket-manager/SKILL.md
     - src: claude/skills/ticket_manager/assets/audit-tickets.js
       dest: skills/ticket-manager/assets/audit-tickets.js
-  skill/usage-rules:
+  skill/usage_rules:
     description: Usage Rules skill
     files:
     - src: claude/skills/usage_rules/SKILL.md
       dest: skills/usage-rules/SKILL.md
-  skill/write-a-prd:
+  skill/write_a_prd:
     description: Write A Prd skill
     files:
     - src: claude/skills/write_a_prd/SKILL.md
       dest: skills/write-a-prd/SKILL.md
-  skill/build-tool:
+  skill/build_tool:
     description: Universal component builder for all 7 AI coding tools
     files:
     - src: claude/skills/build_tool/SKILL.md
       dest: skills/build-tool/SKILL.md
-  skill/build-tool-skill:
+  skill/build_tool_skill:
     description: Unified skill builder, validator, adapter, and lifecycle manager
       for all 7 tools
     files:
@@ -163,70 +208,70 @@ components:
       dest: skills/build-tool-skill/assets/compliance-check.py
     - src: claude/skills/build_tool_skill/assets/adapter-generate.py
       dest: skills/build-tool-skill/assets/adapter-generate.py
-  skill/build-tool-agent:
+  skill/build_tool_agent:
     description: Unified agent builder for all 7 tools — deployed to Claude Code
     files:
     - src: claude/skills/build_tool_agent/SKILL.md
       dest: skills/build-tool-agent/SKILL.md
-  skill/build-tool-extension:
+  skill/build_tool_extension:
     description: Unified extension/plugin builder for all 7 tools — deployed to Claude
       Code
     files:
     - src: claude/skills/build_tool_extension/SKILL.md
       dest: skills/build-tool-extension/SKILL.md
-  skill/build-tool-tui:
+  skill/build_tool_tui:
     description: Unified TUI component builder for all 7 tools — deployed to Claude
       Code
     files:
     - src: claude/skills/build_tool_tui/SKILL.md
       dest: skills/build-tool-tui/SKILL.md
-  skill/build-tool-cli:
+  skill/build_tool_cli:
     description: Unified CLI reference for all 7 tools — deployed to Claude Code
     files:
     - src: claude/skills/build_tool_cli/SKILL.md
       dest: skills/build-tool-cli/SKILL.md
-  skill/build-tool-themes:
+  skill/build_tool_themes:
     description: Unified theme builder for all 7 tools — deployed to Claude Code
     files:
     - src: claude/skills/build_tool_themes/SKILL.md
       dest: skills/build-tool-themes/SKILL.md
-  skill/build-tool-prompts:
+  skill/build_tool_prompts:
     description: Unified prompt template builder for all 7 tools — deployed to Claude
       Code
     files:
     - src: claude/skills/build_tool_prompts/SKILL.md
       dest: skills/build-tool-prompts/SKILL.md
-  skill/build-tool-keybindings:
+  skill/build_tool_keybindings:
     description: Unified keybinding reference for all 7 tools — deployed to Claude
       Code
     files:
     - src: claude/skills/build_tool_keybindings/SKILL.md
       dest: skills/build-tool-keybindings/SKILL.md
-  skill/build-tool-config:
+  skill/build_tool_config:
     description: Unified configuration reference for all 7 tools — deployed to Claude
       Code
     files:
     - src: claude/skills/build_tool_config/SKILL.md
       dest: skills/build-tool-config/SKILL.md
-  skill/build-auto-ticket-creator:
+  skill/build_auto_ticket_creator:
     description: Monitor codebase, dependencies, and external sources to auto-create
       tickets for agent updates, skill updates, dep updates, security advisories
     files:
     - src: claude/skills/build_auto_ticket_creator/SKILL.md
       dest: skills/build-auto-ticket-creator/SKILL.md
-  skill/build-backlog-groomer:
+  skill/build_backlog_groomer:
     description: Product & Ticket Manager. Helps transform ideas/plans into structured
       tickets in thoughts/shared/tickets/ and maintains the project backlog.
     files:
     - src: claude/skills/build_backlog_groomer/SKILL.md
       dest: skills/build-backlog-groomer/SKILL.md
-  skill/self-documentation:
+  skill/self_documentation:
     description: Enables Wo to answer How do I...? and What's the command for...?
       questions by searching its own commands, skills, and documentation locally
     files:
     - src: claude/skills/self_documentation/SKILL.md
       dest: skills/self-documentation/SKILL.md
-  skill/ticket-executor:
+  skill/ticket_executor:
     description: Execute approved plans in phases, validating telemetry and committing
       changes after each phase completes successfully
     files:
@@ -234,62 +279,62 @@ components:
       dest: skills/ticket-executor/SKILL.md
     - src: claude/skills/ticket_executor/assets/audit-tickets.js
       dest: skills/ticket-executor/assets/audit-tickets.js
-  skill/validate-podman:
+  skill/validate_podman:
     description: Validate Podman/Quadlet configurations on Fedora
     files:
     - src: claude/skills/validate_podman/SKILL.md
       dest: skills/validate-podman/SKILL.md
-  skill/github-branch:
+  skill/github_branch:
     description: Create and manage GitHub feature branches from tickets with proper
       naming and protection
     files:
     - src: claude/skills/github_branch/SKILL.md
       dest: skills/github-branch/SKILL.md
-  skill/github-pr:
+  skill/github_pr:
     description: Create, manage, and review GitHub Pull Requests with ticket linking
       and template support
     files:
     - src: claude/skills/github_pr/SKILL.md
       dest: skills/github-pr/SKILL.md
-  skill/github-review:
+  skill/github_review:
     description: Review GitHub Pull Requests with structured feedback and CTO Dashboard
       integration
     files:
     - src: claude/skills/github_review/SKILL.md
       dest: skills/github-review/SKILL.md
-  skill/github-sync:
+  skill/github_sync:
     description: Sync feature branches with base branch, resolve conflicts, manage
       branch lifecycle
     files:
     - src: claude/skills/github_sync/SKILL.md
       dest: skills/github-sync/SKILL.md
-  skill/github-release:
+  skill/github_release:
     description: Create GitHub releases with changelog generation, version tagging,
       and automated publishing
     files:
     - src: claude/skills/github_release/SKILL.md
       dest: skills/github-release/SKILL.md
-  skill/github-issue:
+  skill/github_issue:
     description: Create, manage, and link GitHub Issues with tickets, bi-directional
       sync
     files:
     - src: claude/skills/github_issue/SKILL.md
       dest: skills/github-issue/SKILL.md
-  skill/runbook-manager:
+  skill/runbook_manager:
     description: Generate, update, and maintain production runbooks per project
     files:
     - src: claude/skills/runbook_manager/SKILL.md
       dest: skills/runbook-manager/SKILL.md
     - src: claude/skills/runbook_manager/assets/runbook-template.md
       dest: skills/runbook-manager/assets/runbook-template.md
-  skill/postmortem-manager:
+  skill/postmortem_manager:
     description: Generate incident postmortems with interactive flow and git metrics
     files:
     - src: claude/skills/postmortem_manager/SKILL.md
       dest: skills/postmortem-manager/SKILL.md
     - src: claude/skills/postmortem_manager/assets/postmortem-template.md
       dest: skills/postmortem-manager/assets/postmortem-template.md
-  skill/session-export:
+  skill/session_export:
     description: Capture working session as structured session history with git metrics
       and context
     files:
@@ -297,22 +342,17 @@ components:
       dest: skills/session-export/SKILL.md
     - src: claude/skills/session_export/assets/session-template.md
       dest: skills/session-export/assets/session-template.md
-  skill/fixes-create:
+  skill/fixes_create:
     description: Create fix note entry command
     files:
     - src: claude/skills/fixes_create/SKILL.md
       dest: skills/fixes-create/SKILL.md
-  skill/fixes-bump:
+  skill/fixes_bump:
     description: Bump version across project files command
     files:
     - src: claude/skills/fixes_bump/SKILL.md
       dest: skills/fixes-bump/SKILL.md
-  skill/commit:
-    description: Create structured git commits
-    files:
-    - src: claude/skills/commit/SKILL.md
-      dest: skills/commit/SKILL.md
-  skill/fixes-manager:
+  skill/fixes_manager:
     description: Cross-project fix/release notes and version manager. Creates, updates,
       bumps, validates, and syncs fix notes for WOMONO, WOW, OPT.
     files:
@@ -340,77 +380,42 @@ components:
       dest: skills/fixes-manager/assets/opticat/components.json
     - src: claude/skills/fixes_manager/assets/opticat/fix-note-template.md
       dest: skills/fixes-manager/assets/opticat/fix-note-template.md
-  skill/debug:
-    description: Debug issues during manual testing or implementation
-    files:
-    - src: claude/skills/debug/SKILL.md
-      dest: skills/debug/SKILL.md
-  skill/agents-md-manager:
+  skill/agents_md_manager:
     description: agents-md-manager skill
     files:
     - src: claude/skills/agents_md_manager/SKILL.md
       dest: skills/agents-md-manager/SKILL.md
-  skill/knowledge:
-    description: knowledge skill
-    files:
-    - src: claude/skills/knowledge/SKILL.md
-      dest: skills/knowledge/SKILL.md
-  skill/standup:
-    description: standup skill
-    files:
-    - src: claude/skills/standup/SKILL.md
-      dest: skills/standup/SKILL.md
-  command/create-plan:
+  command/create_plan:
     description: create-plan command
     files:
     - src: claude/commands/create-plan.md
       dest: commands/create-plan.md
-  command/implement-plan:
+  command/implement_plan:
     description: implement-plan command
     files:
     - src: claude/commands/implement-plan.md
       dest: commands/implement-plan.md
-  command/ticket-create:
+  command/ticket_create:
     description: ticket-create command
     files:
     - src: claude/commands/ticket-create.md
       dest: commands/ticket-create.md
-  command/validate-plan:
+  command/validate_plan:
     description: validate-plan command
     files:
     - src: claude/commands/validate-plan.md
       dest: commands/validate-plan.md
-  command/fixes-bump:
+  command/fixes_bump:
     description: Bump version across project files
     files:
     - src: claude/commands/fixes-bump.md
       dest: commands/fixes-bump.md
-  command/fixes-create:
+  command/fixes_create:
     description: Create fix note entry
     files:
     - src: claude/commands/fixes-create.md
       dest: commands/fixes-create.md
-  command/standup:
-    description: Generate daily standup entries
-    files:
-    - src: claude/commands/standup.md
-      dest: commands/standup.md
-  skill/sales:
-    description: Sales knowledge, playbooks, and competitive intelligence
-    files:
-    - src: claude/skills/sales/SKILL.md
-      dest: skills/sales/SKILL.md
-  skill/rules_manager:
-    description: Rules Manager skill
-    files:
-    - src: claude/skills/rules_manager/SKILL.md
-      dest: skills/rules_manager/SKILL.md
-  command/rules:
-    description: Rules management command
-    files:
-    - src: claude/commands/rules.md
-      dest: commands/rules.md
-  skill/ticket-organization:
+  skill/ticket_organization:
     description: Proactively organize tickets across all namespaces — auto-audit,
       archive management, naming enforcement, orphan detection, cross-project consistency,
       TODO.md regeneration

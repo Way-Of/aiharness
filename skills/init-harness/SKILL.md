@@ -383,6 +383,21 @@ Create the core structure:
 mkdir -p thoughts/${PROJECT_SLUG}/shared/{tickets,plans,research}
 mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references}
 mkdir -p thoughts/${PROJECT_SLUG}/enforcement-ticket
+mkdir -p thoughts/${PROJECT_SLUG}/rules
+```
+
+Copy template rules to the project:
+
+```bash
+# Copy template rules from shared templates
+if [ -d thoughts/shared/templates/rules ]; then
+  for template in thoughts/shared/templates/rules/*.md; do
+    if [ -f "$template" ]; then
+      filename=$(basename "$template")
+      cp "$template" "thoughts/${PROJECT_SLUG}/rules/$filename"
+    fi
+  done
+fi
 ```
 
 For internal projects, also create:

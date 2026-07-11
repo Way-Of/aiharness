@@ -431,3 +431,13 @@ components:
     files:
     - src: antigravity/skills/sales/SKILL.md
       dest: skills/sales/SKILL.md
+  skill/rules_manager:
+    description: Rules Manager skill
+    files:
+    - src: antigravity/skills/rules_manager/SKILL.md
+      dest: skills/rules_manager/SKILL.md
+  command/rules:
+    description: Rules management command
+    files:
+    - src: antigravity/commands/run-rules.toml
+      dest: commands/run-rules.toml

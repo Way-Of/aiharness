@@ -376,3 +376,13 @@ components:
     files:
     - src: codex/skills/sales/SKILL.md
       dest: skills/sales/SKILL.md
+  skill/rules_manager:
+    description: Rules Manager skill
+    files:
+    - src: codex/skills/rules_manager/SKILL.md
+      dest: skills/rules_manager/SKILL.md
+  command/rules:
+    description: Rules management command
+    files:
+    - src: codex/commands/rules.md
+      dest: commands/rules.md

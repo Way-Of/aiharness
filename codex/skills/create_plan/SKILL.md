@@ -1,7 +1,8 @@
 ---
 name: create_plan
 description: Create detailed, actionable implementation plans through an interactive, iterative process, leveraging CLI tools for research and documentation.
-allowed-tools: read, write, bash, glob, grep, todowrite, task
+allowed-tools: Read, Write, Bash, Glob, Grep, Todowrite, Task
+disable-model-invocation: true
 ---
 
 # Create Plan
@@ -25,7 +26,7 @@ This command uses the `thoughts/` directory pattern for organizing planning arti
 When this command is invoked:
 
 1. **Check if parameters were provided**:
-   - If a file path or ticket reference was provided, read it immediately
+   - If a file path or ticket reference was provided, Read it immediately
    - Begin the research process
 
 2. **If no parameters provided**, respond with:
@@ -44,11 +45,17 @@ Tip: You can also invoke this command with a ticket file directly: `/create_plan
 
 ### Step 1: Context Gathering & Initial Analysis
 
-1. **read all mentioned files immediately and FULLY**
+1. **Read all mentioned files immediately and FULLY**
 2. **Delegate to `scout`** for rapid initial codebase reconnaissance — faster than deep investigation when you need to orient yourself.
 3. **Delegate to research agents** (e.g., `codebase_investigator`, `codebase_locator`, `codebase_pattern_finder`) for deeper context gathering.
-4. **read all files identified by research tasks**
-5. **Present informed understanding with focused questions**
+4. **Load applicable rules** from:
+   - `thoughts/<project>/rules/` (project-specific)
+   - `thoughts/global/rules/` (global fallback)
+   - Platform-specific rules (`.claude/rules/`, etc.)
+   
+   Rules define constraints, coding standards, and architectural guidelines that the plan must respect.
+5. **Read all files identified by research tasks**
+6. **Present informed understanding with focused questions**
 
 ### Step 2: Research & Discovery
 
@@ -79,7 +86,7 @@ Present a high-level structure for approval before detailed writing.
 
 ### Step 4: Detailed Plan Writing
 
-write the plan to `thoughts/plans/{descriptive_name}.md` using this template:
+Write the plan to `thoughts/plans/{descriptive_name}.md` using this template:
 
 ```markdown
 # [Feature/Task Name] Implementation Plan
@@ -95,6 +102,16 @@ write the plan to `thoughts/plans/{descriptive_name}.md` using this template:
 
 ## What We're NOT Doing
 [Explicitly list out-of-scope items]
+
+## Rules Compliance
+
+| Rule | Status | Notes |
+|------|--------|-------|
+| coding-standards | ✅ Compliant | Plan follows style guide |
+| naming-conventions | ✅ Compliant | Names match patterns |
+| testing-requirements | ⚠️ Review | Tests needed for new code |
+| security-guidelines | ✅ Compliant | No security concerns |
+| deployment-rules | ✅ Compliant | Deployment plan included |
 
 ## Implementation Approach
 [High-level strategy and reasoning]
@@ -136,7 +153,7 @@ Continue refining until the user is satisfied.
 
 1. **Be Skeptical** - question vague requirements
 2. **Be Interactive** - Get user buy-in at each step
-3. **Be Thorough** - read all context files COMPLETELY
+3. **Be Thorough** - Read all context files COMPLETELY
 4. **Be Practical** - Focus on incremental, testable changes
 5. **Track Progress** - Use TodoWrite
 

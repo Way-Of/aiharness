@@ -1,10 +1,8 @@
 ---
 name: validate_plan
-description: >-
-  Validate that an implementation plan was correctly executed, verifying all
-  success criteria using CLI tools and delegating to research agents.
+description: Validate that an implementation plan was correctly executed, verifying all success criteria using CLI tools and delegating to research agents.
+allowed-tools: Read, Write, Bash, Grep, Glob, Task
 disable-model-invocation: true
-allowed-tools: 'read, write, bash, grep, glob, task'
 ---
 
 # Validate Plan
@@ -24,17 +22,33 @@ When invoked:
 
 1. **Read the implementation plan** completely
 2. **Identify what should have changed**
-3. **Delegate to research agents** (e.g., `codebase_investigator`, `codebase_locator`) to verify implementation details and find modified files.
+3. **Delegate to `thoughts_locator`** to verify all referenced tickets, plans, and docs exist in `thoughts/`.
+4. **Delegate to `scout`** for rapid verification that expected file structure and dependencies match the plan.
+5. **Delegate to research agents** (e.g., `codebase_investigator`, `codebase_locator`) to verify implementation details and find modified files.
 
 ### Step 2: Systematic Validation
 
 For each phase:
 1. **Check completion status** - Look for checkmarks
 2. **Run automated verification** - Execute success criteria commands
-3. **Assess manual criteria** - List what needs manual testing
-4. **Think about edge cases**
+3. **Check rules compliance** - Verify implementation follows project rules:
+   - Read applicable rules from `thoughts/<project>/rules/` and `thoughts/global/rules/`
+   - Check code style, naming conventions, testing requirements
+   - Note violations in validation report
+   - Flag critical violations as blockers
+4. **Assess manual criteria** - List what needs manual testing
+5. **Think about edge cases**
 
-### Step 3: Generate Validation Report
+### Step 3: Code Review via `reviewer`
+
+Delegate to the `reviewer` agent for an automated code audit:
+- Reviews implemented code against the plan's intent
+- Identifies deviations, quality issues, and potential regressions
+- Produces structured audit report
+
+Address any findings before proceeding.
+
+### Step 4: Generate Validation Report
 
 ```markdown
 ## Validation Report: [Plan Name]
@@ -47,6 +61,16 @@ For each phase:
 - Build passes: `npm run build`
 - Tests pass: `npm test`
 - Linting issues: `npm run lint` (X warnings)
+
+### Rules Compliance
+
+| Rule | Status | Violations |
+|------|--------|------------|
+| coding-standards | ✅ Pass | None |
+| naming-conventions | ⚠️ Warning | 2 minor violations |
+| testing-requirements | ❌ Fail | Missing tests for new functions |
+| security-guidelines | ✅ Pass | None |
+| deployment-rules | ✅ Pass | None |
 
 ### Code Review Findings
 
@@ -86,7 +110,7 @@ Recommended workflow:
 
 ## Notification Integration
 
-When validating plans or marking validation complete, mark related CTO Dashboard notifications as read via the notification API:
+When validating plans or marking validation complete, mark related CTO Dashboard notifications as Read via the notification API:
 
 ```bash
 # Mark validation notification as read after validation complete

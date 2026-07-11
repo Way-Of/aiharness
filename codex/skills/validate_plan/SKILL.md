@@ -1,7 +1,8 @@
 ---
 name: validate_plan
 description: Validate that an implementation plan was correctly executed, verifying all success criteria using CLI tools and delegating to research agents.
-allowed-tools: read, write, bash, grep, glob, task
+allowed-tools: Read, Write, Bash, Grep, Glob, Task
+disable-model-invocation: true
 ---
 
 # Validate Plan
@@ -19,7 +20,7 @@ When invoked:
 
 ### Step 1: Context Discovery
 
-1. **read the implementation plan** completely
+1. **Read the implementation plan** completely
 2. **Identify what should have changed**
 3. **Delegate to `thoughts_locator`** to verify all referenced tickets, plans, and docs exist in `thoughts/`.
 4. **Delegate to `scout`** for rapid verification that expected file structure and dependencies match the plan.
@@ -30,8 +31,13 @@ When invoked:
 For each phase:
 1. **Check completion status** - Look for checkmarks
 2. **Run automated verification** - Execute success criteria commands
-3. **Assess manual criteria** - List what needs manual testing
-4. **Think about edge cases**
+3. **Check rules compliance** - Verify implementation follows project rules:
+   - Read applicable rules from `thoughts/<project>/rules/` and `thoughts/global/rules/`
+   - Check code style, naming conventions, testing requirements
+   - Note violations in validation report
+   - Flag critical violations as blockers
+4. **Assess manual criteria** - List what needs manual testing
+5. **Think about edge cases**
 
 ### Step 3: Code Review via `reviewer`
 
@@ -55,6 +61,16 @@ Address any findings before proceeding.
 - Build passes: `npm run build`
 - Tests pass: `npm test`
 - Linting issues: `npm run lint` (X warnings)
+
+### Rules Compliance
+
+| Rule | Status | Violations |
+|------|--------|------------|
+| coding-standards | ✅ Pass | None |
+| naming-conventions | ⚠️ Warning | 2 minor violations |
+| testing-requirements | ❌ Fail | Missing tests for new functions |
+| security-guidelines | ✅ Pass | None |
+| deployment-rules | ✅ Pass | None |
 
 ### Code Review Findings
 
@@ -86,7 +102,7 @@ Recommended workflow:
 
 ## Key Principles
 
-1. **Understand Before Validating** - read the entire plan first
+1. **Understand Before Validating** - Read the entire plan first
 2. **Be Objective and Critical** - Validate functionality, not just presence
 3. **Verify Comprehensively** - Run all automated checks
 4. **Communicate Clearly** - Provide specific file references
@@ -94,7 +110,7 @@ Recommended workflow:
 
 ## Notification Integration
 
-When validating plans or marking validation complete, mark related CTO Dashboard notifications as read via the notification API:
+When validating plans or marking validation complete, mark related CTO Dashboard notifications as Read via the notification API:
 
 ```bash
 # Mark validation notification as read after validation complete

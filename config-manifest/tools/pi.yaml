@@ -502,3 +502,13 @@ components:
     files:
     - src: pi/agent/skills/sales/SKILL.md
       dest: skills/sales/SKILL.md
+  skill/rules-manager:
+    description: Rules Manager skill
+    files:
+    - src: pi/skills/rules-manager/SKILL.md
+      dest: skills/rules-manager/SKILL.md
+  prompt/rules:
+    description: Rules management prompt
+    files:
+    - src: pi/agent/prompts/rules.md
+      dest: prompts/rules.md

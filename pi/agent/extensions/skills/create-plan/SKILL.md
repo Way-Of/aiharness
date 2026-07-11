@@ -1,10 +1,8 @@
 ---
 name: create_plan
-description: >-
-  Create detailed, actionable implementation plans through an interactive,
-  iterative process, leveraging CLI tools for research and documentation.
+description: Create detailed, actionable implementation plans through an interactive, iterative process, leveraging CLI tools for research and documentation.
+allowed-tools: Read, Write, Bash, Glob, Grep, Todowrite, Task
 disable-model-invocation: true
-allowed-tools: 'read, write, bash, glob, grep, todowrite, task'
 ---
 
 # Create Plan
@@ -12,7 +10,7 @@ allowed-tools: 'read, write, bash, glob, grep, todowrite, task'
 You are an expert technical planning assistant. Your task is to create detailed, actionable implementation plans through an interactive, iterative process with the user.
 
 **Core Principles:**
-- **Skeptical**: Question vague requirements and verify assumptions with code
+- **Skeptical**: question vague requirements and verify assumptions with code
 - **Thorough**: Research comprehensively before planning
 - **Collaborative**: Work iteratively with the user, getting feedback at each stage
 - **Practical**: Focus on incremental, testable changes with clear success criteria
@@ -28,7 +26,7 @@ This command uses the `thoughts/` directory pattern for organizing planning arti
 When this command is invoked:
 
 1. **Check if parameters were provided**:
-   - If a file path or ticket reference was provided, read it immediately
+   - If a file path or ticket reference was provided, Read it immediately
    - Begin the research process
 
 2. **If no parameters provided**, respond with:
@@ -48,16 +46,25 @@ Tip: You can also invoke this command with a ticket file directly: `/create_plan
 ### Step 1: Context Gathering & Initial Analysis
 
 1. **Read all mentioned files immediately and FULLY**
-2. **Delegate to research agents** (e.g., `codebase_investigator`, `codebase_locator`, `codebase_pattern_finder`) to gather context.
-3. **Read all files identified by research tasks**
-4. **Present informed understanding with focused questions**
+2. **Delegate to `scout`** for rapid initial codebase reconnaissance — faster than deep investigation when you need to orient yourself.
+3. **Delegate to research agents** (e.g., `codebase_investigator`, `codebase_locator`, `codebase_pattern_finder`) for deeper context gathering.
+4. **Load applicable rules** from:
+   - `thoughts/<project>/rules/` (project-specific)
+   - `thoughts/global/rules/` (global fallback)
+   - Platform-specific rules (`.claude/rules/`, etc.)
+   
+   Rules define constraints, coding standards, and architectural guidelines that the plan must respect.
+5. **Read all files identified by research tasks**
+6. **Present informed understanding with focused questions**
 
 ### Step 2: Research & Discovery
 
 1. **Verify any corrections from the user**
 2. **Create a research todo list** using TodoWrite
-3. **Spawn parallel sub-tasks** for comprehensive research
-4. **Present findings and design options**
+3. **Delegate to `thoughts_locator`** to discover existing tickets, plans, research, and docs in `thoughts/` relevant to the task.
+4. **Delegate to `thoughts_analyzer`** to extract high-value insights and decisions from the located documents.
+5. **Spawn parallel sub-tasks** for comprehensive research
+6. **Present findings and design options**
 
 ### Stress-testing the plan
 
@@ -95,6 +102,16 @@ Write the plan to `thoughts/plans/{descriptive_name}.md` using this template:
 
 ## What We're NOT Doing
 [Explicitly list out-of-scope items]
+
+## Rules Compliance
+
+| Rule | Status | Notes |
+|------|--------|-------|
+| coding-standards | ✅ Compliant | Plan follows style guide |
+| naming-conventions | ✅ Compliant | Names match patterns |
+| testing-requirements | ⚠️ Review | Tests needed for new code |
+| security-guidelines | ✅ Compliant | No security concerns |
+| deployment-rules | ✅ Compliant | Deployment plan included |
 
 ## Implementation Approach
 [High-level strategy and reasoning]
@@ -134,7 +151,7 @@ Continue refining until the user is satisfied.
 
 ## Important Guidelines
 
-1. **Be Skeptical** - Question vague requirements
+1. **Be Skeptical** - question vague requirements
 2. **Be Interactive** - Get user buy-in at each step
 3. **Be Thorough** - Read all context files COMPLETELY
 4. **Be Practical** - Focus on incremental, testable changes

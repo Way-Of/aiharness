@@ -31,8 +31,13 @@ When invoked:
 For each phase:
 1. **Check completion status** - Look for checkmarks
 2. **Run automated verification** - Execute success criteria commands
-3. **Assess manual criteria** - List what needs manual testing
-4. **Think about edge cases**
+3. **Check rules compliance** - Verify implementation follows project rules:
+   - Read applicable rules from `thoughts/<project>/rules/` and `thoughts/global/rules/`
+   - Check code style, naming conventions, testing requirements
+   - Note violations in validation report
+   - Flag critical violations as blockers
+4. **Assess manual criteria** - List what needs manual testing
+5. **Think about edge cases**
 
 ### Step 3: Code Review via `reviewer`
 
@@ -56,6 +61,16 @@ Address any findings before proceeding.
 - Build passes: `npm run build`
 - Tests pass: `npm test`
 - Linting issues: `npm run lint` (X warnings)
+
+### Rules Compliance
+
+| Rule | Status | Violations |
+|------|--------|------------|
+| coding-standards | ✅ Pass | None |
+| naming-conventions | ⚠️ Warning | 2 minor violations |
+| testing-requirements | ❌ Fail | Missing tests for new functions |
+| security-guidelines | ✅ Pass | None |
+| deployment-rules | ✅ Pass | None |
 
 ### Code Review Findings
 

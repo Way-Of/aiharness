@@ -1,9 +1,3 @@
----
-name: init-harness
-description: "Initialize the AI Engineering Harness in a repository"
-allowed-tools: read, write, bash
----
-
 # Initialize Harness
 
 Initialize the AI Engineering Harness in this repository.
@@ -12,14 +6,29 @@ Initialize the AI Engineering Harness in this repository.
 
 1. Runs the tool's project memory init to generate project memory file
 2. Discovers all installed skills, commands, and agents and writes them into the project memory file
-3. Clones the shared `f-rr-d` repo into `thoughts/` with full branch tracking
+3. Clones the f-rr-d repo into `thoughts/` with full branch tracking — supports `--frrd-remote <url>` for custom repos
 4. Creates the project's subfolder inside `thoughts/` with standard structure
 5. Creates personal thoughts directories for developers
 6. Adds `thoughts/` to `.gitignore` to prevent accidental commits
 
+**For existing projects (re-run):**
+- Validates the project against current standards (folder structure, ticket templates, AGENTS.md)
+- Auto-fixes missing directories and templates
+- Reports compliance status and asks before making changes
+
+**Client vs Internal Projects:**
+- **Internal Way-Of projects** get full AGENTS.md with GitHub workflow, all agents, and internal references
+- **Client projects** (when `--frrd-remote` is provided) get a sanitized AGENTS.md — no internal Way-Of references, no GitHub Skills Agent Directory
+
+## Parameters
+
+When invoked with `--frrd-remote <url>`, the init-harness will clone the specified f-rr-d repo instead of the default `github.com/Way-Of/f-rr-d`. This is used for client projects that have their own isolated f-rr-d.
+
+Setting `--frrd-remote` also stores the URL in `.wo/settings.json` as `frrd_remote` for other skills to reference.
+
 ## Critical Rules — f-rr-d is Append-Only
 
-The `thoughts/` directory is a clone of `github.com/Way-Of/f-rr-d`. It must be treated as **append-only**:
+The `thoughts/` directory is a clone of an f-rr-d repository. For internal Way-Of projects this is `github.com/Way-Of/f-rr-d`. For client projects it's the URL specified by `--frrd-remote`. In all cases, it must be treated as **append-only**:
 
 - **NEVER delete** any file or directory inside `thoughts/`
 - **NEVER rename** or **move** any file or directory inside `thoughts/`
@@ -27,14 +36,14 @@ The `thoughts/` directory is a clone of `github.com/Way-Of/f-rr-d`. It must be t
 - Only **create new files** (tickets, plans, research docs) in the appropriate project subfolder
 - Existing tickets, plans, research, and documentation must be left exactly as they are
 
-This is the shared knowledge base across all projects. Deleting or renaming content in one project silently breaks references for all others.
+This is the shared knowledge base across the project. Deleting or renaming content silently breaks references.
 
 ### thoughts/ is Exclusively Managed by f-rr-d
 
-The `thoughts/` folder is **not** part of your project's git history. It is a standalone clone of `github.com/Way-Of/f-rr-d`:
+The `thoughts/` folder is **not** part of your project's git history. It is a standalone clone of the f-rr-d repo:
 
 - **Never commit** `thoughts/` to your project's repository
-- **Only push/pull** `thoughts/` to/from `github.com/Way-Of/f-rr-d`
+- **Only push/pull** `thoughts/` to/from the f-rr-d remote
 - The `.gitignore` entry is **critical** — without it, CI/CD and GitHub Actions workflows may break by pushing f-rr-d content to the wrong remote
 - All ticket, plan, and research operations happen inside `thoughts/` and sync exclusively with f-rr-d
 
@@ -80,22 +89,145 @@ Never force-push.
 
 ## Instructions
 
-### Step 1: Define the Project
+### Step 1: Pull/Clone f-rr-d First
 
-Ask the user:
-1. What is the project name? (e.g., "WayOfMono", "Opticat", "WayOfWork")
-2. What slug should be used? (e.g., "wayofmono", "opticat", "wow")
+Before asking the user anything about the project, ensure f-rr-d is available and up-to-date. This lets you investigate existing projects.
 
-Accept any value — multiple projects can have similar names. Do not validate uniqueness.
+Set `F_RRD_URL`:
+- Use `--frrd-remote <url>` if provided (client project)
+- Otherwise use `https://github.com/Way-Of/f-rr-d.git` (default, internal project)
 
-Set `PROJECT_NAME` to the project name and `PROJECT_SLUG` to the slug.
+**If `thoughts/` does not exist**, clone the f-rr-d repo:
+```bash
+git clone ${F_RRD_URL} thoughts/ || { rm -rf thoughts/; echo "ERROR: git clone failed — thoughts/ has been cleaned up."; exit 1; }
+```
+After cloning, fetch all branches and set up tracking:
+```bash
+git -C thoughts/ fetch --all
+git -C thoughts/ branch -a
+```
 
-### Step 2: Generate Project Memory
+**If `thoughts/` already exists**, check its remote origin:
+- If it points to the expected `F_RRD_URL`: pull the latest:
+  ```bash
+  git -C thoughts/ pull --ff-only
+  ```
+  If pull fails (diverged):
+  ```bash
+  git -C thoughts/ pull --rebase
+  ```
+- If it points to a different repo or is not a repo: ask the user whether to back up and clone, skip, or merge manually. If cloning, back up the existing directory first, then remove it and clone fresh.
+
+If the clone fails at any point, remove the partially-created `thoughts/` directory and exit with an error message.
+
+**Append-only reminder**: Once cloned, only create new files. Never delete, rename, move, or modify existing content inside `thoughts/`.
+
+### Step 2: Investigate Existing Projects & Define the Project
+
+After f-rr-d is up-to-date, list existing projects to see what's already there:
+
+```bash
+ls -d thoughts/*/ 2>/dev/null | xargs -n1 basename | sort
+```
+
+This shows all project slugs currently in f-rr-d (e.g., `wayofmono`, `wow`, `opticat`, `wayofteams`).
+
+**Ask the user:**
+1. Does the project already exist in f-rr-d? (show the list of existing slugs)
+   - If **yes**: ask which existing slug to use. Skip name/slug questions.
+   - If **no**: ask for new project name and slug.
+2. Is this an **internal** Way-Of project or a **client** project?
+
+Set `PROJECT_NAME` to the project name and `PROJECT_SLUG` to the slug. Set `IS_CLIENT` to `true` if a client project.
+
+**If the command was invoked with `--frrd-remote <url>`**, use that URL as the f-rr-d remote. This implies a client project. Skip the "internal vs client" question — it's a client.
+
+**If no `--frrd-remote` is provided**, clone from `https://github.com/Way-Of/f-rr-d.git` (default, internal project).
+
+Store the f-rr-d URL in `.wo/settings.json` for other skills to reference:
+
+```bash
+mkdir -p .wo
+# Write or update the frrd_remote field
+cat > .wo/settings.json <<EOF
+{
+  "frrd_remote": "<F_RRD_URL>",
+  "project_slug": "${PROJECT_SLUG}"
+}
+EOF
+```
+
+If the project already exists in f-rr-d, skip creating the project subfolder (Step 4) — it's already there. Instead, run **Step 2b** to check compliance and update if needed.
+
+### Step 2b: Compliance Check for Existing Projects
+
+When the project already exists in f-rr-d, validate it against current standards and fix any gaps. This handles projects initialized with older harness versions.
+
+**Run these checks:**
+
+#### 1. Required Structure Check
+```bash
+# Check for required directories
+for dir in shared/tickets shared/plans shared/research docs enforcement-ticket; do
+  [ -d "thoughts/${PROJECT_SLUG}/${dir}" ] || echo "MISSING: ${dir}/"
+done
+```
+If any required directories are missing, create them.
+
+#### 2. Ticket Template Check
+```bash
+# Check if ticket template exists and is current
+ls thoughts/${PROJECT_SLUG}/shared/tickets/ticket-template.md 2>/dev/null || echo "MISSING: ticket-template.md"
+# Also check shared/templates/
+ls thoughts/shared/templates/ticket-template.md 2>/dev/null || echo "MISSING: shared/templates/ticket-template.md"
+```
+If the ticket template is missing or outdated, copy from the canonical location:
+```bash
+cp thoughts/shared/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/
+```
+
+#### 3. AGENTS.md Check
+```bash
+ls thoughts/${PROJECT_SLUG}/AGENTS.md 2>/dev/null || echo "MISSING: AGENTS.md"
+```
+If missing, generate it (same logic as Step 3).
+
+#### 4. Developer Workspace Check (internal projects only)
+```bash
+for dev in zerwiz tomas craig andre; do
+  [ -d "thoughts/${PROJECT_SLUG}/${dev}" ] || echo "MISSING: ${dev}/ workspace"
+done
+```
+Create missing developer workspaces.
+
+#### 5. Enforcement Ticket Directory
+```bash
+ls thoughts/${PROJECT_SLUG}/enforcement-ticket/ 2>/dev/null || echo "MISSING: enforcement-ticket/"
+```
+Create if missing.
+
+#### 6. TODO.md Check
+```bash
+ls thoughts/${PROJECT_SLUG}/TODO.md 2>/dev/null || echo "MISSING: TODO.md"
+```
+Create a basic TODO.md if missing.
+
+**After checks complete:**
+- Report all findings to the user
+- Auto-fix what can be auto-fixed (missing dirs, missing templates)
+- Ask user before fixing anything that requires decisions (AGENTS.md content, developer names)
+- If the `alliner-compliance-check` skill is available, delegate to it for deeper validation
+
+**If no issues found**, report: "Project is compliant with current standards."
+
+Then proceed to Step 3 (Generate/Update Project Memory).
+
+### Step 3: Generate Project Memory
 
 Check if the project memory file already exists. If it does, keep it and skip this step.
 If not, run the tool's `/init` command. If this tool has no `/init`, create the project memory file manually with the standard format for this tool.
 
-#### Step 2a: Discover and Append AI Engineering Harness Skills, Commands & Agents Reference
+#### Step 3a: Discover and Append AI Engineering Harness Skills, Commands & Agents Reference
 
 After the project memory file is created (or if it already exists), append a reference section listing all skills, commands, and agents installed by the AI Engineering Harness.
 
@@ -133,7 +265,11 @@ Append the following section to the project memory file:
 
 If the tool does not have a `commands/` directory (e.g., Claude, Codex), omit the Commands section.
 
-After listing skills and commands, also add structured agent definitions for the 6 GitHub skills so that agents know exactly when and how to use them:
+After listing skills and commands, for **internal Way-Of projects** also add structured agent definitions for the 6 GitHub skills so that agents know exactly when and how to use them:
+
+**For client projects (sanitized)**: Skip the GitHub Skills Agent Directory and GitHub Workflow sections entirely. Client AGENTS.md must contain **zero internal Way-Of references**.
+
+For internal projects, add:
 
 ```markdown
 ## GitHub Skills Agent Directory
@@ -191,7 +327,7 @@ Use these skills for all GitHub operations. Never use raw `gh` or `git` commands
 
 ### GitHub Workflow Pattern
 
-After adding the GitHub skill agent definitions, also append this workflow to the project memory file:
+After adding the GitHub skill agent definitions, also append this workflow to the project memory file (internal projects only):
 
 ```markdown
 ## GitHub Workflow
@@ -205,37 +341,18 @@ All GitHub operations follow this sequence:
 6. `github-issue` — Link issues to PRs throughout
 ```
 
-This ensures agents always use the correct skill for each step and never resort to raw commands.
-
-### Step 3: Clone the Shared f-rr-d Repo
-
-Run these checks in order:
-
-1. If `thoughts/` does not exist:
-   ```bash
-   git clone https://github.com/Way-Of/f-rr-d.git thoughts/ || { rm -rf thoughts/; echo "ERROR: git clone failed — thoughts/ has been cleaned up."; exit 1; }
-   ```
-   After cloning, fetch all branches and set up tracking:
-   ```bash
-   git -C thoughts/ fetch --all
-   git -C thoughts/ branch -a
-   ```
-2. If `thoughts/` exists, check its remote origin:
-   - If it points to `Way-Of/f-rr-d`: run `git -C thoughts/ pull --ff-only`
-   - If it points to a different repo or is not a repo: ask the user whether to back up and clone, skip, or merge manually, then execute their choice. If cloning, back up the existing directory first, then remove it and clone fresh.
-
-If the clone fails at any point, remove the partially-created `thoughts/` directory and exit with an error message.
-
-**Append-only reminder**: Once cloned, only create new files. Never delete, rename, move, or modify existing content inside `thoughts/`.
+This ensures agents always use the correct skill for each step and never resort to raw commands. **Skip this entire section for client projects.**
 
 ### Step 4: Create the Project Subfolder — Match Existing f-rr-d Structure
 
-First, examine the existing f-rr-d structure to understand the pattern. Look at `thoughts/wayofmono/`, `thoughts/wow/`, and `thoughts/opticat/` for reference. The canonical structure is:
+**Skip this step if the project already exists in f-rr-d** — the folder structure is already in place. Only create if it's a new project.
+
+First, examine the existing f-rr-d structure to understand the pattern. Look at existing project folders in the cloned repo for reference. The canonical structure is:
 
 ```
 thoughts/${PROJECT_SLUG}/
 ├── shared/
-│   ├── tickets/        # Tickets (copy template from thoughts/shared/tickets/ticket-template.md)
+│   ├── tickets/        # Tickets (copy template from thoughts/shared/templates/ticket-template.md)
 │   ├── plans/          # Implementation plans
 │   └── research/       # Research documents
 ├── docs/
@@ -243,40 +360,73 @@ thoughts/${PROJECT_SLUG}/
 │   ├── decisions/      # ADRs
 │   ├── guides/         # How-to guides
 │   └── references/     # Reference docs
-├── global/             # Project-level cross-cutting concerns
 ├── enforcement-ticket/ # HIGHEST PRIORITY — overrides all other tickets
+├── TODO.md             # If the user wants one
+```
+
+**For internal Way-Of projects only**, also create:
+```
+├── global/             # Project-level cross-cutting concerns
 ├── zerwiz/             # Developer workspace
 ├── tomas/              # Developer workspace
 ├── craig/              # Developer workspace
 ├── andre/              # Developer workspace
-├── TODO.md             # If the user wants one
 ```
 
-> **Enforcement tickets** are the highest priority items in the project. They **override all other tickets** — when an enforcement ticket exists, all work on non-enforcement tickets must pause until the enforcement ticket is resolved. This includes tickets across all namespaces (WOMONO, WOW, OPT).
+**For client projects**, skip `global/` and developer directories — only create the core structure. Ask the user which developer directories they need.
+
+> **Enforcement tickets** are the highest priority items in the project. They **override all other tickets** — when an enforcement ticket exists, all work on non-enforcement tickets must pause until the enforcement ticket is resolved.
 
 Create the core structure:
 
 ```bash
 mkdir -p thoughts/${PROJECT_SLUG}/shared/{tickets,plans,research}
 mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references}
-mkdir -p thoughts/${PROJECT_SLUG}/{global,enforcement-ticket,zerwiz,tomas,craig,andre}
+mkdir -p thoughts/${PROJECT_SLUG}/enforcement-ticket
+mkdir -p thoughts/${PROJECT_SLUG}/rules
+```
+
+Copy template rules to the project:
+
+```bash
+# Copy template rules from shared templates
+if [ -d thoughts/shared/templates/rules ]; then
+  for template in thoughts/shared/templates/rules/*.md; do
+    if [ -f "$template" ]; then
+      filename=$(basename "$template")
+      cp "$template" "thoughts/${PROJECT_SLUG}/rules/$filename"
+    fi
+  done
+fi
+```
+
+For internal projects, also create:
+```bash
+mkdir -p thoughts/${PROJECT_SLUG}/{global,zerwiz,tomas,craig,andre}
 ```
 
 Copy the ticket template from the shared location:
 
 ```bash
-cp thoughts/shared/tickets/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/
+# Try current template path first, fall back to old path
+if [ -f thoughts/shared/templates/ticket-template.md ]; then
+  cp thoughts/shared/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/
+else
+  cp thoughts/shared/tickets/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/ 2>/dev/null || true
+fi
 ```
 
 Additional subdirectories like `docs/best-practices/`, `docs/skills/`, `docs/tools/` can be added as needed — follow what existing projects have.
 
 ### Step 5: Create Personal Thoughts Directories
 
-Developer directories (`zerwiz/`, `tomas/`, `craig/`, `andre/`) were already created in Step 4. These are **always** created for every project — no user input needed. If additional developers join later, create their directories manually:
+**For internal Way-Of projects**: Developer directories (`zerwiz/`, `tomas/`, `craig/`, `andre/`) were already created in Step 4. These are **always** created for every internal project — no user input needed. If additional developers join later, create their directories manually:
 
 ```bash
 mkdir -p thoughts/${PROJECT_SLUG}/<developer-name>
 ```
+
+**For client projects**: Ask the user which developer directories to create. Leave empty if none specified.
 
 Personal dirs contain tickets, plans, and research files directly — no subfolder structure needed.
 
@@ -296,6 +446,7 @@ grep -q '^thoughts/' .gitignore 2>/dev/null || echo 'thoughts/' >> .gitignore
 
 Print the following summary:
 
+**For internal Way-Of projects**:
 ```
 ## Harness Initialized Successfully
 
@@ -325,13 +476,29 @@ Use `/help` to learn more about each agent.
    - `gh auth login` or configure a personal access token
    - Required for pushing tickets, plans, and research to f-rr-d
 2. Create your first ticket:
-   cp thoughts/shared/tickets/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/PROJ-001-my-feature.md
+   cp thoughts/shared/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/PROJ-001-my-feature.md
 3. Generate a plan: /create_plan ...
 4. Implement: /implement_plan ...
 5. Commit: /commit
 
 ### Workflow
 Ticket → /create_plan → /implement_plan → /validate_plan → /commit
+```
+
+**For client projects** (sanitized, no internal references):
+```
+## Harness Initialized Successfully
+
+### Created
+- <project-memory-file> — Project memory for AI agents
+- thoughts/ — Project knowledge repository
+- thoughts/${PROJECT_SLUG}/ — This project's workspace
+
+### Next Steps
+1. Create your first ticket
+2. Generate a plan: /create_plan ...
+3. Implement: /implement_plan ...
+4. Commit: /commit
 ```
 
 ## Edge Cases
@@ -342,7 +509,7 @@ Check with `git rev-parse --git-dir`. If it fails, run `git init` first, then pr
 
 ### thoughts/ Already Exists (Wrong Repo)
 
-If `thoughts/` exists and its remote origin is not `Way-Of/f-rr-d`, ask the user: back up and clone, skip, or merge manually. Execute their choice. If cloning, back up the existing directory first, then remove it and clone fresh. Restore any user files from backup into the new clone's appropriate locations.
+If `thoughts/` exists and its remote origin does not match the expected `F_RRD_URL`, ask the user: back up and clone, skip, or merge manually. Execute their choice. If cloning, back up the existing directory first, then remove it and clone fresh. Restore any user files from backup into the new clone's appropriate locations.
 
 ### Git Clone Failure
 

@@ -48,8 +48,14 @@ Tip: You can also invoke this command with a ticket file directly: `/create_plan
 1. **Read all mentioned files immediately and FULLY**
 2. **Delegate to `scout`** for rapid initial codebase reconnaissance — faster than deep investigation when you need to orient yourself.
 3. **Delegate to research agents** (e.g., `codebase_investigator`, `codebase_locator`, `codebase_pattern_finder`) for deeper context gathering.
-4. **Read all files identified by research tasks**
-5. **Present informed understanding with focused questions**
+4. **Load applicable rules** from:
+   - `thoughts/<project>/rules/` (project-specific)
+   - `thoughts/global/rules/` (global fallback)
+   - Platform-specific rules (`.claude/rules/`, etc.)
+   
+   Rules define constraints, coding standards, and architectural guidelines that the plan must respect.
+5. **Read all files identified by research tasks**
+6. **Present informed understanding with focused questions**
 
 ### Step 2: Research & Discovery
 
@@ -96,6 +102,16 @@ Write the plan to `thoughts/plans/{descriptive_name}.md` using this template:
 
 ## What We're NOT Doing
 [Explicitly list out-of-scope items]
+
+## Rules Compliance
+
+| Rule | Status | Notes |
+|------|--------|-------|
+| coding-standards | ✅ Compliant | Plan follows style guide |
+| naming-conventions | ✅ Compliant | Names match patterns |
+| testing-requirements | ⚠️ Review | Tests needed for new code |
+| security-guidelines | ✅ Compliant | No security concerns |
+| deployment-rules | ✅ Compliant | Deployment plan included |
 
 ## Implementation Approach
 [High-level strategy and reasoning]

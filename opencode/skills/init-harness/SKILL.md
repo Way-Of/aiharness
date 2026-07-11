@@ -1,9 +1,3 @@
----
-name: init-harness
-description: "Initialize the AI Engineering Harness in a repository"
-allowed-tools: read, write, bash
----
-
 # Initialize Harness
 
 Initialize the AI Engineering Harness in this repository.
@@ -163,7 +157,70 @@ cat > .wo/settings.json <<EOF
 EOF
 ```
 
-If the project already exists in f-rr-d, skip creating the project subfolder (Step 4) — it's already there. Just update `.wo/settings.json` and proceed to generate/update the project memory file.
+If the project already exists in f-rr-d, skip creating the project subfolder (Step 4) — it's already there. Instead, run **Step 2b** to check compliance and update if needed.
+
+### Step 2b: Compliance Check for Existing Projects
+
+When the project already exists in f-rr-d, validate it against current standards and fix any gaps. This handles projects initialized with older harness versions.
+
+**Run these checks:**
+
+#### 1. Required Structure Check
+```bash
+# Check for required directories
+for dir in shared/tickets shared/plans shared/research docs enforcement-ticket; do
+  [ -d "thoughts/${PROJECT_SLUG}/${dir}" ] || echo "MISSING: ${dir}/"
+done
+```
+If any required directories are missing, create them.
+
+#### 2. Ticket Template Check
+```bash
+# Check if ticket template exists and is current
+ls thoughts/${PROJECT_SLUG}/shared/tickets/ticket-template.md 2>/dev/null || echo "MISSING: ticket-template.md"
+# Also check shared/templates/
+ls thoughts/shared/templates/ticket-template.md 2>/dev/null || echo "MISSING: shared/templates/ticket-template.md"
+```
+If the ticket template is missing or outdated, copy from the canonical location:
+```bash
+cp thoughts/shared/templates/ticket-template.md thoughts/${PROJECT_SLUG}/shared/tickets/
+```
+
+#### 3. AGENTS.md Check
+```bash
+ls thoughts/${PROJECT_SLUG}/AGENTS.md 2>/dev/null || echo "MISSING: AGENTS.md"
+```
+If missing, generate it (same logic as Step 3).
+
+#### 4. Developer Workspace Check (internal projects only)
+```bash
+for dev in zerwiz tomas craig andre; do
+  [ -d "thoughts/${PROJECT_SLUG}/${dev}" ] || echo "MISSING: ${dev}/ workspace"
+done
+```
+Create missing developer workspaces.
+
+#### 5. Enforcement Ticket Directory
+```bash
+ls thoughts/${PROJECT_SLUG}/enforcement-ticket/ 2>/dev/null || echo "MISSING: enforcement-ticket/"
+```
+Create if missing.
+
+#### 6. TODO.md Check
+```bash
+ls thoughts/${PROJECT_SLUG}/TODO.md 2>/dev/null || echo "MISSING: TODO.md"
+```
+Create a basic TODO.md if missing.
+
+**After checks complete:**
+- Report all findings to the user
+- Auto-fix what can be auto-fixed (missing dirs, missing templates)
+- Ask user before fixing anything that requires decisions (AGENTS.md content, developer names)
+- If the `alliner-compliance-check` skill is available, delegate to it for deeper validation
+
+**If no issues found**, report: "Project is compliant with current standards."
+
+Then proceed to Step 3 (Generate/Update Project Memory).
 
 ### Step 3: Generate Project Memory
 
@@ -326,6 +383,21 @@ Create the core structure:
 mkdir -p thoughts/${PROJECT_SLUG}/shared/{tickets,plans,research}
 mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references}
 mkdir -p thoughts/${PROJECT_SLUG}/enforcement-ticket
+mkdir -p thoughts/${PROJECT_SLUG}/rules
+```
+
+Copy template rules to the project:
+
+```bash
+# Copy template rules from shared templates
+if [ -d thoughts/shared/templates/rules ]; then
+  for template in thoughts/shared/templates/rules/*.md; do
+    if [ -f "$template" ]; then
+      filename=$(basename "$template")
+      cp "$template" "thoughts/${PROJECT_SLUG}/rules/$filename"
+    fi
+  done
+fi
 ```
 
 For internal projects, also create:

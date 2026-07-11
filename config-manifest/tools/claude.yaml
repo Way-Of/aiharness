@@ -390,3 +390,13 @@ components:
     files:
     - src: claude/skills/sales/SKILL.md
       dest: skills/sales/SKILL.md
+  skill/rules_manager:
+    description: Rules Manager skill
+    files:
+    - src: claude/skills/rules_manager/SKILL.md
+      dest: skills/rules_manager/SKILL.md
+  command/rules:
+    description: Rules management command
+    files:
+    - src: claude/commands/rules.md
+      dest: commands/rules.md

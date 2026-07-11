@@ -380,3 +380,13 @@ components:
     files:
     - src: opencode/skills/sales/SKILL.md
       dest: skills/sales/SKILL.md
+  skill/rules-manager:
+    description: Rules Manager skill
+    files:
+    - src: opencode/skills/rules-manager/SKILL.md
+      dest: skills/rules-manager/SKILL.md
+  command/rules:
+    description: Rules management command
+    files:
+    - src: opencode/commands/rules.md
+      dest: commands/rules.md

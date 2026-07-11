@@ -1,9 +1,3 @@
----
-name: init-harness
-description: "Initialize the AI Engineering Harness in a repository"
-allowed-tools: read, write, bash
----
-
 # Initialize Harness
 
 Initialize the AI Engineering Harness in this repository.
@@ -173,6 +167,7 @@ When the project already exists in f-rr-d, validate it against current standards
 
 #### 1. Required Structure Check
 ```bash
+# Check for required directories
 for dir in shared/tickets shared/plans shared/research docs enforcement-ticket; do
   [ -d "thoughts/${PROJECT_SLUG}/${dir}" ] || echo "MISSING: ${dir}/"
 done
@@ -181,7 +176,9 @@ If any required directories are missing, create them.
 
 #### 2. Ticket Template Check
 ```bash
+# Check if ticket template exists and is current
 ls thoughts/${PROJECT_SLUG}/shared/tickets/ticket-template.md 2>/dev/null || echo "MISSING: ticket-template.md"
+# Also check shared/templates/
 ls thoughts/shared/templates/ticket-template.md 2>/dev/null || echo "MISSING: shared/templates/ticket-template.md"
 ```
 If the ticket template is missing or outdated, copy from the canonical location:
@@ -386,6 +383,21 @@ Create the core structure:
 mkdir -p thoughts/${PROJECT_SLUG}/shared/{tickets,plans,research}
 mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references}
 mkdir -p thoughts/${PROJECT_SLUG}/enforcement-ticket
+mkdir -p thoughts/${PROJECT_SLUG}/rules
+```
+
+Copy template rules to the project:
+
+```bash
+# Copy template rules from shared templates
+if [ -d thoughts/shared/templates/rules ]; then
+  for template in thoughts/shared/templates/rules/*.md; do
+    if [ -f "$template" ]; then
+      filename=$(basename "$template")
+      cp "$template" "thoughts/${PROJECT_SLUG}/rules/$filename"
+    fi
+  done
+fi
 ```
 
 For internal projects, also create:

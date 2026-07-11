@@ -1,97 +1,78 @@
----
-description: Validate Plan
----
 # Validate Plan
 
-You are tasked with validating that an implementation plan was correctly executed, verifying all success criteria and identifying any deviations or issues.
+Validate that an implementation plan is complete, feasible, and ready for implementation.
 
-## Initial Setup
+## When to Use
 
-When invoked:
-1. **Determine context** - Are you in an existing conversation or starting fresh?
-2. **Locate the plan** - Use provided path or search `thoughts/plans/`
-3. **Gather implementation evidence** via git history
+- After `/create_plan` finishes and before `/implement_plan` starts
+- When reviewing a plan created by someone else
+- Before starting work on any plan
 
-## Validation Process
+## Validation Checklist
 
-### Step 1: Context Discovery
+### 1. Plan Completeness
+- [ ] All phases have clear scope
+- [ ] All files to modify are listed with paths
+- [ ] Success criteria are defined per phase
+- [ ] No open questions remain
+- [ ] "What We're NOT DOING" section exists
 
-1. **Read the implementation plan** completely
-2. **Identify what should have changed**
-3. **Spawn parallel research tasks** using:
-   - **codebase-analyzer**: Verify implementation details
-   - **codebase-locator**: Find modified files
-   - **explore**: Check test coverage
+### 2. Path Verification
+- [ ] All referenced files exist (use `ls`/`find`)
+- [ ] All directories exist or will be created
+- [ ] No hardcoded paths that should be dynamic
 
-### Step 2: Systematic Validation
+### 3. Rules Compliance
+- [ ] Read applicable rules from `thoughts/<project>/rules/` and `thoughts/global/rules/`
+- [ ] Plan respects coding standards
+- [ ] Plan respects naming conventions
+- [ ] Plan respects security guidelines
 
-For each phase:
-1. **Check completion status** - Look for checkmarks
-2. **Run automated verification** - Execute success criteria commands
-3. **Assess manual criteria** - List what needs manual testing
-4. **Think about edge cases**
+### 4. Feasibility Check
+- [ ] Changes are possible with current codebase patterns
+- [ ] No circular dependencies introduced
+- [ ] No breaking changes without migration plan
+- [ ] Dependencies are available
 
-### Step 3: Generate Validation Report
+### 5. Risk Assessment
+- [ ] Risks are identified and documented
+- [ ] Mitigation strategies exist for high-risk items
+- [ ] Rollback plan exists if needed
 
-```markdown
-## Validation Report: [Plan Name]
+## Rules
 
-### Implementation Status
-- Phase 1: [Name] - Fully implemented
-- Phase 2: [Name] - Partially implemented (see issues)
-
-### Automated Verification Results
-- Build passes: `npm run build`
-- Tests pass: `npm test`
-- Linting issues: `npm run lint` (X warnings)
-
-### Code Review Findings
-
-#### Matches Plan:
-- [What was implemented correctly]
-
-#### Deviations from Plan:
-- [What differs from plan]
-
-#### Potential Issues:
-- [Concerns discovered]
-
-### Manual Testing Required:
-1. [ ] Verify [feature] works
-2. [ ] Test error states
-
-### Recommendations:
-- [Actionable next steps]
-```
-
-## Relationship to Other Commands
-
-Recommended workflow:
-1. `/create_plan` - Create implementation plan
-2. `/implement_plan` - Execute the implementation
-3. `/commit` - Create atomic commits
-4. `/validate_plan` - Verify implementation correctness
-5. Create PR
-
-## Key Principles
-
-1. **Understand Before Validating** - Read the entire plan first
-2. **Be Objective and Critical** - Validate functionality, not just presence
-3. **Verify Comprehensively** - Run all automated checks
-4. **Communicate Clearly** - Provide specific file references
-5. **Think Long-term** - Consider maintainability
+- **Read-Only**: Never modify files, only read and analyze
+- **Block on Critical Issues**: If plan has critical flaws, block implementation
+- **Allow Minor Issues**: Note minor issues but don't block
+- End with `[PLAN_VALIDATION_COMPLETE]`
 
 ## Context Reference
 
 ### Rules
 - **Location**: `thoughts/global/rules/` (global) + `thoughts/<project>/rules/` (project-specific)
 - **Precedence**: Project rules override global rules
-- **Categories**: coding-standards, naming-conventions, testing-requirements, security-guidelines, deployment-rules
 
 ### Templates
 - **Location**: `thoughts/global/templates/`
-- **Available**: ticket-template.md, knowledge-entry.md, todo-template.md, AGENTS.md.template, fixes/
 
 ### Knowledgebase
 - **Location**: `thoughts/global/knowledge/`
-- **Commands**: Use `knowledge` skill to store, fetch, search, list, stats
+
+## Agent Reference
+
+### Available Agents
+| Agent | Purpose | When to Use |
+|-------|---------|-------------|
+| `scout` | Fast codebase recon, file finding | Most code investigation tasks |
+| `codebase_locator` | Find files by feature/task | Locating specific files |
+| `codebase_pattern_finder` | Find similar implementations | Modeling after existing code |
+| `planner` | Design implementation plans | Starting new features, refactoring |
+| `codebase_analyzer` | Deep complex analysis | Tracing data flow through 5+ files |
+| `coder` | Implementation and code generation | Turning plans into code |
+| `reviewer` | Code review and quality checks | After implementation |
+| `debugger` | Debug issues (read-only) | When something is broken |
+| `thoughts_analyzer` | Extract insights from research | Analyzing research documents |
+| `thoughts_locator` | Find documents in thoughts/ | Locating tickets, plans, docs |
+| `web_search_researcher` | Research from web sources | Current info not in codebase |
+| `netlify_troubleshooter` | Netlify CI/CD diagnostics | Build pipeline issues |
+| `github` | GitHub operations (safe) | PRs, issues, branches, reviews |

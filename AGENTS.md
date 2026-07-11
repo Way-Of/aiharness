@@ -136,12 +136,13 @@ All agents are shared across all six tools:
 | `coder` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Implementation and code generation |
 | `reviewer` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Code review and quality checks |
 | `debugger` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Debug issues during testing — examines logs, state, git history to find root causes (read-only) |
+| `github` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | GitHub operations — creates PRs, branches, issues, reviews. ALWAYS asks before destructive actions |
 | `netlify_troubleshooter` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Netlify CI/CD diagnostics and build pipeline |
 
 ## Workflow
 
 ```
-Ticket → /create_plan → /implement_plan → /validate_plan → [/validate_telemetry] → /commit
+Ticket → /create_plan → /validate_plan → /implement_plan → /validate_implementation → [/validate_telemetry] → /commit
 ```
 
 1. Create ticket in `thoughts/shared/tickets/` (use ticket-template.md)
@@ -254,6 +255,7 @@ Available MCP servers: `kubernetes` (disabled by default), `aspire-dashboard` (d
 - coder
 - reviewer
 - debugger
+- github
 - netlify_troubleshooter
 
 ## GitHub Skills Agent Directory

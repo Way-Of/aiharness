@@ -52,7 +52,7 @@ thoughts/
 The harness implements a structured development workflow:
 
 ```
-Ticket → /create_plan → /implement_plan → /validate_plan → [/validate_telemetry] → /commit
+Ticket → /create_plan → /validate_plan → /implement_plan → /validate_implementation → [/validate_telemetry] → /commit
 ```
 
 1. Create tickets in `thoughts/shared/tickets/` using the template

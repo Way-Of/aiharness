@@ -491,7 +491,7 @@ The following agents are available via the harness:
 5. Commit: /commit
 
 ### Workflow
-Ticket → /create_plan → /implement_plan → /validate_plan → /commit
+Ticket → /create_plan → /validate_plan → /implement_plan → /validate_implementation → /commit
 ```
 
 **For client projects** (sanitized, no internal references):

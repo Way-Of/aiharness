@@ -63,5 +63,5 @@ thoughts/
 ## Workflow After Initialization
 
 ```
-Ticket → /create_plan → /implement_plan → /validate_plan → /commit
+Ticket → /create_plan → /validate_plan → /implement_plan → /validate_implementation → /commit
 ```

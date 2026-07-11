@@ -8,14 +8,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 - Debugger agent for all 6 tools + 2 subagent extensions (AIH-186)
+- GitHub agent for all 6 tools + 2 subagent extensions — safe GitHub operations, always asks before destructive actions (AIH-188)
 - Context Reference section to all 83 agent files (rules, templates, knowledgebase)
 - Context Reference section to 108 command and prompt files
+- Agent Reference section to 117 command/prompt files (all 13 agents listed)
 - Knowledgebase reference (`thoughts/global/knowledge/`) to all 659 skill boilerplate sections
+- New `validate-plan` skill — validates plan before implementation (completeness, feasibility, rules)
 - Mandatory validation gate to create-plan: plans require explicit user approval before implementation (16 files)
 - Knowledge entry ai-tools-001: sed bulk-update pattern for mass path renames
 - `alliner-compliance-check` skill added to manifest for all 6 tools (AIH-188)
 - `rules-manager` added to official skills catalog — 53 skills total (AIH-188)
 - `ticket-organization` skill added to manifest for all 6 tools (AIH-188)
+
+### Changed
+- Renamed `validate-plan` → `validate-implementation` (validates code after implementation)
+- Fixed global workflow order: `Ticket → /create_plan → /validate_plan → /implement_plan → /validate_implementation → /commit` (AIH-188)
+- Updated 57 files with correct workflow order
+- Updated 19 planner/telemetry files to reference `validate_implementation`
+- Updated documentation: Skills Catalog and Presentation reflect new agents and workflow
 
 ### Changed
 - Consolidated duplicate rules directories: removed `thoughts/global/templates/rules/`, kept `thoughts/global/rules/` as single source of truth (AIH-187)

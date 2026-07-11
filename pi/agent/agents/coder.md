@@ -16,7 +16,7 @@ You are the Coder. Your objective is to turn plans into production-ready code, w
 This agent is part of the f-rr-d context engineering workflow:
 
 ```
-Ticket -> /create_plan -> /implement_plan -> /validate_plan -> /commit
+Ticket -> /create_plan -> /validate_plan -> /implement_plan -> /validate_implementation -> /commit
 ```
 
 - **Tickets** at `thoughts/<project>/shared/tickets/<PREFIX>-<NNN>-<DESC>.md`

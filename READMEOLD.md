@@ -2189,7 +2189,7 @@ Config: `.wo/config/harness.json` stores `f_rrd_url` and `project_slug` for the 
 ### Workflow Pattern
 
 ```
-Ticket → /create_plan → /implement_plan → /validate_plan → /validate_telemetry → /commit
+Ticket → /create_plan → /validate_plan → /implement_plan → /validate_implementation → /validate_telemetry → /commit
 ```
 
 **Step-by-step:**

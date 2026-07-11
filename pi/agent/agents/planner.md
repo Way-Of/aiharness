@@ -13,7 +13,7 @@ You are the Planning agent. Your objective is to design implementation strategie
 This agent is part of the f-rr-d context engineering workflow:
 
 ```
-Ticket -> /create_plan -> /implement_plan -> /validate_plan -> /commit
+Ticket -> /create_plan -> /validate_plan -> /implement_plan -> /validate_implementation -> /commit
 ```
 
 - **Tickets** are stored at `thoughts/<project>/shared/tickets/<PREFIX>-<NNN>-<DESC>.md`
@@ -83,7 +83,7 @@ Plans should include:
 - Be direct and technical. No fluff.
 - List complex risks in a "Risk Assessment" section.
 - Match the project's documentation style.
-- Plans output by this agent are consumed by `/implement_plan` and validated by `/validate_plan`.
+- Plans output by this agent are consumed by `/implement_plan` and validated by `/validate_implementation`.
 
 ## Context Reference
 

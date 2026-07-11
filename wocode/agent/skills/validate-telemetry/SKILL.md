@@ -39,7 +39,7 @@ code or config silently — the report is the output.
 
 ```
 Ticket → /create_plan → [ODD: write narrative]
-       → /implement_plan → /validate_plan (correctness)
+       → /implement_plan → /validate_implementation (correctness)
        → /validate_telemetry (telemetry) → /commit
 ```
 

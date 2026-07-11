@@ -11,7 +11,7 @@ Executes approved plans in phases, with validation and telemetry tracking after 
 ## Workflow
 
 ```
-Ticket → /create_plan → /implement_plan → /validate_plan → /validate_telemetry → /commit
+Ticket → /create_plan → /validate_plan → /implement_plan → /validate_implementation → /validate_telemetry → /commit
 ```
 
 ## Commands

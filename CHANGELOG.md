@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Renamed kebab→snake dirs in claude and antigravity to match tool conventions
 
 ### Changed
+- Repositioned agents: scout is now the default code investigation agent, codebase_analyzer is only for deep complex analysis
 - All 25 canonical skills made project-agnostic — removed "AI Engineering Harness", "WOMONO", "WOW", "OPT" references (AIH-185)
 - wo-coder.md docs updated: Wo Coder uses kebab-case + Title Case (inherits from Pi, not snake_case)
 - Codex skill.yaml files use pure YAML format (no `---` frontmatter delimiters)

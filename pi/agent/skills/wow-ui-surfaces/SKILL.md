@@ -22,7 +22,8 @@ The UI is divided into distinct "surfaces". The primary application container is
 - **Double-Bubble Prevention:** When streaming an AI response, do not render an empty assistant message row simultaneously with the "thinking" indicator (managed in `src/components/ChatPanel.tsx`).
 - **i18n (WOW-014):** Always use `useTranslation()` for text. Avoid hardcoding strings. Update `src/i18n/sv.json` and `src/i18n/en.json` synchronously.
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

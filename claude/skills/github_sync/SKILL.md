@@ -124,7 +124,8 @@ Parameters:
 - Cleans up branches after merge
 - Respects branch protection rules (no force push to protected)
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

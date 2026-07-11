@@ -70,7 +70,8 @@ When user says "bump to X.Y.Z" or "release vX.Y.Z":
 7. If requested: `git add`, `git commit -m "chore: bump to vX.Y.Z"`, `git tag vX.Y.Z`
 8. Show summary of changes
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

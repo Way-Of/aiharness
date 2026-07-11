@@ -277,7 +277,8 @@ Only `audit_tickets` supports `--auto-fix`. When enabled with that tool:
 - **TODO.md regeneration**: Follow backlog-groomer patterns
 - **Ordering**: Audit runs BEFORE any ticket-manager or ticket-executor operation (see Pre-Session Audit)
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

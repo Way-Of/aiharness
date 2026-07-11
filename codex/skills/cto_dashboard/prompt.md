@@ -36,7 +36,8 @@ Provides a unified dashboard for CTO to review all tickets, track developer prog
 - `ai-harness dev submit <ticket-id>` - Submit for review
 - `ai-harness dev status` - My tickets status
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

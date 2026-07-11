@@ -103,7 +103,8 @@ Would you like me to investigate a specific file or log layer further?
 - **Prevent Context Flooding**: Read files completely but handle large log streams using targeted filters (`grep`, `tail`) rather than dumping full files.
 - **Always Require Context**: If the user's issue description is vague, ask targeted questions before running deep diagnostics.
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

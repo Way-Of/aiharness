@@ -57,7 +57,8 @@ The CTO Dashboard provides interactive ticket status management:
 
 When working on a ticket, the current status from the UI/dashboard is the source of truth. Agents can also update status using `update_ticket` tool with `status` parameter.
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

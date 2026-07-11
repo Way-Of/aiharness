@@ -58,7 +58,8 @@ Some tasks span skills. Execute in this order:
 | `otel_semantic_conventions` | Attribute standards | Placement rules, naming, migration, registry namespaces |
 | `otel_ottl` | OTTL expressions | Syntax, contexts, redaction, normalization, function reference |
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

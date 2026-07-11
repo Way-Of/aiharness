@@ -95,7 +95,8 @@ If the plan has existing checkmarks:
 4. **Communicate Clearly** - Update checkboxes and todos
 5. **Keep Momentum** - Don't get stuck on minor details
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

@@ -80,7 +80,8 @@ After comparing, give your own recommendation: which design you think is stronge
 
 Write the refactor RFC as a local markdown file in `issues/` using the template in [REFERENCE.md](REFERENCE.md). Do NOT ask the user to review before writing — just Write it and share the path.
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

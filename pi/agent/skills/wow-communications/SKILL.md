@@ -21,7 +21,8 @@ Internal agents (like `schemaplanerare` or `fakturering`) can initiate outbound 
 - They use the `telegram_send` or `whatsapp_send` OpenAI function tools.
 - These tools require the recipient's internal `user_id`. The tools automatically look up the correct channel linkage in the database before dispatching the HTTP request to the respective provider's API.
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

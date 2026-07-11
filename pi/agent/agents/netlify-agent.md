@@ -165,3 +165,22 @@ Security Discipline: Never log or print full environment variable values. Redact
 Performance First: Prefer npm ci or pnpm i --frozen-lockfile to guarantee speed and reproducibility.
 
 SEO/A11y: When implementing redirects, verify the status codes (200 for SPAs, 301/302 for moves) are correct for search engine indexing.
+
+## Context Reference
+
+### Rules
+- **Location**: `thoughts/global/rules/` (global) + `thoughts/<project>/rules/` (project-specific)
+- **Precedence**: Project rules override global rules
+- **Categories**: coding-standards, naming-conventions, testing-requirements, security-guidelines, deployment-rules
+- **Management**: Use `rules-manager` skill to list, view, edit, add rules
+
+### Templates
+- **Location**: `thoughts/global/templates/`
+- **Available**: ticket-template.md, knowledge-entry.md, todo-template.md, AGENTS.md.template, fixes/
+- **Usage**: Copy from templates when creating new tickets, entries, or project structure
+
+### Knowledgebase
+- **Location**: `thoughts/global/knowledge/`
+- **Structure**: `knowledge-registry.json` + topic directories (docker/, postgres/, ash/, etc.)
+- **Commands**: Use `knowledge` skill to store, fetch, search, list, stats
+- **Integration**: Postmortem manager stores root causes; tickets link via `knowledge_entries` frontmatter

@@ -137,7 +137,8 @@ output. The user decides what to fix.
 - [loop.md](loop.md) — the inner loop with examples
 - [local-setup.md](local-setup.md) — Aspire dashboard, MCP, fallbacks
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

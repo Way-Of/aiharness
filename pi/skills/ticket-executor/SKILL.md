@@ -103,7 +103,8 @@ curl -X POST http://localhost:6969/api/notifications \
   -d '{"action": "mark-read", "notificationId": "review-<TICKET_ID>"}'
 ```
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

@@ -95,7 +95,8 @@ Before marking a task complete, verify your work against every applicable best-p
 - Quick experiments or prototypes that won't be merged
 - Legacy code cleanup that explicitly preserves the old pattern
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

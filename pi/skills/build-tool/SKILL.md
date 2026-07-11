@@ -158,7 +158,8 @@ Online docs (always fetch at generation time):
 - Antigravity: https://antigravity.google/docs/cli-overview
 - Codex: https://developers.openai.com/codex/cli
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

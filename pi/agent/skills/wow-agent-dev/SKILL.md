@@ -49,7 +49,8 @@ If an agent needs a new capability (e.g., searching a specific DB table), the to
 2. Exported as an OpenAI-compatible function definition schema.
 3. Registered in the execution switch statement within `server/orchestrator-tools-exec.ts`.
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

@@ -22,7 +22,8 @@ description: Fundamental architectural principles and tech stack rules for the W
 - **Workspace Data:** Lives on the filesystem in the directory defined by `WOP_WORKSPACE`.
 - **AI Agent Data:** Application agents (not you, but the bots within the app) live in `.wo/agents/` and their sessions in `workspace/agent/sessions/`.
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

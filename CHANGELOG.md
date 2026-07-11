@@ -12,6 +12,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Simplified rules-manager from 3-tier to 2-tier precedence (project > global)
 - Updated init-harness to copy rules from `thoughts/global/rules/` to new projects
 - Created debugger agent for all 6 tools + 2 subagent extensions (AIH-186)
+- Added Context Reference section to all 83 agent files (rules, templates, knowledgebase paths)
+- Renamed "Templates & Rules" boilerplate to "Context Reference" across 659 skill files
+- Added knowledgebase reference (`thoughts/global/knowledge/`) to all skill boilerplate
 
 ## [1.7.21] - 2026-07-11
 

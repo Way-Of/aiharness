@@ -183,7 +183,8 @@ You've succeeded when:
 - Don't abuse it - proper planning upfront is still better when possible
 - The skill automates the tedious cleanup work of formalizing experiments
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

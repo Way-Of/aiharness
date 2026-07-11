@@ -19,7 +19,8 @@ Activates the [git-commit-helper](skills/git_commit_helper/SKILL.md) skill to pe
 2. Follow that skill's workflow to complete the operation
 3. Report results to the user
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

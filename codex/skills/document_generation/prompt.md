@@ -15,7 +15,8 @@ This skill provides agents with the capability to create a variety of structured
 - Ensure that generated documents comply with established templates, branding, and legal requirements.
 - For documents that modify or represent financial transactions (offers, invoices), confirm user approval before finalization.
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

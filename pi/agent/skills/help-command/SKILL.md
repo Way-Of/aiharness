@@ -96,7 +96,8 @@ deno run -A packages/@aiengineeringharness/codex/skills/help_command/help.ts --j
 - All data is loaded dynamically at runtime — no hardcoded skill lists
 - Use `--markdown` flag when output is for AI agent consumption
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

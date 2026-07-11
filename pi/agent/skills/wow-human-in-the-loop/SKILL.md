@@ -29,7 +29,8 @@ Whenever an internal AI agent needs to modify data, it must submit a proposal to
 ## Your Responsibility
 When modifying backend routes or internal agent prompts, you must ensure this architecture is respected. Do not build bypasses for agents to write directly to the database unless explicitly requested by the developer for a specific, safe edge case.
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

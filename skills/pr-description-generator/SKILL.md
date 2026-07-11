@@ -213,7 +213,8 @@ Added distributed lock using Redis to ensure only one worker processes each even
 - Automated verification helps catch issues before review
 - All PR operations use the GitHub CLI (`gh`) for consistency
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

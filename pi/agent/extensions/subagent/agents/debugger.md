@@ -59,3 +59,22 @@ Debug issues during testing or implementation — examines logs, state, git hist
 - **Prevent Context Flooding**: Use targeted grep/tail for logs, not full dumps
 - **Always Require Context**: If the issue description is vague, ask targeted questions first
 - End with `[DEBUG_COMPLETE]`
+
+## Context Reference
+
+### Rules
+- **Location**: `thoughts/global/rules/` (global) + `thoughts/<project>/rules/` (project-specific)
+- **Precedence**: Project rules override global rules
+- **Categories**: coding-standards, naming-conventions, testing-requirements, security-guidelines, deployment-rules
+- **Management**: Use `rules-manager` skill to list, view, edit, add rules
+
+### Templates
+- **Location**: `thoughts/global/templates/`
+- **Available**: ticket-template.md, knowledge-entry.md, todo-template.md, AGENTS.md.template, fixes/
+- **Usage**: Copy from templates when creating new tickets, entries, or project structure
+
+### Knowledgebase
+- **Location**: `thoughts/global/knowledge/`
+- **Structure**: `knowledge-registry.json` + topic directories (docker/, postgres/, ash/, etc.)
+- **Commands**: Use `knowledge` skill to store, fetch, search, list, stats
+- **Integration**: Postmortem manager stores root causes; tickets link via `knowledge_entries` frontmatter

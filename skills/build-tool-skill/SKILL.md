@@ -177,7 +177,8 @@ The `config-manifest/` directory at `packages/@aiengineeringharness/config-manif
 | `assets/compliance-check.py` | Simplified compliance check script |
 | `scripts/` | Test suite and update scripts (see config-manifest/) |
 
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

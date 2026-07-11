@@ -124,7 +124,8 @@ Parameters:
 - Webhook support for auto-sync (if configured)
 - CTO Dashboard shows linked issues
 - `ticket-manager` `update_ticket` syncs `github_issue` field
-## Templates & Rules
+## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
+- **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

@@ -4,6 +4,24 @@ All notable changes to the AI Engineering Harness will be documented in this fil
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.7.21] - 2026-07-11
+
+### Fixed
+- Skill naming format: all 6 tool validators now pass with 0 issues (AIH-185)
+- Wo Code skill conflict warnings eliminated — names match per-tool conventions
+- serialize_frontmatter colon-quoting bug fixed in all 6 tool update scripts (wocode, opencode, claude, pi, codex, antigravity)
+- Added missing YAML frontmatter to 5 canonical skills (agents-md-manager, init-harness, knowledge, sales, standup)
+- Codex dual-file format: validator accepts SKILL.md fallback, generates prompt.md from SKILL.md body, writes pure YAML for skill.yaml
+- adapter-generate.py: fixed HARNESS_ROOT path (3 levels not 4), skip directories in assets copy, generate correct dir names per tool
+- adapter-generate.py: fixed variable shadowing that broke multi-tool sync
+- Cleaned orphan dirs (no SKILL.md) in opencode, claude, antigravity
+- Renamed kebab→snake dirs in claude and antigravity to match tool conventions
+
+### Changed
+- All 25 canonical skills made project-agnostic — removed "AI Engineering Harness", "WOMONO", "WOW", "OPT" references (AIH-185)
+- wo-coder.md docs updated: Wo Coder uses kebab-case + Title Case (inherits from Pi, not snake_case)
+- Codex skill.yaml files use pure YAML format (no `---` frontmatter delimiters)
+
 ## [1.7.20] - 2026-07-11
 
 ### Added

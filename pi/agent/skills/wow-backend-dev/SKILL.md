@@ -51,3 +51,8 @@ The primary database is `data/wayofwork.sqlite`.
 ## 4. Sub-Systems
 - **Git/GitHub (WOW-013):** High-level wrappers exist in `server/git.ts` (`gitCommit`, `gitPush`, `gitLog`).
 - **Channels (WOW-015):** Inbound messages route through `server/channel-router.ts`. Outbound messaging uses tools in `server/orchestrator-channel-tools.ts`.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

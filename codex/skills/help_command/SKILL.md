@@ -90,3 +90,8 @@ deno run -A packages/@aiengineeringharness/codex/skills/help_command/help.ts --j
 - The `help.ts` companion script is NOT installed by ai-harness — run from the repo
 - All data is loaded dynamically at runtime — no hardcoded skill lists
 - Use `--markdown` flag when output is for AI agent consumption
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

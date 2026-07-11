@@ -245,3 +245,8 @@ Always use `where` guards to prevent nil access:
 - SDK-side sensitive data prevention → `otel_instrumentation`
 - Collector pipelines → `otel_collector`
 - Attribute naming → `otel_semantic_conventions`
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

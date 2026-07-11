@@ -181,3 +181,8 @@ Rules: dot-separated namespaces, snake_case segments, org prefix for company-spe
 - Application instrumentation → `otel_instrumentation`
 - Collector configuration → `otel_collector`
 - OTTL attribute manipulation → `otel_ottl`
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

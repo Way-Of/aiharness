@@ -156,3 +156,8 @@ deprecated: false
 - Categories are auto-created on first entry
 - Search works across title, tags, and content body
 - Sales data feeds into investor-ready-doc-gen automatically
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

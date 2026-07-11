@@ -161,3 +161,8 @@ Override: `PORT=8080 wodev`
 | `docs/fixes/wocode-fixes.md` | Wocode release notes |
 | `docs/fixes/wouser-fixes.md` | Wouser release notes |
 | `thoughts/wayofmono/shared/tickets/WOMONO-084-EXTRACT-UI-TO-WAYOFDEV-REPO.md` | Dashboard extraction ticket |
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

@@ -21,3 +21,8 @@ description: Fundamental architectural principles and tech stack rules for the W
 - **System Data:** Lives in `data/wayofwork.sqlite` (Users, Projects, Tasks, etc.).
 - **Workspace Data:** Lives on the filesystem in the directory defined by `WOP_WORKSPACE`.
 - **AI Agent Data:** Application agents (not you, but the bots within the app) live in `.wo/agents/` and their sessions in `workspace/agent/sessions/`.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

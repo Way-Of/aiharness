@@ -136,3 +136,8 @@ output. The user decides what to fix.
 - [narrative.md](narrative.md) — narrative spec format
 - [loop.md](loop.md) — the inner loop with examples
 - [local-setup.md](local-setup.md) — Aspire dashboard, MCP, fallbacks
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

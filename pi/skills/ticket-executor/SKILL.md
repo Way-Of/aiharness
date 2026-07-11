@@ -102,3 +102,8 @@ curl -X POST http://localhost:6969/api/notifications \
   -H "Content-Type: application/json" \
   -d '{"action": "mark-read", "notificationId": "review-<TICKET_ID>"}'
 ```
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

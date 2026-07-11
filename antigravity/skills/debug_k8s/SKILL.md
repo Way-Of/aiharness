@@ -166,3 +166,8 @@ kubectl exec -it <pod> -n <ns> -- sh
 - **No destructive actions** - Investigation only (no delete, scale, restart)
 - **Guide user** for actions requiring cluster changes
 - **Check multiple sources** - Status, logs, and events together tell the full story
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

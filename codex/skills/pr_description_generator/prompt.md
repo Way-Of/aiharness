@@ -210,3 +210,8 @@ Added distributed lock using Redis to ensure only one worker processes each even
 - It preserves the thoughts/ directory pattern for saved descriptions
 - Automated verification helps catch issues before review
 - All PR operations use the GitHub CLI (`gh`) for consistency
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

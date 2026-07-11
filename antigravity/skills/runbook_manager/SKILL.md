@@ -45,3 +45,8 @@ See `assets/runbook-template.md` — the source of truth for the output format.
 Runbook sections are stored as discrete blocks with markers:
 - `<!-- AUTO -->` sections regenerated on `/update_runbook`
 - `<!-- MANUAL -->` sections preserved across updates
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

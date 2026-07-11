@@ -26,3 +26,8 @@ Autonomously monitors the codebase, dependencies, and external sources for updat
 Detected changes are classified as: `agent-update`, `skill-update`, `dep-update`, `security`, `breaking-change`
 
 Tickets are created with proper namespace and auto-assigned based on change type.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

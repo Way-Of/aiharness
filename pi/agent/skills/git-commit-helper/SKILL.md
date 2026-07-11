@@ -221,3 +221,8 @@ Follow the branch naming convention from the repo. If the repo uses ticket-based
 - The skill focuses on creating clean, atomic commits with meaningful messages
 - The user maintains full control and must approve before commits are created
 - All git operations are transparent and shown to the user
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

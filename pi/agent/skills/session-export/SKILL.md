@@ -48,3 +48,8 @@ See `assets/session-template.md` — the source of truth for the output format.
 ## Git-History Mode
 
 `--from-git <range>` rebuilds the export from `git log` and `git diff` when agent context is no longer available. Sections that require agent reasoning (Problems Solved, Architecture Notes) are prompted fresh.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

@@ -241,3 +241,8 @@ When user says "what's in the knowledge base":
 - Registry is source of truth for counts
 - Quality validation before every store
 - Link entries to tickets when possible
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

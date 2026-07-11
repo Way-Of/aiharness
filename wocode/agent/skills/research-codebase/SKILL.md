@@ -88,3 +88,8 @@ status: complete
 - Focus on finding concrete file paths and line numbers
 - Read files FULLY before spawning sub-tasks
 - Wait for ALL sub-agents before synthesizing
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

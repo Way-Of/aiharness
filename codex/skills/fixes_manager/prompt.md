@@ -132,3 +132,8 @@ Per-project assets may extend this with additional sections.
 ## Related Skills
 
 - `ticket-manager` — Tickets reference fix notes
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

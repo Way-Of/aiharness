@@ -468,16 +468,16 @@ Print the following summary:
 
 ### Available Agents
 The following agents are available via the harness:
-- **codebase_analyzer** — Analyze implementation details, trace data flow
+- **scout** — Find files, understand code, quick analysis — use this for most code investigation tasks
 - **codebase_locator** — Find files/directories by feature or task
 - **codebase_pattern_finder** — Discover similar implementations and patterns
+- **codebase_analyzer** — Deep analysis of complex systems — trace data flow through 5+ files, understand intricate interactions
 - **thoughts_analyzer** — Extract insights from research documents
 - **thoughts_locator** — Discover documents in thoughts/ directory
 - **web_search_researcher** — Research information from web sources
 - **coder** — Implementation and code generation
 - **planner** — Architecture and implementation planning
 - **reviewer** — Code review and quality checks
-- **scout** — Fast codebase reconnaissance
 - **netlify_troubleshooter** — Netlify CI/CD diagnostics and build pipeline
 
 Use `/help` to learn more about each agent.

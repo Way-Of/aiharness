@@ -396,3 +396,8 @@ spec:
 - SDK setup → `otel_instrumentation`
 - OTTL expressions → `otel_ottl`
 - Attribute naming → `otel_semantic_conventions`
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

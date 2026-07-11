@@ -70,3 +70,8 @@ Agent: Reads docs/tools/ai-coding-tools/README.md →
        Updates opencode.md with latest tool list →
        Reports: "Updated OpenCode reference (2 new tools, 1 deprecated)"
 ```
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

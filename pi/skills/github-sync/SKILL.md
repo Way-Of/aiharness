@@ -131,3 +131,7 @@ Parameters:
 - Used when review requests changes
 - Cleans up branches after merge
 - Respects branch protection rules (no force push to protected)
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

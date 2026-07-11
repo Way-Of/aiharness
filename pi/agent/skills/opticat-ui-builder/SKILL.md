@@ -48,3 +48,8 @@ This skill includes the following resource directories:
 ---
 
 **Any unneeded directories can be deleted.** Not every skill requires all three types of resources.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

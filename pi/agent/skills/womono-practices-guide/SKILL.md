@@ -94,3 +94,8 @@ Before marking a task complete, verify your work against every applicable best-p
 
 - Quick experiments or prototypes that won't be merged
 - Legacy code cleanup that explicitly preserves the old pattern
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

@@ -152,3 +152,8 @@ If push fails due to authentication, guide the user:
 ### Unknown Developer
 
 If the detected developer username doesn't match any known developer, still create the standup file — the name will be added to the team later. Print a warning: "Unknown developer '<name>'. If this is you, ask to be added to thoughts/global/team.md."
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

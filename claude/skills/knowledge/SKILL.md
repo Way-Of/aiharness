@@ -173,3 +173,8 @@ New topics are auto-created on first entry.
 - **Sales Knowledge**: Provides market data, competitive intel, and customer research for investor-ready-doc-gen
 - **Feature Testing Framework**: Template for testing features with knowledge capture built in
 - **Ticket System**: Links knowledge entries to tickets via `knowledge_entries` frontmatter field
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

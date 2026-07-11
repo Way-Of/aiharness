@@ -20,3 +20,8 @@ All messages from external platforms (e.g., Telegram bots) hit the unified inbou
 Internal agents (like `schemaplanerare` or `fakturering`) can initiate outbound messages.
 - They use the `telegram_send` or `whatsapp_send` OpenAI function tools.
 - These tools require the recipient's internal `user_id`. The tools automatically look up the correct channel linkage in the database before dispatching the HTTP request to the respective provider's API.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

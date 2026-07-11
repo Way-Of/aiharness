@@ -562,3 +562,8 @@ curl -sf http://otel-collector:4318/v1/traces || echo "Collector unreachable (HT
 - Attribute naming → `otel_semantic_conventions`
 - Collector config → `otel_collector`
 - Collector-side transforms/redaction → `otel_ottl`
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

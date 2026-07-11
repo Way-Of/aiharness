@@ -84,3 +84,8 @@ ai-harness --validate-manifest
     ai-harness --validate-manifest
     if [ $? -ne 0 ]; then exit 1; fi
 ```
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

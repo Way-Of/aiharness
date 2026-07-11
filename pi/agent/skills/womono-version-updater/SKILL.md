@@ -69,3 +69,8 @@ When user says "bump to X.Y.Z" or "release vX.Y.Z":
 6. Add release notes to `docs/fixes/ai-engineering-harness-fixes.md`
 7. If requested: `git add`, `git commit -m "chore: bump to vX.Y.Z"`, `git tag vX.Y.Z`
 8. Show summary of changes
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

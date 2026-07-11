@@ -222,3 +222,8 @@ The harness has its own AGENTS.md at `packages/@aiengineeringharness/AGENTS.md` 
 - Serves as structured reference data for AI coding assistants
 - Contains repository structure, commands/skills table, agent table, workflow
 - Is maintained manually alongside the code
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

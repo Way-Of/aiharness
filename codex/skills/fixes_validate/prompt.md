@@ -15,3 +15,8 @@ Validate version consistency across all project files using the fixes-manager sk
 4. Read all version fields from their respective files
 5. Report any mismatches between versions
 6. Present a summary of findings to the user
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

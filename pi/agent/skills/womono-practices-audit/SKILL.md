@@ -88,3 +88,8 @@ Output a structured report:
 ### 4. Create Tickets for Violations
 
 For each violation, create a ticket. Use the `womono_practices_backlog` skill or manual ticket creation at `thoughts/wayofmono/shared/tickets/`.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

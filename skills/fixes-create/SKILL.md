@@ -21,3 +21,8 @@ Create a new fix note entry for any Way-Of project using the fixes-manager skill
 4. Read existing fix notes from `thoughts/<project>/docs/fixes/`
 5. Append new version entry with standardized format
 6. Confirm the result with the user
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

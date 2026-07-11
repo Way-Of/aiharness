@@ -182,3 +182,8 @@ You've succeeded when:
 - It's a "get out of jail free" card for exploratory work
 - Don't abuse it - proper planning upfront is still better when possible
 - The skill automates the tedious cleanup work of formalizing experiments
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

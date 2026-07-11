@@ -22,3 +22,8 @@ description: Critical security, access control, and privacy rules defined in WOW
   - `ACCESS_DENIED`: When a user attempts an unauthorized action (e.g., Worker trying to view another project).
   - `SEARCH` / `READ`: When users query the workspace via tools.
   - `SAVE_VERSION`: When users trigger GitHub backups.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

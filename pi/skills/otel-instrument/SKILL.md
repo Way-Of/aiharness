@@ -58,3 +58,8 @@ Some tasks span skills. Execute in this order:
 | `otel_collector` | Collector YAML, deployment manifests | Receivers, processors, exporters, pipelines, sampling, RED metrics |
 | `otel_semantic_conventions` | Attribute standards | Placement rules, naming, migration, registry namespaces |
 | `otel_ottl` | OTTL expressions | Syntax, contexts, redaction, normalization, function reference |
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

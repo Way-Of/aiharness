@@ -89,3 +89,8 @@ Reference by number from the parent PRD:
 </issue-template>
 
 Do NOT close or modify the parent PRD file.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

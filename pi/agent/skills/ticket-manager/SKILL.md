@@ -268,3 +268,8 @@ The notification IDs follow the format:
 - `update-<TICKET_ID>` — for ticket status updates
 
 This ensures the CTO Dashboard bell badge reflects only genuinely unread notifications.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

@@ -130,3 +130,7 @@ Parameters:
 - Updates ticket status to "Submitted for Review" on PR creation
 - CTO Dashboard Review Queue watches for "needs-review" label
 - On merge, updates ticket to "Done" and deletes branch
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

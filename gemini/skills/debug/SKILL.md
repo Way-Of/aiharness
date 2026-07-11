@@ -102,3 +102,8 @@ Would you like me to investigate a specific file or log layer further?
 - **Read-Only Operations**: Do not write code or apply fixes. Focus entirely on diagnostic discovery.
 - **Prevent Context Flooding**: Read files completely but handle large log streams using targeted filters (`grep`, `tail`) rather than dumping full files.
 - **Always Require Context**: If the user's issue description is vague, ask targeted questions before running deep diagnostics.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

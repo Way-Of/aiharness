@@ -127,3 +127,8 @@ Override: `PORT=8080 wodev`
 | `README.md` | Monorepo root README (CTO Dashboard section) |
 | `docs/fixes/cto-dashboard-fixes.md` | Release notes |
 | `thoughts/wayofmono/shared/tickets/WOMONO-084-EXTRACT-UI-TO-WAYOFDEV-REPO.md` | Dashboard extraction ticket |
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

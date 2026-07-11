@@ -172,3 +172,8 @@ The `config-manifest/` directory at `packages/@aiengineeringharness/config-manif
 | `assets/config-manifest-example.yaml` | Example per-tool YAML entry |
 | `assets/compliance-check.py` | Simplified compliance check script |
 | `scripts/` | Test suite and update scripts (see config-manifest/) |
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

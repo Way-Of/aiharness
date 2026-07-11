@@ -49,3 +49,8 @@ This skill includes the following resource directories:
 <h3>assets/</h3>
 - `assets/skill-template.md`: A customized `SKILL.md` template specifically for creating WoW skills.
 - `assets/ui-templates/`: Directory containing basic UI component templates (e.g., React components) aligned with WoW's frontend.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

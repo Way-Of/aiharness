@@ -717,3 +717,8 @@ Agent: [triggers investor_ready_doc_gen]
        [suggests: "Create assets/verticals/ants_farming/market_reference.yaml? (copy VERTICAL_TEMPLATE.yaml)"]
        [generates white_paper.md from template using only user-provided data]
 ```
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

@@ -166,3 +166,8 @@ Online docs (always fetch at generation time):
 - Pi: https://pi.dev/
 - Antigravity: https://antigravity.google/docs/cli-overview
 - Codex: https://developers.openai.com/codex/cli
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

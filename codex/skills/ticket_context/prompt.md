@@ -56,3 +56,8 @@ The CTO Dashboard provides interactive ticket status management:
 - **Real-time Updates**: Status changes update immediately in UI and sync to f-rr-d repository
 
 When working on a ticket, the current status from the UI/dashboard is the source of truth. Agents can also update status using `update_ticket` tool with `status` parameter.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

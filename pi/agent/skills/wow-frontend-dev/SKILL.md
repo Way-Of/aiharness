@@ -60,3 +60,8 @@ The application uses a strict Dark Theme by default.
 - Prop interface above the component definition.
 - Decompose large views into smaller components (e.g., `TAPlannerPage` -> `TAPlanningWizard` -> `SketchLibrary`).
 - Use Lucide icons to enhance visual hierarchy.
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

@@ -91,3 +91,8 @@ If the plan has existing checkmarks:
 3. **Maintain Quality** - Run verification commands
 4. **Communicate Clearly** - Update checkboxes and todos
 5. **Keep Momentum** - Don't get stuck on minor details
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

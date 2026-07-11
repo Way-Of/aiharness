@@ -124,3 +124,8 @@ Present per-worktree blocks with all fields.
 4. **Branch cleanup** — check `git branch --merged $DEFAULT_BRANCH | grep <branch>`:
    - Merged → offer `git branch -d <branch>`
    - Not merged → inform user the branch is retained
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

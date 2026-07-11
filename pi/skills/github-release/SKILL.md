@@ -108,3 +108,7 @@ Parameters:
 - Links release to tickets via PR references
 - Updates ticket statuses to "Done" for included tickets
 - Posts release notes to CTO Dashboard news
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

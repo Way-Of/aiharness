@@ -42,3 +42,8 @@ This skill includes the following resource directories:
 
 ### assets/
 (Currently empty - add assets like default simulation models or result visualization templates if needed.)
+
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

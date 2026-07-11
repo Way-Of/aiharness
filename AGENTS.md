@@ -125,17 +125,16 @@ All agents are shared across all six tools:
 
 | Agent | OpenCode | Claude | Pi | Wo Coder | Antigravity | Codex | Purpose |
 |-------|:--------:|:------:|:------:|:--:|:--------:|:-----------:|:----:|--------|
-| `codebase_analyzer` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Analyze implementation details, trace data flow |
-| `codebase_investigator` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Investigate codebase structure and dependencies |
+| `scout` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Find files, understand code, quick analysis — use this for most code investigation tasks |
 | `codebase_locator` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Find files/directories by feature or task |
 | `codebase_pattern_finder` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Discover similar implementations and patterns |
+| `codebase_analyzer` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Deep analysis of complex systems — trace data flow through 5+ files, understand intricate interactions |
 | `thoughts_analyzer` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Extract insights from research documents |
 | `thoughts_locator` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Discover documents in thoughts/ directory |
 | `web_search_researcher` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Research information from web sources |
 | `coder` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Implementation and code generation |
 | `planner` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Architecture and implementation planning |
 | `reviewer` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Code review and quality checks |
-| `scout` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Fast codebase reconnaissance |
 | `netlify_troubleshooter` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Netlify CI/CD diagnostics and build pipeline |
 
 ## Workflow
@@ -243,17 +242,17 @@ Available MCP servers: `kubernetes` (disabled by default), `aspire-dashboard` (d
 - validate-plan
 
 ### Agents (available from the AI Engineering Harness)
-- codebase_analyzer
+- scout
 - codebase_locator
 - codebase_pattern_finder
-- coder
-- netlify_troubleshooter
-- planner
-- reviewer
-- scout
+- codebase_analyzer
 - thoughts_analyzer
 - thoughts_locator
 - web_search_researcher
+- coder
+- planner
+- reviewer
+- netlify_troubleshooter
 
 ## GitHub Skills Agent Directory
 

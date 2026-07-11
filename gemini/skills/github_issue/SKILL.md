@@ -117,3 +117,7 @@ Parameters:
 - Webhook support for auto-sync (if configured)
 - CTO Dashboard shows linked issues
 - `ticket-manager` `update_ticket` syncs `github_issue` field
+## Templates & Rules
+
+- **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
+- **Rules**: `thoughts/global/templates/rules/` — coding standards, naming, security, testing, deployment rules

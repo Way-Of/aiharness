@@ -385,7 +385,7 @@ Create the core structure:
 
 ```bash
 mkdir -p thoughts/${PROJECT_SLUG}/shared/{tickets,plans,research}
-mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references}
+mkdir -p thoughts/${PROJECT_SLUG}/docs/{architecture,decisions,guides,references,debug}
 mkdir -p thoughts/${PROJECT_SLUG}/enforcement-ticket
 mkdir -p thoughts/${PROJECT_SLUG}/rules
 ```

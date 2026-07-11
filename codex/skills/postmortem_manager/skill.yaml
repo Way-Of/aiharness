@@ -1,13 +1,12 @@
----
+description: Generate, update, and maintain incident postmortems per project in the
+  f-rr-d thoughts folder. Interactive flow covers What Went Well, What Could Be Better,
+  Root Cause Analysis, Tech Debt, Knowledge, Action Items, and Metrics. Follows canonical
+  template at assets/postmortem-template.md.
 name: postmortem_manager
-description: Generate, update, and maintain incident postmortems per project in the f-rr-d thoughts folder. Interactive flow covers What Went Well, What Could Be Better, Root Cause Analysis, Tech Debt, Knowledge, Action Items, and Metrics. Follows canonical template at assets/postmortem-template.md.
-version: 1.0.0
 tools:
-  - read
-  - write
-  - grep
-  - glob
-  - bash
----
-
-
+- read
+- write
+- grep
+- glob
+- bash
+version: 1.0.0

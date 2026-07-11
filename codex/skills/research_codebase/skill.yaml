@@ -1,20 +1,17 @@
----
+description: Conduct comprehensive codebase research by delegating to parallel sub-agents
+  and synthesizing findings using CLI tools.
 name: research_codebase
-description: Conduct comprehensive codebase research by delegating to parallel sub-agents and synthesizing findings using CLI tools.
 tools:
-  - read
-  - write
-  - bash
-  - grep
-  - glob
-  - todowrite
-  - task
-  - google
-  - web
-  - search
-  - web
-  - fetch
+- read
+- write
+- bash
+- grep
+- glob
+- todowrite
+- task
+- google
+- web
+- search
+- web
+- fetch
 version: 1.0.0
----
-
-

@@ -1,7 +1,4 @@
----
+description: Bump the version across all project files. Delegates to fixes-manager
+  skill.
 name: fixes_bump
-description: Bump the version across all project files. Delegates to fixes-manager skill.
 version: 1.0.0
----
-
-

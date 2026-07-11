@@ -1,12 +1,9 @@
----
+description: Debug issues during manual testing or implementation by examining logs,
+  state, and git history using CLI tools.
 name: debug
-description: Debug issues during manual testing or implementation by examining logs, state, and git history using CLI tools.
 tools:
-  - read
-  - bash
-  - grep
-  - glob
+- read
+- bash
+- grep
+- glob
 version: 1.0.0
----
-
-

@@ -1,14 +1,10 @@
----
 name: build_tool_skill
-version: 1.0.0
 tools:
-  - read
-  - write
-  - edit
-  - bash
-  - grep
-  - glob
-  - websearch
----
-
-
+- read
+- write
+- edit
+- bash
+- grep
+- glob
+- websearch
+version: 1.0.0

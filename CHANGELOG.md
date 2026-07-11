@@ -6,17 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- Debugger agent for all 6 tools + 2 subagent extensions (AIH-186)
+- Context Reference section to all 83 agent files (rules, templates, knowledgebase)
+- Context Reference section to 108 command and prompt files
+- Knowledgebase reference (`thoughts/global/knowledge/`) to all 659 skill boilerplate sections
+- Mandatory validation gate to create-plan: plans require explicit user approval before implementation (16 files)
+- Knowledge entry ai-tools-001: sed bulk-update pattern for mass path renames
+
 ### Changed
 - Consolidated duplicate rules directories: removed `thoughts/global/templates/rules/`, kept `thoughts/global/rules/` as single source of truth (AIH-187)
 - Updated ~680 skill files to reference `thoughts/global/rules/` instead of `thoughts/global/templates/rules/`
 - Simplified rules-manager from 3-tier to 2-tier precedence (project > global)
 - Updated init-harness to copy rules from `thoughts/global/rules/` to new projects
-- Created debugger agent for all 6 tools + 2 subagent extensions (AIH-186)
-- Added Context Reference section to all 83 agent files (rules, templates, knowledgebase paths)
 - Renamed "Templates & Rules" boilerplate to "Context Reference" across 659 skill files
-- Added knowledgebase reference (`thoughts/global/knowledge/`) to all skill boilerplate
-- Added Context Reference section to 108 command and prompt files (rules, templates, knowledgebase paths)
-- Added mandatory validation gate to create-plan: plans require explicit user approval before implementation (16 files)
+
+### Fixed
+- Planner agent repositioned from 8th to 4th in agent lists across all tools (AIH-186)
+- Planner agent description updated to clearly state when to use it
 
 ## [1.7.21] - 2026-07-11
 

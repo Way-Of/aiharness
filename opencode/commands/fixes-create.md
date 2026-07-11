@@ -17,3 +17,18 @@ Create a new fix note entry for any Way-Of project using the fixes-manager skill
 4. Read existing fix notes from `thoughts/<project>/docs/fixes/`
 5. Append new version entry with standardized format
 6. Confirm the result with the user
+
+## Context Reference
+
+### Rules
+- **Location**: `thoughts/global/rules/` (global) + `thoughts/<project>/rules/` (project-specific)
+- **Precedence**: Project rules override global rules
+- **Categories**: coding-standards, naming-conventions, testing-requirements, security-guidelines, deployment-rules
+
+### Templates
+- **Location**: `thoughts/global/templates/`
+- **Available**: ticket-template.md, knowledge-entry.md, todo-template.md, AGENTS.md.template, fixes/
+
+### Knowledgebase
+- **Location**: `thoughts/global/knowledge/`
+- **Commands**: Use `knowledge` skill to store, fetch, search, list, stats

@@ -34,3 +34,18 @@ Ticket → /create_plan → [ODD: write narrative]
        → /implement_plan → /validate_plan (correctness)
        → /validate_telemetry (telemetry) → /commit
 ```
+
+## Context Reference
+
+### Rules
+- **Location**: `thoughts/global/rules/` (global) + `thoughts/<project>/rules/` (project-specific)
+- **Precedence**: Project rules override global rules
+- **Categories**: coding-standards, naming-conventions, testing-requirements, security-guidelines, deployment-rules
+
+### Templates
+- **Location**: `thoughts/global/templates/`
+- **Available**: ticket-template.md, knowledge-entry.md, todo-template.md, AGENTS.md.template, fixes/
+
+### Knowledgebase
+- **Location**: `thoughts/global/knowledge/`
+- **Commands**: Use `knowledge` skill to store, fetch, search, list, stats

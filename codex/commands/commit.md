@@ -38,3 +38,18 @@ You are tasked with creating git commits for the changes made during this sessio
 - Group related changes together
 - Keep commits focused and atomic when possible
 - The user trusts your judgment - they asked you to commit
+
+## Context Reference
+
+### Rules
+- **Location**: `thoughts/global/rules/` (global) + `thoughts/<project>/rules/` (project-specific)
+- **Precedence**: Project rules override global rules
+- **Categories**: coding-standards, naming-conventions, testing-requirements, security-guidelines, deployment-rules
+
+### Templates
+- **Location**: `thoughts/global/templates/`
+- **Available**: ticket-template.md, knowledge-entry.md, todo-template.md, AGENTS.md.template, fixes/
+
+### Knowledgebase
+- **Location**: `thoughts/global/knowledge/`
+- **Commands**: Use `knowledge` skill to store, fetch, search, list, stats

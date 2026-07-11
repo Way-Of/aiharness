@@ -134,3 +134,18 @@ Continue refining until the user is satisfied.
 4. **Be Practical** - Focus on incremental, testable changes
 5. **Track Progress** - Use TodoWrite
 6. **No Open Questions in Final Plan** - All decisions must be made before finalizing
+
+## Context Reference
+
+### Rules
+- **Location**: `thoughts/global/rules/` (global) + `thoughts/<project>/rules/` (project-specific)
+- **Precedence**: Project rules override global rules
+- **Categories**: coding-standards, naming-conventions, testing-requirements, security-guidelines, deployment-rules
+
+### Templates
+- **Location**: `thoughts/global/templates/`
+- **Available**: ticket-template.md, knowledge-entry.md, todo-template.md, AGENTS.md.template, fixes/
+
+### Knowledgebase
+- **Location**: `thoughts/global/knowledge/`
+- **Commands**: Use `knowledge` skill to store, fetch, search, list, stats

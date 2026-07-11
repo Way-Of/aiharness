@@ -104,3 +104,18 @@ Present per-worktree blocks with all fields.
 4. **Branch cleanup** — check `git branch --merged $DEFAULT_BRANCH | grep <branch>`:
    - Merged → offer `git branch -d <branch>`
    - Not merged → inform user the branch is retained
+
+## Context Reference
+
+### Rules
+- **Location**: `thoughts/global/rules/` (global) + `thoughts/<project>/rules/` (project-specific)
+- **Precedence**: Project rules override global rules
+- **Categories**: coding-standards, naming-conventions, testing-requirements, security-guidelines, deployment-rules
+
+### Templates
+- **Location**: `thoughts/global/templates/`
+- **Available**: ticket-template.md, knowledge-entry.md, todo-template.md, AGENTS.md.template, fixes/
+
+### Knowledgebase
+- **Location**: `thoughts/global/knowledge/`
+- **Commands**: Use `knowledge` skill to store, fetch, search, list, stats

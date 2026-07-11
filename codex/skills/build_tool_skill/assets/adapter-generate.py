@@ -17,7 +17,7 @@ import os
 import sys
 import shutil
 
-HARNESS_ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..")
+HARNESS_ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "..")
 HARNESS_ROOT = os.path.abspath(HARNESS_ROOT)
 CANONICAL_DIR = os.path.join(HARNESS_ROOT, "skills")
 

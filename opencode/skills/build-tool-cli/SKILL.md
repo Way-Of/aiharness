@@ -1,7 +1,7 @@
 ---
-name: build-tool-cli
+name: build_tool_cli
 description: CLI reference for all 7 AI coding tools — knows flags, subcommands, environment variables, output modes, non-interactive usage.
-allowed-tools: read, write, edit, bash, grep, glob, websearch
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Websearch
 ---
 
 # build_tool_cli — Unified CLI Reference
@@ -58,7 +58,7 @@ You are a cross-tool CLI expert. You know the command line interface for ALL 7 A
 - **Name field**: snake_case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
 - **Config**: `~/.wocode/skills/`
-- **Docs**: Internal (WayOfMono monorepo)
+- **Docs**: Internal
 
 ## CLI Patterns Per Tool
 
@@ -96,4 +96,4 @@ Always fetch the latest docs before building:
 - Pi: https://pi.dev/
 - Antigravity: https://antigravity.sh/docs
 - Codex: https://github.com/openai/codex
-- Wo Coder: packages/@wayofmono/wo-agent/
+- Wo Coder: Internal docs

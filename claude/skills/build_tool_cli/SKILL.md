@@ -58,7 +58,7 @@ You are a cross-tool CLI expert. You know the command line interface for ALL 7 A
 - **Name field**: snake_case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
 - **Config**: `~/.wocode/skills/`
-- **Docs**: Internal (WayOfMono monorepo)
+- **Docs**: Internal
 
 ## CLI Patterns Per Tool
 
@@ -96,4 +96,4 @@ Always fetch the latest docs before building:
 - Pi: https://pi.dev/
 - Antigravity: https://antigravity.sh/docs
 - Codex: https://github.com/openai/codex
-- Wo Coder: packages/@wayofmono/wo-agent/
+- Wo Coder: Internal docs

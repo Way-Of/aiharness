@@ -58,7 +58,7 @@ You are a cross-tool configuration expert. You know how to configure ALL 7 AI co
 - **Name field**: snake_case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
 - **Config**: `~/.wocode/skills/`
-- **Docs**: Internal (WayOfMono monorepo)
+- **Docs**: Internal
 
 ## Config Systems Per Tool
 
@@ -105,4 +105,4 @@ Always fetch the latest docs before building:
 - Pi: https://pi.dev/
 - Antigravity: https://antigravity.sh/docs
 - Codex: https://github.com/openai/codex
-- Wo Coder: packages/@wayofmono/wo-agent/
+- Wo Coder: Internal docs

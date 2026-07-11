@@ -1,7 +1,7 @@
 ---
-name: build-tool-themes
+name: build_tool_themes
 description: Build themes for all 7 AI coding tools — knows JSON format, color tokens, vars system, hex/256-color values, hot reload.
-allowed-tools: read, write, edit, bash, grep, glob, websearch
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Websearch
 ---
 
 # build_tool_themes — Unified Theme Builder
@@ -35,7 +35,7 @@ You are a cross-tool theme builder. You know how to create themes for ALL 7 AI c
 - **Directory naming**: kebab-case
 - **Name field**: kebab-case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
-- **Config**: `~/.wocode/agent/skills/`
+- **Config**: `~/.pi/agent/skills/`
 - **Docs**: https://pi.dev/
 
 ### Antigravity
@@ -58,7 +58,7 @@ You are a cross-tool theme builder. You know how to create themes for ALL 7 AI c
 - **Name field**: snake_case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
 - **Config**: `~/.wocode/skills/`
-- **Docs**: Internal (WayOfMono monorepo)
+- **Docs**: Internal
 
 ## Theme Systems Per Tool
 
@@ -87,4 +87,4 @@ Always fetch the latest docs before building:
 - Pi: https://pi.dev/
 - Antigravity: https://antigravity.sh/docs
 - Codex: https://github.com/openai/codex
-- Wo Coder: packages/@wayofmono/wo-agent/
+- Wo Coder: Internal docs

@@ -1,7 +1,7 @@
 ---
 name: alliner_compliance_check
 description: "Deep compliance validation for existing f-rr-d projects. Checks ticket templates, frontmatter, AGENTS.md, folder structure, cross-references, and f-rr-d sync status. Auto-fixes safe issues."
-allowed-tools: read, write, edit, bash, grep, glob, task
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Task
 disable-model-invocation: true
 ---
 
@@ -111,7 +111,7 @@ ls thoughts/${PROJECT_SLUG}/shared/tickets/*.md 2>/dev/null
 - [ ] `project` field matches the project slug (uppercase)
 - [ ] `namespace` field matches the project slug (lowercase)
 - [ ] Ticket filename matches naming convention: `<PREFIX>-<NNN>-<UPPERCASE-DASHED-DESC>.md`
-- [ ] Ticket prefix matches project namespace (e.g., `WOMONO-` for wayofmono)
+- [ ] Ticket prefix matches project namespace
 - [ ] No tickets with status "Done" in active `shared/tickets/` (should be in `done/`)
 - [ ] No tickets with status "Deprecated" in active `shared/tickets/` (should be in `deprecated/`)
 
@@ -144,11 +144,11 @@ ls thoughts/${PROJECT_SLUG}/AGENTS.md 2>/dev/null
   - `## Agent Workflow`
   - `## Available Skills`
   - `## Agent Instructions`
-- [ ] Contains `thoughts/<project>/` paths (not hardcoded `thoughts/wayofmono/`)
-- [ ] For client projects: zero references to internal Way-Of paths:
+- [ ] Contains `thoughts/<project>/` paths (not hardcoded project-specific paths)
+- [ ] For client projects: zero references to internal paths:
   - No `thoughts/global/`
   - No `ENFORCE-`, `STRAT-`, `SALES-`, `GLOBAL-`
-  - No `wayofmono/`, `wayofteams/`, `wowx/`, `woc/`
+  - No project-specific directories
 - [ ] Ticket naming convention section references correct prefix
 
 **Severity:**
@@ -282,8 +282,8 @@ git branch -vv | grep '\*'
 - ✅ Copied latest ticket-template.md
 
 ### Requires Decision
-- ❌ **ERROR**: Ticket `WOMONO-045` has invalid status "todo" (not in allowed values)
-- ❌ **ERROR**: Broken parent_ticket reference in `WOMONO-067` → points to `WOMONO-000` (not found)
+- ❌ **ERROR**: Ticket `PROJ-045` has invalid status "todo" (not in allowed values)
+- ❌ **ERROR**: Broken parent_ticket reference in `PROJ-067` → points to `PROJ-000` (not found)
 - ⚠️ **WARNING**: AGENTS.md missing `## Available Skills` section
 
 ### Compliance Score
@@ -331,5 +331,4 @@ If not available, fall back to the basic checks in Step 2b.
 ## Related Skills
 
 - `init-harness` — Calls this skill from Step 2b
-- `womono-practices-audit` — Validates code against best practices (different scope)
 - `ticket-manager` — Ticket lifecycle (this skill validates ticket format)

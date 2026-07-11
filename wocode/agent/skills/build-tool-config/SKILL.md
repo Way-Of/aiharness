@@ -1,7 +1,7 @@
 ---
-name: build-tool-config
+name: build_tool_config
 description: Configure all 7 AI coding tools — knows settings.json, providers, models, packages, keybindings, all configuration options.
-allowed-tools: read, write, edit, bash, grep, glob, websearch
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Websearch
 ---
 
 # build_tool_config — Unified Configuration Reference
@@ -35,7 +35,7 @@ You are a cross-tool configuration expert. You know how to configure ALL 7 AI co
 - **Directory naming**: kebab-case
 - **Name field**: kebab-case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
-- **Config**: `~/.wocode/agent/skills/`
+- **Config**: `~/.pi/agent/skills/`
 - **Docs**: https://pi.dev/
 
 ### Antigravity
@@ -58,7 +58,7 @@ You are a cross-tool configuration expert. You know how to configure ALL 7 AI co
 - **Name field**: snake_case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
 - **Config**: `~/.wocode/skills/`
-- **Docs**: Internal (WayOfMono monorepo)
+- **Docs**: Internal
 
 ## Config Systems Per Tool
 
@@ -75,7 +75,7 @@ You are a cross-tool configuration expert. You know how to configure ALL 7 AI co
 - **Local**: `.claude/settings.local.json` (gitignored)
 
 ### Pi
-- **Config**: `~/.wocode/agent/config.json`
+- **Config**: `~/.pi/agent/config.json`
 - **Project**: `.agents/config.json`
 - **Providers**: OpenAI, Anthropic, Google, custom
 - **Models**: configurable per provider
@@ -105,4 +105,4 @@ Always fetch the latest docs before building:
 - Pi: https://pi.dev/
 - Antigravity: https://antigravity.sh/docs
 - Codex: https://github.com/openai/codex
-- Wo Coder: packages/@wayofmono/wo-agent/
+- Wo Coder: Internal docs

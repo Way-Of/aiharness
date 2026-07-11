@@ -6,7 +6,7 @@ Bump the version across all project files using the fixes-manager skill.
 `/fixes bump --project=<project> --version=<version>`
 
 ### Arguments
-- `--project` (required) — Project namespace: `womono`, `wow`, `opticat`
+- `--project` (required) — Project namespace (any project with `assets/<project>/version-config.json`)
 - `--version` (required) — Target version string (e.g. `1.8.0`)
 
 ## Process:
@@ -17,7 +17,7 @@ Bump the version across all project files using the fixes-manager skill.
 ### 2. Load Version Config
 - Read `skills/fixes-manager/assets/<project>/version-config.json`
 - This defines ALL version files for that project, their types (json/yaml/regex/markdown), and bump order
-- **Each project has its own config** — wow and opticat only have a fix note to bump, womono has 5+ files
+- **Each project has its own config** — check the project's `version-config.json` for the full list of version files
 
 ### 3. Bump Each Version File in Order
 For each file in `version-config.json.version_files`, sorted by `bump_order`:
@@ -29,15 +29,12 @@ For each file in `version-config.json.version_files`, sorted by `bump_order`:
 | `regex` | Replace the regex `pattern` match with the new version |
 | `markdown` | Insert a new version header entry (CHANGELOG) or find/replace old version strings (README) |
 
-### 4. womono-Specific Notes
-If `--project=womono`, these additional steps apply:
-- After updating `manifest.json`, also update the 7 per-tool `version` fields: `antigravity/version`, `claude/version`, `codex/version`, `opencode/version`, `pi/version`, `wocode/version`
-- After all files are updated, recompile:
-  ```bash
-  python3 packages/@aiengineeringharness/config-manifest/compile.py
-  ```
+### 4. Project-Specific Steps
+Some projects have additional version files beyond the base config. Check `version-config.json` for:
+- `per_tool_versions` — If present, update per-tool version fields after the base manifest
+- `post_bump_hooks` — If present, run the specified commands (e.g., recompile manifests)
 
-### 5. CHANGELOG.md Entry Format (womono only)
+### 5. CHANGELOG Entry
 Insert after `# Changelog` line:
 
 ```markdown

@@ -15,15 +15,13 @@ Fix notes live in `thoughts/<project>/docs/fixes/`. The skill writes to the corr
 
 ---
 
-## Supported Projects
+## Project Discovery
 
-| Project | Namespace | Assets | Fixes Location |
-|---------|-----------|--------|----------------|
-| WayOfMono | WOMONO | `assets/womono/` | `thoughts/wayofmono/docs/fixes/` |
-| WayOfWork | WOW | `assets/wow/` | `thoughts/wow/docs/fixes/` |
-| OptiCat | OPT | `assets/opticat/` | `thoughts/opticat/docs/fixes/` |
+Projects are discovered dynamically from `assets/<project>/` directories. Any directory under `assets/` with a valid `version-config.json` or `components.json` is treated as a supported project.
 
-New projects: create `assets/<project-slug>/` with the asset structure below.
+To add a new project, create `assets/<project-slug>/` with the asset structure below.
+
+Fix notes for each project live in `thoughts/<project>/docs/fixes/`.
 
 ---
 

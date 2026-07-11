@@ -10,7 +10,7 @@ Bump the version across all project files using the fixes-manager skill.
 `/fixes bump --project=<project> --version=<version>`
 
 ### Arguments
-- `--project` (required) — Project namespace: `womono`, `wow`, `opticat`
+- `--project` (required) — Project namespace (any project with `assets/<project>/version-config.json`)
 - `--version` (required) — Target version string (e.g. `1.8.0`)
 
 ## Process

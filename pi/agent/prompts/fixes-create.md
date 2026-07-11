@@ -6,7 +6,7 @@ description: Fixes Create — Create fix note entry
 Create a new fix note entry for any Way-Of project using the fixes-manager skill.
 
 ## Usage
-`/fixes create --project=womono --component=harness --version=1.8.0`
+`/fixes create --project=<project> [--component=<component>] [--version=<version>]`
 
 ## Steps
 1. Validate arguments: `--project` (required), `--component` (optional), `--version` (optional)

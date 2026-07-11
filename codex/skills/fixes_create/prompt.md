@@ -6,8 +6,8 @@ Create a new fix note entry for any Way-Of project using the fixes-manager skill
 `/fixes create --project=<project> [--component=<component>] [--version=<version>]`
 
 ### Arguments
-- `--project` (required) — Project namespace: `womono`, `wow`, `opticat`
-- `--component` (optional) — Component name (e.g. `harness`, `wocode`, `wouser`, `dashboard`)
+- `--project` (required) — Project namespace (any project with `assets/<project>/components.json`)
+- `--component` (optional) — Component name (from `assets/<project>/components.json`). Prompts interactively if omitted.
 - `--version` (optional) — Version string (e.g. `1.8.0`). Prompts interactively if omitted.
 
 ## Process

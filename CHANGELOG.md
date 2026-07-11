@@ -4,6 +4,38 @@ All notable changes to the AI Engineering Harness will be documented in this fil
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.7.20] - 2026-07-11
+
+### Added
+- Rules system with global and project-specific rules (AIH-182)
+- rules-manager skill with interactive menu
+- /rules command for all 7 tools
+- Production-ready rules templates (AIH-183)
+- init-harness creates rules folder and copies templates
+- create-plan loads rules before planning
+- validate-plan checks rules compliance
+- Cross-platform tool paths in README (Linux/macOS/Windows)
+- aiharness version-config.json for fixes-bump support (AIH-184)
+
+### Changed
+- Fixes skills (fixes-manager, fixes-bump, fixes-create, fixes-validate) made project-agnostic — no longer hardcoded to womono/wow/opticat (AIH-184)
+- fixes-manager uses dynamic project discovery from `assets/<project>/` instead of hardcoded project table
+- fixes-bump `--project` accepts any project with `assets/<project>/version-config.json`
+- fixes-create `--project` and `--component` arguments are now generic
+- Command and prompt files use generic conditional logic instead of project-specific sections
+- CTO Dashboard references renamed to WayOfTeams (AIH-179)
+- Workflow order updated: validate-plan before implement-plan (AIH-179)
+- Ticket-manager uses category subdirectories (AIH-180)
+- /complete command moves tickets to done/ subdirectory (AIH-180)
+- All .pi references in wocode updated to .wocode (AIH-181)
+
+### Fixed
+- Ticket creation now uses correct category subdirectories (AIH-180)
+- Tickets moved to done/ subdirectory on completion (AIH-180)
+- theme-cycler.ts uses .wocode/themes instead of .pi/themes (AIH-181)
+- All .pi path references fixed in wocode/agent (AIH-181)
+- Incomplete v1.7.20 bump fixed: base_manifest.yaml, install.ts now at 1.7.20 (AIH-184)
+
 ## [Unreleased]
 
 ### Fixed

@@ -11,7 +11,7 @@ Validates Podman Quadlet configurations for Fedora-based deployments.
 ## Reference Assets
 
 - `assets/FEDORA-PODMAN-GUIDE.md` - Fedora Podman & Quadlet Deep Dive
-- `assets/INFRASTRUCTURE.md` - WayOfMono Infrastructure Overview
+- `assets/INFRASTRUCTURE.md` - Infrastructure Overview
 
 ## Validation Checks
 

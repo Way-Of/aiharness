@@ -22,6 +22,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - All 25 canonical skills made project-agnostic — removed "AI Engineering Harness", "WOMONO", "WOW", "OPT" references (AIH-185)
 - wo-coder.md docs updated: Wo Coder uses kebab-case + Title Case (inherits from Pi, not snake_case)
 - Codex skill.yaml files use pure YAML format (no `---` frontmatter delimiters)
+- Templates consolidated to `thoughts/global/templates/` — removed scattered `fixes-templates/` and `thoughts/shared/templates/` (AIH-185)
+- Debug skill updated with optimized workflow + saves debug sessions to `docs/debug/` (AIH-184)
+- init-harness creates `docs/debug/` directory during project setup (AIH-184)
+- Fixes commands/prompts added to manifest for deployment across all tools (AIH-184)
 
 ## [1.7.20] - 2026-07-11
 

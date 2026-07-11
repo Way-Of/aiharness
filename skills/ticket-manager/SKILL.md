@@ -61,8 +61,11 @@ Take the highest number, increment by 1. If no tickets exist, start at `001`.
 
 ### Storage Location
 
-- Shared tickets: `thoughts/<project-slug>/shared/tickets/<FILE>.md`
+- Shared tickets (active): `thoughts/<project-slug>/shared/tickets/<category>/<ID>-<description>.md`
+- Shared tickets (done): `thoughts/<project-slug>/shared/tickets/done/<ID>-<description>.md`
 - Personal tickets: `thoughts/<project-slug>/<dev>/tickets/<DEV>-<XXX>-<description>.md`
+
+**Category subdirectories**: `frontend/`, `backend/`, `infrastructure/`, `devops/`, `security/`, `architecture/`, `docs/`, `testing/`, `ai-tools/`
 
 ### Frontmatter
 
@@ -116,9 +119,31 @@ If a ticket's AC don't cover these, add them.
 ### `/work <ticket-id>`
 Start working on a ticket. Updates status to "In Progress", creates a work session context.
 
+**Steps:**
+1. Find ticket file in `shared/tickets/<category>/` or `shared/tickets/` (fallback)
+2. Update frontmatter: `status: "In Progress"`
+3. Create work session context
+4. Log work start in ticket's Work Log section
+
 ### `/complete <ticket-id>`
-Mark a ticket as done. If review is required (CTO/Lead), moves to "Submitted for Review" instead.
-Checks off linked TODO checkboxes in `thoughts/<project-slug>/shared/tickets/TODO.md`.
+Mark a ticket as done. **CRITICAL: Moves ticket file to `done/` subdirectory.**
+
+**Steps:**
+1. Find ticket file: `thoughts/<project-slug>/shared/tickets/<category>/<ticket-id>*.md` or `thoughts/<project-slug>/shared/tickets/<ticket-id>*.md`
+2. Update frontmatter: `status: "Done"`, `completed: "YYYY-MM-DD"`
+3. Move file: `git mv <source> thoughts/<project-slug>/shared/tickets/done/<filename>`
+4. Create `done/` directory if it doesn't exist
+5. If review is required, moves to "Submitted for Review" instead (no file move)
+6. Checks off linked TODO checkboxes in `thoughts/<project-slug>/shared/tickets/TODO.md`
+
+**Example:**
+```bash
+# Before
+thoughts/wayofteams/shared/tickets/backend/WOW-045-AUTH-FIX.md
+
+# After /complete WOW-045
+thoughts/wayofteams/shared/tickets/done/WOW-045-AUTH-FIX.md
+```
 
 ### `/sync team`
 Show team dashboard: all tickets grouped by owner, status, blockers, dependencies.
@@ -131,6 +156,13 @@ Interactive ticket creation wizard. Prompts for:
 - Title, type, priority, namespace
 - Assignee, project, category
 - Context, requirements, technical notes, success criteria
+
+**Ticket creation path:**
+```
+thoughts/<project-slug>/shared/tickets/<category>/<ID>-<description>.md
+```
+
+**Auto-creates category subdirectory** if it doesn't exist (e.g., `backend/`, `frontend/`, `infrastructure/`)
 
 ## Available Tools
 

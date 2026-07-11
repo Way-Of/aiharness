@@ -1,7 +1,7 @@
 ---
 name: ticket_manager
 description: "Manage tickets across all namespaces (WOMONO, WOW, OPT) with proper naming, numbering, and storage. Enforces production-ready standard: no mock data, enterprise grade."
-allowed-tools: read, grep, glob, bash, write, edit
+allowed-tools: Read, Grep, Glob, Bash, Write, Edit
 ---
 
 # Ticket Manager Skill
@@ -16,21 +16,12 @@ You are the Ticket Manager for the AI Engineering Harness. Your job is to manage
 | WOW-XXX | `wow` | `thoughts/wow/` | Way of Work platform |
 | OPT-XXX | `opticat` | `thoughts/opticat/` | Opticat platform |
 
-## Enforcement Tickets
-
-**Enforcement tickets** live in `thoughts/<project-slug>/enforcement-ticket/` and are the **highest priority items**. They **override all other tickets**.
-
-### Rules
-- When an enforcement ticket exists (status != "Done"), all work on non-enforcement tickets **must pause**
-- Enforcement tickets use `category: "enforcement"` and `priority: "Critical"`
-- An enforcement ticket is only "resolved" when its status is "Done"
-
 ## Ticket Status Flow
 
 ```
 Backlog → Planned → Ready → In Progress → Submitted for Review → In Review → Approved → Done
-                                            ↘ Changes Requested → In Progress
-                                            ↘ Reject → Blocked
+                                           ↘ Changes Requested → In Progress
+                                           ↘ Reject → Blocked
 ```
 
 | Status | Color | Description |
@@ -45,7 +36,6 @@ Backlog → Planned → Ready → In Progress → Submitted for Review → In Re
 | **Done** | Green | Completed and merged |
 | **Blocked** | Red | Blocked by dependency/issue |
 | **Changes Requested** | Orange | Review requested changes, back to work |
-| **Deprecated** | Gray | Superseded or abandoned — never deleted |
 
 ## Ticket Naming Convention
 
@@ -55,13 +45,27 @@ Backlog → Planned → Ready → In Progress → Submitted for Review → In Re
 <NAMESPACE>-<NNN>-<UPPERCASE-DESCRIPTION-WITH-DASHES>.md
 ```
 
+Examples:
+- `WOMONO-044-IDEAS-PRIORITIZATION-BOARD.md`
+- `WOMONO-049-SELF-UPDATING-INSTALLER.md`
+- `WOW-001-SOME-FEATURE.md`
+- `OPT-001-SOME-FEATURE.md`
+
+### Finding the Next Number
+
+```Bash
+ls thoughts/<project-slug>/shared/tickets/<PREFIX>-*.md
+```
+
+Take the highest number, increment by 1. If no tickets exist, start at `001`.
+
 ### Storage Location
 
-- Active tickets: `thoughts/<project-slug>/shared/tickets/<FILE>.md`
-- Done tickets: `thoughts/<project-slug>/shared/tickets/done/<FILE>.md`
-- Deprecated tickets: `thoughts/<project-slug>/shared/tickets/deprecated/<FILE>.md`
-- Legacy tickets: `thoughts/<project-slug>/shared/tickets/legacy/<FILE>.md`
+- Shared tickets (active): `thoughts/<project-slug>/shared/tickets/<category>/<ID>-<description>.md`
+- Shared tickets (done): `thoughts/<project-slug>/shared/tickets/done/<ID>-<description>.md`
 - Personal tickets: `thoughts/<project-slug>/<dev>/tickets/<DEV>-<XXX>-<description>.md`
+
+**Category subdirectories**: `frontend/`, `backend/`, `infrastructure/`, `devops/`, `security/`, `architecture/`, `docs/`, `testing/`, `ai-tools/`
 
 ### Frontmatter
 
@@ -70,8 +74,7 @@ Backlog → Planned → Ready → In Progress → Submitted for Review → In Re
 title: "[<PREFIX>-<NNN>] <Descriptive Title>"
 type: "Feature" | "Bug" | "TechDebt" | "Epic" | "Improvement"
 priority: "Critical" | "High" | "Medium" | "Low"
-status: "Backlog" | "Planned" | "Ready" | "In Progress" | "Submitted for Review" | "In Review" | "Approved" | "Done" | "Blocked" | "Changes Requested" | "Deprecated"
-domain: "frontend" | "backend" | "devops" | "infra" | "ai-tools" | "docs" | "security" | "testing" | "architecture" | "cross-cutting"
+status: "Backlog" | "Planned" | "Ready" | "In Progress" | "Submitted for Review" | "In Review" | "Approved" | "Done" | "Blocked" | "Changes Requested"
 assignee: ""
 reporter: "@username"
 project: "WOMONO" | "WOW" | "OPT"
@@ -81,133 +84,183 @@ parent_ticket: ""
 shared_tickets: "[]"
 pr_url: ""
 github_issue: ""
-created: ""
-updated: ""
-deprecated: false
-deprecated_reason: ""
-deprecated_date: ""
-replaced_by: ""
 ---
 ```
 
 ### Template
 
-Use `thoughts/shared/templates/ticket-template.md`.
+Use `thoughts/shared/tickets/ticket-template.md`.
 
-## Domain-Based Routing
+## Audit Utility
 
-Every ticket has a `domain` field mapping to the code area it affects.
+A ticket audit script is bundled at `assets/audit-tickets.js`. Run it to validate all tickets across WOMONO, WOW, and OPT for frontmatter compliance:
 
-| Domain | Primary | Secondary |
-|--------|---------|-----------|
-| frontend | @zerwiz | @michael |
-| backend | @craig | @zerwiz |
-| devops | @craig | — |
-| infra | @craig | — |
-| ai-tools | @zerwiz | — |
-| docs | @zerwiz | @michael |
-| security | @craig | @zerwiz |
-| testing | @zerwiz | @craig |
-| architecture | @craig | @zerwiz |
-| cross-cutting | @zerwiz | @craig |
-
-## Archive System (NEVER DELETE)
-
-Tickets are NEVER deleted. Use archive tiers:
-
-| Tier | Directory | When |
-|------|-----------|------|
-| Active | `shared/tickets/` | Default |
-| Done | `shared/tickets/done/` | Auto-moved on completion |
-| Deprecated | `shared/tickets/deprecated/` | Superseded or abandoned |
-| Legacy | `shared/tickets/legacy/` | Old-format cleanup |
-
-## Completion Flow
-
-When marking a ticket "Done":
-
-```
-Step 1: Validate completable status
-Step 2: Set status: "Done", completed: "YYYY-MM-DD", updated: "YYYY-MM-DD"
-Step 3: Knowledge capture — ask about non-obvious solutions, store in knowledge base
-Step 4: CHANGELOG prompt — append to [Unreleased] section
-Step 5: Move to done/ via git mv
-Step 6: Remove from personal folder
-Step 7: Regenerate TODO.md
+```bash
+deno run -A assets/audit-tickets.js
 ```
 
-## Personal Ticket Routing
-
-When ticket has `assignee`, copy to developer's personal folder:
-
-| Trigger | Action |
-|---------|--------|
-| Created with assignee | Copy to `thoughts/<project>/<developer>/` |
-| Assignee changed | Remove from old, copy to new |
-| Completed | Remove from personal folder |
-| Reopened | Re-copy to personal folder |
-
-## TODO.md Management
-
-Each project has ONE canonical `TODO.md` at `thoughts/<project>/TODO.md`. Regenerate on every status change. Groups tickets by domain with enforcement tickets first.
-
-## Audit Rules
-
-| Rule | Level | Check |
-|------|-------|-------|
-| done-in-root | WARNING | Done ticket in shared/tickets/ root |
-| active-in-done | ERROR | Active ticket in done/ |
-| done-missing-completed | ERROR | Done ticket missing completed field |
-| deprecated-missing-reason | ERROR | Deprecated ticket missing reason |
-| assigned-missing-from-personal | WARNING | Assigned ticket not in personal folder |
-| orphan-in-personal | ERROR | File in personal folder with no matching ticket |
-| missing-frontmatter | WARNING | Missing required fields |
-| wrong-naming-convention | WARNING | Name doesn't match convention |
-| cross-project-ticket | ERROR | Prefix doesn't match project folder |
-| domain-missing | WARNING | Missing domain field |
+This checks every ticket file for required frontmatter fields, correct formatting, and file naming. Use it before submitting tickets for review or after batch operations.
 
 ## Production-Ready Standard
 
-Every ticket's acceptance criteria must include: no mock data, error handling, observability, security, edge cases, tests for failure modes.
+Every ticket's acceptance criteria **must** include:
+
+- **No mock data** — all endpoints, queries, and components work against real data. Mocks only in test suites.
+- **Error handling** — every external call, DB query, and user input validated and handled.
+- **Observability** — structured logging, metrics, or traces for non-trivial operations.
+- **Security** — RBAC, Economics Shield, audit logging per `wow_access_control`.
+- **Edge cases** — empty states, timeouts, rate limits, malformed input handled.
+- **Tests** — failure modes covered, not just happy path.
+
+If a ticket's AC don't cover these, add them.
 
 ## Core Commands
 
 ### `/work <ticket-id>`
-Start working on a ticket. Updates status to "In Progress".
+Start working on a ticket. Updates status to "In Progress", creates a work session context.
+
+**Steps:**
+1. Find ticket file in `shared/tickets/<category>/` or `shared/tickets/` (fallback)
+2. Update frontmatter: `status: "In Progress"`
+3. Create work session context
+4. Log work start in ticket's Work Log section
 
 ### `/complete <ticket-id>`
-Mark ticket as done. Executes full completion flow: validate → set Done → knowledge capture → CHANGELOG → move to done/ → remove from personal → regenerate TODO.
+Mark a ticket as done. **CRITICAL: Moves ticket file to `done/` subdirectory.**
+
+**Steps:**
+1. Find ticket file: `thoughts/<project-slug>/shared/tickets/<category>/<ticket-id>*.md` or `thoughts/<project-slug>/shared/tickets/<ticket-id>*.md`
+2. Update frontmatter: `status: "Done"`, `completed: "YYYY-MM-DD"`
+3. Move file: `git mv <source> thoughts/<project-slug>/shared/tickets/done/<filename>`
+4. Create `done/` directory if it doesn't exist
+5. If review is required, moves to "Submitted for Review" instead (no file move)
+6. Checks off linked TODO checkboxes in `thoughts/<project-slug>/shared/tickets/TODO.md`
+
+**Example:**
+```bash
+# Before
+thoughts/wayofteams/shared/tickets/backend/WOW-045-AUTH-FIX.md
+
+# After /complete WOW-045
+thoughts/wayofteams/shared/tickets/done/WOW-045-AUTH-FIX.md
+```
 
 ### `/sync team`
-Show team dashboard: tickets grouped by owner, status, blockers.
+Show team dashboard: all tickets grouped by owner, status, blockers, dependencies.
+
+### `/sync skills`
+Sync all available skills to all configured frontends.
 
 ### `/ticket create`
-Interactive wizard. Prompts for title, type, priority, namespace, domain, assignee. Auto-suggests domain and assignee from content.
+Interactive ticket creation wizard. Prompts for:
+- Title, type, priority, namespace
+- Assignee, project, category
+- Context, requirements, technical notes, success criteria
+
+**Ticket creation path:**
+```
+thoughts/<project-slug>/shared/tickets/<category>/<ID>-<description>.md
+```
+
+**Auto-creates category subdirectory** if it doesn't exist (e.g., `backend/`, `frontend/`, `infrastructure/`)
 
 ## Available Tools
 
 ### `list_tickets`
-Filter by: namespace, status, assignee, project, category, domain, role.
+List tickets with filtering.
+Parameters:
+- `namespace` (optional): Filter by "wow" | "opticat" | "womono" | "team"
+- `status` (optional): Filter by status
+- `assignee` (optional): Filter by assignee
+- `project` (optional): Filter by project
+- `category` (optional): Filter by category
+- `role` (optional): Filter by required role
 
 ### `get_ticket`
-Get full ticket metadata by ticket_id.
+Get full ticket metadata.
+Parameters:
+- `ticket_id` (required): The ticket ID (e.g., "TKT-001")
 
 ### `update_ticket`
-Update status, assignee, domain, blockers, pr_url.
+Update ticket status and metadata.
+Parameters:
+- `ticket_id` (required): The ticket ID
+- `status` (optional): New status
+- `assignee` (optional): New assignee
+- `blockers` (optional): Array of blocking ticket IDs
+- `unblocks` (optional): Array of unblocked ticket IDs
+- `pr_url` (optional): Link to GitHub PR
+
+### `link_todo_to_ticket`
+Bind a TODO.md section to a ticket ID.
+Parameters:
+- `ticket_id` (required): The ticket ID
+- `section` (required): The section header in TODO.md
+- `owner` (required): Developer ID owning the task
 
 ### `submit_for_review`
-Submit for CTO review with optional pr_url.
+Submit completed work for CTO review.
+Parameters:
+- `ticket_id` (required): The ticket ID
+- `pr_url` (optional): GitHub PR URL
 
 ### `cto_review_action`
-CTO action: "approve" | "request-changes" | "reject" with comments.
+_review_action
+CTO reviews submitted work.
+Parameters:
+- `ticket_id` (required): The ticket ID
+- `action` (required): "approve" | "request-changes" | "reject"
+- `comments` (optional): Review comments
+
+### CTO Review Flow (Dashboard Integration)
+
+The CTO Dashboard provides a dedicated **Review Queue** view for tickets awaiting CTO review:
+
+1. **Submit for Review**: When developer sets status to "In Review" (or uses `/complete` which auto-submits if review required), ticket appears in Review Queue
+2. **CTO Notification**: CTO sees ticket in Review Queue with "Approve", "Request Changes", "Reject" buttons
+3. **Review Actions**:
+   - **Approve**: Status → "Approved" → Auto-transition to "Done"
+   - **Request Changes**: Status → "Changes Requested" → Auto-transition back to "In Progress"
+   - **Reject**: Status → "Blocked" with review comments as reason
+4. **Review Comments**: CTO can add comments that are stored in ticket frontmatter (`reviewComments`, `reviewedBy`, `reviewedAt`)
+
+The dashboard store has `updateTicketReview` action that handles this flow.
 
 ### `sync_personal_todos`
-Regenerate personal TODO.md for all developers.
+Regenerate personal TODO.md for all developers from shared ticket assignments.
+
+## Ticket Storage (per project, from harness.json project_slug)
+
+Tickets are stored as markdown files in:
+- `thoughts/<project-slug>/shared/tickets/<category>/<ID>-<description>.md` (shared tickets)
+- `thoughts/<project-slug>/<dev>/tickets/<DEV>-<XXX>-<description>.md` (personal tickets)
+
+Each ticket follows the template in `thoughts/shared/tickets/ticket-template.md` (cross-project template at f-rr-d root).
+
+## Hierarchical Linking
+
+- Personal tickets reference parent shared ticket via `parent_ticket` frontmatter
+- Shared tickets reference personal sub-tasks via `sub_tasks` array
+- Personal TODO.md auto-generates from assigned shared tickets
 
 ## Notification Integration
 
+When updating ticket status or managing tickets, mark related CTO Dashboard notifications as Read via the notification API:
+
 ```bash
+# Mark review notification as read after review action
 curl -X POST http://localhost:6969/api/notifications \
   -H "Content-Type: application/json" \
   -d '{"action": "mark-read", "notificationId": "review-<TICKET_ID>"}'
+
+# Mark update notification as read after status change
+curl -X POST http://localhost:6969/api/notifications \
+  -H "Content-Type: application/json" \
+  -d '{"action": "mark-read", "notificationId": "update-<TICKET_ID>"}'
 ```
+
+The notification IDs follow the format:
+- `review-<TICKET_ID>` — for tickets in review queue
+- `update-<TICKET_ID>` — for ticket status updates
+
+This ensures the CTO Dashboard bell badge reflects only genuinely unread notifications.

@@ -1,19 +1,19 @@
-# Pi Domain Experts (Agents)
+# Wo Coder Domain Experts (Agents)
 
 > [!NOTE]
-> This reference guide is based on the official [Pi Documentation](https://pi.dev).
+> This reference guide is based on the Pi agent system, adapted for Wo Coder.
 
-In Pi, agents are custom domain-expert personas configured using Markdown files. They allow developers to customize the AI's instruction set, context formatting, and rules for specialized tasks.
+In Wo Coder, agents are custom domain-expert personas configured using Markdown files. They allow developers to customize the AI's instruction set, context formatting, and rules for specialized tasks.
 
 ---
 
 ## 📂 Naming & Location
 
-Domain-expert agents in Pi are stored under:
-*   **Global level**: `~/.pi/agent/agents/<agent-name>.md`
-*   **Workspace level**: `<workspace-root>/.agents/agents/<agent-name>.md`
+Domain-expert agents in Wo Coder are stored under:
+*   **Global level**: `~/.wocode/agent/agents/<agent-name>.md`
+*   **Workspace level**: `<workspace-root>/.wocode/agents/<agent-name>.md`
 
-Pi strictly uses **kebab-case** naming conventions for its agent files (e.g., `codebase-analyzer.md`, `thoughts-locator.md`).
+Wo Coder uses **kebab-case** naming conventions for its agent files (e.g., `codebase-analyzer.md`, `thoughts-locator.md`).
 
 ### Markdown Format Example (`my-custom-expert.md`)
 

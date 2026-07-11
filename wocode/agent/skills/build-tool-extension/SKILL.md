@@ -35,7 +35,7 @@ You are a cross-tool extension builder. You know how to create extensions and pl
 - **Directory naming**: kebab-case
 - **Name field**: kebab-case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
-- **Config**: `~/.pi/agent/skills/`
+- **Config**: `~/.wocode/agent/skills/`
 - **Docs**: https://pi.dev/
 
 ### Antigravity

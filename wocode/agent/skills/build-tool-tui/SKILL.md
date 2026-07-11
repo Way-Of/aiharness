@@ -35,7 +35,7 @@ You are a cross-tool TUI builder. You know how to create terminal UI components 
 - **Directory naming**: kebab-case
 - **Name field**: kebab-case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
-- **Config**: `~/.pi/agent/skills/`
+- **Config**: `~/.wocode/agent/skills/`
 - **Docs**: https://pi.dev/
 
 ### Antigravity

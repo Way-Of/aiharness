@@ -35,7 +35,7 @@ You are a cross-tool configuration expert. You know how to configure ALL 7 AI co
 - **Directory naming**: kebab-case
 - **Name field**: kebab-case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
-- **Config**: `~/.pi/agent/skills/`
+- **Config**: `~/.wocode/agent/skills/`
 - **Docs**: https://pi.dev/
 
 ### Antigravity
@@ -75,7 +75,7 @@ You are a cross-tool configuration expert. You know how to configure ALL 7 AI co
 - **Local**: `.claude/settings.local.json` (gitignored)
 
 ### Pi
-- **Config**: `~/.pi/agent/config.json`
+- **Config**: `~/.wocode/agent/config.json`
 - **Project**: `.agents/config.json`
 - **Providers**: OpenAI, Anthropic, Google, custom
 - **Models**: configurable per provider

@@ -89,7 +89,7 @@ All tools use JSON config files. Key files per tool:
 |------|-------------|--------|
 | opencode | `~/.config/opencode/opencode.json` | JSON/JSONC |
 | claude | `~/.claude/settings.json` | JSON |
-| pi | `~/.pi/agent/config.json` | JSON |
+| pi | `~/.wocode/agent/config.json` | JSON |
 | antigravity | `~/.antigravity/settings.json` | JSON |
 | codex | `~/.codex/config.json` | JSON |
 | wocode | `~/.wocode/wocode.json` | JSON |
@@ -140,7 +140,7 @@ All tools use JSON config files. Key files per tool:
 |------|-------------|
 | opencode | `packages/@aiengineeringharness/opencode/` → `~/.config/opencode/` |
 | claude | `packages/@aiengineeringharness/claude/` → `~/.claude/` |
-| pi | `packages/@aiengineeringharness/pi/` → `~/.pi/agent/` |
+| pi | `packages/@aiengineeringharness/wocode/` → `~/.pi/agent/` |
 | antigravity | `packages/@aiengineeringharness/antigravity/` → `~/.antigravity/` |
 | codex | `packages/@aiengineeringharness/codex/` → `~/.codex/` |
 | wocode | `packages/@aiengineeringharness/wocode/` → `~/.wocode/` |

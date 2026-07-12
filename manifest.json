@@ -1,5 +1,5 @@
 {
-  "version": "1.7.20",
+  "version": "1.7.22",
   "tools": {
     "antigravity": {
       "name": "antigravity",
@@ -69,6 +69,14 @@
             {
               "src": "antigravity/agents/netlify_troubleshooter.md",
               "dest": "agents/netlify_troubleshooter.md"
+            },
+            {
+              "src": "antigravity/agents/debugger.md",
+              "dest": "agents/debugger.md"
+            },
+            {
+              "src": "antigravity/agents/github.md",
+              "dest": "agents/github.md"
             }
           ]
         },
@@ -387,8 +395,8 @@
           "description": "Validate Plan skill",
           "files": [
             {
-              "src": "antigravity/skills/validate_plan/SKILL.md",
-              "dest": "skills/validate-plan/SKILL.md"
+              "src": "antigravity/skills/validate_implementation/SKILL.md",
+              "dest": "skills/validate-implementation/SKILL.md"
             }
           ]
         },
@@ -878,6 +886,14 @@
             {
               "src": "claude/agents/netlify_troubleshooter.md",
               "dest": "agents/netlify_troubleshooter.md"
+            },
+            {
+              "src": "claude/agents/debugger.md",
+              "dest": "agents/debugger.md"
+            },
+            {
+              "src": "claude/agents/github.md",
+              "dest": "agents/github.md"
             }
           ]
         },
@@ -1040,8 +1056,8 @@
           "description": "Validate Plan skill",
           "files": [
             {
-              "src": "claude/skills/validate_plan/SKILL.md",
-              "dest": "skills/validate-plan/SKILL.md"
+              "src": "claude/skills/validate_implementation/SKILL.md",
+              "dest": "skills/validate-implementation/SKILL.md"
             }
           ]
         },
@@ -1621,6 +1637,14 @@
             {
               "src": "codex/agents/netlify_troubleshooter.md",
               "dest": "agents/netlify_troubleshooter.md"
+            },
+            {
+              "src": "codex/agents/debugger.md",
+              "dest": "agents/debugger.md"
+            },
+            {
+              "src": "codex/agents/github.md",
+              "dest": "agents/github.md"
             }
           ]
         },
@@ -1852,8 +1876,8 @@
           "description": "Validate Plan skill",
           "files": [
             {
-              "src": "codex/skills/validate_plan/SKILL.md",
-              "dest": "skills/validate-plan/SKILL.md"
+              "src": "codex/skills/validate_implementation/SKILL.md",
+              "dest": "skills/validate-implementation/SKILL.md"
             }
           ]
         },
@@ -2347,6 +2371,14 @@
             {
               "src": "opencode/agents/netlify_troubleshooter.md",
               "dest": "agents/netlify_troubleshooter.md"
+            },
+            {
+              "src": "opencode/agents/debugger.md",
+              "dest": "agents/debugger.md"
+            },
+            {
+              "src": "opencode/agents/github.md",
+              "dest": "agents/github.md"
             }
           ]
         },
@@ -2522,8 +2554,8 @@
           "description": "Validate Plan skill",
           "files": [
             {
-              "src": "opencode/skills/validate-plan/SKILL.md",
-              "dest": "skills/validate-plan/SKILL.md"
+              "src": "opencode/skills/validate-implementation/SKILL.md",
+              "dest": "skills/validate-implementation/SKILL.md"
             }
           ]
         },
@@ -3072,6 +3104,14 @@
             {
               "src": "pi/agent/agents/netlify-agent.md",
               "dest": "agents/netlify-agent.md"
+            },
+            {
+              "src": "pi/agent/agents/debugger.md",
+              "dest": "agents/debugger.md"
+            },
+            {
+              "src": "pi/agent/agents/github.md",
+              "dest": "agents/github.md"
             }
           ]
         },
@@ -4059,6 +4099,14 @@
             {
               "src": "wocode/agent/agents/codebase-investigator.md",
               "dest": "agents/codebase-investigator.md"
+            },
+            {
+              "src": "wocode/agent/agents/debugger.md",
+              "dest": "agents/debugger.md"
+            },
+            {
+              "src": "wocode/agent/agents/github.md",
+              "dest": "agents/github.md"
             }
           ]
         },

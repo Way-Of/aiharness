@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [1.8.0] - 2026-07-12
+
 ### Added
 - Debugger agent for all 6 tools + 2 subagent extensions (AIH-186)
 - GitHub agent for all 6 tools + 2 subagent extensions — safe GitHub operations, always asks before destructive actions (AIH-188)
@@ -26,8 +28,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Updated 57 files with correct workflow order
 - Updated 19 planner/telemetry files to reference `validate_implementation`
 - Updated documentation: Skills Catalog and Presentation reflect new agents and workflow
-
-### Changed
 - Consolidated duplicate rules directories: removed `thoughts/global/templates/rules/`, kept `thoughts/global/rules/` as single source of truth (AIH-187)
 - Updated ~680 skill files to reference `thoughts/global/rules/` instead of `thoughts/global/templates/rules/`
 - Simplified rules-manager from 3-tier to 2-tier precedence (project > global)

@@ -6,7 +6,7 @@ The AI Engineering Harness provides 51 battle-tested skills, 12 agents, and work
 
 ## About This
 
-This repo provides a cross-tool AI engineering harness — 51+ skills, 12 agents, and workflows that work across 7 AI coding tools. Install once, use everywhere.
+This repo provides a cross-tool AI engineering harness — 51+ skills, 12 agents, and workflows that work across 6 AI coding tools. Install once, use everywhere.
 
 ### Updating
 

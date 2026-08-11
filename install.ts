@@ -405,12 +405,12 @@ function printHelp(): void {
   ];
   for (const line of logo) console.log(o(`  ${line}`));
   console.log();
-  console.log(`  ${ob("⟡ WAY OF CLI")}  ${od("way-of — engine commands")}  ${od("─".repeat(14))}\n`);
+  console.log(`  ${ob("⟡ AI HARNESS CLI")}  ${od("ai-harness — engine commands")}  ${od("─".repeat(4))}\n`);
   console.log(`  ${o("┌")}${od("─".repeat(54))}${o("│")}`);
   console.log(`  ${o("│")}  ${C.bold}deno run -A <url> --tool=all --yes${C.reset}${" ".repeat(18)}${o("│")}`);
-  console.log(`  ${o("│")}  ${C.bold}way-of --tool=claude${C.reset}${" ".repeat(32)}${o("│")}`);
-  console.log(`  ${o("│")}  ${C.bold}way-of --update${C.reset}${" ".repeat(37)}${o("│")}`);
-  console.log(`  ${o("│")}  ${C.bold}way-of --help${C.reset}${" ".repeat(39)}${o("│")}`);
+  console.log(`  ${o("│")}  ${C.bold}ai-harness --tool=claude${C.reset}${" ".repeat(28)}${o("│")}`);
+  console.log(`  ${o("│")}  ${C.bold}ai-harness --update${C.reset}${" ".repeat(33)}${o("│")}`);
+  console.log(`  ${o("│")}  ${C.bold}ai-harness --help${C.reset}${" ".repeat(35)}${o("│")}`);
   console.log(`  ${o("└")}${od("─".repeat(54))}${o("┘")}`);
   console.log();
 

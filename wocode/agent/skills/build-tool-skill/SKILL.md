@@ -1,5 +1,6 @@
 ---
 name: build-tool-skill
+description: Build skills for all 7 AI coding tools — knows SKILL.md format, frontmatter, naming conventions, allowed-tools, directory rules.
 platforms:
   - opencode
   - claude

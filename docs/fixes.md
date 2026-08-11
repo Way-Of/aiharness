@@ -1,5 +1,41 @@
 # AI Engineering Harness Fixes & Release Notes
 
+## v1.8.1 — 2026-08-12 — Directory Formatting Fixes + Safe Installation + investor-ready-doc-gen Pipeline (AIH-190)
+
+### Bug Fixes
+- **Vestigial `agent/` directories removed (AIH-190)**: Deleted stale `agent/skills/fixes-manager/` stubs from opencode, claude, codex, antigravity. Each tool already had the full skill in `skills/fixes-manager/`.
+- **Manifest snake_case dest paths fixed (AIH-190)**: 10 dest paths in `manifest.json` corrected from snake_case to kebab-case (`rules_manager` → `rules-manager`, `ticket_organization` → `ticket-organization`, `alliner_compliance_check` → `alliner-compliance-check`, `fixes_bump` → `fixes-bump`, `fixes_create` → `fixes-create`).
+- **`validate-plan` name mismatch fixed (AIH-190)**: Changed `name: validate_plan` → `name: validate-plan` in 5 kebab-case tool copies (opencode, pi×3, wocode). Pi validation errors resolved.
+- **`build-tool-skill` description added (AIH-190)**: Added missing `description:` field to 8 of 10 SKILL.md copies. Pi no longer reports "description is required".
+- **`build-tool-skill` name mismatch fixed (AIH-190)**: Changed `name: build-tool-skill` → `name: build_tool_skill` in codex and gemini to match directory names.
+- **Pi `theme-cycler.ts` shortcut conflict fixed (AIH-190)**: Changed `ctrl+g` → `ctrl+shift+g` in pi and wocode extensions. Pi no longer reports "Extension shortcut conflicts with built-in".
+- **Installer always creates backups (AIH-190)**: `install.ts` now creates `.bak.<timestamp>` backup before overwriting ANY config file, regardless of `--yes` flag.
+- **Installer skips settings with `--yes` (AIH-190)**: The `--yes` flag now skips the `settings` component instead of silently overwriting user configs (`opencode.json`, `wocode.json`, `antigravity.json`).
+- **Claude settings now deployed (AIH-190)**: Added `settings.json` and `.mcp.json` to Claude's manifest entries. Claude now gets MCP server config installed.
+- **Stale removal protects backups (AIH-190)**: `removeStaleFiles()` now skips `.bak.*` files.
+
+### Features
+- **`investor-ready-doc-gen` registered in pipeline (AIH-190)**: Skill now in `manifest.json` for all 6 manifest tools (opencode, claude, pi, wocode, antigravity, codex). Can be installed/updated via `ai-harness`.
+- **Canonical `skills/investor-ready-doc-gen/` created (AIH-190)**: Single source of truth for the investor-ready documentation skill.
+- **Gemini `investor-ready-doc-gen` deployed (AIH-190)**: Was the only tool missing the skill.
+- **Pi duplicate removed (AIH-190)**: Removed `pi/agent/extensions/skills/investor-ready-doc-gen/` (kept `pi/agent/skills/`).
+- **README installation safety docs (AIH-190)**: Added "Installation Safety" section explaining `--yes` behavior, backup locations, and safe vs destructive install modes.
+
+### Files
+- `opencode/agent/`, `claude/agent/`, `codex/agent/`, `antigravity/agent/` — Deleted vestigial directories
+- `manifest.json` — Fixed 10 dest paths, added investor-ready-doc-gen entries, added Claude settings
+- `config-manifest/tools/{opencode,claude,pi,wocode,antigravity,codex}.yaml` — Added investor-ready-doc-gen entries
+- `config-manifest/tools/claude.yaml` — Added settings.json and .mcp.json to settings component
+- `opencode/skills/validate-plan/SKILL.md`, `pi/agent/skills/validate-plan/SKILL.md`, `pi/agent/extensions/skills/validate-plan/SKILL.md`, `pi/skills/validate-plan/SKILL.md`, `wocode/agent/skills/validate-plan/SKILL.md` — Fixed name field
+- `skills/build-tool-skill/SKILL.md`, `opencode/skills/build-tool-skill/SKILL.md`, `wocode/agent/skills/build-tool-skill/SKILL.md`, `pi/agent/skills/build-tool-skill/SKILL.md`, `claude/skills/build_tool_skill/SKILL.md`, `antigravity/skills/build_tool_skill/SKILL.md`, `codex/skills/build_tool_skill/SKILL.md`, `gemini/skills/build_tool_skill/SKILL.md` — Added description, fixed name
+- `pi/agent/extensions/theme-cycler.ts`, `wocode/agent/extensions/theme-cycler.ts` — Fixed ctrl+g shortcut
+- `skills/investor-ready-doc-gen/` — New canonical skill source
+- `gemini/skills/investor_ready_doc_gen/` — New Gemini deployment
+- `install.ts` — Added backup logic, settings skip with --yes, NEVER_DELETE patterns
+- `README.md` — Added Installation Safety section
+
+---
+
 ## v1.7.20 — 2026-07-11 — Rules System + Production-Ready Standards + Fixes Skills (AIH-182, AIH-183, AIH-184)
 
 ### Features

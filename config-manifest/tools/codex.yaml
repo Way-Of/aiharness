@@ -408,3 +408,134 @@ components:
     files:
     - src: codex/skills/ticket_organization/SKILL.md
       dest: skills/ticket_organization/SKILL.md
+
+
+  skill/investor_ready_doc_gen:
+    description: Generate investor-ready documentation for any project
+    files:
+    - src: codex/skills/investor_ready_doc_gen/SKILL.md
+      dest: skills/investor_ready_doc_gen/SKILL.md
+    - src: codex/skills/investor_ready_doc_gen/prompt.md
+      dest: skills/investor_ready_doc_gen/prompt.md
+    - src: codex/skills/investor_ready_doc_gen/assets/examples/opticat_config.yaml
+      dest: skills/investor_ready_doc_gen/assets/examples/opticat_config.yaml
+    - src: codex/skills/investor_ready_doc_gen/assets/examples/wow_config.yaml
+      dest: skills/investor_ready_doc_gen/assets/examples/wow_config.yaml
+    - src: codex/skills/investor_ready_doc_gen/assets/pdf/investor-theme.css
+      dest: skills/investor_ready_doc_gen/assets/pdf/investor-theme.css
+    - src: codex/skills/investor_ready_doc_gen/assets/schema/investor_config.schema.yaml
+      dest: skills/investor_ready_doc_gen/assets/schema/investor_config.schema.yaml
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/changelog.md
+      dest: skills/investor_ready_doc_gen/assets/templates/changelog.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/index.md
+      dest: skills/investor_ready_doc_gen/assets/templates/index.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/todo.md
+      dest: skills/investor_ready_doc_gen/assets/templates/todo.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/company/business_plan.md
+      dest: skills/investor_ready_doc_gen/assets/templates/company/business_plan.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/company/company_overview.md
+      dest: skills/investor_ready_doc_gen/assets/templates/company/company_overview.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/company/organizational_chart.md
+      dest: skills/investor_ready_doc_gen/assets/templates/company/organizational_chart.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/company/team_bios.md
+      dest: skills/investor_ready_doc_gen/assets/templates/company/team_bios.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/company/team_values.md
+      dest: skills/investor_ready_doc_gen/assets/templates/company/team_values.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/costs/alignment_summary.md
+      dest: skills/investor_ready_doc_gen/assets/templates/costs/alignment_summary.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/costs/cloud_costs.md
+      dest: skills/investor_ready_doc_gen/assets/templates/costs/cloud_costs.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/costs/cost_analysis.md
+      dest: skills/investor_ready_doc_gen/assets/templates/costs/cost_analysis.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/costs/detailed_breakdown.md
+      dest: skills/investor_ready_doc_gen/assets/templates/costs/detailed_breakdown.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/costs/hardware_costs.md
+      dest: skills/investor_ready_doc_gen/assets/templates/costs/hardware_costs.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/costs/setup_legal_costs.md
+      dest: skills/investor_ready_doc_gen/assets/templates/costs/setup_legal_costs.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/costs/team_tooling_costs.md
+      dest: skills/investor_ready_doc_gen/assets/templates/costs/team_tooling_costs.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/executive/executive_summary.md
+      dest: skills/investor_ready_doc_gen/assets/templates/executive/executive_summary.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/executive/investment_thesis.md
+      dest: skills/investor_ready_doc_gen/assets/templates/executive/investment_thesis.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/executive/white_paper.md
+      dest: skills/investor_ready_doc_gen/assets/templates/executive/white_paper.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/financial/README.md
+      dest: skills/investor_ready_doc_gen/assets/templates/financial/README.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/financial/cap_table.md
+      dest: skills/investor_ready_doc_gen/assets/templates/financial/cap_table.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/financial/cost_analysis.md
+      dest: skills/investor_ready_doc_gen/assets/templates/financial/cost_analysis.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/financial/historical_financials.md
+      dest: skills/investor_ready_doc_gen/assets/templates/financial/historical_financials.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/financial/master_financial_model.md
+      dest: skills/investor_ready_doc_gen/assets/templates/financial/master_financial_model.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/financial/revenue_model.md
+      dest: skills/investor_ready_doc_gen/assets/templates/financial/revenue_model.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/financial/seed_allocation_plan.md
+      dest: skills/investor_ready_doc_gen/assets/templates/financial/seed_allocation_plan.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/legal/advisor_board_contract.md
+      dest: skills/investor_ready_doc_gen/assets/templates/legal/advisor_board_contract.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/legal/angel_investor_contract.md
+      dest: skills/investor_ready_doc_gen/assets/templates/legal/angel_investor_contract.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/legal/intellectual_property.md
+      dest: skills/investor_ready_doc_gen/assets/templates/legal/intellectual_property.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/legal/shareholder_agreement.md
+      dest: skills/investor_ready_doc_gen/assets/templates/legal/shareholder_agreement.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/legal/vc_investor_contract.md
+      dest: skills/investor_ready_doc_gen/assets/templates/legal/vc_investor_contract.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/market/README.md
+      dest: skills/investor_ready_doc_gen/assets/templates/market/README.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/market/competitive_analysis.md
+      dest: skills/investor_ready_doc_gen/assets/templates/market/competitive_analysis.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/market/deep_research.md
+      dest: skills/investor_ready_doc_gen/assets/templates/market/deep_research.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/market/go_to_market_strategy.md
+      dest: skills/investor_ready_doc_gen/assets/templates/market/go_to_market_strategy.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/market/market_research.md
+      dest: skills/investor_ready_doc_gen/assets/templates/market/market_research.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/market/partnership_strategy.md
+      dest: skills/investor_ready_doc_gen/assets/templates/market/partnership_strategy.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/market/product_roadmap.md
+      dest: skills/investor_ready_doc_gen/assets/templates/market/product_roadmap.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/market/research_prompt.md
+      dest: skills/investor_ready_doc_gen/assets/templates/market/research_prompt.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/operations/client_overview.md
+      dest: skills/investor_ready_doc_gen/assets/templates/operations/client_overview.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/operations/kpi_dashboard.md
+      dest: skills/investor_ready_doc_gen/assets/templates/operations/kpi_dashboard.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/operations/venture_studio_strategy.md
+      dest: skills/investor_ready_doc_gen/assets/templates/operations/venture_studio_strategy.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/pitch_deck/master_deck.md
+      dest: skills/investor_ready_doc_gen/assets/templates/pitch_deck/master_deck.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/pitch_deck/one_pager.md
+      dest: skills/investor_ready_doc_gen/assets/templates/pitch_deck/one_pager.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/pitch_deck/pitch_script.md
+      dest: skills/investor_ready_doc_gen/assets/templates/pitch_deck/pitch_script.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/pitch_deck/send_ahead_deck.md
+      dest: skills/investor_ready_doc_gen/assets/templates/pitch_deck/send_ahead_deck.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/pitch_deck/supporting_slides.md
+      dest: skills/investor_ready_doc_gen/assets/templates/pitch_deck/supporting_slides.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/technical/demo_presentation_slides.md
+      dest: skills/investor_ready_doc_gen/assets/templates/technical/demo_presentation_slides.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/technical/demo_script.md
+      dest: skills/investor_ready_doc_gen/assets/templates/technical/demo_script.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/technical/demo_use_case_scenarios.md
+      dest: skills/investor_ready_doc_gen/assets/templates/technical/demo_use_case_scenarios.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/technical/demo_video_links.md
+      dest: skills/investor_ready_doc_gen/assets/templates/technical/demo_video_links.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/technical/product_functionality.md
+      dest: skills/investor_ready_doc_gen/assets/templates/technical/product_functionality.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/technical/technical_overview.md
+      dest: skills/investor_ready_doc_gen/assets/templates/technical/technical_overview.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/venture_studio/README.md
+      dest: skills/investor_ready_doc_gen/assets/templates/venture_studio/README.md
+    - src: codex/skills/investor_ready_doc_gen/assets/templates/venture_studio/venture_studio_strategy.md
+      dest: skills/investor_ready_doc_gen/assets/templates/venture_studio/venture_studio_strategy.md
+    - src: codex/skills/investor_ready_doc_gen/assets/verticals/VERTICAL_TEMPLATE.yaml
+      dest: skills/investor_ready_doc_gen/assets/verticals/VERTICAL_TEMPLATE.yaml
+    - src: codex/skills/investor_ready_doc_gen/assets/verticals/construction_software/market_reference.yaml
+      dest: skills/investor_ready_doc_gen/assets/verticals/construction_software/market_reference.yaml
+    - src: codex/skills/investor_ready_doc_gen/assets/verticals/hvac_optimization/market_reference.yaml
+      dest: skills/investor_ready_doc_gen/assets/verticals/hvac_optimization/market_reference.yaml

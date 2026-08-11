@@ -1,5 +1,6 @@
 ---
-name: build-tool-skill
+name: build_tool_skill
+description: Build skills for all 7 AI coding tools — knows SKILL.md format, frontmatter, naming conventions, allowed-tools, directory rules.
 version: "2.0"
 tools: [read, write, edit, bash, grep, glob, websearch]
 platforms: [opencode, claude, pi, wocode, antigravity, codex]

@@ -44,13 +44,18 @@ ai-harness.exe --update
 # Install CLI
 deno run -A https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts --install-cli
 
-# Install all tools
+# Install all tools (safe — prompts before overwriting configs)
+ai-harness --tool=all
+
+# Install all tools (destructive — overwrites ALL configs without prompting)
 ai-harness --tool=all --yes
 
 # Install specific tool
 ai-harness --tool=claude
 ai-harness --tool=opencode
 ```
+
+> **⚠️ `--yes` flag destroys custom configs.** See [Installation Safety](#installation-safety) before using it.
 
 ## Supported Tools
 
@@ -75,13 +80,14 @@ deno run -A https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts -
 ### Per-Tool Install
 
 ```bash
-ai-harness --tool=claude          # Claude Code
+ai-harness --tool=claude          # Claude Code (safe — prompts on conflict)
 ai-harness --tool=opencode        # OpenCode
 ai-harness --tool=pi              # Pi
 ai-harness --tool=wocode          # Wo Coder
 ai-harness --tool=antigravity     # Antigravity
 ai-harness --tool=codex           # Codex CLI
-ai-harness --tool=all --yes       # All tools
+ai-harness --tool=all             # All tools (safe — prompts on conflict)
+ai-harness --tool=all --yes       # All tools (DESTRUCTIVE — no prompts)
 ```
 
 ### Update
@@ -97,6 +103,62 @@ git clone https://github.com/Way-Of/aiharness.git ~/.ai-engineering-harness
 cd ~/.ai-engineering-harness
 ./setup.sh claude    # Claude Code
 ./setup.sh all       # All tools
+```
+
+## Installation Safety
+
+### `--yes` flag behavior
+
+| Flag | Behavior | Use when |
+|------|----------|----------|
+| *(no flag)* | Prompts before overwriting any config file that differs from the harness default | **First install** or when you have custom configs |
+| `--yes` | Skips ALL prompts, overwrites every file silently | CI/CD, fresh machines, or you want a clean slate |
+
+### What `--yes` overwrites
+
+These user config files will be **silently replaced** with harness defaults:
+
+| Tool | File destroyed | Contains |
+|------|---------------|----------|
+| OpenCode | `~/.config/opencode/opencode.json` | MCP servers, model config, custom settings |
+| Wo Coder | `~/.wocode/agent/wocode.json` | MCP servers, tool config |
+| Antigravity | `~/.antigravity/antigravity.json` | Tool config |
+
+### What `--yes` deletes
+
+Stale file removal removes any file in `skills/`, `agents/`, `commands/`, `extensions/`, `themes/` that is not in the current manifest. If you manually added or renamed files in these directories, they will be **permanently deleted**.
+
+### Safe install (recommended)
+
+```bash
+# First install — reviews each config conflict
+ai-harness --tool=opencode
+
+# Update — reviews changes before applying
+ai-harness --update
+```
+
+### Clean wipe (destructive)
+
+```bash
+# Nuclear option — overwrites everything, no prompts
+ai-harness --tool=all --yes
+
+# Preview what would be overwritten first
+ai-harness --tool=all --dry-run
+```
+
+### Backup behavior
+
+The installer **always** creates a timestamped backup before overwriting any config file — whether you use `--yes` or not:
+
+```
+~/.config/opencode/opencode.json.bak.1723401234567
+```
+
+To restore a previous config:
+```bash
+cp ~/.config/opencode/opencode.json.bak.1723401234567 ~/.config/opencode/opencode.json
 ```
 
 ## Skills (52)

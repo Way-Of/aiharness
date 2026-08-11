@@ -678,7 +678,19 @@ async function removeStaleFiles(
     installedFiles.push(...await collectFilePaths(join(targetDir, subdir), targetDir));
   }
 
-  const stalePaths = installedFiles.filter((f) => !expectedPaths.has(f));
+  const NEVER_DELETE = [
+    /\.bak\.\d+$/,      // Backup files
+    /\.custom\./,        // User customizations
+    /\/user\./,          // User-specific configs
+  ];
+
+  const stalePaths = installedFiles.filter((f) => {
+    if (expectedPaths.has(f)) return false;
+    for (const pattern of NEVER_DELETE) {
+      if (pattern.test(f)) return false;
+    }
+    return true;
+  });
   if (stalePaths.length === 0) return;
 
   console.log(`\n  ${od("┄")} ${opts.toolName}: ${yellow(String(stalePaths.length))} stale file(s) not in manifest:`);
@@ -976,7 +988,13 @@ async function installTool(manifest: Manifest, toolName: string, opts: InstallOp
 
   for (const comp of selectedComponents) {
     // Warn before installing user-specific config files in the default flow
-    if (comp.name === "settings" && !opts.yes && opts.skills.length === 0) {
+    if (comp.name === "settings") {
+      if (opts.yes) {
+        // With --yes, skip settings to preserve user configs
+        console.log(`  ${od("·")} settings  ${od("(skipped — use without --yes to review)")}`);
+        skipped += comp.files.length;
+        continue;
+      }
       if (!opts.settingsPrompted) {
         console.log(`\n  ⚠ The "settings" component contains tool-specific config files`);
         console.log(`    (settings.json, .mcp.json) that may overwrite your existing settings.`);
@@ -1063,6 +1081,12 @@ async function installTool(manifest: Manifest, toolName: string, opts: InstallOp
       }
 
       if (existingContent !== null && existingContent !== srcContent) {
+        // Always backup before overwrite
+        const backupPath = destPath + `.bak.${Date.now()}`;
+        try {
+          await Deno.writeTextFile(backupPath, existingContent);
+          console.log(`  ${o("💾")} backed up  ${od(fileEntry.dest)} → ${od(basename(backupPath))}`);
+        } catch { /* non-fatal */ }
         console.log(`\n  ${o("⟁")} ${fileEntry.dest}  ${yellow("conflict")}  ${od("(incoming differs)")}`);
         if (!opts.yes) {
           if (opts.dryRun) {

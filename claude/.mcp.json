@@ -9,6 +9,18 @@
       "type": "http",
       "url": "http://localhost:18891",
       "disabled": true
+    },
+    "anchor": {
+      "type": "http",
+      "url": "http://localhost:42777/mcp",
+      "disabled": true,
+      "_comment": "Anchor semantic memory — 11 MCP tools for memory, context injection, PR review"
+    },
+    "wayofteams": {
+      "type": "http",
+      "url": "http://localhost:4000/mcp",
+      "disabled": true,
+      "_comment": "WayOfTeams CTO Dashboard — 25+ MCP tools for tickets, standups, knowledge, rules"
     }
   }
 }

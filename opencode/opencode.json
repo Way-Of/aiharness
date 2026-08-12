@@ -10,6 +10,18 @@
         "type": "remote",
         "url": "http://localhost:18891",
         "enabled": false
+    },
+    "anchor": {
+        "type": "remote",
+        "url": "http://localhost:42777/mcp",
+        "enabled": false,
+        "_comment": "Anchor semantic memory MCP server — enable if running Anchor locally"
+    },
+    "wayofteams": {
+        "type": "remote",
+        "url": "http://localhost:4000/mcp",
+        "enabled": false,
+        "_comment": "WayOfTeams CTO Dashboard MCP — enable if running WayOfTeams locally (25+ tools: tickets, standups, knowledge, rules, memory)"
     }
   }
 }

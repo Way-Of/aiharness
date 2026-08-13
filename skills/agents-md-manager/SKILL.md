@@ -23,13 +23,13 @@ When creating or updating AGENTS.md, ALWAYS include acceptance criteria for:
 
 ### Skills
 - [ ] All 77 canonical skills present in all 6 tools
-- [ ] Per-tool naming correct (kebab for opencode/pi/wocode, snake for claude/antigravity/codex)
+- [ ] Run `python3 harnessbuilder/sync-everything.py` to verify naming
 - [ ] Frontmatter `name:` matches directory name
-- [ ] Content identical across tools (modulo naming)
+- [ ] Content identical across tools
 
 ### Agents
 - [ ] All 14 canonical agents present in all 6 tools
-- [ ] Agent naming correct (snake_case for all tools)
+- [ ] Run `python3 harnessbuilder/sync-everything.py` to verify naming
 - [ ] Content identical across tools
 
 ### Commands/Prompts

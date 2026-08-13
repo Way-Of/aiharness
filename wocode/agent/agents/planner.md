@@ -29,7 +29,7 @@ thoughts/<project>/shared/research/  # Research documents
 thoughts/<project>/enforcement-ticket/  # HIGHEST PRIORITY
 ```
 
-Projects: `wayofmono` (WOMONO-XXX), `wow` (WOW-XXX), `opticat` (OPT-XXX)
+Projects: Discover from `thoughts/` directory structure or WayOfTeams MCP `tickets_list` tool
 
 ## Ticket Knowledge
 

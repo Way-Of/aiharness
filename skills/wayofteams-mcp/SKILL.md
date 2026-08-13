@@ -158,3 +158,28 @@ When MCP is not available, skills fall back to local file operations:
 - Rules: read from `thoughts/global/rules/`
 
 **Always check MCP availability before attempting connection.**
+
+## Code Traceability
+
+When using MCP tools, maintain ticket traceability:
+
+### Ticket References
+Every code change must include a ticket reference:
+```typescript
+// [PROJ-001] Create ticket via MCP
+const ticket = await mcp.tickets_create({ title: "..." });
+```
+
+### Fetching Context from Tickets
+Use MCP to get ticket context for implementation:
+```
+tickets_get(ticket_id="PROJ-001")
+  → Returns: requirements, acceptance criteria, technical notes
+  → Use this context to guide implementation
+```
+
+### Linking Code to Tickets
+After implementing from a ticket, add reference to all changed files:
+```bash
+grep -r "PROJ-001" --include="*.ts" --include="*.py"
+```

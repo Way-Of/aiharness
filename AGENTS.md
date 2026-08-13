@@ -193,6 +193,48 @@ Anchor provides persistent semantic memory via WayOfTeams MCP:
 
 **Config**: See `skills/anchor-memory/SKILL.md` for details.
 
+## Code Traceability
+
+Every code change MUST include a ticket reference comment. This enables:
+- Tracing what a piece of code was supposed to do (read the ticket)
+- Verifying code matches the ticket's acceptance criteria
+- Finding all code related to a specific ticket
+- Understanding why a change was made (ticket context)
+
+### Reference Format
+```
+[<PREFIX>-<NNN>] <brief description>
+```
+
+### Placement
+- Add BEFORE the changed line in code files
+- Every modified file must have at least one reference
+
+### Examples
+```typescript
+// [AIH-192] Add WayOfTeams MCP integration
+const mcpClient = new WayOfTeamsMCP();
+```
+
+```python
+# [AIH-191] Validate ticket frontmatter on creation
+def validate_frontmatter(ticket):
+```
+
+### Querying
+```bash
+# Find all code for a ticket
+grep -r "AIH-192" --include="*.ts" --include="*.py"
+
+# Find which tickets touched a file
+grep -l "AIH-" install.ts
+```
+
+### Fetching Context from Tickets/Plans
+- **Ticket**: `thoughts/<project>/shared/tickets/<TICKET-ID>.md` — requirements, acceptance criteria
+- **Plan**: `thoughts/<project>/shared/plans/<PLAN-NAME>.md` — implementation phases, file changes
+- **Search**: `grep -r "<TICKET-ID>" --include="*.ts"` — find related code
+
 ## Tool-Specific Notes
 
 ### OpenCode

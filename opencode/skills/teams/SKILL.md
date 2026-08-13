@@ -136,3 +136,28 @@ When MCP is not available, fall back to local operations:
 - **Knowledge**: Search local `thoughts/` directory
 
 **Always check MCP availability before attempting connection.**
+
+## Code Traceability
+
+When using team context, maintain ticket references:
+
+### Ticket References
+Every code change must include a ticket reference:
+```typescript
+// [PROJ-001] Add team member to project
+const member = await mcp.teams_status();
+```
+
+### Fetching Context from Tickets
+Use team context to understand what tickets are being worked on:
+```
+teams_tickets(status="in_progress")
+  → Returns: list of active tickets
+  → Use this to understand team context
+```
+
+### Linking Code to Tickets
+After implementing, add reference to all changed files:
+```bash
+grep -r "PROJ-001" --include="*.ts" --include="*.py"
+```

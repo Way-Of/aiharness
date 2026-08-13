@@ -1,6 +1,3 @@
----
-description: Validate Telemetry
----
 # Validate Telemetry
 
 Activate the **observability-driven-development** skill and run its

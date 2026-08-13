@@ -1,6 +1,3 @@
----
-description: Commit Changes
----
 # Commit Changes
 
 You are tasked with creating git commits for the changes made during this session.

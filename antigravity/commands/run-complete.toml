@@ -1,2 +1,2 @@
 description = "Complete"
-prompt = "Activate the `ticket-manager` skill to perform the complete operation."
+prompt = "Activate the `complete` skill."

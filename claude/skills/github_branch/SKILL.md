@@ -1,6 +1,6 @@
 ---
 name: github_branch
-description: Create and manage GitHub feature branches from tickets. Ensures proper branch naming, ticket linking, and base branch selection.
+description: "Create and manage GitHub feature branches from tickets. Ensures proper branch naming, ticket linking, and base branch selection."
 allowed-tools: Read Write Edit Bash Git
 ---
 
@@ -73,7 +73,6 @@ Parameters:
 - Branch name includes ticket ID for traceability
 - Auto-sets upstream tracking on push
 - Respects branch protection rules
-
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

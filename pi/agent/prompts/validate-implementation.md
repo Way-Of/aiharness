@@ -1,6 +1,3 @@
----
-description: Validate Plan
----
 # Validate Implementation
 
 You are tasked with validating that an implementation plan was correctly executed, verifying all success criteria and identifying any deviations or issues.

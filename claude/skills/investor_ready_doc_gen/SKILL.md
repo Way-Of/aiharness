@@ -38,7 +38,7 @@ The following principles are synthesized from 6 authoritative sources (OGSCapita
 ### Core Principles
 1. **Purpose-driven design**: A pitch deck is a decision document, not a showcase. Every design choice must accelerate investor understanding of: market size, urgency, traction, business logic, founder credibility. If it distracts from these signals, cut it.
 2. **One idea per slide**: Each slide proves exactly one thing (problem, market logic, traction). Never combine product detail, market context, and strategy on one slide.
-3. **Scan-first layout**: Investors scan before reading. Write headlines as conclusions, not labels. Disciplined subheads, clear spacing, visible difference between primary/secondary information.
+3. **Scan-first layout**: Investors scan before reading. write headlines as conclusions, not labels. Disciplined subheads, clear spacing, visible difference between primary/secondary information.
 4. **15-slide consensus**: 15 slides for the visual pitch is the norm in 2026. 25+ loses attention. Longer content goes in a separate due-diligence document.
 5. **Stage-appropriate narrative**: Pre-seed → lead with founder + problem. Series A → lead with traction. Series B+ → lead with scale and defensibility.
 
@@ -257,7 +257,7 @@ The template at `assets/verticals/VERTICAL_TEMPLATE.yaml` provides a complete sk
 
 Before generating ANY investor docs, you MUST thoroughly investigate the application's actual codebase. This is not optional.
 
-1. **Explore the full repository structure** — Read README, package.json, directory tree, configuration files
+1. **Explore the full repository structure** — read README, package.json, directory tree, configuration files
 2. **Identify the technology stack** — languages, frameworks, databases, infrastructure, APIs
 3. **Analyze the architecture** — components, modules, data flow, integrations, deployments
 4. **Extract actual metrics** — real code stats (lines of code, number of services, API endpoints)
@@ -268,11 +268,11 @@ Before generating ANY investor docs, you MUST thoroughly investigate the applica
    - Look for CSS custom properties: `--primary`, `--color-primary`, `--brand-primary`, `--accent`
    - Check `tailwind.config.js` / `tailwind.config.ts` for custom color palettes
    - Scan `theme.json`, `colors.css`, `variables.css`, or similar theme files
-   - Read the app's main CSS for dominant hex colors (most frequently used non-gray colors)
+   - read the app's main CSS for dominant hex colors (most frequently used non-gray colors)
    - Check for brand asset files: `logo.svg`, `brand-assets/`, `favicon` colors
    - If the project has a website, fetch it and extract brand colors from the rendered CSS
    - If no colors found, ASK the user: "What are your brand's primary/accent colors?" — provide a color picker reference
-   - Write findings to `investor_research/<project_name>/design.yaml` (copy format from `assets/pdf/design-template.yaml`)
+   - write findings to `investor_research/<project_name>/design.yaml` (copy format from `assets/pdf/design-template.yaml`)
 
 Create a structured research folder for all findings:
 
@@ -305,7 +305,7 @@ For every claim that will go into investor docs, verify it via web search:
    - **Compare**: How does the national market compare to global? (e.g., "Sweden represents 2% of the global HVAC optimization market but is growing at 22% CAGR due to strict EU regulations")
 9. **Save all source URLs** — every claim must have a verifiable source
 
-Write findings to `investor_research/<project_name>/MARKET_RESEARCH.md` and `COMPETITOR_RESEARCH.md`.
+write findings to `investor_research/<project_name>/MARKET_RESEARCH.md` and `COMPETITOR_RESEARCH.md`.
 
 ### Step 3: Create Self-Managed TODO.md ⚠️ MANDATORY
 
@@ -368,7 +368,7 @@ jurisdiction: ""
 ```
 
 ### Step 5: Load Vertical Knowledge Base
-1. Read the `market_category` from config
+1. read the `market_category` from config
 2. Find matching folder in `assets/verticals/` (e.g., `hvac_optimization` for HVAC projects)
 3. Load `market_reference.yaml` for that vertical
 4. Cross-reference vertical data with your codebase investigation and web verification
@@ -378,12 +378,12 @@ jurisdiction: ""
 ### Step 6: Generate All Documents — Work Through TODO.md
 
 For each item in your TODO.md:
-1. Read the template file from `assets/templates/<category>/<template>.md`
+1. read the template file from `assets/templates/<category>/<template>.md`
 2. Replace all `{{variable}}` placeholders with merged config values
 3. Enrich market sections with verified web research data (competitor names, stats, source URLs)
 4. Enrich technical sections with actual codebase analysis findings
 5. Handle conditionals (`{{#if}}`) and iterators (`{{#each}}`)
-6. Write the rendered output to the project's docs directory
+6. write the rendered output to the project's docs directory
 7. Tick off the item in TODO.md
 8. Self-check: verify all placeholders filled, all claims sourced
 
@@ -662,7 +662,7 @@ Show the user:
 - Next steps and review process
 
 ### Step 10: Generate Final TODO.md for User
-Write `investor_research/<project_name>/TODO.md` to the output folder documenting:
+write `investor_research/<project_name>/TODO.md` to the output folder documenting:
 - What was generated
 - What needs human review
 - What data is still missing

@@ -6,6 +6,7 @@ allowed-tools:
   - bash
   - grep
   - glob
+disable-model-invocation: true
 ---
 
 # Debug

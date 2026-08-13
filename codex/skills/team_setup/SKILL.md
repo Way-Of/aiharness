@@ -1,7 +1,7 @@
 ---
 name: team_setup
 description: "Initialize and manage team configuration: developers, roles, projects, and ticket assignments"
-tools:
+allowed-tools:
   - read
   - write
   - grep

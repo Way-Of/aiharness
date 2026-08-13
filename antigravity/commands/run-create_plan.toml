@@ -1,2 +1,2 @@
 description = "Create Plan"
-prompt = "Activate the `create_plan` skill."
+prompt = "Activate the `create-plan` skill."

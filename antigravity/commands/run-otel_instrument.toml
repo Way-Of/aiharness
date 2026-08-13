@@ -1,2 +1,2 @@
-description = "OpenTelemetry Instrumentation Orchestrator"
-prompt = "Activate the `otel_instrument` skill."
+description = "Otel Instrument"
+prompt = "Activate the `otel-instrument` skill."

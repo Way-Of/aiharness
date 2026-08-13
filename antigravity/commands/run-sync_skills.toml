@@ -1,2 +1,2 @@
-description = "Sync-skills"
-prompt = "Activate the `build-tool-skill` skill to perform the sync-skills operation."
+description = "Sync Skills"
+prompt = "Activate the `sync-skills` skill."

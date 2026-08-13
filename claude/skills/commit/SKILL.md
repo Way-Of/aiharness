@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Create structured git commits. Delegates to the git-commit-helper skill.
+description: "Create structured git commits. Delegates to the git-commit-helper skill."
 allowed-tools: Read Bash Glob Grep
 disable-model-invocation: true
 ---

@@ -1,2 +1,2 @@
-description = "Git Worktree Manager"
+description = "Worktree"
 prompt = "Activate the `worktree` skill."

@@ -2,7 +2,6 @@
 name: worktree
 description: Manage git worktrees for parallel development workflows integrated with the harness ticket system. Use when the user mentions worktrees, wants to work on multiple branches simultaneously, asks about parallel development, or wants to create an isolated workspace for a ticket or feature. Uses run_shell_command for git operations.
 allowed-tools: Read Bash Glob Grep
-disable-model-invocation: true
 ---
 
 # Git Worktree Manager
@@ -56,7 +55,7 @@ When auto-triggered (no explicit subcommand), infer intent from context. If ambi
 
 ## `create`
 
-1. **Resolve branch name** using naming conventions above. If argument is a ticket path, use `read_file` to Read the ticket for context.
+1. **Resolve branch name** using naming conventions above. If argument is a ticket path, use `read_file` to read the ticket for context.
 
 2. **Check conflicts**:
    ```bash

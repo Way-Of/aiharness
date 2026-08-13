@@ -1,19 +1,22 @@
----
-description: Fixes Create — Create fix note entry
----
-# /fixes create — Create Fix Note Entry
+# Fixes Create
 
 Create a new fix note entry for any Way-Of project using the fixes-manager skill.
 
 ## Usage
 `/fixes create --project=<project> [--component=<component>] [--version=<version>]`
 
-## Steps
-1. Validate arguments: `--project` (required), `--component` (optional), `--version` (optional)
-2. Load the fixes-manager skill `assets/<project>/` for version fields
-3. Read existing fix notes from `thoughts/<project>/docs/fixes/`
-4. Append new version entry with standardized format
-5. Confirm the result with the user
+### Arguments
+- `--project` (required) — Project namespace (any project with `assets/<project>/components.json`)
+- `--component` (optional) — Component name (from `assets/<project>/components.json`). Prompts interactively if omitted.
+- `--version` (optional) — Version string (e.g. `1.8.0`). Prompts interactively if omitted.
+
+## Process:
+1. Validate the provided arguments
+2. Activate the fixes-manager skill
+3. Load `assets/<project>/` for version fields and component list
+4. Read existing fix notes from `thoughts/<project>/docs/fixes/`
+5. Append new version entry with standardized format
+6. Confirm the result with the user
 
 ## Context Reference
 

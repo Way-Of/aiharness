@@ -1,6 +1,6 @@
 ---
 name: ticket-create
-description: Interactive ticket creation wizard. Delegates to the ticket-manager skill.
+description: "Interactive ticket creation wizard. Delegates to the ticket-manager skill."
 allowed-tools:
   - read
   - write

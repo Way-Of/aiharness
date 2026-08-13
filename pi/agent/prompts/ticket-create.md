@@ -1,7 +1,4 @@
----
-description: Ticket-create — Interactive ticket creation wizard
----
-# /ticket-create — Interactive ticket creation wizard
+# Ticket-create — Interactive ticket creation wizard
 
 Activates the ticket-manager skill to perform this operation.
 
@@ -10,9 +7,9 @@ Activates the ticket-manager skill to perform this operation.
 /ticket-create
 ```
 
-## Steps
-1. Activate the `ticket-manager` skill
-2. Follow that skill's workflow
+## Process:
+1. This command activates the `ticket-manager` skill
+2. Follow that skill's workflow to complete the operation
 3. Report results to the user
 
 ## Context Reference

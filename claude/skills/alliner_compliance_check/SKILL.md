@@ -1,6 +1,6 @@
 ---
 name: alliner_compliance_check
-description: Deep compliance validation for existing f-rr-d projects. Checks ticket templates, frontmatter, AGENTS.md, folder structure, cross-references, and f-rr-d sync status. Auto-fixes safe issues.
+description: "Deep compliance validation for existing f-rr-d projects. Checks ticket templates, frontmatter, AGENTS.md, folder structure, cross-references, and f-rr-d sync status. Auto-fixes safe issues."
 allowed-tools: Read Write Edit Bash Grep Glob Task
 disable-model-invocation: true
 ---

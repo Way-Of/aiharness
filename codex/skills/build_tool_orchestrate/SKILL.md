@@ -1,7 +1,7 @@
 ---
 name: build_tool_orchestrate
 description: Orchestrate domain experts to research and build components for all 7 AI coding tools — knows team coordination, domain expert dispatch, research workflows.
-tools:
+allowed-tools:
   - read
   - write
   - edit

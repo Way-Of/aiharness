@@ -1,7 +1,13 @@
 ---
 name: validate_implementation
 description: Validate implementation after coding — checks code quality, tests, regressions against the plan, verifying all success criteria using CLI tools and delegating to research agents.
-allowed-tools: Read, Write, Bash, Grep, Glob, Task
+allowed-tools:
+  - read
+  - write
+  - bash
+  - grep
+  - glob
+  - task
 disable-model-invocation: true
 ---
 

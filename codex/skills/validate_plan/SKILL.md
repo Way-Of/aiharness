@@ -1,12 +1,13 @@
 ---
 name: validate_plan
 description: Validate an implementation plan before coding begins — checks completeness, feasibility, paths, and rules compliance.
-tools:
+allowed-tools:
   - read
   - bash
   - grep
   - glob
   - task
+disable-model-invocation: true
 ---
 
 # Validate Plan

@@ -1,7 +1,12 @@
 ---
 name: standup
 description: Generate a daily end-of-day standup entry and save it to the shared thoughts repository.
-allowed-tools: read, write, grep, glob, bash
+allowed-tools:
+  - read
+  - write
+  - grep
+  - glob
+  - bash
 ---
 
 # Daily Standup

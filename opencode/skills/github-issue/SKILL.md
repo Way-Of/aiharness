@@ -1,7 +1,7 @@
 ---
 name: github-issue
-description: Create, manage, and link GitHub Issues with tickets. Supports bi-directional sync between f-rr-d tickets and GitHub Issues.
-allowed-tools: read, write, edit, bash, git, gh
+description: "Create, manage, and link GitHub Issues with tickets. Supports bi-directional sync between f-rr-d tickets and GitHub Issues."
+allowed-tools: read,write,edit,bash,git,gh
 ---
 
 # GitHub Issue Skill
@@ -117,7 +117,6 @@ Parameters:
 - Webhook support for auto-sync (if configured)
 - CTO Dashboard shows linked issues
 - `ticket-manager` `update_ticket` syncs `github_issue` field
-
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

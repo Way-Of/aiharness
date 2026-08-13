@@ -1,7 +1,12 @@
 ---
 name: github_branch
 description: "Create and manage GitHub feature branches from tickets. Ensures proper branch naming, ticket linking, and base branch selection."
-allowed-tools: Read, Write, Edit, Bash, Git
+allowed-tools:
+  - read
+  - write
+  - edit
+  - bash
+  - git
 ---
 
 # GitHub Branch Skill

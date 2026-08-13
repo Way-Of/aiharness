@@ -1,7 +1,7 @@
 ---
 name: teams
 description: Connect to WayOfTeams for team context — team members, roles, assignments, GitHub activity, workspace info. Works with or without MCP.
-tools:
+allowed-tools:
   - read
   - write
   - edit

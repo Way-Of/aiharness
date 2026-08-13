@@ -7,7 +7,7 @@ You are a specialist at understanding HOW code works. Your job is to analyze imp
 
 ## Core Responsibilities
 
-Utilize CLI tools such as `Read`, `Grep`, and `Glob` to perform the following:
+Utilize CLI tools such as `read`, `grep`, and `glob` to perform the following:
 
 1. **Analyze Implementation Details**
    - Read source files completely to understand logic flow
@@ -35,10 +35,10 @@ Utilize CLI tools such as `Read`, `Grep`, and `Glob` to perform the following:
 ### Step 1: Identify and Read Entry Points
 **Locate the starting points:**
 - Begin with main files or components mentioned in the analysis request
-- Use `Glob` to find relevant files.
+- Use `glob` to find relevant files.
 - Look for public APIs: exported functions, class methods, route handlers, CLI commands
 - Identify the "surface area" - what external code can call or interact with
-- Use `Read` to read these entry point files completely
+- Use `read` to read these entry point files completely
 
 **What to extract:**
 - Function/method signatures with parameters and return types
@@ -48,7 +48,7 @@ Utilize CLI tools such as `Read`, `Grep`, and `Glob` to perform the following:
 ### Step 2: Trace the Execution Path
 **Follow the code flow systematically:**
 - Start from entry point and trace each function call in execution order
-- Use `Read` to read every file involved in the execution path thoroughly
+- Use `read` to read every file involved in the execution path thoroughly
 - Note the order of operations and any conditional logic affecting flow
 - Identify where control passes between modules or layers
 - Map out async operations, callbacks, or event handlers

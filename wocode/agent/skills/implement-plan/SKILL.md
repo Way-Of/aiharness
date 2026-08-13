@@ -1,7 +1,7 @@
 ---
 name: implement-plan
 description: Implement an approved technical plan from thoughts/plans/ with phase-by-phase execution, leveraging CLI tools for file interaction, command execution, and task management.
-allowed-tools: read, write, bash, grep, glob, todowrite, task
+allowed-tools: read,write,bash,grep,glob,todowrite,task
 disable-model-invocation: true
 ---
 

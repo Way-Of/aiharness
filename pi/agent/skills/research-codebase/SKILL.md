@@ -14,6 +14,7 @@ allowed-tools:
   - search
   - web
   - fetch
+disable-model-invocation: true
 ---
 
 # Research Codebase

@@ -1,6 +1,6 @@
 ---
 name: github-pr
-description: Create, manage, and review GitHub Pull Requests with ticket linking, template support, and review workflow integration.
+description: "Create, manage, and review GitHub Pull Requests with ticket linking, template support, and review workflow integration."
 allowed-tools:
   - read
   - write
@@ -128,7 +128,6 @@ Parameters:
 - Updates ticket status to "Submitted for Review" on PR creation
 - CTO Dashboard Review Queue watches for "needs-review" label
 - On merge, updates ticket to "Done" and deletes branch
-
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

@@ -1,7 +1,7 @@
 ---
 name: build-tool-keybindings
 description: Build keybindings for all 7 AI coding tools — knows registerShortcut(), Key IDs, modifier combos, reserved keys, terminal compatibility.
-allowed-tools: read, write, edit, bash, grep, glob, websearch
+allowed-tools: read,write,edit,bash,grep,glob,websearch
 ---
 
 # build_tool_keybindings — Unified Keybinding Builder

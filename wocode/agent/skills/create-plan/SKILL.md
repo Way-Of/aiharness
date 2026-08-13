@@ -1,7 +1,7 @@
 ---
 name: create-plan
 description: Create detailed, actionable implementation plans through an interactive, iterative process, leveraging CLI tools for research and documentation.
-allowed-tools: read, write, bash, glob, grep, todowrite, task
+allowed-tools: read,write,bash,glob,grep,todowrite,task
 disable-model-invocation: true
 ---
 
@@ -166,7 +166,6 @@ After the plan is finalized:
 - Users maintain control over what gets implemented
 - Plans can be shared, discussed, and revised without side effects
 
-
 ## Important Guidelines
 
 1. **Be Skeptical** - question vague requirements
@@ -175,7 +174,32 @@ After the plan is finalized:
 4. **Be Practical** - Focus on incremental, testable changes
 5. **Track Progress** - Use TodoWrite
 
+
 ## Context Reference
+
+## Code Traceability
+
+Plans must include traceability instructions for implementers:
+
+### Plan Structure
+Every plan should specify:
+1. Which ticket this plan implements
+2. What files will be changed
+3. What `[PREFIX-NNN]` references to add to each file
+4. How to verify the implementation matches the ticket
+
+### Fetching Context
+- **From ticket**: `thoughts/<project>/shared/tickets/<TICKET-ID>.md` — requirements, acceptance criteria
+- **From plan**: `thoughts/<project>/shared/plans/<PLAN-NAME>.md` — implementation phases
+- **From MCP**: `tickets_get(ticket_id="<TICKET-ID>")` — live ticket data
+
+### Traceability in Plans
+Plans should include a section like:
+```markdown
+## Code Traceability
+- File: `src/auth.ts` — Add `[PROJ-001] Implement login validation`
+- File: `src/auth.test.ts` — Add `[PROJ-001] Add login validation tests`
+```
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules

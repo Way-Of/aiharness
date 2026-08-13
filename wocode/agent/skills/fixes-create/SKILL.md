@@ -1,6 +1,6 @@
 ---
 name: fixes-create
-description: Create a fix note entry for any Way-Of project. Delegates to fixes-manager skill.
+description: "Create a fix note entry for any Way-Of project. Delegates to fixes-manager skill."
 disable-model-invocation: true
 ---
 

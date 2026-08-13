@@ -7,6 +7,7 @@ allowed-tools:
   - grep
   - glob
   - task
+disable-model-invocation: true
 ---
 
 # Validate Plan

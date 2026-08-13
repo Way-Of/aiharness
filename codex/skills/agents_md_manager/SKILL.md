@@ -1,7 +1,12 @@
 ---
-name: agents-md-manager
+name: agents_md_manager
 description: Create, update, and maintain AGENTS.md files across projects and subdirectories. Ensures every AGENTS.md follows the standard format and contains accurate agent/command/skill references.
-allowed-tools: read, write, grep, glob, bash
+allowed-tools:
+  - read
+  - write
+  - grep
+  - glob
+  - bash
 ---
 
 # AGENTS.md Manager
@@ -71,6 +76,33 @@ A well-formed AGENTS.md includes:
 ## Workflow
 <primary workflow>
 
+## Code Traceability
+
+Every code change MUST include a ticket reference comment:
+
+```typescript
+// [PROJ-001] Add user authentication
+const auth = new AuthService();
+```
+
+```python
+# [PROJ-001] Fix login validation
+def validate_login(credentials):
+```
+
+**Rules:**
+- Format: `[<PREFIX>-<NNN>] <brief description>`
+- Place BEFORE the changed line
+- Every modified file must have at least one reference
+- Query all code: `grep -r "PROJ-001" --include="*.ts" --include="*.py"`
+
+**Fetching context from tickets/plans:**
+- Read ticket: `thoughts/<project>/shared/tickets/<TICKET-ID>.md`
+- Read plan: `thoughts/<project>/shared/plans/<PLAN-NAME>.md`
+- Search by ticket: `grep -r "<TICKET-ID>" --include="*.ts"`
+- The ticket contains: requirements, acceptance criteria, technical notes
+- The plan contains: implementation phases, file changes, success criteria
+
 ## MCP Configuration
 <if applicable>
 
@@ -82,7 +114,7 @@ A well-formed AGENTS.md includes:
 
 ```markdown
 ---
-name: <project-slug>
+name: <project_slug>
 description: <project description>
 version: "<semver>"
 ---

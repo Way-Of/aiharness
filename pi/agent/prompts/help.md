@@ -1,7 +1,4 @@
----
-description: Help — Unified help system for all commands and skills
----
-# /help — Unified help system for all commands and skills
+# Help — Unified help system for all commands and skills
 
 Activates the help-command skill to perform this operation.
 
@@ -10,9 +7,9 @@ Activates the help-command skill to perform this operation.
 /help
 ```
 
-## Steps
-1. Activate the `help-command` skill
-2. Follow that skill's workflow
+## Process:
+1. This command activates the `help-command` skill
+2. Follow that skill's workflow to complete the operation
 3. Report results to the user
 
 ## Context Reference

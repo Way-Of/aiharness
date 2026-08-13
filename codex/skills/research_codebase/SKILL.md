@@ -1,7 +1,19 @@
 ---
 name: research_codebase
 description: Conduct comprehensive codebase research by delegating to parallel sub-agents and synthesizing findings using CLI tools.
-allowed-tools: Read, Write, Bash, Grep, Glob, Todowrite, Task, Google, Web, Search, Web, Fetch
+allowed-tools:
+  - read
+  - write
+  - bash
+  - grep
+  - glob
+  - todowrite
+  - task
+  - google
+  - web
+  - search
+  - web
+  - fetch
 disable-model-invocation: true
 ---
 

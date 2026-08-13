@@ -1,7 +1,7 @@
 ---
 name: knowledge
 description: Store, fetch, search, and manage learned knowledge in a structured, growing database.
-allowed-tools: read, write, grep, glob
+allowed-tools: read,write,grep,glob
 ---
 
 # Knowledge Database

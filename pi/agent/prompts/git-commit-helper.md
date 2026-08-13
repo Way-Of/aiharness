@@ -1,7 +1,4 @@
----
-description: Git-commit-helper — Create well-structured git commits
----
-# /git-commit-helper — Create well-structured git commits
+# Git-commit-helper — Create well-structured git commits
 
 Activates the git-commit-helper skill to perform this operation.
 
@@ -10,9 +7,9 @@ Activates the git-commit-helper skill to perform this operation.
 /git-commit-helper
 ```
 
-## Steps
-1. Activate the `git-commit-helper` skill
-2. Follow that skill's workflow
+## Process:
+1. This command activates the `git-commit-helper` skill
+2. Follow that skill's workflow to complete the operation
 3. Report results to the user
 
 ## Context Reference

@@ -1,7 +1,7 @@
 ---
 name: init_harness
 description: Initialize the harness in a repository
-allowed-tools: read, write, bash, grep, glob
+allowed-tools: read,write,bash,grep,glob
 ---
 
 # Initialize Harness
@@ -487,7 +487,34 @@ The following agents are available via the harness:
 
 ### Workflow
 Ticket → /create_plan → /validate_plan → /implement_plan → /validate_implementation → /commit
-```
+
+### Code Traceability
+
+Every code change MUST include a ticket reference comment:
+
+\`\`\`typescript
+// [PROJ-001] Add user authentication
+const auth = new AuthService();
+\`\`\`
+
+\`\`\`python
+# [PROJ-001] Fix login validation
+def validate_login(credentials):
+\`\`\`
+
+**Rules:**
+- Format: \`[<PREFIX>-<NNN>] <brief description>\`
+- Place BEFORE the changed line
+- Every modified file must have at least one reference
+- Query all code: \`grep -r "PROJ-001" --include="*.ts" --include="*.py"\`
+
+**Fetching context from tickets/plans:**
+- Read ticket: \`thoughts/<project>/shared/tickets/<TICKET-ID>.md\`
+- Read plan: \`thoughts/<project>/shared/plans/<PLAN-NAME>.md\`
+- Search by ticket: \`grep -r "<TICKET-ID>" --include="*.ts"\`
+- The ticket contains: requirements, acceptance criteria, technical notes
+- The plan contains: implementation phases, file changes, success criteria
+\`\`\`
 
 **For client projects** (sanitized, no internal references):
 ```
@@ -503,6 +530,39 @@ Ticket → /create_plan → /validate_plan → /implement_plan → /validate_imp
 2. Generate a plan: /create_plan ...
 3. Implement: /implement_plan ...
 4. Commit: /commit
+```
+
+### Step 8: Detect WayOfTeams MCP (Optional)
+
+Check if WayOfTeams MCP is available and configure if user has a paid subscription:
+
+```bash
+# Check if MCP endpoint is reachable
+MCP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 https://teamsapp.zerwiz.org/mcp 2>/dev/null)
+```
+
+**If MCP is reachable (HTTP 200/401):**
+1. Check if user has a WayOfTeams subscription (prompt or config flag)
+2. If subscribed: enable `wayofteams` in the tool's config file
+3. If not subscribed: show upgrade prompt
+4. Report status in output
+
+**If MCP is not reachable:**
+- Leave `wayofteams` disabled in config
+- Note: "WayOfTeams MCP not detected. Enable later with: ai-harness --update"
+
+**Config updates (only if subscribed):**
+- OpenCode: Set `wayofteams.enabled: true` in `opencode.json`
+- Claude: Set `wayofteams.disabled: false` in `.mcp.json`
+- Wo Coder: Set `wayofteams.enabled: true` in `wocode.json`
+- Antigravity: Set `wayofteams.enabled: true` in `antigravity.json`
+
+**Output:**
+```
+MCP Servers:
+  WayOfTeams (teamsapp.zerwiz.org/mcp): Available/Unavailable
+  Anchor (localhost:42777): Available/Unavailable
+  Enabled in: opencode.json, .mcp.json
 ```
 
 ## Edge Cases

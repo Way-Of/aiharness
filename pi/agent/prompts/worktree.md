@@ -1,6 +1,3 @@
----
-description: Git Worktree Manager
----
 # Git Worktree Manager
 
 ## Conventions

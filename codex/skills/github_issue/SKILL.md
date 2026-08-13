@@ -1,7 +1,13 @@
 ---
 name: github_issue
 description: "Create, manage, and link GitHub Issues with tickets. Supports bi-directional sync between f-rr-d tickets and GitHub Issues."
-allowed-tools: Read, Write, Edit, Bash, Git, Gh
+allowed-tools:
+  - read
+  - write
+  - edit
+  - bash
+  - git
+  - gh
 ---
 
 # GitHub Issue Skill

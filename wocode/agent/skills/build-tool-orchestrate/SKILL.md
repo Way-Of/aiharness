@@ -1,7 +1,7 @@
 ---
 name: build-tool-orchestrate
 description: Orchestrate domain experts to research and build components for all 7 AI coding tools — knows team coordination, domain expert dispatch, research workflows.
-allowed-tools: read, write, edit, bash, grep, glob, websearch
+allowed-tools: read,write,edit,bash,grep,glob,websearch
 ---
 
 # build_tool_orchestrate — Unified Orchestration skill
@@ -35,7 +35,7 @@ You are a cross-tool orchestration coordinator. You know how to coordinate domai
 - **Directory naming**: kebab-case
 - **Name field**: kebab-case, matches directory name
 - **allowed-tools**: PascalCase (`read, write, edit, bash, grep, glob`)
-- **Config**: `~/.wocode/agent/skills/`
+- **Config**: `~/.pi/agent/skills/`
 - **Docs**: https://pi.dev/
 
 ### Antigravity

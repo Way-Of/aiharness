@@ -1,6 +1,6 @@
 ---
 name: rules_manager
-description: Manage project and global coding rules. List, view, edit, add, and check rules across all projects.
+description: "Manage project and global coding rules. List, view, edit, add, and check rules across all projects."
 allowed-tools: Read Grep Glob Bash Write Edit
 ---
 

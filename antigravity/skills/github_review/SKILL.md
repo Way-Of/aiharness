@@ -1,7 +1,7 @@
 ---
 name: github_review
-description: Review GitHub Pull Requests with structured feedback, approval workflow, and CTO Dashboard integration.
-allowed-tools: read, write, edit, bash, git, gh
+description: "Review GitHub Pull Requests with structured feedback, approval workflow, and CTO Dashboard integration."
+allowed-tools: read,write,edit,bash,git,gh
 ---
 
 # GitHub Review Skill
@@ -121,7 +121,6 @@ Parameters:
 - CTO actions (Approve/Request Changes/Reject) call `submit_review_decision`
 - Ticket status auto-updates based on review decision
 - Review comments stored in ticket frontmatter (`reviewComments`, `reviewedBy`, `reviewedAt`)
-
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

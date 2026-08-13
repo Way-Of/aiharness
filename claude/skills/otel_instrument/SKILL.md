@@ -1,6 +1,7 @@
 ---
 name: otel_instrument
 description: OpenTelemetry orchestrator — auto-activates on observability, telemetry, tracing, metrics, logging, OTel SDK, Collector, semantic conventions, or OTTL requests. Routes to the correct sub-skill.
+
 allowed-tools: Read Bash Grep Glob
 ---
 
@@ -43,7 +44,7 @@ Some tasks span skills. Execute in this order:
 
 | Compound Task | Sequence |
 |---|---|
-| ODD on a new feature | `observability_driven_development` (Write narrative) → `otel_instrumentation` (instrument) → `observability_driven_development` (validate) |
+| ODD on a new feature | `observability_driven_development` (write narrative) → `otel_instrumentation` (instrument) → `observability_driven_development` (validate) |
 | Full observability setup | `otel_instrumentation` → `otel_collector` → `otel_ottl` (if sensitive data) |
 | Instrument + sampling | `otel_instrumentation` → `otel_collector` |
 | Fix naming + add redaction | `otel_semantic_conventions` → `otel_ottl` |

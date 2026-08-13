@@ -1,6 +1,6 @@
 ---
 name: work
-description: Start working on a ticket, update status to In Progress. Delegates to the ticket-manager skill.
+description: "Start working on a ticket, update status to In Progress. Delegates to the ticket-manager skill."
 allowed-tools:
   - read
   - write

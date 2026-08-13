@@ -1,2 +1,2 @@
 description = "Organize Tickets"
-prompt = "Activate the `ticket_organization` skill to run organize_all across all namespaces."
+prompt = "Activate the `organize-tickets` skill."

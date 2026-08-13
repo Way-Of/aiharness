@@ -1,7 +1,12 @@
 ---
 name: sales
 description: Store, retrieve, and apply sales knowledge across projects. Integrates with investor-ready-doc-gen for market data, competitive analysis, and revenue projections.
-allowed-tools: read, write, grep, glob, bash
+allowed-tools:
+  - read
+  - write
+  - grep
+  - glob
+  - bash
 ---
 
 # Sales Knowledge & Playbooks

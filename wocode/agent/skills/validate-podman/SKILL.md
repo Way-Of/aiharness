@@ -1,7 +1,7 @@
 ---
 name: validate-podman
 description: Validate Podman/Quadlet configurations on Fedora. Checks .container, .volume, .network files for syntax, security best practices, systemd integration, and dependency ordering.
-allowed-tools: read, write, bash, glob, grep
+allowed-tools: read,write,bash,glob,grep
 ---
 
 # Validate Podman skill
@@ -51,7 +51,6 @@ podman logs <container-name>
 ## Usage
 
 This skill auto-activates when working with Podman Quadlet files in `infra/quadlets/` or similar directories.
-
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

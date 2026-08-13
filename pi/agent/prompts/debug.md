@@ -1,6 +1,3 @@
----
-description: Debug
----
 # Debug
 
 You are tasked with helping debug issues during manual testing or implementation. This command allows you to investigate problems by examining logs, state, and git history without editing files.

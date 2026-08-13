@@ -1,6 +1,6 @@
 ---
 name: github-sync
-description: Sync feature branches with base branch, resolve conflicts, and manage branch lifecycle.
+description: "Sync feature branches with base branch, resolve conflicts, and manage branch lifecycle."
 allowed-tools:
   - read
   - write
@@ -128,7 +128,6 @@ Parameters:
 - Used when review requests changes
 - Cleans up branches after merge
 - Respects branch protection rules (no force push to protected)
-
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

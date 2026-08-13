@@ -1,7 +1,4 @@
----
-description: Organize tickets — audit, archive, check naming, detect orphans, regenerate TODO.md
----
-# /organize-tickets — Audit, archive, and organize all tickets
+# Organize-tickets — Audit, archive, and organize all tickets
 
 Activates the ticket-organization skill to perform this operation.
 
@@ -10,8 +7,8 @@ Activates the ticket-organization skill to perform this operation.
 /organize-tickets [--dry-run] [--auto-fix]
 ```
 
-## Steps
-1. Activate the `ticket-organization` skill
+## Process:
+1. This command activates the `ticket-organization` skill
 2. Run `organize_all` with the provided flags
 3. If `--dry-run`, preview changes without modifying anything
 4. If `--auto-fix`, auto-repair fixable issues during audit

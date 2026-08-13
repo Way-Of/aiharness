@@ -9,6 +9,7 @@ allowed-tools:
   - glob
   - todowrite
   - task
+disable-model-invocation: true
 ---
 
 # Implement Plan

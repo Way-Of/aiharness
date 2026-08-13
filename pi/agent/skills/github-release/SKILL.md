@@ -1,6 +1,6 @@
 ---
 name: github-release
-description: Create GitHub releases with changelog generation, version tagging, and automated publishing.
+description: "Create GitHub releases with changelog generation, version tagging, and automated publishing."
 allowed-tools:
   - read
   - write
@@ -106,7 +106,6 @@ Parameters:
 - Links release to tickets via PR references
 - Updates ticket statuses to "Done" for included tickets
 - Posts release notes to CTO Dashboard news
-
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

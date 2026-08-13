@@ -56,7 +56,6 @@ podman logs <container-name>
 ## Usage
 
 This skill auto-activates when working with Podman Quadlet files in `infra/quadlets/` or similar directories.
-
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

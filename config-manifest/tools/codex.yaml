@@ -539,3 +539,15 @@ components:
       dest: skills/investor_ready_doc_gen/assets/verticals/construction_software/market_reference.yaml
     - src: codex/skills/investor_ready_doc_gen/assets/verticals/hvac_optimization/market_reference.yaml
       dest: skills/investor_ready_doc_gen/assets/verticals/hvac_optimization/market_reference.yaml
+
+  skill/wayofteams-mcp:
+    description: Wayofteams Mcp integration via WayOfTeams MCP
+    files:
+    - src: codex/skills/wayofteams_mcp/SKILL.md
+      dest: skills/wayofteams_mcp/SKILL.md
+
+  skill/anchor-memory:
+    description: Anchor Memory integration via WayOfTeams MCP
+    files:
+    - src: codex/skills/anchor_memory/SKILL.md
+      dest: skills/anchor_memory/SKILL.md

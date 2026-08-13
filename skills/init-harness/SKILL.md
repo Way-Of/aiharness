@@ -505,6 +505,39 @@ Ticket → /create_plan → /validate_plan → /implement_plan → /validate_imp
 4. Commit: /commit
 ```
 
+### Step 8: Detect WayOfTeams MCP (Optional)
+
+Check if WayOfTeams MCP is available and configure if user has a paid subscription:
+
+```bash
+# Check if MCP endpoint is reachable
+MCP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 https://teamsapp.zerwiz.org/mcp 2>/dev/null)
+```
+
+**If MCP is reachable (HTTP 200/401):**
+1. Check if user has a WayOfTeams subscription (prompt or config flag)
+2. If subscribed: enable `wayofteams` in the tool's config file
+3. If not subscribed: show upgrade prompt
+4. Report status in output
+
+**If MCP is not reachable:**
+- Leave `wayofteams` disabled in config
+- Note: "WayOfTeams MCP not detected. Enable later with: ai-harness --update"
+
+**Config updates (only if subscribed):**
+- OpenCode: Set `wayofteams.enabled: true` in `opencode.json`
+- Claude: Set `wayofteams.disabled: false` in `.mcp.json`
+- Wo Coder: Set `wayofteams.enabled: true` in `wocode.json`
+- Antigravity: Set `wayofteams.enabled: true` in `antigravity.json`
+
+**Output:**
+```
+MCP Servers:
+  WayOfTeams (teamsapp.zerwiz.org/mcp): Available/Unavailable
+  Anchor (localhost:42777): Available/Unavailable
+  Enabled in: opencode.json, .mcp.json
+```
+
 ## Edge Cases
 
 ### Not a Git Repository

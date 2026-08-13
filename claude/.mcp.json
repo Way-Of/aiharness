@@ -18,9 +18,9 @@
     },
     "wayofteams": {
       "type": "http",
-      "url": "http://localhost:4000/mcp",
+      "url": "https://teamsapp.zerwiz.org/mcp",
       "disabled": true,
-      "_comment": "WayOfTeams CTO Dashboard — 25+ MCP tools for tickets, standups, knowledge, rules"
+      "_comment": "WayOfTeams MCP — 41 tools. Requires paid subscription."
     }
   }
 }

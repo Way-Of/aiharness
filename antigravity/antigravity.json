@@ -1,5 +1,17 @@
 {
   "name": "antigravity",
   "description": "Antigravity Agent Platform Integration",
-  "enabled": true
+  "enabled": true,
+  "mcp": {
+    "wayofteams": {
+      "url": "https://teamsapp.zerwiz.org/mcp",
+      "enabled": false,
+      "_comment": "WayOfTeams MCP — 41 tools. Requires paid subscription."
+    },
+    "anchor": {
+      "url": "http://localhost:42777/mcp",
+      "enabled": false,
+      "_comment": "Anchor MCP — use via WayOfTeams instead"
+    }
+  }
 }

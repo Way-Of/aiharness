@@ -1,9 +1,9 @@
 {
-  "version": "1.8.1",
+  "version": "1.8.0",
   "tools": {
     "antigravity": {
       "name": "antigravity",
-      "version": "1.8.1",
+      "version": "1.0.0",
       "target": "~/.antigravity",
       "components": {
         "settings": {
@@ -1064,12 +1064,30 @@
               "dest": "skills/investor_ready_doc_gen/assets/verticals/hvac_optimization/market_reference.yaml"
             }
           ]
+        },
+        "skill/wayofteams-mcp": {
+          "description": "Wayofteams Mcp integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "antigravity/skills/wayofteams_mcp/SKILL.md",
+              "dest": "skills/wayofteams_mcp/SKILL.md"
+            }
+          ]
+        },
+        "skill/anchor-memory": {
+          "description": "Anchor Memory integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "antigravity/skills/anchor_memory/SKILL.md",
+              "dest": "skills/anchor_memory/SKILL.md"
+            }
+          ]
         }
       }
     },
     "claude": {
       "name": "claude",
-      "version": "1.8.1",
+      "version": "1.0.0",
       "target": "~/.claude",
       "components": {
         "settings": {
@@ -2068,12 +2086,30 @@
               "dest": "skills/investor_ready_doc_gen/assets/verticals/hvac_optimization/market_reference.yaml"
             }
           ]
+        },
+        "skill/wayofteams-mcp": {
+          "description": "Wayofteams Mcp integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "claude/skills/wayofteams_mcp/SKILL.md",
+              "dest": "skills/wayofteams_mcp/SKILL.md"
+            }
+          ]
+        },
+        "skill/anchor-memory": {
+          "description": "Anchor Memory integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "claude/skills/anchor_memory/SKILL.md",
+              "dest": "skills/anchor_memory/SKILL.md"
+            }
+          ]
         }
       }
     },
     "codex": {
       "name": "codex",
-      "version": "1.8.1",
+      "version": "1.0.0",
       "target": "~/.codex",
       "components": {
         "settings": {
@@ -3051,12 +3087,30 @@
               "dest": "skills/investor_ready_doc_gen/assets/verticals/hvac_optimization/market_reference.yaml"
             }
           ]
+        },
+        "skill/wayofteams-mcp": {
+          "description": "Wayofteams Mcp integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "codex/skills/wayofteams_mcp/SKILL.md",
+              "dest": "skills/wayofteams_mcp/SKILL.md"
+            }
+          ]
+        },
+        "skill/anchor-memory": {
+          "description": "Anchor Memory integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "codex/skills/anchor_memory/SKILL.md",
+              "dest": "skills/anchor_memory/SKILL.md"
+            }
+          ]
         }
       }
     },
     "opencode": {
       "name": "opencode",
-      "version": "1.8.1",
+      "version": "1.0.0",
       "target": "~/.config/opencode",
       "components": {
         "settings": {
@@ -4042,12 +4096,30 @@
               "dest": "skills/investor-ready-doc-gen/assets/verticals/hvac_optimization/market_reference.yaml"
             }
           ]
+        },
+        "skill/wayofteams-mcp": {
+          "description": "Wayofteams Mcp integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "opencode/skills/wayofteams-mcp/SKILL.md",
+              "dest": "skills/wayofteams-mcp/SKILL.md"
+            }
+          ]
+        },
+        "skill/anchor-memory": {
+          "description": "Anchor Memory integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "opencode/skills/anchor-memory/SKILL.md",
+              "dest": "skills/anchor-memory/SKILL.md"
+            }
+          ]
         }
       }
     },
     "pi": {
       "name": "pi",
-      "version": "1.8.1",
+      "version": "1.0.0",
       "target": "~/.pi/agent",
       "components": {
         "agents": {
@@ -5273,12 +5345,30 @@
               "dest": "skills/investor-ready-doc-gen/assets/verticals/hvac_optimization/market_reference.yaml"
             }
           ]
+        },
+        "skill/wayofteams-mcp": {
+          "description": "Wayofteams Mcp integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "pi/agent/skills/wayofteams-mcp/SKILL.md",
+              "dest": "skills/wayofteams-mcp/SKILL.md"
+            }
+          ]
+        },
+        "skill/anchor-memory": {
+          "description": "Anchor Memory integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "pi/agent/skills/anchor-memory/SKILL.md",
+              "dest": "skills/anchor-memory/SKILL.md"
+            }
+          ]
         }
       }
     },
     "wocode": {
       "name": "wocode",
-      "version": "1.8.1",
+      "version": "1.0.0",
       "target": "~/.wocode/agent",
       "components": {
         "settings": {
@@ -6475,6 +6565,24 @@
             {
               "src": "wocode/agent/skills/investor-ready-doc-gen/assets/verticals/hvac_optimization/market_reference.yaml",
               "dest": "skills/investor-ready-doc-gen/assets/verticals/hvac_optimization/market_reference.yaml"
+            }
+          ]
+        },
+        "skill/wayofteams-mcp": {
+          "description": "Wayofteams Mcp integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "wocode/agent/skills/wayofteams-mcp/SKILL.md",
+              "dest": "skills/wayofteams-mcp/SKILL.md"
+            }
+          ]
+        },
+        "skill/anchor-memory": {
+          "description": "Anchor Memory integration via WayOfTeams MCP",
+          "files": [
+            {
+              "src": "wocode/agent/skills/anchor-memory/SKILL.md",
+              "dest": "skills/anchor-memory/SKILL.md"
             }
           ]
         }

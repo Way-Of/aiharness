@@ -10,6 +10,18 @@
         "type": "remote",
         "url": "http://localhost:18891",
         "enabled": false
+    },
+    "wayofteams": {
+        "type": "remote",
+        "url": "https://teamsapp.zerwiz.org/mcp",
+        "enabled": false,
+        "_comment": "WayOfTeams MCP — 41 tools. Requires paid subscription."
+    },
+    "anchor": {
+        "type": "remote",
+        "url": "http://localhost:42777/mcp",
+        "enabled": false,
+        "_comment": "Anchor MCP — use via WayOfTeams instead (direct is STDIO-only)"
     }
   }
 }

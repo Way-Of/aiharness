@@ -28,13 +28,11 @@ When creating or updating AGENTS.md, ALWAYS include acceptance criteria for:
 
 ### Skills
 - [ ] All 77 canonical skills present in all 6 tools
-- [ ] Run `python3 harnessbuilder/sync-everything.py` to verify naming
 - [ ] Frontmatter `name:` matches directory name
 - [ ] Content identical across tools
 
 ### Agents
 - [ ] All 14 canonical agents present in all 6 tools
-- [ ] Run `python3 harnessbuilder/sync-everything.py` to verify naming
 - [ ] Content identical across tools
 
 ### Commands/Prompts
@@ -82,9 +80,7 @@ def validate_frontmatter(ticket):
 - The ticket contains: requirements, acceptance criteria, technical notes
 - The plan contains: implementation phases, file changes, success criteria
 
-## Critical: harnessbuilder System
 
-The harness has an automated sync system at `harnessbuilder/`:
 
 ### What It Does
 1. `sync-everything.py` — syncs canonical skills/agents/commands to all 6 tools
@@ -94,17 +90,13 @@ The harness has an automated sync system at `harnessbuilder/`:
 ### How to Use
 ```bash
 # Sync all components to all tools
-python3 harnessbuilder/sync-everything.py
 
 # Validate only (no changes)
-python3 harnessbuilder/sync-everything.py --validate-only
 
 # Dry run (show what would change)
-python3 harnessbuilder/sync-everything.py --dry-run
 ```
 
 ### Report
-After sync, check `harnessbuilder/REPORT.md` for status.
 
 | Tool | Project Memory File |
 |------|-------------------|

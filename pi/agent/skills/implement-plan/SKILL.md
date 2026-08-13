@@ -135,13 +135,11 @@ When implementing, verify acceptance criteria for:
 
 ### Skills
 - [ ] All 77 canonical skills present in all 6 tools
-- [ ] Per-tool naming correct (run `python3 harnessbuilder/sync-everything.py` to verify)
 - [ ] Frontmatter `name:` matches directory name
 - [ ] Content identical across tools (modulo naming)
 
 ### Agents
 - [ ] All 14 canonical agents present in all 6 tools
-- [ ] Agent naming correct (run `python3 harnessbuilder/sync-everything.py` to verify)
 - [ ] Content identical across tools
 
 ### Commands/Prompts
@@ -152,10 +150,8 @@ When implementing, verify acceptance criteria for:
 ### After Implementation
 ```bash
 # Sync all components to all tools
-python3 harnessbuilder/sync-everything.py
 
 # Verify consistency
-python3 harnessbuilder/sync-everything.py --validate-only
 ```
 
 ## Critical: Never Rewrite Ticket Context

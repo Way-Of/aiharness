@@ -1,7 +1,14 @@
 ---
 name: wayofteams_mcp
 description: Connect to WayOfTeams MCP server — 41 tools for tickets, standups, knowledge, rules, memory, and team context. Works with or without MCP connection.
-allowed-tools: read, write, edit, bash, grep, glob, websearch
+tools:
+  - read
+  - write
+  - edit
+  - bash
+  - grep
+  - glob
+  - websearch
 ---
 
 # wayofteams-mcp — WayOfTeams MCP Integration

@@ -19,11 +19,46 @@ Ticket -> /create_plan -> /validate_plan -> /implement_plan -> /validate_impleme
 
 ## Ticket Knowledge
 
-- Namespaces: `wayofmono` (WOMONO-XXX), `wow` (WOW-XXX), `opticat` (OPT-XXX)
+- Discover namespaces from `thoughts/` directory structure or WayOfTeams MCP
 - Status flow: Backlog -> Planned -> Ready -> In Progress -> Submitted for Review -> In Review -> Approved -> Done
 - When starting work on a ticket, update its frontmatter status to "In Progress"
 - When implementation is complete, update status to "Submitted for Review"
 - Check `thoughts/<project>/enforcement-ticket/` before starting any work
+
+## Code Traceability (CRITICAL)
+
+**Every code change MUST include a ticket reference comment:**
+
+```typescript
+// [PROJ-001] Add user authentication
+const auth = new AuthService();
+```
+
+```python
+# [PROJ-001] Fix login validation
+def validate_login(credentials):
+```
+
+**Rules:**
+- Format: `[<PREFIX>-<NNN>] <brief description>`
+- Place BEFORE the changed line
+- Every modified file must have at least one reference
+- Use the ticket ID from the ticket you're working on
+
+**Fetching context from tickets/plans:**
+- Read ticket: `thoughts/<project>/shared/tickets/<TICKET-ID>.md`
+- Read plan: `thoughts/<project>/shared/plans/<PLAN-NAME>.md`
+- The ticket contains: requirements, acceptance criteria, technical notes
+- The plan contains: implementation phases, file changes, success criteria
+
+**Querying:**
+```bash
+# Find all code for a ticket
+grep -r "PROJ-001" --include="*.ts" --include="*.py"
+
+# Find which tickets touched a file
+grep -l "PROJ-" install.ts
+```
 
 ## Mandatory Workflow
 

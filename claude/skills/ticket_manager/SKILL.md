@@ -241,6 +241,71 @@ Each ticket follows the template in `thoughts/shared/tickets/ticket-template.md`
 - Shared tickets reference personal sub-tasks via `sub_tasks` array
 - Personal TODO.md auto-generates from assigned shared tickets
 
+## Done Lifecycle
+
+When a ticket is marked as Done, move it to the `done/` subdirectory:
+
+### Moving Tickets to Done
+```bash
+# Move shared ticket to done/
+mv thoughts/<project>/shared/tickets/<category>/<TICKET-ID>.md \
+   thoughts/<project>/shared/tickets/done/
+
+# Move personal ticket to done/
+mv thoughts/<project>/<dev>/tickets/<TICKET-ID>.md \
+   thoughts/<project>/<dev>/tickets/done/
+```
+
+### Creating the done/ Directory
+If `done/` doesn't exist, create it:
+```bash
+mkdir -p thoughts/<project>/shared/tickets/done/
+```
+
+### `/done <ticket-id>` Command
+1. Find ticket file: `thoughts/<project>/shared/tickets/<category>/<ticket-id>*.md`
+2. Update frontmatter: `status: "Done"`, `completed: "YYYY-MM-DD"`
+3. Move file to `done/` subdirectory
+4. Create `done/` directory if it doesn't exist
+
+### `/done-plan <plan-path>` Command
+1. Find plan file
+2. Update plan with completion notes
+3. Move to `thoughts/<project>/shared/plans/done/` or `thoughts/plans/done/`
+
+## Code Traceability
+
+When creating or updating tickets, add traceability references to code changes:
+
+### Reference Format
+```
+[<PREFIX>-<NNN>] <brief description>
+```
+
+### Placement
+- Add BEFORE the changed line in code files
+- Every modified file should have at least one reference
+
+### Examples
+```typescript
+// [AIH-192] Add WayOfTeams MCP integration
+const mcpClient = new WayOfTeamsMCP();
+```
+
+```python
+# [AIH-191] Validate ticket frontmatter on creation
+def validate_frontmatter(ticket):
+```
+
+### Querying
+```bash
+# Find all code for a ticket
+grep -r "AIH-192" --include="*.ts" --include="*.py"
+
+# Find which tickets touched a file
+grep -l "AIH-" install.ts
+```
+
 ## Notification Integration
 
 When updating ticket status or managing tickets, mark related CTO Dashboard notifications as Read via the notification API:
@@ -262,6 +327,34 @@ The notification IDs follow the format:
 - `update-<TICKET_ID>` — for ticket status updates
 
 This ensures the CTO Dashboard bell badge reflects only genuinely unread notifications.
+
+## WayOfTeams MCP Integration (Optional)
+
+If WayOfTeams MCP is available, use it for ticket operations instead of local file manipulation:
+
+### Check MCP Availability
+```bash
+# Check if WayOfTeams MCP is configured
+grep -l "wayofteams" ~/.config/opencode/opencode.json ~/.claude/.mcp.json 2>/dev/null
+```
+
+### MCP Ticket Operations
+When MCP is available, these operations can use WayOfTeams MCP tools:
+
+| Operation | MCP Tool | Fallback |
+|-----------|----------|----------|
+| List tickets | `tickets_list` | Read from `thoughts/` |
+| Get ticket | `tickets_get` | Read ticket file |
+| Create ticket | `tickets_create` | Write to `thoughts/` |
+| Update ticket | `tickets_update` | Edit ticket file |
+| Notifications | `team_notifications` | curl localhost:6969 |
+
+### MCP + File Hybrid Approach
+1. Try MCP first: `tickets_create` via WayOfTeams
+2. Also write to local `thoughts/` as backup
+3. If MCP fails, fall back to file-only
+
+**Always keep file-based operations as fallback.** MCP is additive, not a replacement.
 
 ## Context Reference
 

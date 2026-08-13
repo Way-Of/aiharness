@@ -1,7 +1,7 @@
 ---
 name: anchor_memory
 description: Store and retrieve semantic memories via Anchor through WayOfTeams MCP — decisions, patterns, invariants, context injection, PR review context.
-allowed-tools: read, write, edit, bash, grep, glob, websearch
+allowed-tools: Read Write Edit Bash Grep Glob Websearch
 ---
 
 # anchor-memory — Anchor Semantic Memory Integration

@@ -1,7 +1,7 @@
 ---
 name: ticket_organization
-description: "Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration"
-allowed-tools: Read, Grep, Glob, Bash, Write, Edit
+description: Proactively organize tickets across all namespaces — auto-audit, archive management, naming enforcement, orphan detection, cross-project consistency, TODO.md regeneration
+allowed-tools: Read Grep Glob Bash Write Edit
 ---
 
 # Ticket Organization Skill

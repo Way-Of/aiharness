@@ -150,3 +150,27 @@ This creates a searchable debug history for the project. Reference `thoughts/glo
 - **Read-Only Operations**: Do not write code or apply fixes. Focus entirely on diagnostic discovery.
 - **Prevent Context Flooding**: Read files completely but handle large log streams using targeted filters (`grep`, `tail`) rather than dumping full files.
 - **Always Require Context**: If the user's issue description is vague, ask targeted questions before running deep diagnostics.
+
+
+## Critical: Update Tickets and Plans When Done
+
+When implementation is complete, ALWAYS update the ticket and plan:
+
+### Ticket Updates
+- Set `status: "Done"` in frontmatter
+- Set `completed: "YYYY-MM-DD"` in frontmatter
+- ADD work log entry (never delete old entries)
+- ADD any new findings or decisions
+- Move ticket to `done/` subdirectory if applicable
+
+### Plan Updates
+- Check off completed phases in the plan file
+- ADD any deviations from the original plan
+- ADD notes about what was actually implemented vs planned
+- Move plan to `done/` subdirectory if fully implemented
+
+### Why This Matters
+- Future developers need to know what was done and why
+- Audit trails require complete history
+- Debugging needs context from implementation
+- Ticket status must reflect reality

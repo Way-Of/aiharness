@@ -665,3 +665,15 @@ components:
     files:
     - src: codex/skills/worktree/SKILL.md
       dest: skills/worktree/SKILL.md
+
+  skill/validate-implementation:
+    description: Validate Implementation
+    files:
+    - src: codex/skills/validate_implementation/SKILL.md
+      dest: skills/validate_implementation/SKILL.md
+
+  skill/help:
+    description: Unified help system
+    files:
+    - src: codex/skills/help/SKILL.md
+      dest: skills/help/SKILL.md

@@ -708,3 +708,15 @@ components:
     files:
     - src: antigravity/skills/worktree/SKILL.md
       dest: skills/worktree/SKILL.md
+
+  skill/validate-implementation:
+    description: Validate Implementation
+    files:
+    - src: antigravity/skills/validate_implementation/SKILL.md
+      dest: skills/validate_implementation/SKILL.md
+
+  skill/help:
+    description: Unified help system
+    files:
+    - src: antigravity/skills/help/SKILL.md
+      dest: skills/help/SKILL.md

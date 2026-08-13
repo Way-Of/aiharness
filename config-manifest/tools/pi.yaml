@@ -791,3 +791,15 @@ components:
     files:
     - src: pi/agent/skills/worktree/SKILL.md
       dest: skills/worktree/SKILL.md
+
+  skill/validate-implementation:
+    description: Validate Implementation
+    files:
+    - src: pi/agent/skills/validate-implementation/SKILL.md
+      dest: skills/validate-implementation/SKILL.md
+
+  skill/help:
+    description: Unified help system
+    files:
+    - src: pi/agent/skills/help/SKILL.md
+      dest: skills/help/SKILL.md

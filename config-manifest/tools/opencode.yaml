@@ -669,3 +669,15 @@ components:
     files:
     - src: opencode/skills/worktree/SKILL.md
       dest: skills/worktree/SKILL.md
+
+  skill/validate-implementation:
+    description: Validate Implementation
+    files:
+    - src: opencode/skills/validate-implementation/SKILL.md
+      dest: skills/validate-implementation/SKILL.md
+
+  skill/help:
+    description: Unified help system
+    files:
+    - src: opencode/skills/help/SKILL.md
+      dest: skills/help/SKILL.md

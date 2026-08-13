@@ -782,3 +782,15 @@ components:
     files:
     - src: wocode/agent/skills/worktree/SKILL.md
       dest: skills/worktree/SKILL.md
+
+  skill/validate-implementation:
+    description: Validate Implementation
+    files:
+    - src: wocode/agent/skills/validate-implementation/SKILL.md
+      dest: skills/validate-implementation/SKILL.md
+
+  skill/help:
+    description: Unified help system
+    files:
+    - src: wocode/agent/skills/help/SKILL.md
+      dest: skills/help/SKILL.md

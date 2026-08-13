@@ -1091,6 +1091,168 @@
               "dest": "skills/teams/SKILL.md"
             }
           ]
+        },
+        "skill/build-tool-orchestrate": {
+          "description": "Build Tool Orchestrate",
+          "files": [
+            {
+              "src": "antigravity/skills/build_tool_orchestrate/SKILL.md",
+              "dest": "skills/build_tool_orchestrate/SKILL.md"
+            }
+          ]
+        },
+        "skill/complete": {
+          "description": "Complete",
+          "files": [
+            {
+              "src": "antigravity/skills/complete/SKILL.md",
+              "dest": "skills/complete/SKILL.md"
+            }
+          ]
+        },
+        "skill/cto-dashboard": {
+          "description": "Cto Dashboard",
+          "files": [
+            {
+              "src": "antigravity/skills/cto_dashboard/SKILL.md",
+              "dest": "skills/cto_dashboard/SKILL.md"
+            }
+          ]
+        },
+        "skill/docs-sync-updater": {
+          "description": "Docs Sync Updater",
+          "files": [
+            {
+              "src": "antigravity/skills/docs_sync_updater/SKILL.md",
+              "dest": "skills/docs_sync_updater/SKILL.md"
+            }
+          ]
+        },
+        "skill/interview": {
+          "description": "Interview",
+          "files": [
+            {
+              "src": "antigravity/skills/interview/SKILL.md",
+              "dest": "skills/interview/SKILL.md"
+            }
+          ]
+        },
+        "skill/observability-driven-development": {
+          "description": "Observability Driven Development",
+          "files": [
+            {
+              "src": "antigravity/skills/observability_driven_development/SKILL.md",
+              "dest": "skills/observability_driven_development/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-collector": {
+          "description": "Otel Collector",
+          "files": [
+            {
+              "src": "antigravity/skills/otel_collector/SKILL.md",
+              "dest": "skills/otel_collector/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrument": {
+          "description": "Otel Instrument",
+          "files": [
+            {
+              "src": "antigravity/skills/otel_instrument/SKILL.md",
+              "dest": "skills/otel_instrument/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrumentation": {
+          "description": "Otel Instrumentation",
+          "files": [
+            {
+              "src": "antigravity/skills/otel_instrumentation/SKILL.md",
+              "dest": "skills/otel_instrumentation/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-ottl": {
+          "description": "Otel Ottl",
+          "files": [
+            {
+              "src": "antigravity/skills/otel_ottl/SKILL.md",
+              "dest": "skills/otel_ottl/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-semantic-conventions": {
+          "description": "Otel Semantic Conventions",
+          "files": [
+            {
+              "src": "antigravity/skills/otel_semantic_conventions/SKILL.md",
+              "dest": "skills/otel_semantic_conventions/SKILL.md"
+            }
+          ]
+        },
+        "skill/team-setup": {
+          "description": "Team Setup",
+          "files": [
+            {
+              "src": "antigravity/skills/team_setup/SKILL.md",
+              "dest": "skills/team_setup/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-context": {
+          "description": "Ticket Context",
+          "files": [
+            {
+              "src": "antigravity/skills/ticket_context/SKILL.md",
+              "dest": "skills/ticket_context/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-create": {
+          "description": "Ticket Create",
+          "files": [
+            {
+              "src": "antigravity/skills/ticket_create/SKILL.md",
+              "dest": "skills/ticket_create/SKILL.md"
+            }
+          ]
+        },
+        "skill/validate-telemetry": {
+          "description": "Validate Telemetry",
+          "files": [
+            {
+              "src": "antigravity/skills/validate_telemetry/SKILL.md",
+              "dest": "skills/validate_telemetry/SKILL.md"
+            }
+          ]
+        },
+        "skill/womono-validate-manifest": {
+          "description": "Womono Validate Manifest",
+          "files": [
+            {
+              "src": "antigravity/skills/womono_validate_manifest/SKILL.md",
+              "dest": "skills/womono_validate_manifest/SKILL.md"
+            }
+          ]
+        },
+        "skill/work": {
+          "description": "Work",
+          "files": [
+            {
+              "src": "antigravity/skills/work/SKILL.md",
+              "dest": "skills/work/SKILL.md"
+            }
+          ]
+        },
+        "skill/worktree": {
+          "description": "Worktree",
+          "files": [
+            {
+              "src": "antigravity/skills/worktree/SKILL.md",
+              "dest": "skills/worktree/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -2122,6 +2284,168 @@
               "dest": "skills/teams/SKILL.md"
             }
           ]
+        },
+        "skill/build-tool-orchestrate": {
+          "description": "Build Tool Orchestrate",
+          "files": [
+            {
+              "src": "claude/skills/build_tool_orchestrate/SKILL.md",
+              "dest": "skills/build_tool_orchestrate/SKILL.md"
+            }
+          ]
+        },
+        "skill/complete": {
+          "description": "Complete",
+          "files": [
+            {
+              "src": "claude/skills/complete/SKILL.md",
+              "dest": "skills/complete/SKILL.md"
+            }
+          ]
+        },
+        "skill/cto-dashboard": {
+          "description": "Cto Dashboard",
+          "files": [
+            {
+              "src": "claude/skills/cto_dashboard/SKILL.md",
+              "dest": "skills/cto_dashboard/SKILL.md"
+            }
+          ]
+        },
+        "skill/docs-sync-updater": {
+          "description": "Docs Sync Updater",
+          "files": [
+            {
+              "src": "claude/skills/docs_sync_updater/SKILL.md",
+              "dest": "skills/docs_sync_updater/SKILL.md"
+            }
+          ]
+        },
+        "skill/interview": {
+          "description": "Interview",
+          "files": [
+            {
+              "src": "claude/skills/interview/SKILL.md",
+              "dest": "skills/interview/SKILL.md"
+            }
+          ]
+        },
+        "skill/observability-driven-development": {
+          "description": "Observability Driven Development",
+          "files": [
+            {
+              "src": "claude/skills/observability_driven_development/SKILL.md",
+              "dest": "skills/observability_driven_development/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-collector": {
+          "description": "Otel Collector",
+          "files": [
+            {
+              "src": "claude/skills/otel_collector/SKILL.md",
+              "dest": "skills/otel_collector/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrument": {
+          "description": "Otel Instrument",
+          "files": [
+            {
+              "src": "claude/skills/otel_instrument/SKILL.md",
+              "dest": "skills/otel_instrument/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrumentation": {
+          "description": "Otel Instrumentation",
+          "files": [
+            {
+              "src": "claude/skills/otel_instrumentation/SKILL.md",
+              "dest": "skills/otel_instrumentation/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-ottl": {
+          "description": "Otel Ottl",
+          "files": [
+            {
+              "src": "claude/skills/otel_ottl/SKILL.md",
+              "dest": "skills/otel_ottl/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-semantic-conventions": {
+          "description": "Otel Semantic Conventions",
+          "files": [
+            {
+              "src": "claude/skills/otel_semantic_conventions/SKILL.md",
+              "dest": "skills/otel_semantic_conventions/SKILL.md"
+            }
+          ]
+        },
+        "skill/team-setup": {
+          "description": "Team Setup",
+          "files": [
+            {
+              "src": "claude/skills/team_setup/SKILL.md",
+              "dest": "skills/team_setup/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-context": {
+          "description": "Ticket Context",
+          "files": [
+            {
+              "src": "claude/skills/ticket_context/SKILL.md",
+              "dest": "skills/ticket_context/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-create": {
+          "description": "Ticket Create",
+          "files": [
+            {
+              "src": "claude/skills/ticket_create/SKILL.md",
+              "dest": "skills/ticket_create/SKILL.md"
+            }
+          ]
+        },
+        "skill/validate-telemetry": {
+          "description": "Validate Telemetry",
+          "files": [
+            {
+              "src": "claude/skills/validate_telemetry/SKILL.md",
+              "dest": "skills/validate_telemetry/SKILL.md"
+            }
+          ]
+        },
+        "skill/womono-validate-manifest": {
+          "description": "Womono Validate Manifest",
+          "files": [
+            {
+              "src": "claude/skills/womono_validate_manifest/SKILL.md",
+              "dest": "skills/womono_validate_manifest/SKILL.md"
+            }
+          ]
+        },
+        "skill/work": {
+          "description": "Work",
+          "files": [
+            {
+              "src": "claude/skills/work/SKILL.md",
+              "dest": "skills/work/SKILL.md"
+            }
+          ]
+        },
+        "skill/worktree": {
+          "description": "Worktree",
+          "files": [
+            {
+              "src": "claude/skills/worktree/SKILL.md",
+              "dest": "skills/worktree/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -3130,6 +3454,168 @@
             {
               "src": "codex/skills/teams/SKILL.md",
               "dest": "skills/teams/SKILL.md"
+            }
+          ]
+        },
+        "skill/build-tool-orchestrate": {
+          "description": "Build Tool Orchestrate",
+          "files": [
+            {
+              "src": "codex/skills/build_tool_orchestrate/SKILL.md",
+              "dest": "skills/build_tool_orchestrate/SKILL.md"
+            }
+          ]
+        },
+        "skill/complete": {
+          "description": "Complete",
+          "files": [
+            {
+              "src": "codex/skills/complete/SKILL.md",
+              "dest": "skills/complete/SKILL.md"
+            }
+          ]
+        },
+        "skill/cto-dashboard": {
+          "description": "Cto Dashboard",
+          "files": [
+            {
+              "src": "codex/skills/cto_dashboard/SKILL.md",
+              "dest": "skills/cto_dashboard/SKILL.md"
+            }
+          ]
+        },
+        "skill/docs-sync-updater": {
+          "description": "Docs Sync Updater",
+          "files": [
+            {
+              "src": "codex/skills/docs_sync_updater/SKILL.md",
+              "dest": "skills/docs_sync_updater/SKILL.md"
+            }
+          ]
+        },
+        "skill/interview": {
+          "description": "Interview",
+          "files": [
+            {
+              "src": "codex/skills/interview/SKILL.md",
+              "dest": "skills/interview/SKILL.md"
+            }
+          ]
+        },
+        "skill/observability-driven-development": {
+          "description": "Observability Driven Development",
+          "files": [
+            {
+              "src": "codex/skills/observability_driven_development/SKILL.md",
+              "dest": "skills/observability_driven_development/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-collector": {
+          "description": "Otel Collector",
+          "files": [
+            {
+              "src": "codex/skills/otel_collector/SKILL.md",
+              "dest": "skills/otel_collector/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrument": {
+          "description": "Otel Instrument",
+          "files": [
+            {
+              "src": "codex/skills/otel_instrument/SKILL.md",
+              "dest": "skills/otel_instrument/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrumentation": {
+          "description": "Otel Instrumentation",
+          "files": [
+            {
+              "src": "codex/skills/otel_instrumentation/SKILL.md",
+              "dest": "skills/otel_instrumentation/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-ottl": {
+          "description": "Otel Ottl",
+          "files": [
+            {
+              "src": "codex/skills/otel_ottl/SKILL.md",
+              "dest": "skills/otel_ottl/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-semantic-conventions": {
+          "description": "Otel Semantic Conventions",
+          "files": [
+            {
+              "src": "codex/skills/otel_semantic_conventions/SKILL.md",
+              "dest": "skills/otel_semantic_conventions/SKILL.md"
+            }
+          ]
+        },
+        "skill/team-setup": {
+          "description": "Team Setup",
+          "files": [
+            {
+              "src": "codex/skills/team_setup/SKILL.md",
+              "dest": "skills/team_setup/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-context": {
+          "description": "Ticket Context",
+          "files": [
+            {
+              "src": "codex/skills/ticket_context/SKILL.md",
+              "dest": "skills/ticket_context/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-create": {
+          "description": "Ticket Create",
+          "files": [
+            {
+              "src": "codex/skills/ticket_create/SKILL.md",
+              "dest": "skills/ticket_create/SKILL.md"
+            }
+          ]
+        },
+        "skill/validate-telemetry": {
+          "description": "Validate Telemetry",
+          "files": [
+            {
+              "src": "codex/skills/validate_telemetry/SKILL.md",
+              "dest": "skills/validate_telemetry/SKILL.md"
+            }
+          ]
+        },
+        "skill/womono-validate-manifest": {
+          "description": "Womono Validate Manifest",
+          "files": [
+            {
+              "src": "codex/skills/womono_validate_manifest/SKILL.md",
+              "dest": "skills/womono_validate_manifest/SKILL.md"
+            }
+          ]
+        },
+        "skill/work": {
+          "description": "Work",
+          "files": [
+            {
+              "src": "codex/skills/work/SKILL.md",
+              "dest": "skills/work/SKILL.md"
+            }
+          ]
+        },
+        "skill/worktree": {
+          "description": "Worktree",
+          "files": [
+            {
+              "src": "codex/skills/worktree/SKILL.md",
+              "dest": "skills/worktree/SKILL.md"
             }
           ]
         }
@@ -4148,6 +4634,168 @@
             {
               "src": "opencode/skills/teams/SKILL.md",
               "dest": "skills/teams/SKILL.md"
+            }
+          ]
+        },
+        "skill/build-tool-orchestrate": {
+          "description": "Build Tool Orchestrate",
+          "files": [
+            {
+              "src": "opencode/skills/build-tool-orchestrate/SKILL.md",
+              "dest": "skills/build-tool-orchestrate/SKILL.md"
+            }
+          ]
+        },
+        "skill/complete": {
+          "description": "Complete",
+          "files": [
+            {
+              "src": "opencode/skills/complete/SKILL.md",
+              "dest": "skills/complete/SKILL.md"
+            }
+          ]
+        },
+        "skill/cto-dashboard": {
+          "description": "Cto Dashboard",
+          "files": [
+            {
+              "src": "opencode/skills/cto-dashboard/SKILL.md",
+              "dest": "skills/cto-dashboard/SKILL.md"
+            }
+          ]
+        },
+        "skill/docs-sync-updater": {
+          "description": "Docs Sync Updater",
+          "files": [
+            {
+              "src": "opencode/skills/docs-sync-updater/SKILL.md",
+              "dest": "skills/docs-sync-updater/SKILL.md"
+            }
+          ]
+        },
+        "skill/interview": {
+          "description": "Interview",
+          "files": [
+            {
+              "src": "opencode/skills/interview/SKILL.md",
+              "dest": "skills/interview/SKILL.md"
+            }
+          ]
+        },
+        "skill/observability-driven-development": {
+          "description": "Observability Driven Development",
+          "files": [
+            {
+              "src": "opencode/skills/observability-driven-development/SKILL.md",
+              "dest": "skills/observability-driven-development/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-collector": {
+          "description": "Otel Collector",
+          "files": [
+            {
+              "src": "opencode/skills/otel-collector/SKILL.md",
+              "dest": "skills/otel-collector/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrument": {
+          "description": "Otel Instrument",
+          "files": [
+            {
+              "src": "opencode/skills/otel-instrument/SKILL.md",
+              "dest": "skills/otel-instrument/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrumentation": {
+          "description": "Otel Instrumentation",
+          "files": [
+            {
+              "src": "opencode/skills/otel-instrumentation/SKILL.md",
+              "dest": "skills/otel-instrumentation/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-ottl": {
+          "description": "Otel Ottl",
+          "files": [
+            {
+              "src": "opencode/skills/otel-ottl/SKILL.md",
+              "dest": "skills/otel-ottl/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-semantic-conventions": {
+          "description": "Otel Semantic Conventions",
+          "files": [
+            {
+              "src": "opencode/skills/otel-semantic-conventions/SKILL.md",
+              "dest": "skills/otel-semantic-conventions/SKILL.md"
+            }
+          ]
+        },
+        "skill/team-setup": {
+          "description": "Team Setup",
+          "files": [
+            {
+              "src": "opencode/skills/team-setup/SKILL.md",
+              "dest": "skills/team-setup/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-context": {
+          "description": "Ticket Context",
+          "files": [
+            {
+              "src": "opencode/skills/ticket-context/SKILL.md",
+              "dest": "skills/ticket-context/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-create": {
+          "description": "Ticket Create",
+          "files": [
+            {
+              "src": "opencode/skills/ticket-create/SKILL.md",
+              "dest": "skills/ticket-create/SKILL.md"
+            }
+          ]
+        },
+        "skill/validate-telemetry": {
+          "description": "Validate Telemetry",
+          "files": [
+            {
+              "src": "opencode/skills/validate-telemetry/SKILL.md",
+              "dest": "skills/validate-telemetry/SKILL.md"
+            }
+          ]
+        },
+        "skill/womono-validate-manifest": {
+          "description": "Womono Validate Manifest",
+          "files": [
+            {
+              "src": "opencode/skills/womono-validate-manifest/SKILL.md",
+              "dest": "skills/womono-validate-manifest/SKILL.md"
+            }
+          ]
+        },
+        "skill/work": {
+          "description": "Work",
+          "files": [
+            {
+              "src": "opencode/skills/work/SKILL.md",
+              "dest": "skills/work/SKILL.md"
+            }
+          ]
+        },
+        "skill/worktree": {
+          "description": "Worktree",
+          "files": [
+            {
+              "src": "opencode/skills/worktree/SKILL.md",
+              "dest": "skills/worktree/SKILL.md"
             }
           ]
         }
@@ -5408,6 +6056,168 @@
               "dest": "skills/teams/SKILL.md"
             }
           ]
+        },
+        "skill/build-tool-orchestrate": {
+          "description": "Build Tool Orchestrate",
+          "files": [
+            {
+              "src": "pi/agent/skills/build-tool-orchestrate/SKILL.md",
+              "dest": "skills/build-tool-orchestrate/SKILL.md"
+            }
+          ]
+        },
+        "skill/complete": {
+          "description": "Complete",
+          "files": [
+            {
+              "src": "pi/agent/skills/complete/SKILL.md",
+              "dest": "skills/complete/SKILL.md"
+            }
+          ]
+        },
+        "skill/cto-dashboard": {
+          "description": "Cto Dashboard",
+          "files": [
+            {
+              "src": "pi/agent/skills/cto-dashboard/SKILL.md",
+              "dest": "skills/cto-dashboard/SKILL.md"
+            }
+          ]
+        },
+        "skill/docs-sync-updater": {
+          "description": "Docs Sync Updater",
+          "files": [
+            {
+              "src": "pi/agent/skills/docs-sync-updater/SKILL.md",
+              "dest": "skills/docs-sync-updater/SKILL.md"
+            }
+          ]
+        },
+        "skill/interview": {
+          "description": "Interview",
+          "files": [
+            {
+              "src": "pi/agent/skills/interview/SKILL.md",
+              "dest": "skills/interview/SKILL.md"
+            }
+          ]
+        },
+        "skill/observability-driven-development": {
+          "description": "Observability Driven Development",
+          "files": [
+            {
+              "src": "pi/agent/skills/observability-driven-development/SKILL.md",
+              "dest": "skills/observability-driven-development/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-collector": {
+          "description": "Otel Collector",
+          "files": [
+            {
+              "src": "pi/agent/skills/otel-collector/SKILL.md",
+              "dest": "skills/otel-collector/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrument": {
+          "description": "Otel Instrument",
+          "files": [
+            {
+              "src": "pi/agent/skills/otel-instrument/SKILL.md",
+              "dest": "skills/otel-instrument/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrumentation": {
+          "description": "Otel Instrumentation",
+          "files": [
+            {
+              "src": "pi/agent/skills/otel-instrumentation/SKILL.md",
+              "dest": "skills/otel-instrumentation/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-ottl": {
+          "description": "Otel Ottl",
+          "files": [
+            {
+              "src": "pi/agent/skills/otel-ottl/SKILL.md",
+              "dest": "skills/otel-ottl/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-semantic-conventions": {
+          "description": "Otel Semantic Conventions",
+          "files": [
+            {
+              "src": "pi/agent/skills/otel-semantic-conventions/SKILL.md",
+              "dest": "skills/otel-semantic-conventions/SKILL.md"
+            }
+          ]
+        },
+        "skill/team-setup": {
+          "description": "Team Setup",
+          "files": [
+            {
+              "src": "pi/agent/skills/team-setup/SKILL.md",
+              "dest": "skills/team-setup/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-context": {
+          "description": "Ticket Context",
+          "files": [
+            {
+              "src": "pi/agent/skills/ticket-context/SKILL.md",
+              "dest": "skills/ticket-context/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-create": {
+          "description": "Ticket Create",
+          "files": [
+            {
+              "src": "pi/agent/skills/ticket-create/SKILL.md",
+              "dest": "skills/ticket-create/SKILL.md"
+            }
+          ]
+        },
+        "skill/validate-telemetry": {
+          "description": "Validate Telemetry",
+          "files": [
+            {
+              "src": "pi/agent/skills/validate-telemetry/SKILL.md",
+              "dest": "skills/validate-telemetry/SKILL.md"
+            }
+          ]
+        },
+        "skill/womono-validate-manifest": {
+          "description": "Womono Validate Manifest",
+          "files": [
+            {
+              "src": "pi/agent/skills/womono-validate-manifest/SKILL.md",
+              "dest": "skills/womono-validate-manifest/SKILL.md"
+            }
+          ]
+        },
+        "skill/work": {
+          "description": "Work",
+          "files": [
+            {
+              "src": "pi/agent/skills/work/SKILL.md",
+              "dest": "skills/work/SKILL.md"
+            }
+          ]
+        },
+        "skill/worktree": {
+          "description": "Worktree",
+          "files": [
+            {
+              "src": "pi/agent/skills/worktree/SKILL.md",
+              "dest": "skills/worktree/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -6637,6 +7447,168 @@
             {
               "src": "wocode/agent/skills/teams/SKILL.md",
               "dest": "skills/teams/SKILL.md"
+            }
+          ]
+        },
+        "skill/build-tool-orchestrate": {
+          "description": "Build Tool Orchestrate",
+          "files": [
+            {
+              "src": "wocode/agent/skills/build-tool-orchestrate/SKILL.md",
+              "dest": "skills/build-tool-orchestrate/SKILL.md"
+            }
+          ]
+        },
+        "skill/complete": {
+          "description": "Complete",
+          "files": [
+            {
+              "src": "wocode/agent/skills/complete/SKILL.md",
+              "dest": "skills/complete/SKILL.md"
+            }
+          ]
+        },
+        "skill/cto-dashboard": {
+          "description": "Cto Dashboard",
+          "files": [
+            {
+              "src": "wocode/agent/skills/cto-dashboard/SKILL.md",
+              "dest": "skills/cto-dashboard/SKILL.md"
+            }
+          ]
+        },
+        "skill/docs-sync-updater": {
+          "description": "Docs Sync Updater",
+          "files": [
+            {
+              "src": "wocode/agent/skills/docs-sync-updater/SKILL.md",
+              "dest": "skills/docs-sync-updater/SKILL.md"
+            }
+          ]
+        },
+        "skill/interview": {
+          "description": "Interview",
+          "files": [
+            {
+              "src": "wocode/agent/skills/interview/SKILL.md",
+              "dest": "skills/interview/SKILL.md"
+            }
+          ]
+        },
+        "skill/observability-driven-development": {
+          "description": "Observability Driven Development",
+          "files": [
+            {
+              "src": "wocode/agent/skills/observability-driven-development/SKILL.md",
+              "dest": "skills/observability-driven-development/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-collector": {
+          "description": "Otel Collector",
+          "files": [
+            {
+              "src": "wocode/agent/skills/otel-collector/SKILL.md",
+              "dest": "skills/otel-collector/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrument": {
+          "description": "Otel Instrument",
+          "files": [
+            {
+              "src": "wocode/agent/skills/otel-instrument/SKILL.md",
+              "dest": "skills/otel-instrument/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-instrumentation": {
+          "description": "Otel Instrumentation",
+          "files": [
+            {
+              "src": "wocode/agent/skills/otel-instrumentation/SKILL.md",
+              "dest": "skills/otel-instrumentation/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-ottl": {
+          "description": "Otel Ottl",
+          "files": [
+            {
+              "src": "wocode/agent/skills/otel-ottl/SKILL.md",
+              "dest": "skills/otel-ottl/SKILL.md"
+            }
+          ]
+        },
+        "skill/otel-semantic-conventions": {
+          "description": "Otel Semantic Conventions",
+          "files": [
+            {
+              "src": "wocode/agent/skills/otel-semantic-conventions/SKILL.md",
+              "dest": "skills/otel-semantic-conventions/SKILL.md"
+            }
+          ]
+        },
+        "skill/team-setup": {
+          "description": "Team Setup",
+          "files": [
+            {
+              "src": "wocode/agent/skills/team-setup/SKILL.md",
+              "dest": "skills/team-setup/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-context": {
+          "description": "Ticket Context",
+          "files": [
+            {
+              "src": "wocode/agent/skills/ticket-context/SKILL.md",
+              "dest": "skills/ticket-context/SKILL.md"
+            }
+          ]
+        },
+        "skill/ticket-create": {
+          "description": "Ticket Create",
+          "files": [
+            {
+              "src": "wocode/agent/skills/ticket-create/SKILL.md",
+              "dest": "skills/ticket-create/SKILL.md"
+            }
+          ]
+        },
+        "skill/validate-telemetry": {
+          "description": "Validate Telemetry",
+          "files": [
+            {
+              "src": "wocode/agent/skills/validate-telemetry/SKILL.md",
+              "dest": "skills/validate-telemetry/SKILL.md"
+            }
+          ]
+        },
+        "skill/womono-validate-manifest": {
+          "description": "Womono Validate Manifest",
+          "files": [
+            {
+              "src": "wocode/agent/skills/womono-validate-manifest/SKILL.md",
+              "dest": "skills/womono-validate-manifest/SKILL.md"
+            }
+          ]
+        },
+        "skill/work": {
+          "description": "Work",
+          "files": [
+            {
+              "src": "wocode/agent/skills/work/SKILL.md",
+              "dest": "skills/work/SKILL.md"
+            }
+          ]
+        },
+        "skill/worktree": {
+          "description": "Worktree",
+          "files": [
+            {
+              "src": "wocode/agent/skills/worktree/SKILL.md",
+              "dest": "skills/worktree/SKILL.md"
             }
           ]
         }

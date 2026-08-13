@@ -34,6 +34,29 @@ You are the Project's Product Manager and Backlog Groomer. Your task is to organ
 
 ## Context Reference
 
+## Code Traceability
+
+When creating tickets, ensure they follow the traceability convention:
+
+### Ticket Naming
+```
+<PREFIX>-<NNN>-<UPPERCASE-DESCRIPTION>.md
+```
+
+### What Goes in the Ticket
+Every ticket should include enough context for agents to fetch and understand:
+- **Problem statement** — what needs to be done
+- **Acceptance criteria** — how to verify it's done
+- **Technical notes** — affected components, architecture decisions
+- **Related tickets** — dependencies, parent/child relationships
+
+### Linking Code to Tickets
+After implementing from a ticket, add `[PREFIX-NNN]` references to all changed files:
+```typescript
+// [PROJ-001] Add backlog grooming automation
+const groomer = new BacklogGroomer();
+```
+
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates
 - **Rules**: `thoughts/global/rules/` — coding standards, naming, security, testing, deployment rules
 - **Knowledge**: `thoughts/global/knowledge/` — stored knowledge base, searchable via `knowledge` skill

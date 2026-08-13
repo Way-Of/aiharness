@@ -561,3 +561,111 @@ components:
     files:
     - src: opencode/skills/teams/SKILL.md
       dest: skills/teams/SKILL.md
+
+  skill/build-tool-orchestrate:
+    description: Build Tool Orchestrate
+    files:
+    - src: opencode/skills/build-tool-orchestrate/SKILL.md
+      dest: skills/build-tool-orchestrate/SKILL.md
+
+  skill/complete:
+    description: Complete
+    files:
+    - src: opencode/skills/complete/SKILL.md
+      dest: skills/complete/SKILL.md
+
+  skill/cto-dashboard:
+    description: Cto Dashboard
+    files:
+    - src: opencode/skills/cto-dashboard/SKILL.md
+      dest: skills/cto-dashboard/SKILL.md
+
+  skill/docs-sync-updater:
+    description: Docs Sync Updater
+    files:
+    - src: opencode/skills/docs-sync-updater/SKILL.md
+      dest: skills/docs-sync-updater/SKILL.md
+
+  skill/interview:
+    description: Interview
+    files:
+    - src: opencode/skills/interview/SKILL.md
+      dest: skills/interview/SKILL.md
+
+  skill/observability-driven-development:
+    description: Observability Driven Development
+    files:
+    - src: opencode/skills/observability-driven-development/SKILL.md
+      dest: skills/observability-driven-development/SKILL.md
+
+  skill/otel-collector:
+    description: Otel Collector
+    files:
+    - src: opencode/skills/otel-collector/SKILL.md
+      dest: skills/otel-collector/SKILL.md
+
+  skill/otel-instrument:
+    description: Otel Instrument
+    files:
+    - src: opencode/skills/otel-instrument/SKILL.md
+      dest: skills/otel-instrument/SKILL.md
+
+  skill/otel-instrumentation:
+    description: Otel Instrumentation
+    files:
+    - src: opencode/skills/otel-instrumentation/SKILL.md
+      dest: skills/otel-instrumentation/SKILL.md
+
+  skill/otel-ottl:
+    description: Otel Ottl
+    files:
+    - src: opencode/skills/otel-ottl/SKILL.md
+      dest: skills/otel-ottl/SKILL.md
+
+  skill/otel-semantic-conventions:
+    description: Otel Semantic Conventions
+    files:
+    - src: opencode/skills/otel-semantic-conventions/SKILL.md
+      dest: skills/otel-semantic-conventions/SKILL.md
+
+  skill/team-setup:
+    description: Team Setup
+    files:
+    - src: opencode/skills/team-setup/SKILL.md
+      dest: skills/team-setup/SKILL.md
+
+  skill/ticket-context:
+    description: Ticket Context
+    files:
+    - src: opencode/skills/ticket-context/SKILL.md
+      dest: skills/ticket-context/SKILL.md
+
+  skill/ticket-create:
+    description: Ticket Create
+    files:
+    - src: opencode/skills/ticket-create/SKILL.md
+      dest: skills/ticket-create/SKILL.md
+
+  skill/validate-telemetry:
+    description: Validate Telemetry
+    files:
+    - src: opencode/skills/validate-telemetry/SKILL.md
+      dest: skills/validate-telemetry/SKILL.md
+
+  skill/womono-validate-manifest:
+    description: Womono Validate Manifest
+    files:
+    - src: opencode/skills/womono-validate-manifest/SKILL.md
+      dest: skills/womono-validate-manifest/SKILL.md
+
+  skill/work:
+    description: Work
+    files:
+    - src: opencode/skills/work/SKILL.md
+      dest: skills/work/SKILL.md
+
+  skill/worktree:
+    description: Worktree
+    files:
+    - src: opencode/skills/worktree/SKILL.md
+      dest: skills/worktree/SKILL.md

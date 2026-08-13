@@ -600,3 +600,111 @@ components:
     files:
     - src: antigravity/skills/teams/SKILL.md
       dest: skills/teams/SKILL.md
+
+  skill/build-tool-orchestrate:
+    description: Build Tool Orchestrate
+    files:
+    - src: antigravity/skills/build_tool_orchestrate/SKILL.md
+      dest: skills/build_tool_orchestrate/SKILL.md
+
+  skill/complete:
+    description: Complete
+    files:
+    - src: antigravity/skills/complete/SKILL.md
+      dest: skills/complete/SKILL.md
+
+  skill/cto-dashboard:
+    description: Cto Dashboard
+    files:
+    - src: antigravity/skills/cto_dashboard/SKILL.md
+      dest: skills/cto_dashboard/SKILL.md
+
+  skill/docs-sync-updater:
+    description: Docs Sync Updater
+    files:
+    - src: antigravity/skills/docs_sync_updater/SKILL.md
+      dest: skills/docs_sync_updater/SKILL.md
+
+  skill/interview:
+    description: Interview
+    files:
+    - src: antigravity/skills/interview/SKILL.md
+      dest: skills/interview/SKILL.md
+
+  skill/observability-driven-development:
+    description: Observability Driven Development
+    files:
+    - src: antigravity/skills/observability_driven_development/SKILL.md
+      dest: skills/observability_driven_development/SKILL.md
+
+  skill/otel-collector:
+    description: Otel Collector
+    files:
+    - src: antigravity/skills/otel_collector/SKILL.md
+      dest: skills/otel_collector/SKILL.md
+
+  skill/otel-instrument:
+    description: Otel Instrument
+    files:
+    - src: antigravity/skills/otel_instrument/SKILL.md
+      dest: skills/otel_instrument/SKILL.md
+
+  skill/otel-instrumentation:
+    description: Otel Instrumentation
+    files:
+    - src: antigravity/skills/otel_instrumentation/SKILL.md
+      dest: skills/otel_instrumentation/SKILL.md
+
+  skill/otel-ottl:
+    description: Otel Ottl
+    files:
+    - src: antigravity/skills/otel_ottl/SKILL.md
+      dest: skills/otel_ottl/SKILL.md
+
+  skill/otel-semantic-conventions:
+    description: Otel Semantic Conventions
+    files:
+    - src: antigravity/skills/otel_semantic_conventions/SKILL.md
+      dest: skills/otel_semantic_conventions/SKILL.md
+
+  skill/team-setup:
+    description: Team Setup
+    files:
+    - src: antigravity/skills/team_setup/SKILL.md
+      dest: skills/team_setup/SKILL.md
+
+  skill/ticket-context:
+    description: Ticket Context
+    files:
+    - src: antigravity/skills/ticket_context/SKILL.md
+      dest: skills/ticket_context/SKILL.md
+
+  skill/ticket-create:
+    description: Ticket Create
+    files:
+    - src: antigravity/skills/ticket_create/SKILL.md
+      dest: skills/ticket_create/SKILL.md
+
+  skill/validate-telemetry:
+    description: Validate Telemetry
+    files:
+    - src: antigravity/skills/validate_telemetry/SKILL.md
+      dest: skills/validate_telemetry/SKILL.md
+
+  skill/womono-validate-manifest:
+    description: Womono Validate Manifest
+    files:
+    - src: antigravity/skills/womono_validate_manifest/SKILL.md
+      dest: skills/womono_validate_manifest/SKILL.md
+
+  skill/work:
+    description: Work
+    files:
+    - src: antigravity/skills/work/SKILL.md
+      dest: skills/work/SKILL.md
+
+  skill/worktree:
+    description: Worktree
+    files:
+    - src: antigravity/skills/worktree/SKILL.md
+      dest: skills/worktree/SKILL.md

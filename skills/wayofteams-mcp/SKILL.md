@@ -18,7 +18,7 @@ Connect your AI coding agent to WayOfTeams via the Model Context Protocol (MCP).
 
 ## Prerequisites
 
-- WayOfTeams account with active subscription (Starter $29/seat, Pro $59/seat, Team $149/seat)
+- WayOfTeams account with active subscription
 - GitHub login (provides JWT token for MCP auth)
 - AI tool with MCP support (OpenCode, Claude Code, etc.)
 

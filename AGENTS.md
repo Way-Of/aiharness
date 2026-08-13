@@ -160,9 +160,38 @@ Ticket → /create_plan → /validate_plan → /implement_plan → /validate_imp
 | Claude Code | `.mcp.json` | `"disabled": true` |
 | Pi | N/A | N/A |
 | Wo Coder | `wocode.json` | `"enabled": false` |
+| Antigravity | `antigravity.json` | `"enabled": false` |
 | Codex | N/A | N/A |
 
-Available MCP servers: `kubernetes` (disabled by default), `aspire-dashboard` (disabled by default; see [microsoft/aspire#14733](https://github.com/microsoft/aspire/issues/14733) for the standalone-Docker MCP caveat)
+### Available MCP Servers
+
+| Server | Endpoint | Tools | Auth | Status |
+|--------|----------|-------|------|--------|
+| `kubernetes` | local (npx) | Cluster management | None | Disabled by default |
+| `aspire-dashboard` | `http://localhost:18891` | .NET Aspire | None | Disabled by default |
+| `wayofteams` | `https://teamsapp.zerwiz.org/mcp` | 41 tools (tickets, standups, knowledge, rules, memory) | Bearer JWT | **Requires paid subscription** |
+| `anchor` | `http://localhost:42777/mcp` | 11 tools (memory, context, PR review) | API key | Use via WayOfTeams (direct is STDIO-only) |
+
+### WayOfTeams MCP Integration
+
+WayOfTeams provides 41 MCP tools for team-aware AI agents:
+- **Tickets**: `tickets_list`, `tickets_get`, `tickets_create`, `tickets_update`
+- **Standups**: `standup_get`, `standup_create`
+- **Knowledge**: `knowledge_list/search/get/create`, `rules_list/get/create/update`
+- **Memory**: `memory_store/search/get/list/delete`, `memory_update`, `anchors_*`, `context_inject`, `pr_review_context`
+- **Team**: `team_skills`, `team_notifications`, `thoughts_read/search`
+
+**Auth**: Bearer JWT from GitHub login. Set `WAYOFTEAMS_MCP_TOKEN` env var.
+**Config**: See `skills/wayofteams-mcp/SKILL.md` for per-tool config examples.
+
+### Anchor Memory Integration
+
+Anchor provides persistent semantic memory via WayOfTeams MCP:
+- Store decisions, patterns, invariants across sessions
+- Context injection for new sessions
+- PR review context with decision rationale
+
+**Config**: See `skills/anchor-memory/SKILL.md` for details.
 
 ## Tool-Specific Notes
 

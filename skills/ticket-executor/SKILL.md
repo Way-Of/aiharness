@@ -70,6 +70,56 @@ The notification IDs follow the format:
 
 This ensures the CTO Dashboard bell badge reflects only genuinely unread notifications.
 
+## WayOfTeams MCP Integration (Optional)
+
+If WayOfTeams MCP is available, use it for status updates:
+
+### MCP Status Updates
+When MCP is available, update ticket status via WayOfTeams:
+- `tickets_update` with `status: "In Progress"` when starting
+- `tickets_update` with `status: "Done"` when complete
+- `team_notifications` for notification management
+
+### MCP + File Hybrid
+1. Try MCP first: `tickets_update` via WayOfTeams
+2. Also update local ticket file as backup
+3. If MCP fails, fall back to file-only
+
+**Always keep file-based operations as fallback.**
+
+## Done Lifecycle
+
+When all phases are complete, move the ticket to `done/`:
+
+### Moving to Done
+```bash
+# Find and move ticket
+TICKET_FILE=$(find thoughts/ -name "<TICKET-ID>*.md" -type f)
+mv "$TICKET_FILE" thoughts/<project>/shared/tickets/done/
+```
+
+### Plan Done Lifecycle
+When implementing a plan, move it to `done/` after completion:
+```bash
+mv thoughts/<project>/shared/plans/<plan-name>.md \
+   thoughts/<project>/shared/plans/done/
+```
+
+## Code Traceability
+
+When executing plan phases, ensure all code changes have ticket references:
+
+### Before Committing
+1. Check all modified files for `[PREFIX-NNN]` references
+2. If missing, add them before the changed lines
+3. Verify with: `grep -r "<TICKET-ID>" --include="*.ts" --include="*.py"`
+
+### Reference Format
+```typescript
+// [AIH-192] Phase 1: Add MCP skill
+const skill = new WayOfTeamsMCP();
+```
+
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

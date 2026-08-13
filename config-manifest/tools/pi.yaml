@@ -677,3 +677,9 @@ components:
     files:
     - src: pi/agent/skills/anchor-memory/SKILL.md
       dest: skills/anchor-memory/SKILL.md
+
+  skill/teams:
+    description: WayOfTeams team context integration
+    files:
+    - src: pi/agent/skills/teams/SKILL.md
+      dest: skills/teams/SKILL.md

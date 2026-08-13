@@ -551,3 +551,9 @@ components:
     files:
     - src: codex/skills/anchor_memory/SKILL.md
       dest: skills/anchor_memory/SKILL.md
+
+  skill/teams:
+    description: WayOfTeams team context integration
+    files:
+    - src: codex/skills/teams/SKILL.md
+      dest: skills/teams/SKILL.md

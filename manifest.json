@@ -1082,6 +1082,15 @@
               "dest": "skills/anchor_memory/SKILL.md"
             }
           ]
+        },
+        "skill/teams": {
+          "description": "WayOfTeams team context integration",
+          "files": [
+            {
+              "src": "antigravity/skills/teams/SKILL.md",
+              "dest": "skills/teams/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -2104,6 +2113,15 @@
               "dest": "skills/anchor_memory/SKILL.md"
             }
           ]
+        },
+        "skill/teams": {
+          "description": "WayOfTeams team context integration",
+          "files": [
+            {
+              "src": "claude/skills/teams/SKILL.md",
+              "dest": "skills/teams/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -3103,6 +3121,15 @@
             {
               "src": "codex/skills/anchor_memory/SKILL.md",
               "dest": "skills/anchor_memory/SKILL.md"
+            }
+          ]
+        },
+        "skill/teams": {
+          "description": "WayOfTeams team context integration",
+          "files": [
+            {
+              "src": "codex/skills/teams/SKILL.md",
+              "dest": "skills/teams/SKILL.md"
             }
           ]
         }
@@ -4112,6 +4139,15 @@
             {
               "src": "opencode/skills/anchor-memory/SKILL.md",
               "dest": "skills/anchor-memory/SKILL.md"
+            }
+          ]
+        },
+        "skill/teams": {
+          "description": "WayOfTeams team context integration",
+          "files": [
+            {
+              "src": "opencode/skills/teams/SKILL.md",
+              "dest": "skills/teams/SKILL.md"
             }
           ]
         }
@@ -5363,6 +5399,15 @@
               "dest": "skills/anchor-memory/SKILL.md"
             }
           ]
+        },
+        "skill/teams": {
+          "description": "WayOfTeams team context integration",
+          "files": [
+            {
+              "src": "pi/agent/skills/teams/SKILL.md",
+              "dest": "skills/teams/SKILL.md"
+            }
+          ]
         }
       }
     },
@@ -6583,6 +6628,15 @@
             {
               "src": "wocode/agent/skills/anchor-memory/SKILL.md",
               "dest": "skills/anchor-memory/SKILL.md"
+            }
+          ]
+        },
+        "skill/teams": {
+          "description": "WayOfTeams team context integration",
+          "files": [
+            {
+              "src": "wocode/agent/skills/teams/SKILL.md",
+              "dest": "skills/teams/SKILL.md"
             }
           ]
         }

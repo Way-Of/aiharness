@@ -14,8 +14,102 @@ Create, update, and maintain AGENTS.md files across projects and subdirectories.
 2. Updates existing AGENTS.md with current agent, command, and skill lists
 3. Ensures correct frontmatter format per tool
 4. Knows per-tool project memory filename conventions
+5. **Includes acceptance criteria for ALL components** (skills, agents, commands, prompts)
+6. **Enforces code traceability** — every code change gets `[PREFIX-NNN]` reference
 
-## Tool Project Memory Filenames
+## Critical: Acceptance Criteria for ALL Components
+
+When creating or updating AGENTS.md, ALWAYS include acceptance criteria for:
+
+### Skills
+- [ ] All 77 canonical skills present in all 6 tools
+- [ ] Per-tool naming correct (kebab for opencode/pi/wocode, snake for claude/antigravity/codex)
+- [ ] Frontmatter `name:` matches directory name
+- [ ] Content identical across tools (modulo naming)
+
+### Agents
+- [ ] All 14 canonical agents present in all 6 tools
+- [ ] Agent naming correct (snake_case for all tools)
+- [ ] Content identical across tools
+
+### Commands/Prompts
+- [ ] All 24 canonical commands present in opencode/claude/pi/wocode/codex
+- [ ] Antigravity uses .toml format (skip validation)
+- [ ] Content identical across tools (modulo format)
+
+### Code Traceability
+- [ ] Every code change has `[PREFIX-NNN]` reference
+- [ ] Format: `[<PREFIX>-<NNN>] <brief description>`
+- [ ] Placement: BEFORE the changed line
+- [ ] Every modified file must have at least one reference
+
+### MCP Integration
+- [ ] WayOfTeams MCP configured (41 tools)
+- [ ] Anchor Memory MCP configured (11 tools)
+- [ ] Skills document MCP availability
+- [ ] Agents know MCP tools exist
+
+## Critical: Adding Context to Code
+
+Every code change MUST include ticket reference comments. This is NOT optional.
+
+### Format
+```typescript
+// [AIH-192] Add WayOfTeams MCP integration
+const mcpClient = new WayOfTeamsMCP();
+```
+
+```python
+# [AIH-191] Validate ticket frontmatter on creation
+def validate_frontmatter(ticket):
+```
+
+### Rules
+- Format: `[<PREFIX>-<NNN>] <brief description>`
+- Place BEFORE the changed line
+- Every modified file must have at least one reference
+- Use the ticket ID from the ticket you're working on
+
+### Fetching Context from Tickets/Plans
+- Read ticket: `thoughts/<project>/shared/tickets/<TICKET-ID>.md`
+- Read plan: `thoughts/<project>/shared/plans/<PLAN-NAME>.md`
+- Search by ticket: `grep -r "<TICKET-ID>" --include="*.ts"`
+- The ticket contains: requirements, acceptance criteria, technical notes
+- The plan contains: implementation phases, file changes, success criteria
+
+## Critical: harnessbuilder System
+
+The harness has an automated sync system at `harnessbuilder/`:
+
+### What It Does
+1. `sync-everything.py` — syncs canonical skills/agents/commands to all 6 tools
+2. `validate.py` — checks all 6 tools match canonical
+3. `tools.py` — per-tool naming rules
+
+### How to Use
+```bash
+# Sync all components to all tools
+python3 harnessbuilder/sync-everything.py
+
+# Validate only (no changes)
+python3 harnessbuilder/sync-everything.py --validate-only
+
+# Dry run (show what would change)
+python3 harnessbuilder/sync-everything.py --dry-run
+```
+
+### Per-Tool Naming Rules (from tools.py)
+| Tool | Skills | Agents | Commands |
+|------|--------|--------|----------|
+| OpenCode | kebab-case | snake_case | .md |
+| Claude | snake_case | snake_case | .md |
+| Pi | kebab-case | snake_case | .md (prompts) |
+| Wo Coder | kebab-case | snake_case | .md (prompts) |
+| Antigravity | snake_case | snake_case | .toml |
+| Codex | snake_case | snake_case | .md |
+
+### Report
+After sync, check `harnessbuilder/REPORT.md` for status.
 
 | Tool | Project Memory File |
 |------|-------------------|

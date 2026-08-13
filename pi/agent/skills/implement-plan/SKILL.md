@@ -102,6 +102,82 @@ If the plan has existing checkmarks:
 4. **Communicate Clearly** - Update checkboxes and todos
 5. **Keep Momentum** - Don't get stuck on minor details
 
+## Critical: Code Traceability (MANDATORY)
+
+**Every code change MUST include a ticket reference comment. This is NOT optional.**
+
+### Format
+```typescript
+// [AIH-192] Add WayOfTeams MCP integration
+const mcpClient = new WayOfTeamsMCP();
+```
+
+```python
+# [AIH-191] Validate ticket frontmatter on creation
+def validate_frontmatter(ticket):
+```
+
+### Rules
+- Format: `[<PREFIX>-<NNN>] <brief description>`
+- Place BEFORE the changed line
+- Every modified file must have at least one reference
+- Use the ticket ID from the ticket you're implementing
+
+### Why This Matters
+- Traces what code was supposed to do (read the ticket)
+- Verifies code matches acceptance criteria
+- Finds all code related to a specific ticket
+- Debugging: "why was this changed?" → read the ticket
+
+## Critical: Acceptance Criteria for ALL Components
+
+When implementing, verify acceptance criteria for:
+
+### Skills
+- [ ] All 77 canonical skills present in all 6 tools
+- [ ] Per-tool naming correct (run `python3 harnessbuilder/sync-everything.py` to verify)
+- [ ] Frontmatter `name:` matches directory name
+- [ ] Content identical across tools (modulo naming)
+
+### Agents
+- [ ] All 14 canonical agents present in all 6 tools
+- [ ] Agent naming correct (run `python3 harnessbuilder/sync-everything.py` to verify)
+- [ ] Content identical across tools
+
+### Commands/Prompts
+- [ ] All 24 canonical commands present in opencode/claude/pi/wocode/codex
+- [ ] Antigravity uses .toml format (skip validation)
+- [ ] Content identical across tools (modulo format)
+
+### After Implementation
+```bash
+# Sync all components to all tools
+python3 harnessbuilder/sync-everything.py
+
+# Verify consistency
+python3 harnessbuilder/sync-everything.py --validate-only
+```
+
+## Critical: Never Rewrite Ticket Context
+
+**TICKETS ARE IMMUTABLE HISTORY.** You can ONLY ADD to tickets. NEVER:
+- ❌ Rewrite ticket content
+- ❌ Remove old context, notes, or decisions
+- ❌ Simplify or condense ticket history
+- ❌ Delete work logs, research notes, or technical details
+- ❌ Replace old information with new (ADD new info, keep old)
+
+**WHY:** Old context may be needed for debugging, auditing, onboarding, or legal requirements.
+
+## Critical: Fetch Context from Tickets/Plans
+
+Before implementing, READ the ticket and plan:
+- **Ticket**: `thoughts/<project>/shared/tickets/<TICKET-ID>.md` — requirements, acceptance criteria
+- **Plan**: `thoughts/<project>/shared/plans/<PLAN-NAME>.md` — implementation phases, file changes
+- **Search**: `grep -r "<TICKET-ID>" --include="*.ts"` — find related code
+
+The ticket contains what to build. The plan contains how to build it. Never implement without reading both.
+
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

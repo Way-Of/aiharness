@@ -103,16 +103,6 @@ python3 harnessbuilder/sync-everything.py --validate-only
 python3 harnessbuilder/sync-everything.py --dry-run
 ```
 
-### Per-Tool Naming Rules (from tools.py)
-| Tool | Skills | Agents | Commands |
-|------|--------|--------|----------|
-| OpenCode | kebab-case | snake_case | .md |
-| Claude | snake_case | snake_case | .md |
-| Pi | kebab-case | snake_case | .md (prompts) |
-| Wo Coder | kebab-case | snake_case | .md (prompts) |
-| Antigravity | snake_case | snake_case | .toml |
-| Codex | snake_case | snake_case | .md |
-
 ### Report
 After sync, check `harnessbuilder/REPORT.md` for status.
 

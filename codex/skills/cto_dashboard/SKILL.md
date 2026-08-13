@@ -1,5 +1,5 @@
 ---
-name: cto_dashboard
+name: wayofteams
 description: >-
   CTO dashboard with ticket overview, developer progress, review queue, and
   GitHub PR integration
@@ -11,7 +11,7 @@ allowed-tools:
   - write
 ---
 
-# CTO Dashboard & Developer Reporting
+# WayOfTeams & Developer Reporting
 
 Provides a unified dashboard for CTO to review all tickets, track developer progress, and manage the review queue.
 

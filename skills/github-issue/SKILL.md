@@ -115,7 +115,7 @@ Parameters:
 - Bi-directional sync: ticket ↔ GitHub Issue
 - Issue labels map to ticket metadata (priority, type, project)
 - Webhook support for auto-sync (if configured)
-- CTO Dashboard shows linked issues
+- WayOfTeams shows linked issues
 - `ticket-manager` `update_ticket` syncs `github_issue` field
 ## Context Reference
 

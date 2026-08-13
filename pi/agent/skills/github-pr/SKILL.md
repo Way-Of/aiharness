@@ -126,7 +126,7 @@ Parameters:
 
 - Auto-links PR to ticket via `ticket-manager` `link_pr_to_ticket`
 - Updates ticket status to "Submitted for Review" on PR creation
-- CTO Dashboard Review Queue watches for "needs-review" label
+- WayOfTeams Review Queue watches for "needs-review" label
 - On merge, updates ticket to "Done" and deletes branch
 ## Context Reference
 

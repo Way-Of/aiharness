@@ -1,6 +1,6 @@
 ---
 name: github_review
-description: "Review GitHub Pull Requests with structured feedback, approval workflow, and CTO Dashboard integration."
+description: "Review GitHub Pull Requests with structured feedback, approval workflow, and WayOfTeams integration."
 allowed-tools:
   - read
   - write
@@ -12,7 +12,7 @@ allowed-tools:
 
 # GitHub Review Skill
 
-Handles PR review workflow with structured feedback, approval states, and CTO Dashboard integration.
+Handles PR review workflow with structured feedback, approval states, and WayOfTeams integration.
 
 ## Review States
 
@@ -121,7 +121,7 @@ Parameters:
 - `pr_number` (required): PR number
 - `file_path` (optional): Specific file to view
 
-## CTO Dashboard Integration
+## WayOfTeams Integration
 
 - Review Queue shows PRs with "needs-review" label
 - CTO actions (Approve/Request Changes/Reject) call `submit_review_decision`

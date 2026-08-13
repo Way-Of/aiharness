@@ -40,9 +40,9 @@ A ticket audit script is bundled at `assets/audit-tickets.js`. Run it after exec
 deno run -A assets/audit-tickets.js
 ```
 
-## CTO Dashboard UI Integration
+## WayOfTeams UI Integration
 
-The CTO Dashboard status dropdown affects execution workflow:
+The WayOfTeams status dropdown affects execution workflow:
 
 - **Status Sync**: When `/implement_plan` runs, it reads the current ticket status from the dashboard/UI
 - **Auto-transition**: Moving a ticket to "In Progress" in the UI signals the executor to begin work
@@ -56,7 +56,7 @@ Agents should respect the UI status as the current state. Use `update_ticket` to
 
 ## Notification Integration
 
-When completing ticket phases or implementing plans, mark related CTO Dashboard notifications as Read via the notification API:
+When completing ticket phases or implementing plans, mark related WayOfTeams notifications as Read via the notification API:
 
 ```bash
 # Mark review notification as read after phase completion
@@ -74,7 +74,7 @@ The notification IDs follow the format:
 - `review-<TICKET_ID>` — for tickets in review queue
 - `update-<TICKET_ID>` — for ticket status updates
 
-This ensures the CTO Dashboard bell badge reflects only genuinely unread notifications.
+This ensures the WayOfTeams bell badge reflects only genuinely unread notifications.
 
 ## WayOfTeams MCP Integration (Optional)
 

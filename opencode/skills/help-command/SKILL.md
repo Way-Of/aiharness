@@ -25,7 +25,7 @@ categorized, up-to-date documentation for both AI agents and human developers.
 | `/help onboarding` | New developer quickstart |
 | `/help ticket` | Ticket workflow, naming conventions, namespaces |
 | `/help team` | Team setup |
-| `/help dashboard` | CTO Dashboard features |
+| `/help dashboard` | WayOfTeams features |
 | `/help --json <topic>` | Machine-readable JSON output |
 | `/help --markdown <topic>` | Markdown output (agent-friendly) |
 

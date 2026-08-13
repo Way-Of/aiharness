@@ -111,7 +111,7 @@ Recommended workflow:
 
 ## Notification Integration
 
-When validating plans or marking validation complete, mark related CTO Dashboard notifications as Read via the notification API:
+When validating plans or marking validation complete, mark related WayOfTeams notifications as Read via the notification API:
 
 ```bash
 # Mark validation notification as read after validation complete
@@ -129,7 +129,7 @@ The notification IDs follow the format:
 - `review-<TICKET_ID>` — for tickets in review queue
 - `update-<TICKET_ID>` — for ticket status updates
 
-This ensures the CTO Dashboard bell badge reflects only genuinely unread notifications.
+This ensures the WayOfTeams bell badge reflects only genuinely unread notifications.
 
 ## Context Reference
 

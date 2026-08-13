@@ -262,7 +262,7 @@ Parameters:
 
 ### CTO Review Flow (Dashboard Integration)
 
-The CTO Dashboard provides a dedicated **Review Queue** view for tickets awaiting CTO review:
+The WayOfTeams provides a dedicated **Review Queue** view for tickets awaiting CTO review:
 
 1. **Submit for Review**: When developer sets status to "In Review" (or uses `/complete` which auto-submits if review required), ticket appears in Review Queue
 2. **CTO Notification**: CTO sees ticket in Review Queue with "Approve", "Request Changes", "Reject" buttons
@@ -358,7 +358,7 @@ grep -l "AIH-" install.ts
 
 ## Notification Integration
 
-When updating ticket status or managing tickets, mark related CTO Dashboard notifications as Read via the notification API:
+When updating ticket status or managing tickets, mark related WayOfTeams notifications as Read via the notification API:
 
 ```bash
 # Mark review notification as read after review action
@@ -376,7 +376,7 @@ The notification IDs follow the format:
 - `review-<TICKET_ID>` — for tickets in review queue
 - `update-<TICKET_ID>` — for ticket status updates
 
-This ensures the CTO Dashboard bell badge reflects only genuinely unread notifications.
+This ensures the WayOfTeams bell badge reflects only genuinely unread notifications.
 
 ## WayOfTeams MCP Integration (Optional)
 

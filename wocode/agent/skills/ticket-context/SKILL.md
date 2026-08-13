@@ -52,7 +52,7 @@ Every ticket has a `domain` field. When loading ticket context:
 - Never work on a deprecated ticket without user confirmation.
 - The `ticket_manager` skill handles full lifecycle. This skill ensures process adherence.
 
-## CTO Dashboard UI Integration
+## WayOfTeams UI Integration
 
 - **Status Dropdown**: Both list and detail views have status Select
 - **Available Statuses**: Backlog, In Progress, In Review, Done, Blocked, Deprecated

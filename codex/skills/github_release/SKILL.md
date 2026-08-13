@@ -105,7 +105,7 @@ Parameters:
 - Uses conventional commits for version determination
 - Links release to tickets via PR references
 - Updates ticket statuses to "Done" for included tickets
-- Posts release notes to CTO Dashboard news
+- Posts release notes to WayOfTeams news
 ## Context Reference
 
 - **Templates**: `thoughts/global/templates/` — ticket, fix note, knowledge, and other templates

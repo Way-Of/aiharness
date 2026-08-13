@@ -322,9 +322,9 @@ Use these skills for all GitHub operations. Never use raw `gh` or `git` commands
 #### Agent: GitHub Review (github-review)
 - **Identifier:** `github_review_v1`
 - **Primary Runtime:** Platform-native
-- **Core Responsibility:** Review Pull Requests with structured feedback, approval workflow, and CTO Dashboard integration
+- **Core Responsibility:** Review Pull Requests with structured feedback, approval workflow, and WayOfTeams integration
 - **Inputs:** PR URL, review criteria
-- **Outputs:** Review submitted (approve/changes-requested/reject), CTO Dashboard notified
+- **Outputs:** Review submitted (approve/changes-requested/reject), WayOfTeams notified
 - **Constraints:** Never self-review; must verify against ticket acceptance criteria; only CTO can dismiss reviews
 
 #### Agent: GitHub Sync (github-sync)

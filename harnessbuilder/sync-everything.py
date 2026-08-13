@@ -165,6 +165,70 @@ def validate():
     
     return errors
 
+def report():
+    """Generate markdown report of sync status."""
+    from harnessbuilder.tools import TOOLS as tool_config
+    
+    lines = []
+    lines.append("# Harnessbuilder Sync Report\n")
+    lines.append(f"Generated: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    
+    # Skills
+    canonical_skills = len([s for s in os.listdir(os.path.join(REPO_ROOT, 'skills')) 
+                           if os.path.isdir(os.path.join(REPO_ROOT, 'skills', s)) and s != 'README.md'])
+    lines.append(f"## Skills: {canonical_skills} canonical\n")
+    lines.append("| Tool | Count | Status |")
+    lines.append("|------|:-----:|--------|")
+    for tool_name, config in tool_config.items():
+        path = os.path.join(REPO_ROOT, config['skills_dir'])
+        count = len([s for s in os.listdir(path) if os.path.isdir(os.path.join(path, s)) and s != 'README.md']) if os.path.exists(path) else 0
+        status = "✓" if count == canonical_skills else f"⚠ {count - canonical_skills} extras"
+        lines.append(f"| {tool_name} | {count} | {status} |")
+    
+    # Agents
+    canonical_agents = len([f for f in os.listdir(os.path.join(REPO_ROOT, 'opencode', 'agents')) 
+                           if f.endswith('.md') and f != 'README.md'])
+    lines.append(f"\n## Agents: {canonical_agents} canonical\n")
+    lines.append("| Tool | Count | Status |")
+    lines.append("|------|:-----:|--------|")
+    for tool_name, config in tool_config.items():
+        path = os.path.join(REPO_ROOT, config['agents_dir'])
+        count = len([f for f in os.listdir(path) if f.endswith('.md') and f != 'README.md']) if os.path.exists(path) else 0
+        status = "✓" if count == canonical_agents else f"⚠ {count - canonical_agents} extras"
+        lines.append(f"| {tool_name} | {count} | {status} |")
+    
+    # Commands
+    canonical_cmds = len([f for f in os.listdir(os.path.join(REPO_ROOT, 'opencode', 'commands')) 
+                         if f.endswith('.md') and f != 'README.md'])
+    lines.append(f"\n## Commands: {canonical_cmds} canonical\n")
+    lines.append("| Tool | Count | Status |")
+    lines.append("|------|:-----:|--------|")
+    for tool_name, config in tool_config.items():
+        path = os.path.join(REPO_ROOT, config['commands_dir'])
+        count = len([f for f in os.listdir(path) if f.endswith('.md') and f != 'README.md']) if os.path.exists(path) else 0
+        if tool_name == 'antigravity':
+            status = "⚠ .toml format (skipped)"
+        else:
+            status = "✓" if count == canonical_cmds else f"⚠ {count - canonical_cmds} extras"
+        lines.append(f"| {tool_name} | {count} | {status} |")
+    
+    # Validation
+    lines.append("\n## Validation\n")
+    errors = validate()
+    if errors:
+        lines.append(f"**ERRORS: {len(errors)}**\n")
+        for e in errors:
+            lines.append(f"- ✗ {e}")
+    else:
+        lines.append("**All tools consistent ✓**\n")
+    
+    report_path = os.path.join(REPO_ROOT, 'harnessbuilder', 'REPORT.md')
+    with open(report_path, 'w') as f:
+        f.write('\n'.join(lines))
+    
+    print(f"Report saved to: {report_path}")
+    return report_path
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description='Sync canonical sources to all 6 tools')

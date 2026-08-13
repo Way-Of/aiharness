@@ -1,5 +1,66 @@
 # AI Engineering Harness Fixes & Release Notes
 
+## v1.8.2 — 2026-08-13 — WayOfTeams MCP + Anchor Memory + Ticket Lifecycle (AIH-190, AIH-191, AIH-192)
+
+### Features
+- **WayOfTeams MCP skill (AIH-192)**: New `wayofteams-mcp` skill documenting all 41 WayOfTeams MCP tools — tickets, standups, knowledge, rules, memory, team context. Deployed to all 6 tools.
+- **Anchor Memory skill (AIH-192)**: New `anchor-memory` skill for semantic memory via WayOfTeams MCP — decisions, patterns, invariants, context injection, PR review context. Deployed to all 6 tools.
+- **Teams skill (AIH-190)**: New `teams` skill for team context — team structure, GitHub activity, workspace info. Deployed to all 6 tools.
+- **MCP config updates (AIH-192)**: Fixed opencode.json and claude/.mcp.json URLs (localhost→teamsapp.zerwiz.org), added MCP entries to wocode.json and antigravity.json.
+- **init-harness MCP detection (AIH-192)**: Step 8 detects WayOfTeams availability and configures MCP connections for subscribed users.
+- **MCP awareness in skills (AIH-190/192)**: Added MCP integration sections to ticket-manager and ticket-executor (ADD only, kept existing fallbacks).
+- **Ticket lifecycle (AIH-191)**: Added done lifecycle, `/done` command, `/done-plan` command documentation to ticket-manager and ticket-executor.
+- **Code traceability (AIH-191)**: Added `[PREFIX-NNN]` reference format and querying instructions.
+- **Planner agent updated (AIH-192)**: Removed hardcoded namespaces (wayofmono/wow/opticat), now discovers from directory structure or MCP.
+- **AGENTS.md updated (AIH-192)**: Added WayOfTeams MCP (41 tools), Anchor Memory, and MCP configuration documentation.
+
+### Changed
+- **Pricing removed from skills**: Pricing information lives on the WayOfTeams store page, not in harness skills or AGENTS.md.
+
+### Files
+- `skills/wayofteams-mcp/SKILL.md` — New WayOfTeams MCP skill (canonical)
+- `skills/anchor-memory/SKILL.md` — New Anchor Memory skill (canonical)
+- `skills/teams/SKILL.md` — New Teams skill (canonical)
+- `opencode/skills/wayofteams-mcp/SKILL.md` — Per-tool copy
+- `opencode/skills/anchor-memory/SKILL.md` — Per-tool copy
+- `opencode/skills/teams/SKILL.md` — Per-tool copy
+- `claude/skills/wayofteams_mcp/SKILL.md` — Per-tool copy (snake_case)
+- `claude/skills/anchor_memory/SKILL.md` — Per-tool copy (snake_case)
+- `claude/skills/teams/SKILL.md` — Per-tool copy
+- `pi/agent/skills/wayofteams-mcp/SKILL.md` — Per-tool copy
+- `pi/agent/skills/anchor-memory/SKILL.md` — Per-tool copy
+- `pi/agent/skills/teams/SKILL.md` — Per-tool copy
+- `wocode/agent/skills/wayofteams-mcp/SKILL.md` — Per-tool copy
+- `wocode/agent/skills/anchor-memory/SKILL.md` — Per-tool copy
+- `wocode/agent/skills/teams/SKILL.md` — Per-tool copy
+- `antigravity/skills/wayofteams_mcp/SKILL.md` — Per-tool copy (snake_case)
+- `antigravity/skills/anchor_memory/SKILL.md` — Per-tool copy (snake_case)
+- `antigravity/skills/teams/SKILL.md` — Per-tool copy
+- `codex/skills/wayofteams_mcp/SKILL.md` — Per-tool copy (snake_case)
+- `codex/skills/anchor_memory/SKILL.md` — Per-tool copy (snake_case)
+- `codex/skills/teams/SKILL.md` — Per-tool copy
+- `config-manifest/tools/opencode.yaml` — Added 3 skill entries
+- `config-manifest/tools/claude.yaml` — Added 3 skill entries
+- `config-manifest/tools/pi.yaml` — Added 3 skill entries
+- `config-manifest/tools/wocode.yaml` — Added 3 skill entries
+- `config-manifest/tools/antigravity.yaml` — Added 3 skill entries
+- `config-manifest/tools/codex.yaml` — Added 3 skill entries
+- `opencode/opencode.json` — Fixed WayOfTeams URL (localhost→teamsapp.zerwiz.org)
+- `claude/.mcp.json` — Fixed WayOfTeams URL (localhost→teamsapp.zerwiz.org)
+- `wocode/wocode.json` — Added wayofteams + anchor MCP entries
+- `antigravity/antigravity.json` — Added MCP config section
+- `skills/init-harness/SKILL.md` — Added Step 8: MCP detection
+- `skills/ticket-manager/SKILL.md` — Added MCP integration, done lifecycle, code traceability
+- `skills/ticket-executor/SKILL.md` — Added MCP integration, done lifecycle, traceability
+- `opencode/agents/planner.md` — Removed hardcoded namespaces
+- `AGENTS.md` — Added WayOfTeams MCP, Anchor Memory, MCP configuration
+- `manifest.json` — Regenerated with v1.8.2
+- `config-manifest/base_manifest.yaml` — Version bumped to 1.8.2
+- `install.ts` — Version bumped to 1.8.2
+- `install.ps1` — Version bumped to 1.8.2
+
+---
+
 ## v1.8.1 — 2026-08-12 — Directory Formatting Fixes + Safe Installation + investor-ready-doc-gen Pipeline (AIH-190)
 
 ### Bug Fixes

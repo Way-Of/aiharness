@@ -97,7 +97,7 @@ param(
   [switch]$SkipBinary
 )
 
-$ScriptVersion = "1.8.0"
+$ScriptVersion = "1.8.2"
 $ScriptUrl = "https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts"
 
 function Write-Logo {

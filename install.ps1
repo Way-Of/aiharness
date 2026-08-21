@@ -145,9 +145,9 @@ function Test-Deno {
 
 function Install-Deno {
   Write-Step "Deno not found. Choose installation method:"
-  Write-Host "  1) winget (recommended) — winget install DenoLand.Deno"
-  Write-Host "  2) Official script  — iex (iwr https://deno.land/install.ps1)"
-  Write-Host "  3) Skip — I'll install manually"
+  Write-Host "  1) winget (recommended) - winget install DenoLand.Deno"
+  Write-Host "  2) Official script  - iex (iwr https://deno.land/install.ps1)"
+  Write-Host "  3) Skip - I'll install manually"
   $choice = Read-Host "  Enter 1, 2, or 3"
   switch ($choice) {
     "1" {

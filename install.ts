@@ -279,8 +279,8 @@ async function loadManifest(sd: string, token: string | null): Promise<Manifest>
     const manifestUrl = cacheBustUrl(`${sd}manifest.json`);
     const resp = await fetchWithAuth(manifestUrl, token);
     if (!resp.ok) {
-      if ((resp.status === 403 || resp.status === 404) && !token) {
-        const cloneDir = Deno.build.os === "windows" ? "%TEMP%\\wom" : "/tmp/wom";
+if ((resp.status === 403 || resp.status === 404) && !token) {
+        const cloneDir = Deno.build.os === "windows" ? "%TEMP%\\aiharness" : "/tmp/aiharness";
         const sep = Deno.build.os === "windows" ? "\\" : "/";
         throw new Error(
           `Failed to fetch manifest (${resp.status}). If this is a private repository, clone and run locally:\n\n` +

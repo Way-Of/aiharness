@@ -99,6 +99,7 @@ param(
 
 $ScriptVersion = "1.8.2"
 $ScriptUrl = "https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts"
+$LocalInstallPath = Join-Path $env:TEMP "aiharness-install.ps1"
 
 function Write-Logo {
   $logo = @(

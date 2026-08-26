@@ -1090,7 +1090,7 @@ async function installTool(manifest: Manifest, toolName: string, opts: InstallOp
           console.log(`  ${o("💾")} backed up  ${od(fileEntry.dest)} → ${od(basename(backupPath))}`);
         } catch { /* non-fatal */ }
         console.log(`\n  ${o("⟁")} ${fileEntry.dest}  ${yellow("conflict")}  ${od("(incoming differs)")}`);
-        if (!opts.yes) {
+        if (!opts.yes && !opts.merge) {
           if (opts.dryRun) {
             console.log(`  ${od("[dry-run]")} would overwrite`);
             updatedCount++;

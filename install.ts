@@ -1739,17 +1739,17 @@ if (args["install-cli"]) {
       });
       await psCmd.output();
     } catch { /* non-admin — proceed anyway */ }
-    // Spawn next step directly via full path (bypasses PATH issue)
-    console.log(`  ${o("►")} ${C.bold}Running ai-harness --tool=all --yes...${C.reset}\n`);
-    const spawnCmd = new Deno.Command(binPath + "\\ai-harness.cmd", {
-      args: ["--tool=all", "--yes"],
-      stdin: "inherit", stdout: "inherit", stderr: "inherit",
-    });
-    const spawnResult = await spawnCmd.output();
-    Deno.exit(spawnResult.success ? 0 : 1);
+    console.log(`  ${o("►")} Next: ${C.bold}ai-harness --tool=all${C.reset}  ${od("(safe — prompts on conflict)")}`);
+    console.log(`  ${o("►")} Next: ${C.bold}ai-harness --tool=all --merge${C.reset}  ${od("(safe — preserves your configs)")}`);
+    console.log(`  ${o("►")} Next: ${C.bold}ai-harness --tool=all --yes${C.reset}  ${od("(destructive — no prompts)")}`);
+    console.log(`  ${o("►")} Update: ${C.bold}ai-harness --update${C.reset}`);
+    console.log();
+    Deno.exit(0);
   }
 
-  console.log(`  ${o("►")} Next: ${C.bold}ai-harness --tool=all --yes${C.reset}`);
+  console.log(`  ${o("►")} Next: ${C.bold}ai-harness --tool=all${C.reset}  ${od("(safe — prompts on conflict)")}`);
+  console.log(`  ${o("►")} Next: ${C.bold}ai-harness --tool=all --merge${C.reset}  ${od("(safe — preserves your configs)")}`);
+  console.log(`  ${o("►")} Next: ${C.bold}ai-harness --tool=all --yes${C.reset}  ${od("(destructive — no prompts)")}`);
   console.log(`  ${o("►")} Update: ${C.bold}ai-harness --update${C.reset}`);
   console.log();
   Deno.exit(0);

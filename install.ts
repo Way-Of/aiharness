@@ -407,7 +407,7 @@ function printHelp(): void {
   console.log();
   console.log(`  ${ob("⟡ AI HARNESS CLI")}  ${od("ai-harness — engine commands")}  ${od("─".repeat(4))}\n`);
   console.log(`  ${o("┌")}${od("─".repeat(54))}${o("│")}`);
-  console.log(`  ${o("│")}  ${C.bold}deno run -A <url> --tool=all --yes${C.reset}${" ".repeat(18)}${o("│")}`);
+  console.log(`  ${o("│")}  ${C.bold}ai-harness --tool=all --merge${C.reset}${" ".repeat(21)}${o("│")}`);
   console.log(`  ${o("│")}  ${C.bold}ai-harness --tool=claude${C.reset}${" ".repeat(28)}${o("│")}`);
   console.log(`  ${o("│")}  ${C.bold}ai-harness --update${C.reset}${" ".repeat(33)}${o("│")}`);
   console.log(`  ${o("│")}  ${C.bold}ai-harness --help${C.reset}${" ".repeat(35)}${o("│")}`);
@@ -420,16 +420,16 @@ function printHelp(): void {
       title: "quick start (one-liner)",
       items: [
         { cmd: `deno run -A ${INSTALL_URL} --install-cli`, desc: "Install CLI with Matrix output" },
-        { cmd: "ai-harness --tool=all --yes", desc: "Install all tool configs at once" },
+        { cmd: "ai-harness --tool=all --merge", desc: "Install all tools (safe — preserves your configs)" },
       ],
     },
     {
       title: "install & update",
       items: [
-        { cmd: "--tool=<name>", desc: "Install tool config (claude, opencode, pi, wocode, antigravity, codex, all)" },
+        { cmd: "--tool=<name>", desc: "Install tool config (claude, opencode, pi, wocode, antigravity, codex, gemini, all, auto)" },
         { cmd: "--install-cli", desc: "Install/update CLI binary with Matrix output" },
         { cmd: "--update", desc: "Full harness sync: CLI + docs + all tools + stale cleanup + validate" },
-        { cmd: "--yes, -y", desc: "Skip confirmation prompts" },
+        { cmd: "--yes, -y", desc: "Skip confirmation prompts (destructive)" },
         { cmd: "--merge", desc: "Preserve user files: skip stale removal, skip settings, only update manifest files" },
         { cmd: "--dry-run, -n", desc: "Preview without writing files" },
         { cmd: "--skill=<name>", desc: "Specific component names to install (comma-separated)" },
@@ -441,22 +441,29 @@ function printHelp(): void {
       title: "maintenance",
       items: [
         { cmd: "--prune", desc: "Interactive: review & remove non-manifest skills across all tools" },
-        { cmd: "--purge[=<name>]", desc: "Nuclear cleanup: wipe ALL harness files from tool config dirs (no manifest needed)" },
-        { cmd: "--purge=all", desc: "Purge all 7 tool config directories at once" },
+        { cmd: "--purge[=<name>]", desc: "Nuclear cleanup: wipe ALL harness files from tool config dirs" },
         { cmd: "--check", desc: "Check installed version vs manifest" },
         { cmd: "--compliance", desc: "Validate all tools match manifest — no missing/stale/dangling files" },
         { cmd: "--uninstall=<name>", desc: "Remove installed files (claude, opencode, all, ...)" },
         { cmd: "--no-validate", desc: "Skip compliance validation after --update" },
+        { cmd: "--skip-binary", desc: "Skip CLI binary update in --update" },
       ],
     },
     {
       title: "sync & reporting",
       items: [
         { cmd: "--sync-docs", desc: "Sync canonical skills to all tool directories" },
-        { cmd: "--sync-docs --check", desc: "Preview skill sync without making changes" },
         { cmd: "--import-ref", desc: "Import ref skills/agents to all platforms" },
         { cmd: "--report-skills", desc: "Report local skills to dashboard telemetry API" },
         { cmd: "--report-url=<url>", desc: "Dashboard URL for skill reporting" },
+        { cmd: "--no-report", desc: "Disable telemetry reporting" },
+      ],
+    },
+    {
+      title: "debug & diagnostics",
+      items: [
+        { cmd: "--debug", desc: "Enable debug logging to file" },
+        { cmd: "--detect", desc: "Print platform-aware system report and exit" },
       ],
     },
     {
@@ -481,7 +488,7 @@ function printHelp(): void {
 
   console.log(`  ${ob("⟡ QUICK START")}\n`);
   console.log(`  ${o("1.")} ${C.bold}deno run -A <url> --install-cli${C.reset}`);
-  console.log(`  ${o("2.")} ${C.bold}ai-harness --tool=all --yes${C.reset}`);
+  console.log(`  ${o("2.")} ${C.bold}ai-harness --tool=all --merge${C.reset}  ${od("(safe — preserves your configs)")}`);
   console.log(`  ${o("3.")} ${C.bold}ai-harness --update${C.reset}`);
   console.log();
 }
@@ -2244,9 +2251,8 @@ if (args.uninstall) {
 }
 
 if (!args.tool && !args.uninstall && !args.purge) {
-  console.error("Error: --tool is required.\n");
   printHelp();
-  Deno.exit(1);
+  Deno.exit(0);
 }
 
 // These are already declared at top level for handlers

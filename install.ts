@@ -389,6 +389,81 @@ function renderDiff(oldText: string, newText: string): string {
   return lines.join("\n");
 }
 
+async function showInteractiveMenu(): Promise<void> {
+  const logo = [
+    "██╗    ██╗   █████╗   ██╗   ██╗     ██████╗   ███████╗",
+    "██║    ██║  ██╔══██╗  ╚██╗ ██╔╝    ██╔═══██╗  ██╔════╝",
+    "██║ █╗ ██║  ███████║   ╚████╔╝     ██║   ██║  █████╗  ",
+    "██║███╗██║  ██╔══██║    ╚██╔╝      ██║   ██║  ██╔══╝  ",
+    "╚███╔███╔╝  ██║  ██║     ██║       ╚███████╝  ██║     ",
+    " ╚══╝╚══╝   ╚═╝  ╚═╝     ╚═╝        ╚══════╝  ╚═╝     ",
+  ];
+  for (const line of logo) console.log(o(`  ${line}`));
+  console.log();
+  console.log(`  ${ob("⟡ AI HARNESS CLI")}  ${od("v" + VERSION)}\n`);
+
+  const menuItems = [
+    { key: "1", label: "Install all tools (safe)", desc: "prompts on conflict", cmd: "--tool=all" },
+    { key: "2", label: "Install all tools (merge)", desc: "preserves your configs", cmd: "--tool=all --merge" },
+    { key: "3", label: "Install all tools (destructive)", desc: "no prompts", cmd: "--tool=all --yes" },
+    { key: "4", label: "Install specific tool", desc: "choose which tool", cmd: null },
+    { key: "5", label: "Update harness", desc: "full sync", cmd: "--update" },
+    { key: "6", label: "Update CLI only", desc: "install/update binary", cmd: "--install-cli" },
+    { key: "7", label: "Run compliance check", desc: "validate all tools", cmd: "--compliance" },
+    { key: "8", label: "Show full help", desc: "all flags", cmd: null },
+    { key: "q", label: "Quit", desc: "", cmd: null },
+  ];
+
+  console.log(`  ${ob("▸ What would you like to do?")}\n`);
+  for (const item of menuItems) {
+    console.log(`  ${o("[" + item.key + "]")} ${C.bold}${item.label}${C.reset}  ${od(item.desc)}`);
+  }
+  console.log();
+
+  const input = (await readLine()).toLowerCase().trim();
+
+  const selected = menuItems.find(m => m.key === input);
+  if (!selected || selected.key === "q") {
+    console.log(`\n  ${od("bye!")}`);
+    return;
+  }
+
+  if (selected.key === "4") {
+    console.log(`\n  ${ob("▸ Which tool?")}\n`);
+    const tools = ["claude", "opencode", "pi", "wocode", "antigravity", "codex", "gemini", "all"];
+    for (const t of tools) {
+      console.log(`  ${o("·")} ${C.bold}${t}${C.reset}`);
+    }
+    console.log();
+    const toolInput = (await readLine()).toLowerCase().trim();
+    if (!tools.includes(toolInput)) {
+      console.log(`\n  ${cross()} Unknown tool: ${toolInput}`);
+      return;
+    }
+    console.log(`\n  ${o("►")} Running: ${C.bold}ai-harness --tool=${toolInput}${C.reset}\n`);
+    const cmd = new Deno.Command("ai-harness", {
+      args: ["--tool", toolInput],
+      stdin: "inherit", stdout: "inherit", stderr: "inherit",
+    });
+    const result = await cmd.output();
+    Deno.exit(result.success ? 0 : 1);
+  }
+
+  if (selected.key === "8") {
+    printHelp();
+    return;
+  }
+
+  const cmdArgs = selected.cmd!.split(" ");
+  console.log(`\n  ${o("►")} Running: ${C.bold}ai-harness ${selected.cmd}${C.reset}\n`);
+  const cmd = new Deno.Command("ai-harness", {
+    args: cmdArgs,
+    stdin: "inherit", stdout: "inherit", stderr: "inherit",
+  });
+  const result = await cmd.output();
+  Deno.exit(result.success ? 0 : 1);
+}
+
 async function promptConfirm(message: string): Promise<boolean> {
   return confirm(message);
 }
@@ -2251,7 +2326,7 @@ if (args.uninstall) {
 }
 
 if (!args.tool && !args.uninstall && !args.purge) {
-  printHelp();
+  await showInteractiveMenu();
   Deno.exit(0);
 }
 

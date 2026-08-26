@@ -12,30 +12,24 @@ This repo provides a cross-tool AI engineering harness — 51+ skills, 12 agents
 
 To pull the latest skills, agents, and installer updates from the remote repository:
 
-**macOS / Linux:**
+**All platforms (requires Deno):**
 
 ```bash
 deno run --reload -A https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ts --install-cli
 ```
 
-**Windows (PowerShell):**
+The `--reload` flag forces a re-fetch of all dependencies and the script itself, ensuring you always get the latest version.
+
+**Windows (PowerShell, no Deno):**
 
 ```powershell
 irm https://raw.githubusercontent.com/Way-Of/aiharness/main/install.ps1 | iex
 ```
 
-The `--reload` flag (Deno) forces a re-fetch of all dependencies and the script itself, ensuring you always get the latest version. On Windows, `irm` (Invoke-RestMethod) fetches and pipes the script directly to `iex` (Invoke-Expression).
-
 **Using the CLI (all platforms):**
 
 ```bash
 ai-harness --update
-```
-
-**Windows (PowerShell) with explicit flags:**
-
-```powershell
-ai-harness.exe --update
 ```
 
 ## Quick Start
@@ -50,12 +44,16 @@ ai-harness --tool=all
 # Install all tools (destructive — overwrites ALL configs without prompting)
 ai-harness --tool=all --yes
 
+# Install all tools (merge — safe for existing setups, never deletes)
+ai-harness --tool=all --merge
+
 # Install specific tool
 ai-harness --tool=claude
 ai-harness --tool=opencode
 ```
 
 > **⚠️ `--yes` flag destroys custom configs.** See [Installation Safety](#installation-safety) before using it.
+> **✅ `--merge` flag preserves user files.** See [Merge Install](#merge-install-safe-for-existing-setups) for details.
 
 ## Supported Tools
 
@@ -113,20 +111,17 @@ cd ~/.ai-engineering-harness
 |------|----------|----------|
 | *(no flag)* | Prompts before overwriting any config file that differs from the harness default | **First install** or when you have custom configs |
 | `--yes` | Skips ALL prompts, overwrites every file silently | CI/CD, fresh machines, or you want a clean slate |
+| `--merge` | Preserves user files: skips stale removal, skips settings, only updates manifest files | **Existing setups** — adds harness on top of your custom config |
 
-### What `--yes` overwrites
+### What `--merge` preserves
 
-These user config files will be **silently replaced** with harness defaults:
-
-| Tool | File destroyed | Contains |
-|------|---------------|----------|
-| OpenCode | `~/.config/opencode/opencode.json` | MCP servers, model config, custom settings |
-| Wo Coder | `~/.wocode/agent/wocode.json` | MCP servers, tool config |
-| Antigravity | `~/.antigravity/antigravity.json` | Tool config |
-
-### What `--yes` deletes
-
-Stale file removal removes any file in `skills/`, `agents/`, `commands/`, `extensions/`, `themes/` that is not in the current manifest. If you manually added or renamed files in these directories, they will be **permanently deleted**.
+| Behavior | `--merge` | Default | `--yes` |
+|----------|-----------|---------|---------|
+| User's existing skills/agents | ✅ Kept | ✅ Kept | ❌ Deleted if not in manifest |
+| Custom config files | ✅ Kept | Prompts | ❌ Overwritten |
+| Settings component | ✅ Skipped | Prompts | ✅ Skipped |
+| New manifest files | ✅ Installed | ✅ Installed | ✅ Installed |
+| Updated manifest files | ✅ Updated | Prompts | ✅ Updated |
 
 ### Safe install (recommended)
 
@@ -136,6 +131,16 @@ ai-harness --tool=opencode
 
 # Update — reviews changes before applying
 ai-harness --update
+```
+
+### Merge install (safe for existing setups)
+
+```bash
+# Add harness on top of your existing setup — never deletes or overwrites
+ai-harness --tool=all --merge
+
+# Just OpenCode, preserve everything else
+ai-harness --tool=opencode --merge
 ```
 
 ### Clean wipe (destructive)
@@ -238,7 +243,8 @@ cp ~/.config/opencode/opencode.json.bak.1723401234567 ~/.config/opencode/opencod
 
 ```bash
 ai-harness --tool=<name>          # Install tool config
-ai-harness --tool=all --yes       # Install all tools
+ai-harness --tool=all --yes       # Install all tools (destructive)
+ai-harness --tool=all --merge     # Install all tools (safe for existing setups)
 ai-harness --update               # Full sync
 ai-harness --install-cli          # Install/update CLI
 ai-harness --help                 # Full usage

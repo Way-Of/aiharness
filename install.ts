@@ -430,6 +430,7 @@ function printHelp(): void {
         { cmd: "--install-cli", desc: "Install/update CLI binary with Matrix output" },
         { cmd: "--update", desc: "Full harness sync: CLI + docs + all tools + stale cleanup + validate" },
         { cmd: "--yes, -y", desc: "Skip confirmation prompts" },
+        { cmd: "--merge", desc: "Preserve user files: skip stale removal, skip settings, only update manifest files" },
         { cmd: "--dry-run, -n", desc: "Preview without writing files" },
         { cmd: "--skill=<name>", desc: "Specific component names to install (comma-separated)" },
         { cmd: "--interactive, -i", desc: "Interactive checkbox picker" },
@@ -800,6 +801,7 @@ interface InstallOptions {
   interactive: boolean;
   dryRun: boolean;
   yes: boolean;
+  merge: boolean; // Preserve user files: skip stale removal, skip settings, only update manifest files
   sd: string;
   token: string | null;
   local: boolean;
@@ -989,9 +991,9 @@ async function installTool(manifest: Manifest, toolName: string, opts: InstallOp
   for (const comp of selectedComponents) {
     // Warn before installing user-specific config files in the default flow
     if (comp.name === "settings") {
-      if (opts.yes) {
-        // With --yes, skip settings to preserve user configs
-        console.log(`  ${od("·")} settings  ${od("(skipped — use without --yes to review)")}`);
+      if (opts.yes || opts.merge) {
+        // With --yes or --merge, skip settings to preserve user configs
+        console.log(`  ${od("·")} settings  ${od("(skipped — use without --yes/--merge to review)")}`);
         skipped += comp.files.length;
         continue;
       }
@@ -1121,8 +1123,8 @@ async function installTool(manifest: Manifest, toolName: string, opts: InstallOp
 
   console.log(`\n  ${o("└")} ${od(toolName)}: ${green(String(newCount))} NEW, ${green(String(updatedCount))} UPDATED, ${od(String(unchanged))} UNCHANGED, ${yellow(String(skipped))} SKIPPED`);
 
-  // Remove stale files not in manifest (only for full installs)
-  if (opts.skills.length === 0 && !opts.interactive) {
+  // Remove stale files not in manifest (only for full installs, skipped in merge mode)
+  if (opts.skills.length === 0 && !opts.interactive && !opts.merge) {
     await removeStaleFiles(targetDir, expectedPaths, {
       dryRun: opts.dryRun,
       yes: opts.yes,
@@ -1306,7 +1308,7 @@ async function installDeliveryPackage(
 
 const args = parseArgs(Deno.args, {
   string: ["tool", "skill", "dest", "mode", "report-url", "uninstall"],
-  boolean: ["interactive", "dry-run", "yes", "help", "check", "local", "import-ref", "sync-docs", "report-skills", "update", "no-validate", "prune", "install-cli", "compliance", "detect", "no-report", "debug", "purge"],
+  boolean: ["interactive", "dry-run", "yes", "help", "check", "local", "import-ref", "sync-docs", "report-skills", "update", "no-validate", "prune", "install-cli", "compliance", "detect", "no-report", "debug", "purge", "merge"],
   alias: { h: "help", n: "dry-run", y: "yes", i: "interactive", l: "local" },
 });
 
@@ -1907,11 +1909,12 @@ if (args.update) {
   console.log(`  ${ob("▸ STEP 3/4")}  ${od("Install/update " + Object.keys(manifest.tools).length + " tools")}`);
   console.log(`  ${od("─".repeat(40))}\n`);
   if (dryRun) {
-    console.log(`  ${od("[dry-run]")} would run: ${C.bold}ai-harness --tool=all${yes ? " --yes" : ""}${C.reset}\n`);
+    console.log(`  ${od("[dry-run]")} would run: ${C.bold}ai-harness --tool=all${yes ? " --yes" : ""}${Boolean(args.merge) ? " --merge" : ""}${C.reset}\n`);
     console.log(`  ${od("[dry-run]")} would remove stale files in all ${Object.keys(manifest.tools).length} target dirs\n`);
   } else {
     const runArgs = ["--tool=all"];
     if (yes) runArgs.push("--yes");
+    if (Boolean(args.merge)) runArgs.push("--merge");
     const runCmd = new Deno.Command("ai-harness", {
       args: runArgs, stdout: "inherit", stderr: "inherit",
     });
@@ -2261,6 +2264,7 @@ const installOpts: InstallOptions = {
   interactive: Boolean(args.interactive),
   dryRun: Boolean(args["dry-run"]),
   yes: Boolean(args.yes),
+  merge: Boolean(args.merge),
   sd,
   token,
   local: Boolean(args.local),

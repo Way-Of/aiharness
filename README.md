@@ -8,6 +8,27 @@ The AI Engineering Harness provides 51 battle-tested skills, 12 agents, and work
 
 This repo provides a cross-tool AI engineering harness — 51+ skills, 12 agents, and workflows that work across 6 AI coding tools. Install once, use everywhere.
 
+## Prerequisites
+
+The primary installer requires [Deno](https://deno.com). Install it first:
+
+**macOS / Linux:**
+```bash
+curl -fsSL https://deno.land/install.sh | sh
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://deno.land/install.ps1 | iex
+```
+
+**Via npm (any platform):**
+```bash
+npm install -g deno
+```
+
+> **Windows users:** If you prefer to skip Deno, use the PowerShell installer directly — see [Installation](#installation).
+
 ### Updating
 
 To pull the latest skills, agents, and installer updates from the remote repository:
